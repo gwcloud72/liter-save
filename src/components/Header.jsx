@@ -1,0 +1,15 @@
+const SERVICE_BADGES = ['휘발유', '경유', '지역별', '최저가순'];
+
+export default function Header() {
+  return (
+    <header className="site-header">
+      <a className="brand" href="#top" aria-label="리터세이브 홈">
+        <span className="brand-mark">L</span>
+        <span>리터세이브</span>
+      </a>
+      <nav className="header-pills" aria-label="서비스 특징">
+        {SERVICE_BADGES.map((badge) => <span key={badge}>{badge}</span>)}
+      </nav>
+    </header>
+  );
+}
