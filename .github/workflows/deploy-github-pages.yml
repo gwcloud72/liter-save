@@ -1,5 +1,8 @@
 name: Deploy Liter Save
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: ["main"]
@@ -7,9 +10,6 @@ on:
   schedule:
     - cron: "0 6,18 * * *"
       timezone: "Asia/Seoul"
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
+          node-version: "22"
           package-manager-cache: false
 
       - name: Install dependencies
@@ -44,6 +44,8 @@ jobs:
           OPINET_REGIONS: ${{ vars.OPINET_REGIONS }}
           OPINET_FUELS: ${{ vars.OPINET_FUELS }}
           OPINET_COUNT: "20"
+          OPINET_API_BASE: "http://www.opinet.co.kr/api"
+          OPINET_AUTH_PARAM: "code"
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
@@ -52,7 +54,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
