@@ -4,7 +4,7 @@ import proj4 from 'proj4';
 
 const OUTPUT_PATH = path.resolve('public/data/oil-prices.json');
 const API_BASE = 'https://www.opinet.co.kr/api';
-const CERT_KEY = process.env.OPINET_CERT_KEY;
+const CERT_KEY = (process.env.OPINET_CERT_KEY ?? '').trim();
 const COUNT = Number(process.env.OPINET_COUNT || 20);
 
 const DEFAULT_FUELS = [
@@ -29,15 +29,18 @@ const KATEC_CRS = '+proj=tmerc +lat_0=38 +lon_0=128 +k=0.9999 +x_0=400000 +y_0=6
 const WGS84_CRS = 'WGS84';
 
 function parsePairs(value, fallback) {
-  if (!value) return fallback;
-  return value
+  if (!value || !String(value).trim()) return fallback;
+  const pairs = String(value)
     .split(',')
     .map((pair) => pair.trim())
     .filter(Boolean)
     .map((pair) => {
       const [code, name] = pair.split(':');
       return { code: code?.trim() ?? '', name: name?.trim() || code?.trim() || '이름 없음' };
-    });
+    })
+    .filter((item) => item.code);
+
+  return pairs.length ? pairs : fallback;
 }
 
 function findArrayWithKeys(value, keys) {
@@ -52,12 +55,70 @@ function findArrayWithKeys(value, keys) {
   return [];
 }
 
+function redactUrl(urlLike) {
+  const url = new URL(String(urlLike));
+  if (url.searchParams.has('certkey')) {
+    url.searchParams.set('certkey', '***');
+  }
+  return url.toString();
+}
+
+function summarizePayload(raw) {
+  try {
+    const topLevelKeys = raw && typeof raw === 'object' ? Object.keys(raw).slice(0, 10) : [];
+    const resultKeys = raw?.RESULT && typeof raw.RESULT === 'object' ? Object.keys(raw.RESULT).slice(0, 10) : [];
+    return JSON.stringify({ topLevelKeys, resultKeys, result: raw?.RESULT ?? null }).slice(0, 500);
+  } catch {
+    return '응답 요약 생성 실패';
+  }
+}
+
+function extractApiMessage(raw) {
+  const candidates = [
+    raw?.RESULT?.CODE,
+    raw?.RESULT?.MSG,
+    raw?.RESULT?.MESSAGE,
+    raw?.RESULT?.ERROR,
+    raw?.CODE,
+    raw?.MSG,
+    raw?.MESSAGE,
+    raw?.ERROR,
+    raw?.error,
+    raw?.message,
+  ].filter(Boolean);
+
+  return candidates.length ? candidates.join(' / ') : null;
+}
+
 async function fetchJson(url) {
   const response = await fetch(url);
+  const text = await response.text();
+
   if (!response.ok) {
-    throw new Error(`${response.status} ${response.statusText}: ${url}`);
+    throw new Error(`${response.status} ${response.statusText}: ${redactUrl(url)}`);
   }
-  return response.json();
+
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    throw new Error(`JSON 파싱 실패: ${redactUrl(url)} / ${error.message}`);
+  }
+}
+
+async function validateApiKey() {
+  const url = new URL(`${API_BASE}/avgAllPrice.do`);
+  url.searchParams.set('out', 'json');
+  url.searchParams.set('certkey', CERT_KEY);
+
+  const raw = await fetchJson(url);
+  const items = findArrayWithKeys(raw, ['TRADE_DT', 'PRODCD', 'PRICE']);
+
+  if (!items.length) {
+    const apiMessage = extractApiMessage(raw);
+    throw new Error(
+      `오피넷 인증키 확인 실패: 전국 평균가격 응답이 비어 있습니다.${apiMessage ? ` (${apiMessage})` : ''} 응답요약=${summarizePayload(raw)}`,
+    );
+  }
 }
 
 async function fetchRegions() {
@@ -74,13 +135,20 @@ async function fetchRegions() {
     name: String(item.AREA_NM),
   }));
 
+  if (!officialRegions.length) {
+    const apiMessage = extractApiMessage(raw);
+    throw new Error(
+      `오피넷 지역코드 응답이 비어 있습니다.${apiMessage ? ` (${apiMessage})` : ''} 응답요약=${summarizePayload(raw)}`,
+    );
+  }
+
   return [{ code: 'ALL', name: '전국' }, ...officialRegions];
 }
 
 function extractOilItems(raw) {
   const direct = raw?.RESULT?.OIL ?? raw?.OIL;
   if (Array.isArray(direct)) return direct;
-  if (direct && typeof direct === 'object') return [direct];
+  if (direct && typeof direct === 'object' && 'UNI_ID' in direct) return [direct];
   return findArrayWithKeys(raw, ['UNI_ID', 'PRICE']);
 }
 
@@ -138,7 +206,16 @@ async function fetchLowestStations({ region, fuel }) {
   }
 
   const raw = await fetchJson(url);
-  return extractOilItems(raw)
+  const items = extractOilItems(raw);
+
+  if (!items.length) {
+    const apiMessage = extractApiMessage(raw);
+    if (apiMessage) {
+      throw new Error(`${apiMessage} / ${redactUrl(url)} / 응답요약=${summarizePayload(raw)}`);
+    }
+  }
+
+  return items
     .map(normalizeStation)
     .filter((station) => station.id && station.price > 0)
     .sort((a, b) => a.price - b.price);
@@ -163,6 +240,8 @@ async function main() {
     await writeNotConfiguredPayload();
     return;
   }
+
+  await validateApiKey();
 
   const fuels = parsePairs(process.env.OPINET_FUELS, DEFAULT_FUELS);
   const regions = await fetchRegions();
@@ -191,7 +270,7 @@ async function main() {
   const totalStations = datasets.reduce((sum, dataset) => sum + dataset.stations.length, 0);
 
   if (totalStations === 0) {
-    throw new Error('오피넷 데이터 수집 결과가 비어 있습니다. 인증키와 Actions 로그를 확인해주세요.');
+    throw new Error('오피넷 데이터 수집 결과가 비어 있습니다. OPINET_CERT_KEY, OPINET_REGIONS, OPINET_FUELS 설정과 Actions 로그를 확인해주세요.');
   }
 
   const payload = {
