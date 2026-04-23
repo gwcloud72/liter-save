@@ -18,8 +18,23 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const datasets = payload?.datasets ?? [];
-  const fuelOptions = useMemo(() => uniqueOptions(datasets, 'fuelCode', 'fuelName'), [datasets]);
-  const regionOptions = useMemo(() => uniqueOptions(datasets, 'regionCode', 'regionName'), [datasets]);
+  const datasetPairs = useMemo(() => new Set(datasets.map((item) => `${item.regionCode}::${item.fuelCode}`)), [datasets]);
+  const fuelOptions = useMemo(() => {
+    const baseOptions = selectedRegion
+      ? datasets.filter((item) => item.regionCode === selectedRegion)
+      : datasets;
+    return uniqueOptions(baseOptions, 'fuelCode', 'fuelName');
+  }, [datasets, selectedRegion]);
+  const regionOptions = useMemo(() => {
+    const baseOptions = selectedFuel
+      ? datasets.filter((item) => item.fuelCode === selectedFuel)
+      : datasets;
+    return uniqueOptions(baseOptions, 'regionCode', 'regionName');
+  }, [datasets, selectedFuel]);
+  const totalStationCount = useMemo(
+    () => datasets.reduce((sum, dataset) => sum + (dataset.stations?.length ?? 0), 0),
+    [datasets],
+  );
   const currentDataset = useMemo(
     () => datasets.find((item) => item.fuelCode === selectedFuel && item.regionCode === selectedRegion),
     [datasets, selectedFuel, selectedRegion],
@@ -57,13 +72,26 @@ export default function App() {
   }, [loadData]);
 
   useEffect(() => {
-    if (!selectedFuel && fuelOptions.length > 0) {
+    if (datasets.length === 0) return;
+
+    const currentPairKey = `${selectedRegion}::${selectedFuel}`;
+    const hasCurrentPair = datasetPairs.has(currentPairKey);
+
+    if (!hasCurrentPair) {
+      const first = datasets[0];
+      setSelectedFuel(first.fuelCode);
+      setSelectedRegion(first.regionCode);
+    }
+  }, [datasetPairs, datasets, selectedFuel, selectedRegion]);
+
+  useEffect(() => {
+    if (selectedFuel && fuelOptions.length > 0 && !fuelOptions.some((fuel) => fuel.code === selectedFuel)) {
       setSelectedFuel(fuelOptions[0].code);
     }
   }, [fuelOptions, selectedFuel]);
 
   useEffect(() => {
-    if (!selectedRegion && regionOptions.length > 0) {
+    if (selectedRegion && regionOptions.length > 0 && !regionOptions.some((region) => region.code === selectedRegion)) {
       setSelectedRegion(regionOptions[0].code);
     }
   }, [regionOptions, selectedRegion]);
@@ -82,7 +110,7 @@ export default function App() {
     <>
       <Header />
       <main id="top" className="page-shell">
-        <Hero lowestStation={lowest} dataMode={payload?.mode} />
+        <Hero lowestStation={lowest} dataMode={payload?.mode} totalStationCount={totalStationCount} />
         <FinderCard
           fuelOptions={fuelOptions}
           regionOptions={regionOptions}
@@ -95,6 +123,7 @@ export default function App() {
           averagePrice={average}
           mode={payload?.mode}
           generatedAt={payload?.generatedAt}
+          totalStationCount={totalStationCount}
           isLoading={status === 'loading'}
         />
         <StationList

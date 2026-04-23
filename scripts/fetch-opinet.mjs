@@ -172,18 +172,26 @@ async function main() {
     for (const fuel of fuels) {
       try {
         const stations = await fetchLowestStations({ region, fuel });
-        datasets.push({
-          regionCode: region.code,
-          regionName: region.name,
-          fuelCode: fuel.code,
-          fuelName: fuel.name,
-          stations,
-        });
+        if (stations.length > 0) {
+          datasets.push({
+            regionCode: region.code,
+            regionName: region.name,
+            fuelCode: fuel.code,
+            fuelName: fuel.name,
+            stations,
+          });
+        }
         console.log(`${region.name} / ${fuel.name}: ${stations.length}개 수집`);
       } catch (error) {
         console.warn(`${region.name} / ${fuel.name} 수집 실패: ${error.message}`);
       }
     }
+  }
+
+  const totalStations = datasets.reduce((sum, dataset) => sum + dataset.stations.length, 0);
+
+  if (totalStations === 0) {
+    throw new Error('오피넷 데이터 수집 결과가 비어 있습니다. 인증키와 Actions 로그를 확인해주세요.');
   }
 
   const payload = {

@@ -2,8 +2,8 @@ import { formatWon } from '../utils/format.js';
 
 const WAITING_TEXT = '데이터연동대기';
 
-export default function Hero({ lowestStation, dataMode }) {
-  const isReady = dataMode === 'opinet' && lowestStation;
+export default function Hero({ lowestStation, dataMode, totalStationCount = 0 }) {
+  const isReady = dataMode === 'opinet' && totalStationCount > 0 && lowestStation;
 
   return (
     <section className="hero" aria-labelledby="hero-title">

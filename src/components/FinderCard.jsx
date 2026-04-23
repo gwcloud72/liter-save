@@ -14,11 +14,12 @@ export default function FinderCard({
   averagePrice,
   mode,
   generatedAt,
+  totalStationCount,
   isLoading,
 }) {
   const hasFuelOptions = fuelOptions.length > 0;
   const hasRegionOptions = regionOptions.length > 0;
-  const isReady = mode === 'opinet' && hasFuelOptions && hasRegionOptions;
+  const isReady = mode === 'opinet' && hasFuelOptions && hasRegionOptions && totalStationCount > 0;
   const dataLabel = isReady ? '연동완료' : WAITING_TEXT;
   const dataUpdatedLabel = generatedAt ? `갱신: ${formatDate(generatedAt)}` : WAITING_TEXT;
 
