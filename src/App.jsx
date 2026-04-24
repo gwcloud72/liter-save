@@ -8,6 +8,22 @@ import { getPriceStats, sortStationsByPrice, uniqueOptions } from './utils/oilDa
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/oil-prices.json`;
 const PAGE_SIZE = 10;
+const THEME_STORAGE_KEY = 'liter-save-theme';
+
+function getStoredThemeMode() {
+  if (typeof window === 'undefined') return 'system';
+
+  const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+  return ['system', 'light', 'dark'].includes(stored) ? stored : 'system';
+}
+
+function getSystemTheme() {
+  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+    return 'light';
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
 export default function App() {
   const [payload, setPayload] = useState(null);
@@ -16,7 +32,10 @@ export default function App() {
   const [status, setStatus] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [themeMode, setThemeMode] = useState(getStoredThemeMode);
+  const [systemTheme, setSystemTheme] = useState(getSystemTheme);
 
+  const resolvedTheme = themeMode === 'system' ? systemTheme : themeMode;
   const datasets = payload?.datasets ?? [];
   const datasetPairs = useMemo(() => new Set(datasets.map((item) => `${item.regionCode}::${item.fuelCode}`)), [datasets]);
   const fuelOptions = useMemo(() => {
@@ -72,6 +91,33 @@ export default function App() {
   }, [loadData]);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return undefined;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (event) => setSystemTheme(event.matches ? 'dark' : 'light');
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+
+    mediaQuery.addListener(handleChange);
+    return () => mediaQuery.removeListener(handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    window.localStorage.setItem(THEME_STORAGE_KEY, themeMode);
+  }, [themeMode]);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    document.documentElement.dataset.theme = resolvedTheme;
+    document.documentElement.style.colorScheme = resolvedTheme;
+  }, [resolvedTheme]);
+
+  useEffect(() => {
     if (datasets.length === 0) return;
 
     const currentPairKey = `${selectedRegion}::${selectedFuel}`;
@@ -108,7 +154,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header themeMode={themeMode} resolvedTheme={resolvedTheme} onThemeChange={setThemeMode} />
       <main id="top" className="page-shell">
         <Hero lowestStation={lowest} dataMode={payload?.mode} totalStationCount={totalStationCount} />
         <FinderCard
