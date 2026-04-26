@@ -16,3 +16,15 @@ export function formatDate(value) {
     minute: '2-digit',
   }).format(date);
 }
+
+export function formatDistanceKm(value) {
+  const distance = Number(value);
+  if (!Number.isFinite(distance) || distance < 0) return '-';
+  if (distance < 1) {
+    return `${Math.round(distance * 1000)}m`;
+  }
+  if (distance < 10) {
+    return `${distance.toFixed(1)}km`;
+  }
+  return `${Math.round(distance)}km`;
+}

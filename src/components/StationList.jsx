@@ -1,4 +1,5 @@
 import StationCard from './StationCard.jsx';
+import { formatWon } from '../utils/format.js';
 
 const WAITING_TEXT = '데이터연동대기';
 
@@ -25,6 +26,9 @@ export default function StationList({
   totalPages,
   pageSize,
   onPageChange,
+  sortLabel,
+  sortMode,
+  isLocationReady,
 }) {
   const caption = dataset ? `${dataset.regionName} · ${dataset.fuelName} · 총 ${totalStations}개` : WAITING_TEXT;
   const startNumber = totalStations > 0 ? (currentPage - 1) * pageSize + 1 : 0;
@@ -35,12 +39,13 @@ export default function StationList({
     <section className="list-section" aria-labelledby="list-title">
       <div className="section-heading">
         <div>
-          <h2 id="list-title">최저가 목록</h2>
+          <h2 id="list-title">조회 결과</h2>
           <p>{status === 'loading' ? '데이터를 불러오는 중입니다.' : caption}</p>
         </div>
         <div className="section-meta" aria-label="정렬 및 표시 정보">
-          <span className="sort-label">가격 낮은 순</span>
-          {status === 'success' && totalStations > 0 && <span className="sort-label">페이지당 {pageSize}개</span>}
+          <span className="sort-label">{sortLabel}</span>
+          {status === 'success' && averagePrice > 0 && <span className="sort-label">목록 평균 {formatWon(averagePrice)}</span>}
+          {status === 'success' && isLocationReady && sortMode !== 'price' && <span className="sort-label">조회된 주유소 기준</span>}
         </div>
       </div>
 
@@ -54,6 +59,7 @@ export default function StationList({
             station={station}
             rank={startNumber + index}
             averagePrice={averagePrice}
+            sortMode={sortMode}
           />
         ))}
       </div>

@@ -1,6 +1,6 @@
 import ThemeToggle from './ThemeToggle.jsx';
 
-const SERVICE_BADGES = ['휘발유', '경유', '지역별', '최저가순'];
+const SERVICE_BADGES = ['휘발유', '경유', '가까운순', '가성비추천'];
 
 export default function Header({ themeMode, resolvedTheme, onThemeChange }) {
   return (

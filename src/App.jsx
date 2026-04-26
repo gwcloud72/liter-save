@@ -4,11 +4,24 @@ import Hero from './components/Hero.jsx';
 import FinderCard from './components/FinderCard.jsx';
 import StationList from './components/StationList.jsx';
 import NoticeCard from './components/NoticeCard.jsx';
-import { getPriceStats, sortStationsByPrice, uniqueOptions } from './utils/oilData.js';
+import {
+  decorateStations,
+  getBestValueStation,
+  getNearestStation,
+  getPriceStats,
+  SORT_MODE_LABELS,
+  sortStations,
+  uniqueOptions,
+} from './utils/oilData.js';
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/oil-prices.json`;
 const PAGE_SIZE = 10;
 const THEME_STORAGE_KEY = 'liter-save-theme';
+const LOCATION_OPTIONS = {
+  enableHighAccuracy: true,
+  maximumAge: 1000 * 60 * 5,
+  timeout: 1000 * 12,
+};
 
 function getStoredThemeMode() {
   if (typeof window === 'undefined') return 'system';
@@ -25,6 +38,21 @@ function getSystemTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
+function getLocationErrorMessage(error) {
+  if (!error) return '현재 위치를 확인할 수 없습니다.';
+
+  switch (error.code) {
+    case 1:
+      return '현재 위치 권한이 꺼져 있습니다.';
+    case 2:
+      return '현재 위치를 다시 확인해주세요.';
+    case 3:
+      return '위치 확인 시간이 초과되었습니다.';
+    default:
+      return '현재 위치를 확인할 수 없습니다.';
+  }
+}
+
 export default function App() {
   const [payload, setPayload] = useState(null);
   const [selectedFuel, setSelectedFuel] = useState('');
@@ -34,10 +62,18 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [themeMode, setThemeMode] = useState(getStoredThemeMode);
   const [systemTheme, setSystemTheme] = useState(getSystemTheme);
+  const [sortMode, setSortMode] = useState('price');
+  const [userLocation, setUserLocation] = useState({
+    status: 'idle',
+    latitude: null,
+    longitude: null,
+    error: '',
+  });
 
   const resolvedTheme = themeMode === 'system' ? systemTheme : themeMode;
   const datasets = payload?.datasets ?? [];
   const datasetPairs = useMemo(() => new Set(datasets.map((item) => `${item.regionCode}::${item.fuelCode}`)), [datasets]);
+  const hasLocation = Number.isFinite(userLocation.latitude) && Number.isFinite(userLocation.longitude);
   const fuelOptions = useMemo(() => {
     const baseOptions = selectedRegion
       ? datasets.filter((item) => item.regionCode === selectedRegion)
@@ -58,14 +94,39 @@ export default function App() {
     () => datasets.find((item) => item.fuelCode === selectedFuel && item.regionCode === selectedRegion),
     [datasets, selectedFuel, selectedRegion],
   );
-  const stations = useMemo(() => sortStationsByPrice(currentDataset?.stations ?? []), [currentDataset]);
-  const { lowest, average } = useMemo(() => getPriceStats(stations), [stations]);
-  const totalPages = stations.length > 0 ? Math.ceil(stations.length / PAGE_SIZE) : 0;
+  const priceSortedStations = useMemo(
+    () => sortStations(currentDataset?.stations ?? [], 'price'),
+    [currentDataset],
+  );
+  const { lowest, average } = useMemo(() => getPriceStats(priceSortedStations), [priceSortedStations]);
+  const enrichedStations = useMemo(
+    () => decorateStations(
+      priceSortedStations,
+      average,
+      hasLocation
+        ? { latitude: userLocation.latitude, longitude: userLocation.longitude }
+        : null,
+    ),
+    [average, hasLocation, priceSortedStations, userLocation.latitude, userLocation.longitude],
+  );
+  const effectiveSortMode = useMemo(() => {
+    if ((sortMode === 'nearby' || sortMode === 'value') && !hasLocation) {
+      return 'price';
+    }
+    return sortMode;
+  }, [hasLocation, sortMode]);
+  const sortedStations = useMemo(
+    () => sortStations(enrichedStations, effectiveSortMode),
+    [effectiveSortMode, enrichedStations],
+  );
+  const nearestStation = useMemo(() => getNearestStation(enrichedStations), [enrichedStations]);
+  const bestValueStation = useMemo(() => getBestValueStation(enrichedStations), [enrichedStations]);
+  const totalPages = sortedStations.length > 0 ? Math.ceil(sortedStations.length / PAGE_SIZE) : 0;
   const pagedStations = useMemo(() => {
     if (totalPages === 0) return [];
     const startIndex = (currentPage - 1) * PAGE_SIZE;
-    return stations.slice(startIndex, startIndex + PAGE_SIZE);
-  }, [currentPage, stations, totalPages]);
+    return sortedStations.slice(startIndex, startIndex + PAGE_SIZE);
+  }, [currentPage, sortedStations, totalPages]);
 
   const loadData = useCallback(async () => {
     setStatus('loading');
@@ -85,6 +146,69 @@ export default function App() {
       setErrorMessage('데이터연동대기');
     }
   }, []);
+
+  const requestUserLocation = useCallback((nextSortMode = null) => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setUserLocation({
+        status: 'error',
+        latitude: null,
+        longitude: null,
+        error: '현재 위치를 사용할 수 없는 환경입니다.',
+      });
+      if (nextSortMode) {
+        setSortMode('price');
+      }
+      return;
+    }
+
+    setUserLocation((previous) => ({
+      ...previous,
+      status: 'loading',
+      error: '',
+    }));
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation({
+          status: 'ready',
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          error: '',
+        });
+
+        if (nextSortMode) {
+          setSortMode(nextSortMode);
+        }
+      },
+      (error) => {
+        setUserLocation({
+          status: 'error',
+          latitude: null,
+          longitude: null,
+          error: getLocationErrorMessage(error),
+        });
+
+        if (nextSortMode) {
+          setSortMode('price');
+        }
+      },
+      LOCATION_OPTIONS,
+    );
+  }, []);
+
+  const handleSortChange = useCallback((nextSortMode) => {
+    if (nextSortMode === 'price') {
+      setSortMode('price');
+      return;
+    }
+
+    if (hasLocation) {
+      setSortMode(nextSortMode);
+      return;
+    }
+
+    requestUserLocation(nextSortMode);
+  }, [hasLocation, requestUserLocation]);
 
   useEffect(() => {
     loadData();
@@ -144,7 +268,7 @@ export default function App() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedFuel, selectedRegion]);
+  }, [selectedFuel, selectedRegion, effectiveSortMode]);
 
   useEffect(() => {
     if (totalPages > 0 && currentPage > totalPages) {
@@ -156,7 +280,12 @@ export default function App() {
     <>
       <Header themeMode={themeMode} resolvedTheme={resolvedTheme} onThemeChange={setThemeMode} />
       <main id="top" className="page-shell">
-        <Hero lowestStation={lowest} dataMode={payload?.mode} totalStationCount={totalStationCount} />
+        <Hero
+          lowestStation={lowest}
+          dataMode={payload?.mode}
+          totalStationCount={totalStationCount}
+          isLocationReady={hasLocation}
+        />
         <FinderCard
           fuelOptions={fuelOptions}
           regionOptions={regionOptions}
@@ -166,16 +295,23 @@ export default function App() {
           onRegionChange={setSelectedRegion}
           onRefresh={loadData}
           lowestStation={lowest}
-          averagePrice={average}
+          nearestStation={nearestStation}
+          bestValueStation={bestValueStation}
           mode={payload?.mode}
           generatedAt={payload?.generatedAt}
           totalStationCount={totalStationCount}
           isLoading={status === 'loading'}
+          sortMode={effectiveSortMode}
+          onSortChange={handleSortChange}
+          onUseLocation={requestUserLocation}
+          isLocationReady={hasLocation}
+          locationStatus={userLocation.status}
+          locationError={userLocation.error}
         />
         <StationList
           dataset={currentDataset}
           stations={pagedStations}
-          totalStations={stations.length}
+          totalStations={sortedStations.length}
           averagePrice={average}
           status={status}
           errorMessage={errorMessage}
@@ -183,6 +319,9 @@ export default function App() {
           totalPages={totalPages}
           pageSize={PAGE_SIZE}
           onPageChange={setCurrentPage}
+          sortLabel={SORT_MODE_LABELS[effectiveSortMode]}
+          sortMode={effectiveSortMode}
+          isLocationReady={hasLocation}
         />
         <NoticeCard />
       </main>
