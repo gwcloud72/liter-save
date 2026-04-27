@@ -70,7 +70,7 @@ export default function FinderCard({
       <div className="finder-card__head">
         <div>
           <h2>최저가 주유소 찾기</h2>
-          <p>유종, 지역, 정렬 방식을 바꾸면 목록이 바로 갱신됩니다.</p>
+          <p>유종, 지역, 정렬 방식을 바꾸면 목록과 차트가 함께 갱신됩니다.</p>
         </div>
         <button id="refreshButton" type="button" onClick={onRefresh} disabled={isLoading}>
           {isLoading ? '불러오는 중' : '데이터 새로고침'}

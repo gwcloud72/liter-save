@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import FinderCard from './components/FinderCard.jsx';
+import HistorySection from './components/HistorySection.jsx';
 import StationList from './components/StationList.jsx';
 import NoticeCard from './components/NoticeCard.jsx';
 import {
@@ -15,9 +16,17 @@ import {
 } from './utils/oilData.js';
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/oil-prices.json`;
+const HISTORY_URL = `${import.meta.env.BASE_URL}data/oil-history.json`;
 const PAGE_SIZE = 10;
 const THEME_STORAGE_KEY = 'liter-save-theme';
 const FAVORITES_STORAGE_KEY = 'liter-save-favorites';
+const EMPTY_HISTORY_PAYLOAD = {
+  mode: 'history',
+  generatedAt: null,
+  retentionDays: 90,
+  notice: '차트 데이터가 아직 없습니다.',
+  snapshots: [],
+};
 const LOCATION_OPTIONS = {
   enableHighAccuracy: true,
   maximumAge: 1000 * 60 * 5,
@@ -131,6 +140,7 @@ async function copyTextToClipboard(text) {
 export default function App() {
   const initialUrlState = useMemo(() => getInitialUrlState(), []);
   const [payload, setPayload] = useState(null);
+  const [historyPayload, setHistoryPayload] = useState(EMPTY_HISTORY_PAYLOAD);
   const [selectedFuel, setSelectedFuel] = useState(initialUrlState.fuel);
   const [selectedRegion, setSelectedRegion] = useState(initialUrlState.region);
   const [status, setStatus] = useState('idle');
@@ -220,10 +230,26 @@ export default function App() {
     setStatus('loading');
     setErrorMessage('');
     try {
-      const response = await fetch(`${DATA_URL}?t=${Date.now()}`);
-      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-      const nextPayload = await response.json();
+      const [dataResponse, historyResponse] = await Promise.all([
+        fetch(`${DATA_URL}?t=${Date.now()}`),
+        fetch(`${HISTORY_URL}?t=${Date.now()}`).catch(() => null),
+      ]);
+
+      if (!dataResponse.ok) throw new Error(`${dataResponse.status} ${dataResponse.statusText}`);
+      const nextPayload = await dataResponse.json();
       setPayload(nextPayload);
+
+      if (historyResponse && historyResponse.ok) {
+        try {
+          const nextHistoryPayload = await historyResponse.json();
+          setHistoryPayload(nextHistoryPayload?.snapshots ? nextHistoryPayload : EMPTY_HISTORY_PAYLOAD);
+        } catch {
+          setHistoryPayload(EMPTY_HISTORY_PAYLOAD);
+        }
+      } else {
+        setHistoryPayload(EMPTY_HISTORY_PAYLOAD);
+      }
+
       setStatus('success');
     } catch (error) {
       console.error(error);
@@ -463,6 +489,10 @@ export default function App() {
           favoritesOnly={favoritesOnly}
           onToggleFavoritesOnly={() => setFavoritesOnly((previous) => !previous)}
           favoriteCount={favoriteStationsInCurrentView.length}
+        />
+        <HistorySection
+          historyPayload={historyPayload}
+          dataset={currentDataset}
         />
         <StationList
           dataset={currentDataset}

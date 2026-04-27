@@ -1,6 +1,6 @@
 import ThemeToggle from './ThemeToggle.jsx';
 
-const SERVICE_BADGES = ['가까운 순', '가성비 추천', '공유 링크', '즐겨찾기'];
+const SERVICE_BADGES = ['가까운 순', '가성비 추천', '공유 링크', '즐겨찾기', '가격 차트'];
 
 export default function Header({ themeMode, resolvedTheme, onThemeChange, favoriteCount = 0 }) {
   return (
