@@ -1,6 +1,6 @@
 {
   "mode": "history",
-  "generatedAt": "2026-04-27T13:01:18.065Z",
+  "generatedAt": "2026-04-27T16:26:47.085Z",
   "retentionDays": 90,
   "notice": "오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.",
   "snapshots": [
@@ -311,6 +311,335 @@
           "fuelName": "경유",
           "lowestPrice": 1955,
           "averagePrice": 1966,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "19",
+          "regionName": "세종",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1974,
+          "averagePrice": 1985,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "19",
+          "regionName": "세종",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1964,
+          "averagePrice": 1979,
+          "stationCount": 20
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-04-27T16:26:47.085Z",
+      "metrics": [
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1929,
+          "averagePrice": 1946,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1855,
+          "averagePrice": 1930,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "01",
+          "regionName": "서울",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1977,
+          "averagePrice": 1984,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "01",
+          "regionName": "서울",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1968,
+          "averagePrice": 1981,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "02",
+          "regionName": "경기",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1955,
+          "averagePrice": 1970,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "02",
+          "regionName": "경기",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1953,
+          "averagePrice": 1960,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "03",
+          "regionName": "강원",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1959,
+          "averagePrice": 1975,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "03",
+          "regionName": "강원",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1949,
+          "averagePrice": 1965,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "04",
+          "regionName": "충북",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1959,
+          "averagePrice": 1975,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "04",
+          "regionName": "충북",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1939,
+          "averagePrice": 1960,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "05",
+          "regionName": "충남",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1969,
+          "averagePrice": 1975,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "05",
+          "regionName": "충남",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1949,
+          "averagePrice": 1962,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "06",
+          "regionName": "전북",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1929,
+          "averagePrice": 1961,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "06",
+          "regionName": "전북",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1929,
+          "averagePrice": 1955,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "07",
+          "regionName": "전남",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1945,
+          "averagePrice": 1961,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "07",
+          "regionName": "전남",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1855,
+          "averagePrice": 1945,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "08",
+          "regionName": "경북",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1934,
+          "averagePrice": 1955,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "08",
+          "regionName": "경북",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1923,
+          "averagePrice": 1944,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "09",
+          "regionName": "경남",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1950,
+          "averagePrice": 1959,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "09",
+          "regionName": "경남",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1945,
+          "averagePrice": 1954,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "10",
+          "regionName": "부산",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1953,
+          "averagePrice": 1966,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "10",
+          "regionName": "부산",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1943,
+          "averagePrice": 1957,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "11",
+          "regionName": "제주",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1979,
+          "averagePrice": 2000,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "11",
+          "regionName": "제주",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1957,
+          "averagePrice": 1986,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "14",
+          "regionName": "대구",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1929,
+          "averagePrice": 1961,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "14",
+          "regionName": "대구",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1920,
+          "averagePrice": 1949,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "15",
+          "regionName": "인천",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1969,
+          "averagePrice": 1976,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "15",
+          "regionName": "인천",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1965,
+          "averagePrice": 1971,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "16",
+          "regionName": "광주",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1959,
+          "averagePrice": 1971,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "16",
+          "regionName": "광주",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1943,
+          "averagePrice": 1961,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "17",
+          "regionName": "대전",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1975,
+          "averagePrice": 1980,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "17",
+          "regionName": "대전",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1966,
+          "averagePrice": 1972,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "18",
+          "regionName": "울산",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1953,
+          "averagePrice": 1970,
+          "stationCount": 20
+        },
+        {
+          "regionCode": "18",
+          "regionName": "울산",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1954,
+          "averagePrice": 1965,
           "stationCount": 20
         },
         {
