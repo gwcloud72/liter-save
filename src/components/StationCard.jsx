@@ -1,7 +1,7 @@
 import { formatDistanceKm, formatWon } from '../utils/format.js';
 import { buildKakaoRouteUrl } from '../utils/mapLinks.js';
 
-export default function StationCard({ station, rank, averagePrice, sortMode }) {
+export default function StationCard({ station, rank, averagePrice, sortMode, isFavorite, onToggleFavorite }) {
   const saving = Number(averagePrice || 0) - Number(station.price || 0);
   const savingText = saving >= 0
     ? `목록 평균 대비 ${formatWon(saving)} 저렴`
@@ -36,8 +36,17 @@ export default function StationCard({ station, rank, averagePrice, sortMode }) {
           {!savingPerLiterText && expensivePerLiterText && <span className="station-insight is-warning">{expensivePerLiterText}</span>}
           {expectedSavingsText && <span className="station-insight is-accent">{expectedSavingsText}</span>}
           {sortMode === 'value' && rank === 1 && <span className="station-insight is-accent">가성비 추천</span>}
+          {isFavorite && <span className="station-insight is-favorite">즐겨찾기 저장됨</span>}
         </div>
         <div className="station-card__actions">
+          <button
+            type="button"
+            className={`favorite-button${isFavorite ? ' is-active' : ''}`}
+            onClick={() => onToggleFavorite(station)}
+            aria-pressed={isFavorite}
+          >
+            {isFavorite ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기 추가'}
+          </button>
           <a
             className="route-link"
             href={kakaoRouteUrl}

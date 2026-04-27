@@ -4,6 +4,13 @@ export function formatWon(value) {
   return `${price.toLocaleString('ko-KR')}원`;
 }
 
+export function formatSignedWon(value) {
+  const price = Number(value);
+  if (!Number.isFinite(price)) return '-';
+  const prefix = price > 0 ? '+' : price < 0 ? '-' : '';
+  return `${prefix}${Math.abs(price).toLocaleString('ko-KR')}원`;
+}
+
 export function formatDate(value) {
   if (!value) return '-';
   const date = new Date(value);

@@ -29,11 +29,20 @@ export default function StationList({
   sortLabel,
   sortMode,
   isLocationReady,
+  favoritesOnly,
+  favoriteCount,
+  favoriteIds,
+  onToggleFavorite,
 }) {
-  const caption = dataset ? `${dataset.regionName} · ${dataset.fuelName} · 총 ${totalStations}개` : WAITING_TEXT;
+  const caption = dataset
+    ? `${dataset.regionName} · ${dataset.fuelName} · ${favoritesOnly ? `즐겨찾기 ${totalStations}개` : `총 ${totalStations}개`}`
+    : WAITING_TEXT;
   const startNumber = totalStations > 0 ? (currentPage - 1) * pageSize + 1 : 0;
   const endNumber = totalStations > 0 ? Math.min(currentPage * pageSize, totalStations) : 0;
   const pageNumbers = getVisiblePages(currentPage, totalPages);
+  const emptyStateMessage = favoritesOnly
+    ? '현재 조건에서 즐겨찾기한 주유소가 없습니다.'
+    : WAITING_TEXT;
 
   return (
     <section className="list-section" aria-labelledby="list-title">
@@ -46,13 +55,14 @@ export default function StationList({
           <span className="sort-label">{sortLabel}</span>
           {status === 'success' && averagePrice > 0 && <span className="sort-label">목록 평균 {formatWon(averagePrice)}</span>}
           {status === 'success' && isLocationReady && sortMode !== 'price' && <span className="sort-label">조회된 주유소 기준</span>}
+          {favoritesOnly && <span className="sort-label">즐겨찾기 {favoriteCount}곳</span>}
         </div>
       </div>
 
       <div className="station-list" aria-live="polite">
         {status === 'loading' && <div className="empty-state">데이터를 불러오는 중입니다.</div>}
         {status === 'error' && <div className="empty-state">{errorMessage || WAITING_TEXT}</div>}
-        {status === 'success' && totalStations === 0 && <div className="empty-state">{WAITING_TEXT}</div>}
+        {status === 'success' && totalStations === 0 && <div className="empty-state">{emptyStateMessage}</div>}
         {status === 'success' && stations.map((station, index) => (
           <StationCard
             key={station.id || `${station.name}-${startNumber + index}`}
@@ -60,6 +70,8 @@ export default function StationList({
             rank={startNumber + index}
             averagePrice={averagePrice}
             sortMode={sortMode}
+            isFavorite={favoriteIds.has(station.id)}
+            onToggleFavorite={onToggleFavorite}
           />
         ))}
       </div>

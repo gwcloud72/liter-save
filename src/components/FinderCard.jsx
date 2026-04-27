@@ -51,11 +51,16 @@ export default function FinderCard({
   isLocationReady,
   locationStatus,
   locationError,
+  onCopyShareLink,
+  shareMessage,
+  favoritesOnly,
+  onToggleFavoritesOnly,
+  favoriteCount,
 }) {
   const hasFuelOptions = fuelOptions.length > 0;
   const hasRegionOptions = regionOptions.length > 0;
   const isReady = mode === 'opinet' && hasFuelOptions && hasRegionOptions && totalStationCount > 0;
-  const dataLabel = isReady ? '연동완료' : WAITING_TEXT;
+  const dataLabel = isReady ? '데이터 연동 완료' : WAITING_TEXT;
   const dataUpdatedLabel = generatedAt ? `갱신: ${formatDate(generatedAt)}` : WAITING_TEXT;
   const locationHelperText = getLocationHelperText({ isLocationReady, locationStatus, locationError });
   const locationButtonLabel = getLocationButtonLabel({ isLocationReady, locationStatus });
@@ -144,6 +149,29 @@ export default function FinderCard({
           <strong>{dataLabel}</strong>
           <small>{dataUpdatedLabel}</small>
         </article>
+      </div>
+
+      <div className="utility-panel" aria-label="공유 및 즐겨찾기">
+        <div className="utility-panel__copy">
+          <strong>공유와 즐겨찾기</strong>
+          <p>현재 화면 링크를 복사하거나, 자주 보는 주유소만 따로 모아볼 수 있습니다.</p>
+          <div className="utility-panel__meta">
+            <span className="sort-label">현재 조건 즐겨찾기 {favoriteCount}곳</span>
+            <span className="sort-label">현재 위치는 링크에 포함되지 않습니다.</span>
+          </div>
+          {shareMessage && <p className="utility-panel__message">{shareMessage}</p>}
+        </div>
+        <div className="utility-panel__actions">
+          <button type="button" className="secondary-button" onClick={onCopyShareLink}>현재 화면 공유</button>
+          <button
+            type="button"
+            className={`secondary-button${favoritesOnly ? ' is-active' : ''}`}
+            onClick={onToggleFavoritesOnly}
+            aria-pressed={favoritesOnly}
+          >
+            {favoritesOnly ? '전체 목록 보기' : '즐겨찾기만 보기'}
+          </button>
+        </div>
       </div>
     </section>
   );
