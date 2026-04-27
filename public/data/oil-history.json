@@ -1,6 +1,6 @@
 {
   "mode": "history",
-  "generatedAt": "2026-04-27T16:26:47.085Z",
+  "generatedAt": "2026-04-27T21:50:08.389Z",
   "retentionDays": 90,
   "notice": "오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.",
   "snapshots": [
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "capturedAt": "2026-04-27T16:26:47.085Z",
+      "capturedAt": "2026-04-27T21:50:08.389Z",
       "metrics": [
         {
           "regionCode": "ALL",
@@ -351,7 +351,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1855,
-          "averagePrice": 1930,
+          "averagePrice": 1925,
           "stationCount": 20
         },
         {
@@ -359,7 +359,7 @@
           "regionName": "서울",
           "fuelCode": "B027",
           "fuelName": "휘발유",
-          "lowestPrice": 1977,
+          "lowestPrice": 1976,
           "averagePrice": 1984,
           "stationCount": 20
         },
@@ -369,7 +369,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1968,
-          "averagePrice": 1981,
+          "averagePrice": 1980,
           "stationCount": 20
         },
         {
@@ -386,8 +386,8 @@
           "regionName": "경기",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1953,
-          "averagePrice": 1960,
+          "lowestPrice": 1940,
+          "averagePrice": 1959,
           "stationCount": 20
         },
         {
@@ -422,8 +422,8 @@
           "regionName": "충북",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1939,
-          "averagePrice": 1960,
+          "lowestPrice": 1904,
+          "averagePrice": 1955,
           "stationCount": 20
         },
         {
@@ -477,7 +477,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1855,
-          "averagePrice": 1945,
+          "averagePrice": 1944,
           "stationCount": 20
         },
         {
@@ -494,8 +494,8 @@
           "regionName": "경북",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1923,
-          "averagePrice": 1944,
+          "lowestPrice": 1914,
+          "averagePrice": 1942,
           "stationCount": 20
         },
         {
@@ -512,8 +512,8 @@
           "regionName": "경남",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1945,
-          "averagePrice": 1954,
+          "lowestPrice": 1940,
+          "averagePrice": 1953,
           "stationCount": 20
         },
         {
@@ -530,8 +530,8 @@
           "regionName": "부산",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1943,
-          "averagePrice": 1957,
+          "lowestPrice": 1934,
+          "averagePrice": 1956,
           "stationCount": 20
         },
         {
@@ -567,7 +567,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1920,
-          "averagePrice": 1949,
+          "averagePrice": 1947,
           "stationCount": 20
         },
         {
@@ -612,7 +612,7 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1975,
-          "averagePrice": 1980,
+          "averagePrice": 1981,
           "stationCount": 20
         },
         {
