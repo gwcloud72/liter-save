@@ -1,13 +1,15 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import proj4 from 'proj4';
 
 const OUTPUT_PATH = path.resolve('public/data/oil-prices.json');
+const HISTORY_PATH = path.resolve('public/data/oil-history.json');
 const API_BASE = String(process.env.OPINET_API_BASE || 'http://www.opinet.co.kr/api').trim();
 const RAW_KEY = process.env.OPINET_CERT_KEY || process.env.OPINET_API_KEY || '';
 const API_KEY = String(RAW_KEY).trim().replace(/^['"]|['"]$/g, '');
 const COUNT = Number(process.env.OPINET_COUNT || 20);
 const FORCED_AUTH_PARAM = String(process.env.OPINET_AUTH_PARAM || '').trim();
+const HISTORY_RETENTION_DAYS = Math.max(30, Number(process.env.HISTORY_RETENTION_DAYS || 90));
 
 const DEFAULT_FUELS = [
   { code: 'B027', name: '휘발유' },
@@ -99,7 +101,7 @@ async function fetchJson(url) {
   const response = await fetch(url, {
     headers: {
       Accept: 'application/json,text/plain,*/*',
-      'User-Agent': 'liter-save-build/1.3',
+      'User-Agent': 'liter-save-build/2.0',
     },
     redirect: 'follow',
   });
@@ -140,9 +142,9 @@ async function requestWithFallback(endpoint, params, label, requiredKeys = []) {
     const url = buildApiUrl(endpoint, params, strategy);
     try {
       const raw = await fetchJson(url);
-      const items = extractOilItems(raw).filter((item) =>
-        requiredKeys.length === 0 || requiredKeys.every((key) => key in Object(item)),
-      );
+      const items = extractOilItems(raw).filter((item) => (
+        requiredKeys.length === 0 || requiredKeys.every((key) => key in Object(item))
+      ));
       diagnostics.push({ strategy, count: items.length, summary: summarizeRaw(raw), url: redactUrl(url) });
 
       if (items.length > 0) {
@@ -244,23 +246,131 @@ async function fetchLowestStations({ region, fuel }) {
     .sort((a, b) => a.price - b.price);
 }
 
-async function writeNotConfiguredPayload() {
-  const payload = {
+function createWaitingPayload() {
+  return {
     mode: 'not-configured',
     source: 'waiting',
     generatedAt: null,
     notice: '데이터연동대기',
     datasets: [],
   };
-  await writeFile(OUTPUT_PATH, JSON.stringify(payload, null, 2));
+}
+
+function createEmptyHistoryPayload() {
+  return {
+    mode: 'history',
+    generatedAt: null,
+    retentionDays: HISTORY_RETENTION_DAYS,
+    notice: '차트 데이터가 아직 없습니다.',
+    snapshots: [],
+  };
+}
+
+async function readJsonOrDefault(filePath, fallbackValue) {
+  try {
+    const raw = await readFile(filePath, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return fallbackValue;
+  }
+}
+
+function getPriceSummary(stations = []) {
+  const prices = stations.map((station) => Number(station.price)).filter((price) => Number.isFinite(price) && price > 0);
+  if (prices.length === 0) {
+    return { lowestPrice: null, averagePrice: null, stationCount: 0 };
+  }
+
+  const total = prices.reduce((sum, price) => sum + price, 0);
+  return {
+    lowestPrice: Math.min(...prices),
+    averagePrice: Math.round(total / prices.length),
+    stationCount: prices.length,
+  };
+}
+
+function buildHistoryMetrics(datasets = []) {
+  return datasets.map((dataset) => {
+    const summary = getPriceSummary(dataset.stations);
+    return {
+      regionCode: dataset.regionCode,
+      regionName: dataset.regionName,
+      fuelCode: dataset.fuelCode,
+      fuelName: dataset.fuelName,
+      lowestPrice: summary.lowestPrice,
+      averagePrice: summary.averagePrice,
+      stationCount: summary.stationCount,
+    };
+  });
+}
+
+function getSeoulSlotKey(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Seoul',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    hour12: false,
+  });
+
+  const parts = Object.fromEntries(
+    formatter
+      .formatToParts(date)
+      .filter((part) => part.type !== 'literal')
+      .map((part) => [part.type, part.value]),
+  );
+
+  const hour = Number(parts.hour || 0);
+  const slot = hour < 12 ? 'AM' : 'PM';
+  return `${parts.year}-${parts.month}-${parts.day}-${slot}`;
+}
+
+function mergeHistory(existingHistory, snapshot) {
+  const existingSnapshots = Array.isArray(existingHistory?.snapshots)
+    ? existingHistory.snapshots.filter((item) => item?.capturedAt && Array.isArray(item?.metrics))
+    : [];
+
+  const nextSlotKey = getSeoulSlotKey(snapshot.capturedAt);
+  const withoutSameSlot = existingSnapshots.filter((item) => getSeoulSlotKey(item.capturedAt) !== nextSlotKey);
+  const merged = [...withoutSameSlot, snapshot].sort((left, right) => new Date(left.capturedAt) - new Date(right.capturedAt));
+  const cutoff = Date.now() - HISTORY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+  const retained = merged.filter((item) => {
+    const timestamp = new Date(item.capturedAt).getTime();
+    return Number.isFinite(timestamp) && timestamp >= cutoff;
+  });
+
+  return {
+    mode: 'history',
+    generatedAt: snapshot.capturedAt,
+    retentionDays: HISTORY_RETENTION_DAYS,
+    notice: '오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.',
+    snapshots: retained,
+  };
+}
+
+async function writeWaitingFiles() {
+  await writeFile(OUTPUT_PATH, JSON.stringify(createWaitingPayload(), null, 2));
+
+  const existingHistory = await readJsonOrDefault(HISTORY_PATH, null);
+  if (existingHistory) {
+    await writeFile(HISTORY_PATH, JSON.stringify(existingHistory, null, 2));
+  } else {
+    await writeFile(HISTORY_PATH, JSON.stringify(createEmptyHistoryPayload(), null, 2));
+  }
+
   console.log('데이터연동대기 상태 파일을 생성했습니다.');
 }
 
 async function main() {
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
+  await mkdir(path.dirname(HISTORY_PATH), { recursive: true });
 
   if (!API_KEY) {
-    await writeNotConfiguredPayload();
+    await writeWaitingFiles();
     return;
   }
 
@@ -296,16 +406,25 @@ async function main() {
     throw new Error('오피넷 데이터 수집 결과가 비어 있습니다. npm run opinet:test 로 먼저 avgAllPrice/areaCode/lowTop10 응답을 점검해주세요.');
   }
 
+  const generatedAt = new Date().toISOString();
   const payload = {
     mode: 'opinet',
-    source: 'Korea National Oil Corporation Opinet Open API',
-    generatedAt: new Date().toISOString(),
+    source: '한국석유공사 오피넷 Open API',
+    generatedAt,
     notice: '한국석유공사 오피넷 Open API 기준 데이터입니다. 실제 판매 가격과 차이가 있을 수 있습니다.',
     datasets,
   };
 
+  const existingHistory = await readJsonOrDefault(HISTORY_PATH, createEmptyHistoryPayload());
+  const nextHistory = mergeHistory(existingHistory, {
+    capturedAt: generatedAt,
+    metrics: buildHistoryMetrics(datasets),
+  });
+
   await writeFile(OUTPUT_PATH, JSON.stringify(payload, null, 2));
+  await writeFile(HISTORY_PATH, JSON.stringify(nextHistory, null, 2));
   console.log(`데이터 파일 생성 완료: ${OUTPUT_PATH}`);
+  console.log(`차트 누적 파일 생성 완료: ${HISTORY_PATH}`);
 }
 
 main().catch((error) => {
