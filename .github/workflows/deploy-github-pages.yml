@@ -51,17 +51,23 @@ jobs:
           OPINET_AUTH_PARAM: "code"
           HISTORY_RETENTION_DAYS: "90"
 
+      - name: 유가 리포트 생성
+        run: npm run generate:report
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+
       - name: 누적 데이터 저장소 반영
         shell: bash
         run: |
-          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json; then
+          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json public/data/oil-ai-report.json; then
             echo "반영할 데이터 변경이 없습니다."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/oil-prices.json public/data/oil-history.json
+          git add public/data/oil-prices.json public/data/oil-history.json public/data/oil-ai-report.json
           git commit -m "chore: 가격 데이터 자동 갱신 [skip ci]"
           git push origin HEAD:main
 

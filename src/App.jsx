@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import FinderCard from './components/FinderCard.jsx';
+import MarketReportCard from './components/MarketReportCard.jsx';
 import HistorySection from './components/HistorySection.jsx';
 import StationList from './components/StationList.jsx';
 import NoticeCard from './components/NoticeCard.jsx';
@@ -17,6 +18,7 @@ import {
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/oil-prices.json`;
 const HISTORY_URL = `${import.meta.env.BASE_URL}data/oil-history.json`;
+const REPORT_URL = `${import.meta.env.BASE_URL}data/oil-ai-report.json`;
 const PAGE_SIZE = 10;
 const THEME_STORAGE_KEY = 'liter-save-theme';
 const FAVORITES_STORAGE_KEY = 'liter-save-favorites';
@@ -26,6 +28,14 @@ const EMPTY_HISTORY_PAYLOAD = {
   retentionDays: 90,
   notice: '차트 데이터가 아직 없습니다.',
   snapshots: [],
+};
+const EMPTY_REPORT_PAYLOAD = {
+  mode: 'waiting',
+  provider: 'rule-based',
+  model: null,
+  generatedAt: null,
+  report: null,
+  summary: null,
 };
 const LOCATION_OPTIONS = {
   enableHighAccuracy: true,
@@ -141,6 +151,7 @@ export default function App() {
   const initialUrlState = useMemo(() => getInitialUrlState(), []);
   const [payload, setPayload] = useState(null);
   const [historyPayload, setHistoryPayload] = useState(EMPTY_HISTORY_PAYLOAD);
+  const [reportPayload, setReportPayload] = useState(EMPTY_REPORT_PAYLOAD);
   const [selectedFuel, setSelectedFuel] = useState(initialUrlState.fuel);
   const [selectedRegion, setSelectedRegion] = useState(initialUrlState.region);
   const [status, setStatus] = useState('idle');
@@ -230,9 +241,10 @@ export default function App() {
     setStatus('loading');
     setErrorMessage('');
     try {
-      const [dataResponse, historyResponse] = await Promise.all([
+      const [dataResponse, historyResponse, reportResponse] = await Promise.all([
         fetch(`${DATA_URL}?t=${Date.now()}`),
         fetch(`${HISTORY_URL}?t=${Date.now()}`).catch(() => null),
+        fetch(`${REPORT_URL}?t=${Date.now()}`).catch(() => null),
       ]);
 
       if (!dataResponse.ok) throw new Error(`${dataResponse.status} ${dataResponse.statusText}`);
@@ -250,11 +262,23 @@ export default function App() {
         setHistoryPayload(EMPTY_HISTORY_PAYLOAD);
       }
 
+      if (reportResponse && reportResponse.ok) {
+        try {
+          const nextReportPayload = await reportResponse.json();
+          setReportPayload(nextReportPayload?.report ? nextReportPayload : EMPTY_REPORT_PAYLOAD);
+        } catch {
+          setReportPayload(EMPTY_REPORT_PAYLOAD);
+        }
+      } else {
+        setReportPayload(EMPTY_REPORT_PAYLOAD);
+      }
+
       setStatus('success');
     } catch (error) {
       console.error(error);
       setStatus('error');
       setErrorMessage('데이터연동대기');
+      setReportPayload(EMPTY_REPORT_PAYLOAD);
     }
   }, []);
 
@@ -490,6 +514,7 @@ export default function App() {
           onToggleFavoritesOnly={() => setFavoritesOnly((previous) => !previous)}
           favoriteCount={favoriteStationsInCurrentView.length}
         />
+        <MarketReportCard payload={reportPayload} dataStatus={status} />
         <HistorySection
           historyPayload={historyPayload}
           dataset={currentDataset}

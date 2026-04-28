@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { formatDate, formatSignedWon, formatWon } from '../utils/format.js';
 
 const RANGE_OPTIONS = [
@@ -7,9 +7,10 @@ const RANGE_OPTIONS = [
   { code: '30d', label: '30일' },
 ];
 
-const CHART_WIDTH = 760;
-const CHART_HEIGHT = 260;
-const CHART_PADDING = { top: 16, right: 20, bottom: 34, left: 58 };
+const CHART_WIDTH = 800;
+const CHART_HEIGHT = 320;
+const CHART_PADDING = { top: 28, right: 24, bottom: 46, left: 70 };
+const TICK_COUNT = 5;
 
 function formatAxisLabel(value) {
   const number = Number(value);
@@ -17,21 +18,19 @@ function formatAxisLabel(value) {
   return `${Math.round(number).toLocaleString('ko-KR')}`;
 }
 
-function formatChartLabel(value, rangeCode) {
+function formatChartLabel(value, rangeCode, detailed = false) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return '-';
 
   if (rangeCode === '1d') {
-    return new Intl.DateTimeFormat('ko-KR', {
-      hour: '2-digit',
-      minute: '2-digit',
-    }).format(date);
+    return new Intl.DateTimeFormat('ko-KR', detailed
+      ? { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }
+      : { hour: '2-digit', minute: '2-digit' }).format(date);
   }
 
-  return new Intl.DateTimeFormat('ko-KR', {
-    month: 'numeric',
-    day: 'numeric',
-  }).format(date);
+  return new Intl.DateTimeFormat('ko-KR', detailed
+    ? { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }
+    : { month: 'numeric', day: 'numeric' }).format(date);
 }
 
 function getRangeDays(rangeCode) {
@@ -80,26 +79,46 @@ function buildSeries(historyPayload, dataset, rangeCode) {
   return filtered.length > 0 ? filtered : baseSeries.slice(-Math.min(baseSeries.length, 6));
 }
 
-function buildChart(series) {
+function buildAxisIndexes(length, maxLabels) {
+  if (length <= 0) return [];
+  if (length <= maxLabels) return Array.from({ length }, (_, index) => index);
+
+  const indexes = new Set([0, length - 1]);
+  const step = (length - 1) / (maxLabels - 1);
+
+  for (let index = 1; index < maxLabels - 1; index += 1) {
+    indexes.add(Math.round(step * index));
+  }
+
+  return Array.from(indexes).sort((left, right) => left - right);
+}
+
+function buildChart(series, rangeCode) {
+  const plotWidth = CHART_WIDTH - CHART_PADDING.left - CHART_PADDING.right;
+  const plotHeight = CHART_HEIGHT - CHART_PADDING.top - CHART_PADDING.bottom;
+
   if (!Array.isArray(series) || series.length === 0) {
     return {
       yTicks: [],
       xLabels: [],
+      points: [],
       lowestPolyline: '',
       averagePolyline: '',
-      latestPoints: null,
+      plotWidth,
+      plotHeight,
+      latestIndex: null,
     };
   }
 
-  const values = series.flatMap((item) => [item.lowestPrice, item.averagePrice]).filter((value) => Number.isFinite(value));
+  const values = series
+    .flatMap((item) => [item.lowestPrice, item.averagePrice])
+    .filter((value) => Number.isFinite(value));
+
   const rawMin = Math.min(...values);
   const rawMax = Math.max(...values);
-  const minValue = Math.max(0, Math.floor((rawMin - 25) / 10) * 10);
-  const maxValue = Math.ceil((rawMax + 25) / 10) * 10;
+  const minValue = Math.max(0, Math.floor((rawMin - 20) / 10) * 10);
+  const maxValue = Math.ceil((rawMax + 20) / 10) * 10;
   const safeMaxValue = maxValue <= minValue ? minValue + 50 : maxValue;
-
-  const plotWidth = CHART_WIDTH - CHART_PADDING.left - CHART_PADDING.right;
-  const plotHeight = CHART_HEIGHT - CHART_PADDING.top - CHART_PADDING.bottom;
 
   const toX = (index) => {
     if (series.length === 1) return CHART_PADDING.left + plotWidth / 2;
@@ -108,49 +127,79 @@ function buildChart(series) {
 
   const toY = (value) => {
     const ratio = (Number(value) - minValue) / (safeMaxValue - minValue || 1);
-    return CHART_PADDING.top + plotHeight - (ratio * plotHeight);
+    return CHART_PADDING.top + plotHeight - ratio * plotHeight;
   };
 
-  const lowestPoints = series.map((item, index) => `${toX(index)},${toY(item.lowestPrice)}`).join(' ');
-  const averagePoints = series.map((item, index) => `${toX(index)},${toY(item.averagePrice)}`).join(' ');
-  const latest = series[series.length - 1];
-  const latestIndex = series.length - 1;
+  const points = series.map((item, index) => ({
+    ...item,
+    x: toX(index),
+    lowestY: toY(item.lowestPrice),
+    averageY: toY(item.averagePrice),
+    shortLabel: formatChartLabel(item.capturedAt, rangeCode),
+    detailLabel: formatChartLabel(item.capturedAt, rangeCode, true),
+  }));
 
-  const yTicks = Array.from({ length: 4 }, (_, index) => {
-    const value = minValue + ((safeMaxValue - minValue) * index) / 3;
-    const y = CHART_PADDING.top + plotHeight - (plotHeight * index) / 3;
-    return {
-      value: Math.round(value),
-      y,
-    };
+  const lowestPolyline = points.map((point) => `${point.x},${point.lowestY}`).join(' ');
+  const averagePolyline = points.map((point) => `${point.x},${point.averageY}`).join(' ');
+
+  const yTicks = Array.from({ length: TICK_COUNT }, (_, index) => {
+    const value = minValue + ((safeMaxValue - minValue) * index) / (TICK_COUNT - 1);
+    const y = CHART_PADDING.top + plotHeight - (plotHeight * index) / (TICK_COUNT - 1);
+    return { value: Math.round(value), y };
   }).reverse();
 
-  const labelIndexes = Array.from(new Set([
-    0,
-    Math.floor((series.length - 1) / 2),
-    series.length - 1,
-  ]));
-
-  const xLabels = labelIndexes.map((index) => ({
-    x: toX(index),
-    label: formatChartLabel(series[index].capturedAt, 'axis'),
-    rawLabel: series[index].capturedAt,
+  const xLabelIndexes = buildAxisIndexes(points.length, rangeCode === '1d' ? 6 : 7);
+  const xLabels = xLabelIndexes.map((index) => ({
+    x: points[index].x,
+    label: points[index].shortLabel,
   }));
+
+  const hoverZones = points.map((point, index) => {
+    const previousX = index > 0 ? points[index - 1].x : CHART_PADDING.left;
+    const nextX = index < points.length - 1 ? points[index + 1].x : CHART_WIDTH - CHART_PADDING.right;
+    const startX = index === 0 ? CHART_PADDING.left : (previousX + point.x) / 2;
+    const endX = index === points.length - 1 ? CHART_WIDTH - CHART_PADDING.right : (point.x + nextX) / 2;
+    return {
+      x: startX,
+      width: Math.max(24, endX - startX),
+      index,
+    };
+  });
 
   return {
     yTicks,
     xLabels,
-    lowestPolyline: lowestPoints,
-    averagePolyline: averagePoints,
-    latestPoints: {
-      lowest: { x: toX(latestIndex), y: toY(latest.lowestPrice), value: latest.lowestPrice },
-      average: { x: toX(latestIndex), y: toY(latest.averagePrice), value: latest.averagePrice },
-    },
+    points,
+    hoverZones,
+    lowestPolyline,
+    averagePolyline,
+    plotWidth,
+    plotHeight,
+    latestIndex: points.length - 1,
+  };
+}
+
+function getTooltipPosition(point) {
+  if (!point) return null;
+
+  const boxWidth = 184;
+  const boxHeight = 72;
+  const wantsLeft = point.x > CHART_WIDTH - 220;
+  const tooltipX = wantsLeft ? point.x - boxWidth - 14 : point.x + 14;
+  const aboveY = Math.min(point.lowestY, point.averageY) - boxHeight - 14;
+  const tooltipY = aboveY < CHART_PADDING.top ? Math.max(CHART_PADDING.top + 6, Math.max(point.lowestY, point.averageY) + 14) : aboveY;
+
+  return {
+    x: tooltipX,
+    y: tooltipY,
+    width: boxWidth,
+    height: boxHeight,
   };
 }
 
 export default function HistorySection({ historyPayload, dataset }) {
   const [rangeCode, setRangeCode] = useState('7d');
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const allSeries = useMemo(
     () => buildSeries(historyPayload, dataset, 'all'),
@@ -160,17 +209,24 @@ export default function HistorySection({ historyPayload, dataset }) {
     () => buildSeries(historyPayload, dataset, rangeCode),
     [dataset, historyPayload, rangeCode],
   );
-  const chart = useMemo(() => buildChart(series), [series]);
+  const chart = useMemo(() => buildChart(series, rangeCode), [series, rangeCode]);
   const latest = series[series.length - 1] ?? null;
   const first = series[0] ?? null;
   const changeInRange = latest && first ? Number(latest.lowestPrice) - Number(first.lowestPrice) : null;
   const snapshotCount = allSeries.length;
 
+  useEffect(() => {
+    setHoveredIndex(chart.latestIndex);
+  }, [chart.latestIndex, rangeCode, dataset?.fuelCode, dataset?.regionCode]);
+
+  const hoveredPoint = hoveredIndex !== null ? chart.points[hoveredIndex] ?? null : null;
+  const tooltipPosition = getTooltipPosition(hoveredPoint);
+
   return (
     <section className="history-card" aria-labelledby="history-title">
       <div className="section-heading">
         <div>
-          <h2 id="history-title">가격 흐름 차트</h2>
+          <h2 id="history-title">가격 흐름 그래프</h2>
           <p>
             {dataset
               ? `${dataset.regionName} · ${dataset.fuelName} · 조회 목록 기준 누적 차트`
@@ -220,8 +276,17 @@ export default function HistorySection({ historyPayload, dataset }) {
           <div className="history-chart__legend" aria-hidden="true">
             <span className="history-chart__legend-item"><i className="history-chart__swatch is-lowest"></i> 최저가</span>
             <span className="history-chart__legend-item"><i className="history-chart__swatch is-average"></i> 목록 평균</span>
+            <span className="history-chart__legend-item is-helper">그래프 위에 커서를 올리면 해당 시점 금액을 확인할 수 있습니다.</span>
           </div>
-          <svg className="history-chart" viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`} role="img" aria-label="가격 흐름 차트">
+          <svg
+            className="history-chart"
+            viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
+            role="img"
+            aria-label="가격 흐름 차트"
+            onMouseLeave={() => setHoveredIndex(chart.latestIndex)}
+          >
+            <text x={CHART_PADDING.left} y={18} className="history-chart__title">가격 (원/ℓ)</text>
+
             {chart.yTicks.map((tick) => (
               <g key={tick.y}>
                 <line
@@ -231,11 +296,31 @@ export default function HistorySection({ historyPayload, dataset }) {
                   y2={tick.y}
                   className="history-chart__grid"
                 />
-                <text x={CHART_PADDING.left - 10} y={tick.y + 4} textAnchor="end" className="history-chart__label">
+                <text x={CHART_PADDING.left - 12} y={tick.y + 4} textAnchor="end" className="history-chart__label">
                   {formatAxisLabel(tick.value)}
                 </text>
               </g>
             ))}
+
+            {hoveredPoint && (
+              <rect
+                x={chart.hoverZones[hoveredIndex]?.x ?? hoveredPoint.x - 18}
+                y={CHART_PADDING.top}
+                width={chart.hoverZones[hoveredIndex]?.width ?? 36}
+                height={chart.plotHeight}
+                className="history-chart__hover-band"
+              />
+            )}
+
+            {hoveredPoint && (
+              <line
+                x1={hoveredPoint.x}
+                x2={hoveredPoint.x}
+                y1={CHART_PADDING.top}
+                y2={CHART_HEIGHT - CHART_PADDING.bottom}
+                className="history-chart__guide"
+              />
+            )}
 
             {chart.lowestPolyline && (
               <polyline className="history-chart__line is-lowest" points={chart.lowestPolyline} />
@@ -244,38 +329,60 @@ export default function HistorySection({ historyPayload, dataset }) {
               <polyline className="history-chart__line is-average" points={chart.averagePolyline} />
             )}
 
-            {chart.latestPoints && (
-              <>
-                <circle className="history-chart__point is-lowest" cx={chart.latestPoints.lowest.x} cy={chart.latestPoints.lowest.y} r="4.5" />
-                <circle className="history-chart__point is-average" cx={chart.latestPoints.average.x} cy={chart.latestPoints.average.y} r="4.5" />
-              </>
+            {chart.points.map((point, index) => (
+              <g key={`${point.capturedAt}-${index}`}>
+                <circle
+                  className={`history-chart__point is-lowest${hoveredIndex === index ? ' is-hovered' : ''}`}
+                  cx={point.x}
+                  cy={point.lowestY}
+                  r={hoveredIndex === index ? '5.5' : '4'}
+                />
+                <circle
+                  className={`history-chart__point is-average${hoveredIndex === index ? ' is-hovered' : ''}`}
+                  cx={point.x}
+                  cy={point.averageY}
+                  r={hoveredIndex === index ? '5.5' : '4'}
+                />
+              </g>
+            ))}
+
+            {chart.hoverZones.map((zone) => (
+              <rect
+                key={`zone-${zone.index}`}
+                x={zone.x}
+                y={CHART_PADDING.top}
+                width={zone.width}
+                height={chart.plotHeight}
+                className="history-chart__hotspot"
+                onMouseEnter={() => setHoveredIndex(zone.index)}
+                onFocus={() => setHoveredIndex(zone.index)}
+                onBlur={() => setHoveredIndex(chart.latestIndex)}
+                tabIndex={0}
+                aria-label={`${chart.points[zone.index].detailLabel} 가격 보기`}
+              />
+            ))}
+
+            {tooltipPosition && hoveredPoint && (
+              <g className="history-chart__tooltip-group" transform={`translate(${tooltipPosition.x}, ${tooltipPosition.y})`} pointerEvents="none">
+                <rect className="history-chart__tooltip-box" width={tooltipPosition.width} height={tooltipPosition.height} rx="14" ry="14" />
+                <text x="12" y="20" className="history-chart__tooltip-title">{hoveredPoint.detailLabel}</text>
+                <text x="12" y="42" className="history-chart__tooltip-value is-lowest">최저가 {formatWon(hoveredPoint.lowestPrice)}</text>
+                <text x="12" y="60" className="history-chart__tooltip-value is-average">목록 평균 {formatWon(hoveredPoint.averagePrice)}</text>
+              </g>
             )}
 
-            {series.map((item, index) => {
-              const x = series.length === 1
-                ? (CHART_WIDTH - CHART_PADDING.left - CHART_PADDING.right) / 2 + CHART_PADDING.left
-                : CHART_PADDING.left + ((CHART_WIDTH - CHART_PADDING.left - CHART_PADDING.right) * index) / (series.length - 1);
-              return (
-                <line
-                  key={`${item.capturedAt}-${index}`}
-                  x1={x}
-                  x2={x}
-                  y1={CHART_HEIGHT - CHART_PADDING.bottom}
-                  y2={CHART_HEIGHT - CHART_PADDING.bottom + 6}
-                  className="history-chart__tick"
-                />
-              );
-            })}
+            {chart.xLabels.map((label) => (
+              <text
+                key={`${label.x}-${label.label}`}
+                x={label.x}
+                y={CHART_HEIGHT - 12}
+                textAnchor="middle"
+                className="history-chart__x-label"
+              >
+                {label.label}
+              </text>
+            ))}
           </svg>
-          <div className="history-chart__axis">
-            {series.length > 0 && (
-              <>
-                <span>{formatChartLabel(series[0].capturedAt, rangeCode)}</span>
-                <span>{formatChartLabel(series[Math.floor((series.length - 1) / 2)].capturedAt, rangeCode)}</span>
-                <span>{formatChartLabel(series[series.length - 1].capturedAt, rangeCode)}</span>
-              </>
-            )}
-          </div>
         </div>
       ) : (
         <div className="empty-state history-empty-state">
@@ -287,7 +394,7 @@ export default function HistorySection({ historyPayload, dataset }) {
 
       <p className="history-note">
         차트는 선택한 지역과 유종의 조회 목록 기준으로 누적됩니다.
-        현재 위치 정보는 차트에 저장되지 않으며, 가격 수집 결과만 기록합니다.
+        현재 위치 정보는 차트에 저장되지 않으며, 그래프 위에 커서를 올리면 해당 시점 가격을 확인할 수 있습니다.
       </p>
     </section>
   );
