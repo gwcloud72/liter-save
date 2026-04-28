@@ -2,10 +2,10 @@
   "mode": "fallback",
   "provider": "rule-based",
   "model": null,
-  "generatedAt": "2026-04-28T10:58:42.074Z",
+  "generatedAt": "2026-04-28T21:51:53.949Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,923원, 경유 1,924원 수준으로 집계됐습니다.",
-    "daily": "현재 누적 데이터가 1회라 전일 비교는 준비 중입니다.",
+    "headline": "전국 평균 기준 휘발유 1,925원, 경유 1,928원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -21원, 경유 +3원으로 하락 흐름입니다.",
     "weekly": "최근 7일 흐름은 누적 데이터가 더 쌓이면 더 정확하게 확인할 수 있습니다.",
     "monthly": "최근 30일 흐름은 누적 데이터가 더 쌓이면 더 정확하게 확인할 수 있습니다.",
     "consumerTip": "가격과 거리 조건을 함께 비교해 조회된 주유소 기준으로 가성비 좋은 곳을 확인해보세요.",
@@ -13,20 +13,20 @@
   },
   "summary": {
     "ready": true,
-    "seriesCount": 3,
+    "seriesCount": 4,
     "stationTotal": 720,
     "datasetCount": 36,
-    "generatedAt": "2026-04-28T10:58:39.280Z",
+    "generatedAt": "2026-04-28T21:51:51.374Z",
     "latest": {
-      "gasolineAverage": 1923,
+      "gasolineAverage": 1925,
       "gasolineLowest": 1739,
-      "dieselAverage": 1924,
-      "dieselLowest": 1819
+      "dieselAverage": 1928,
+      "dieselLowest": 1849
     },
     "changes": {
       "day": {
-        "gasoline": null,
-        "diesel": null
+        "gasoline": -21,
+        "diesel": 3
       },
       "week": {
         "gasoline": null,
