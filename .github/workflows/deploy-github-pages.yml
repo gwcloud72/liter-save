@@ -1,8 +1,5 @@
 name: 리터세이브 배포
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 on:
   push:
     branches: ["main"]
@@ -27,7 +24,7 @@ jobs:
 
     steps:
       - name: 저장소 코드 가져오기
-        uses: actions/checkout@v6
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -35,10 +32,37 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "22"
-          package-manager-cache: false
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: Node/npm 버전 확인
+        run: |
+          node --version
+          npm --version
 
       - name: 의존성 설치
-        run: npm install --no-audit --no-fund
+        shell: bash
+        run: |
+          set -e
+          npm config set registry https://registry.npmjs.org/
+          npm config set audit false
+          npm config set fund false
+
+          for attempt in 1 2 3; do
+            echo "npm ci 실행 시도 ${attempt}/3"
+            if npm ci --no-audit --no-fund --prefer-online; then
+              echo "의존성 설치 완료"
+              exit 0
+            fi
+
+            echo "npm ci 실패. npm 캐시와 node_modules 정리 후 재시도합니다."
+            npm cache clean --force || true
+            rm -rf node_modules
+            sleep 5
+          done
+
+          echo "의존성 설치에 실패했습니다. package-lock.json과 npm 로그를 확인해주세요."
+          exit 1
 
       - name: 오피넷 데이터 생성
         run: npm run generate:data
@@ -78,7 +102,7 @@ jobs:
         run: npm run build
 
       - name: 배포 아티팩트 업로드
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: dist
 
@@ -93,4 +117,4 @@ jobs:
     steps:
       - name: GitHub Pages 배포
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v5.0.0
