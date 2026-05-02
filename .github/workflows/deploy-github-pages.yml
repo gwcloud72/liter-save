@@ -6,7 +6,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 6,18 * * *"
-      timezone: "Asia/Seoul"
 
 permissions:
   contents: write
@@ -92,7 +91,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/oil-prices.json public/data/oil-history.json public/data/oil-ai-report.json
-          git commit -m "chore: 가격 데이터 자동 갱신 [skip ci]"
+          git commit -m "가격 데이터 자동 갱신 [skip ci]"
           git push origin HEAD:main
 
       - name: GitHub Pages 준비
