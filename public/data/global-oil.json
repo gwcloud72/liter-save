@@ -1,28 +1,8 @@
 {
-  "mode": "sample",
+  "mode": "pending",
   "source": "FRED / U.S. Energy Information Administration",
-  "updatedAt": "2026-05-01T00:00:00.000Z",
+  "updatedAt": null,
   "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다.",
-  "items": [
-    {
-      "key": "wti",
-      "name": "WTI",
-      "seriesId": "DCOILWTICO",
-      "unit": "USD per barrel",
-      "date": "2026-04-30",
-      "price": 63.02,
-      "previousPrice": 63.37,
-      "change": -0.35
-    },
-    {
-      "key": "brent",
-      "name": "Brent",
-      "seriesId": "DCOILBRENTEU",
-      "unit": "USD per barrel",
-      "date": "2026-04-30",
-      "price": 66.55,
-      "previousPrice": 66.83,
-      "change": -0.28
-    }
-  ]
+  "items": [],
+  "history": {}
 }

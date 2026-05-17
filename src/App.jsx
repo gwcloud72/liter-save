@@ -59,6 +59,19 @@ function formatTime(value) {
   return `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
 }
 
+function formatShortDate(value) {
+  const text = String(value ?? '').slice(0, 10);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) return `${text.slice(5, 7)}.${text.slice(8, 10)}`;
+  return text || '-';
+}
+
+function getTickIndexes(length, maxTicks = 5) {
+  if (length <= 0) return [];
+  if (length <= maxTicks) return Array.from({ length }, (_, index) => index);
+  const last = length - 1;
+  return Array.from(new Set(Array.from({ length: maxTicks }, (_, index) => Math.round((last * index) / (maxTicks - 1)))));
+}
+
 function joinText(values, fallback = '-') {
   const text = values.map((value) => String(value ?? '').trim()).filter(Boolean).join(' · ');
   return text || fallback;
@@ -97,6 +110,48 @@ function average(values) {
   return Math.round(numbers.reduce((sum, value) => sum + value, 0) / numbers.length);
 }
 
+function getDateKey(value) {
+  const text = String(value ?? '').slice(0, 10);
+  return /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : '';
+}
+
+function toTimestamp(value) {
+  const time = new Date(value ?? '').getTime();
+  return Number.isFinite(time) ? time : 0;
+}
+
+function aggregateDailyPoints(points, { strategy = 'latest' } = {}) {
+  const dailyMap = new Map();
+  points.forEach((point, order) => {
+    const date = getDateKey(point?.date ?? point?.label ?? point?.capturedAt);
+    const value = toNumber(point?.value);
+    if (!date || value === null) return;
+    const current = dailyMap.get(date);
+    const capturedAt = point?.capturedAt ?? point?.date ?? point?.label ?? date;
+    const item = { ...point, label: date, date, value, capturedAt, order };
+    if (!current) {
+      dailyMap.set(date, strategy === 'average' ? { date, points: [item] } : item);
+      return;
+    }
+    if (strategy === 'average') {
+      current.points.push(item);
+      return;
+    }
+    const currentTime = toTimestamp(current.capturedAt);
+    const nextTime = toTimestamp(capturedAt);
+    if (nextTime > currentTime || (nextTime === currentTime && order > current.order)) {
+      dailyMap.set(date, item);
+    }
+  });
+  const items = [...dailyMap.values()].map((entry) => {
+    if (strategy !== 'average') return entry;
+    const values = entry.points.map((point) => point.value).filter(Number.isFinite);
+    const latest = entry.points.reduce((selected, point) => (toTimestamp(point.capturedAt) >= toTimestamp(selected.capturedAt) ? point : selected), entry.points[0]);
+    return { ...latest, label: entry.date, date: entry.date, value: values.reduce((sum, value) => sum + value, 0) / Math.max(values.length, 1), samples: values.length };
+  });
+  return items.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+}
+
 function getStationPrice(station) {
   return toNumber(station?.price ?? station?.PRICE ?? station?.priceValue);
 }
@@ -115,24 +170,26 @@ function buildMapSearchUrl(station) {
   return `https://map.kakao.com/link/search/${encodeURIComponent(query)}`;
 }
 
-function getMetricFromSnapshot(snapshot, regionCode, fuelCode) {
+function getMetricFromSnapshot(snapshot, regionCode, fuelCode, { allowNationalFallback = false } = {}) {
   const metrics = Array.isArray(snapshot?.metrics) ? snapshot.metrics : [];
-  return metrics.find((metric) => String(metric.regionCode) === String(regionCode) && String(metric.fuelCode) === String(fuelCode))
-    ?? metrics.find((metric) => String(metric.regionCode) === 'ALL' && String(metric.fuelCode) === String(fuelCode))
-    ?? null;
+  const exact = metrics.find((metric) => String(metric.regionCode) === String(regionCode) && String(metric.fuelCode) === String(fuelCode));
+  if (exact) return exact;
+  if (!allowNationalFallback) return null;
+  return metrics.find((metric) => String(metric.regionCode) === 'ALL' && String(metric.fuelCode) === String(fuelCode)) ?? null;
 }
 
-function getDomesticSeries(historyPayload, regionCode, fuelCode) {
-  return (historyPayload?.snapshots ?? [])
+function getDomesticSeries(historyPayload, regionCode, fuelCode, { allowNationalFallback = false } = {}) {
+  const points = (historyPayload?.snapshots ?? [])
     .map((snapshot) => {
-      const metric = getMetricFromSnapshot(snapshot, regionCode, fuelCode);
+      const metric = getMetricFromSnapshot(snapshot, regionCode, fuelCode, { allowNationalFallback });
       const value = toNumber(metric?.averagePrice ?? metric?.lowestPrice);
       if (!snapshot?.capturedAt || value === null) return null;
-      return { label: snapshot.capturedAt.slice(0, 10), date: snapshot.capturedAt.slice(0, 10), value };
+      const date = getDateKey(snapshot.capturedAt);
+      if (!date) return null;
+      return { label: date, date, capturedAt: snapshot.capturedAt, value };
     })
-    .filter(Boolean)
-    .sort((a, b) => String(a.date).localeCompare(String(b.date)))
-    .slice(-45);
+    .filter(Boolean);
+  return aggregateDailyPoints(points, { strategy: 'latest' }).slice(-45);
 }
 
 function getGlobalItem(payload, key) {
@@ -142,23 +199,28 @@ function getGlobalItem(payload, key) {
 function getGlobalSeries(payload, key) {
   const history = payload?.history?.[key];
   if (Array.isArray(history) && history.length) {
-    return history
-      .map((point) => ({ label: point.date, date: point.date, value: toNumber(point.price ?? point.value) }))
-      .filter((point) => point.date && point.value !== null)
-      .sort((a, b) => String(a.date).localeCompare(String(b.date)))
-      .slice(-45);
+    const points = history
+      .map((point) => {
+        const date = getDateKey(point.date ?? point.capturedAt);
+        const value = toNumber(point.price ?? point.value);
+        return date && value !== null ? { label: date, date, capturedAt: point.capturedAt ?? point.date, value } : null;
+      })
+      .filter(Boolean);
+    return aggregateDailyPoints(points, { strategy: 'latest' }).slice(-45);
   }
   const item = getGlobalItem(payload, key);
   const value = toNumber(item?.price);
-  return item?.date && value !== null ? [{ label: item.date, date: item.date, value }] : [];
+  const date = getDateKey(item?.date);
+  return date && value !== null ? [{ label: date, date, value }] : [];
 }
 
 function normalizePoints(points) {
-  const chartPoints = points
-    .filter((point) => point?.label && toNumber(point.value) !== null)
-    .map((point) => ({ ...point, value: toNumber(point.value) }))
-    .sort((a, b) => String(a.date ?? a.label).localeCompare(String(b.date ?? b.label)))
-    .slice(-45);
+  const chartPoints = aggregateDailyPoints(
+    points
+      .filter((point) => point?.label && toNumber(point.value) !== null)
+      .map((point) => ({ ...point, date: getDateKey(point.date ?? point.label) || (point.date ?? point.label), value: toNumber(point.value) })),
+    { strategy: 'latest' },
+  ).slice(-45);
   const values = chartPoints.map((point) => point.value).filter(Number.isFinite);
   if (!values.length) return { chartPoints: [], min: 0, max: 1 };
   const rawMin = Math.min(...values);
@@ -246,12 +308,14 @@ function EmptyPanel({ title, description, value, meta }) {
   );
 }
 
-function LineChart({ points, valueFormatter = formatNumber, stroke = '#0f766e', emptyTitle = '추이 데이터가 없습니다' }) {
+
+
+function LineChart({ points, valueFormatter = formatNumber, stroke = '#0f766e', emptyTitle = '추이 데이터가 없습니다', title = '가격 추이', scope = '' }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const { chartPoints, min, max } = normalizePoints(points);
-  const width = 680;
-  const height = 220;
-  const padding = { top: 18, right: 24, bottom: 30, left: 34 };
+  const width = 960;
+  const height = 400;
+  const padding = { top: 30, right: 34, bottom: 52, left: 88 };
 
   if (!chartPoints.length) return <EmptyPanel title={emptyTitle} description="데이터 갱신 후 그래프가 표시됩니다." />;
   if (chartPoints.length === 1) return <EmptyPanel title="최근 수집값" value={valueFormatter(chartPoints[0].value)} meta={chartPoints[0].label} description="추이선은 2건 이상 수집된 뒤 표시합니다." />;
@@ -261,7 +325,14 @@ function LineChart({ points, valueFormatter = formatNumber, stroke = '#0f766e', 
   const getY = (value) => padding.top + (1 - ((value - min) / range)) * (height - padding.top - padding.bottom);
   const plotted = chartPoints.map((point, index) => ({ ...point, x: getX(index), y: getY(point.value) }));
   const path = plotted.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x.toFixed(2)} ${point.y.toFixed(2)}`).join(' ');
+  const baseline = height - padding.bottom;
+  const areaPath = `${path} L ${plotted.at(-1).x.toFixed(2)} ${baseline} L ${plotted[0].x.toFixed(2)} ${baseline} Z`;
   const active = activeIndex !== null ? plotted[activeIndex] : plotted.at(-1);
+  const values = plotted.map((point) => point.value);
+  const low = Math.min(...values);
+  const high = Math.max(...values);
+  const yTicks = [0, 1, 2, 3, 4].map((tick) => min + ((max - min) * (4 - tick)) / 4);
+  const xTicks = getTickIndexes(plotted.length, 5);
 
   function activate(event) {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -271,24 +342,38 @@ function LineChart({ points, valueFormatter = formatNumber, stroke = '#0f766e', 
 
   return (
     <div>
-      <div className="mb-3 flex items-center justify-between text-xs font-semibold text-slate-500">
-        <span>{String(plotted[0].label)}</span>
-        <span className="text-slate-950">{active.label} · {valueFormatter(active.value)}</span>
+      <div className="mb-4 grid gap-3 md:grid-cols-[1fr_auto] md:items-end">
+        <div>
+          <p className="text-base font-black text-slate-950">{title}</p>
+          <p className="mt-1 text-xs font-semibold text-slate-500">{scope ? `${scope} · ` : ''}{formatShortDate(plotted[0].label)} ~ {formatShortDate(plotted.at(-1).label)} · 일자별 {plotted.length}건</p>
+        </div>
+        <div className="grid grid-cols-3 border border-slate-200 bg-slate-50 text-right text-xs font-bold text-slate-500">
+          <div className="border-r border-slate-200 px-3 py-2"><span className="block">선택 일자</span><strong className="mt-1 block text-sm text-slate-950">{formatShortDate(active.label)} · {valueFormatter(active.value)}</strong></div>
+          <div className="border-r border-slate-200 px-3 py-2"><span className="block">최저</span><strong className="mt-1 block text-sm text-slate-950">{valueFormatter(low)}</strong></div>
+          <div className="px-3 py-2"><span className="block">최고</span><strong className="mt-1 block text-sm text-slate-950">{valueFormatter(high)}</strong></div>
+        </div>
       </div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="h-56 w-full bg-white" onMouseMove={activate} onMouseLeave={() => setActiveIndex(null)} onClick={activate} role="img" aria-label="가격 추이 그래프">
-        {[0, 1, 2].map((line) => {
-          const y = padding.top + ((height - padding.top - padding.bottom) * line) / 2;
-          return <line key={line} x1={padding.left} x2={width - padding.right} y1={y} y2={y} stroke="#e5e7eb" />;
-        })}
-        <path d={path} fill="none" stroke={stroke} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <line x1={active.x} x2={active.x} y1={padding.top} y2={height - padding.bottom} stroke="#94a3b8" strokeDasharray="3 4" />
-        <circle cx={active.x} cy={active.y} r="5" fill="#fff" stroke={stroke} strokeWidth="3" />
-        <text x={padding.left} y={height - 8} className="fill-slate-500 text-[11px] font-bold">{String(plotted[0].label).slice(5)}</text>
-        <text x={width - padding.right - 60} y={height - 8} className="fill-slate-500 text-[11px] font-bold">{String(plotted.at(-1).label).slice(5)}</text>
-      </svg>
+      <div className="border border-slate-200 bg-white p-2">
+        <svg viewBox={`0 0 ${width} ${height}`} className="h-[22rem] w-full bg-white" onMouseMove={activate} onMouseLeave={() => setActiveIndex(null)} onClick={activate} role="img" aria-label={`${title} 그래프`}>
+          {yTicks.map((value, index) => {
+            const y = padding.top + ((height - padding.top - padding.bottom) * index) / 4;
+            return <g key={index}><line x1={padding.left} x2={width - padding.right} y1={y} y2={y} stroke="#e5e7eb" /><text x={padding.left - 14} y={y + 5} textAnchor="end" className="fill-slate-600 text-[12px] font-bold">{valueFormatter(value)}</text></g>;
+          })}
+          <line x1={padding.left} x2={padding.left} y1={padding.top} y2={baseline} stroke="#cbd5e1" />
+          <line x1={padding.left} x2={width - padding.right} y1={baseline} y2={baseline} stroke="#cbd5e1" />
+          <path d={areaPath} fill={stroke} opacity="0.08" />
+          <path d={path} fill="none" stroke={stroke} strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
+          {plotted.length <= 14 ? plotted.map((point) => <circle key={`${point.label}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke={stroke} strokeWidth="2" />) : null}
+          <line x1={active.x} x2={active.x} y1={padding.top} y2={baseline} stroke="#64748b" strokeDasharray="4 5" />
+          <circle cx={active.x} cy={active.y} r="6.5" fill="#fff" stroke={stroke} strokeWidth="3" />
+          {xTicks.map((index) => <text key={index} x={plotted[index].x} y={height - 14} textAnchor={index === 0 ? 'start' : index === plotted.length - 1 ? 'end' : 'middle'} className="fill-slate-600 text-[12px] font-bold">{formatShortDate(plotted[index].label)}</text>)}
+        </svg>
+      </div>
     </div>
   );
 }
+
+
 
 function HorizontalBars({ bars, valueFormatter = formatWon }) {
   const chartBars = bars.filter((bar) => bar?.label && toNumber(bar.value) !== null).slice(0, 10);
@@ -297,19 +382,25 @@ function HorizontalBars({ bars, valueFormatter = formatWon }) {
   const values = chartBars.map((bar) => toNumber(bar.value)).filter(Number.isFinite);
   const min = Math.min(...values);
   const max = Math.max(...values);
+  const range = Math.max(max - min, 1);
   return (
-    <div className="space-y-3">
-      {chartBars.map((bar) => {
+    <div className="space-y-4">
+      <div className="grid grid-cols-[minmax(96px,140px)_1fr_minmax(90px,120px)] gap-3 border-b border-slate-200 pb-2 text-xs font-black text-slate-500">
+        <span>지역</span><span>가격 범위</span><span className="text-right">현재가</span>
+      </div>
+      {chartBars.map((bar, index) => {
         const value = toNumber(bar.value) ?? 0;
-        const width = Math.max(10, ((value - min) / Math.max(max - min, 1)) * 75 + 15);
+        const ratio = (value - min) / range;
+        const width = max === min ? 68 : Math.max(18, Math.min(100, 28 + ratio * 72));
         return (
-          <div key={bar.label} className="grid grid-cols-[72px_1fr_86px] items-center gap-3 text-sm">
-            <span className="truncate font-bold text-slate-700">{bar.label}</span>
-            <span className="h-2 bg-slate-100"><span className="block h-2 bg-slate-800" style={{ width: `${width}%` }} /></span>
+          <div key={bar.label} className="grid grid-cols-[minmax(96px,140px)_1fr_minmax(90px,120px)] items-center gap-3 text-sm">
+            <span className="min-w-0 truncate font-black text-slate-800">{index + 1}. {bar.label}</span>
+            <span className="h-7 border border-slate-200 bg-slate-50 p-1"><span className="block h-full bg-slate-800" style={{ width: `${width}%` }} /></span>
             <span className="text-right font-black tabular-nums text-slate-950">{valueFormatter(value)}</span>
           </div>
         );
       })}
+      <p className="text-xs font-semibold text-slate-500">막대 길이는 표시된 값의 최저~최고 범위를 기준으로 계산합니다.</p>
     </div>
   );
 }
@@ -427,6 +518,7 @@ export default function App() {
   const brentItem = getGlobalItem(globalOilPayload, 'brent');
   const brentSeries = getGlobalSeries(globalOilPayload, 'brent');
   const domesticSeries = getDomesticSeries(historyPayload, activeRegionCode, activeFuelCode);
+  const nationalSeries = getDomesticSeries(historyPayload, 'ALL', activeFuelCode, { allowNationalFallback: true });
   const regionBars = datasets
     .filter((dataset) => String(dataset.regionCode) !== 'ALL' && String(dataset.fuelCode) === activeFuelCode)
     .map((dataset) => ({ label: dataset.regionName, value: toNumber(dataset.lowestPrice) ?? Math.min(...(dataset.stations ?? []).map(getStationPrice).filter(Number.isFinite)) }))
@@ -451,21 +543,25 @@ export default function App() {
         { label: '전국 평균가', value: formatWon(nationalAverage), unit: '/ L', detail: selectedFuelName },
         { label: `${selectedRegionName} 최저가`, value: formatWon(selectedLowest), unit: '/ L', detail: '선택 지역 기준' },
       ]} />
-      <section className="grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
-        <Panel title="주유소 가격 조회" description="가격이 낮은 순서로 표시합니다. 주유소명을 누르면 상세 정보를 볼 수 있습니다.">
-          <StationTable stations={stations} nationalAverage={nationalAverage} />
+      <Panel title="주유소 가격 조회" description="가격이 낮은 순서로 표시합니다. 주유소명을 누르면 상세 정보를 볼 수 있습니다.">
+        <StationTable stations={stations} nationalAverage={nationalAverage} />
+      </Panel>
+      <Panel title="날짜별 선택 가격 추이" description="현재 선택한 지역과 유종의 날짜별 평균가를 표시합니다.">
+        <LineChart points={domesticSeries} valueFormatter={formatWon} emptyTitle="선택 가격 추이 데이터가 없습니다" title="선택 가격 추이" scope={`${selectedRegionName} · ${selectedFuelName}`} />
+      </Panel>
+      <section className="grid gap-5 xl:grid-cols-[1fr_1fr]">
+        <Panel title="전국 평균가 추이" description="같은 유종의 전국 평균가를 날짜별로 확인합니다.">
+          <LineChart points={nationalSeries} valueFormatter={formatWon} emptyTitle="전국 평균가 추이 데이터가 없습니다" title="전국 평균가 추이" scope={selectedFuelName} />
         </Panel>
-        <div className="space-y-5">
-          <Panel title="가격 흐름" description="데이터가 충분할 때만 추이선을 표시합니다.">
-            <LineChart points={domesticSeries.length >= 2 ? domesticSeries : brentSeries} valueFormatter={domesticSeries.length >= 2 ? formatWon : formatUsd} emptyTitle="가격 추이 데이터가 없습니다" />
-          </Panel>
-          <Panel title="요약" description="수집된 데이터 기준의 짧은 정리입니다.">
-            <SummaryList lines={summaryLines.length ? summaryLines : fallbackSummary} />
-          </Panel>
-        </div>
+        <Panel title="브렌트유 추이" description="국제유가 참고 지표를 날짜별로 확인합니다.">
+          <LineChart points={brentSeries} valueFormatter={formatUsd} stroke="#1d4ed8" emptyTitle="브렌트유 추이 데이터가 없습니다" title="브렌트유 추이" scope="Brent" />
+        </Panel>
       </section>
       <Panel title="지역별 최저가" description="같은 유종 기준으로 지역별 최저가를 비교합니다.">
         <HorizontalBars bars={regionBars} valueFormatter={formatWon} />
+      </Panel>
+      <Panel title="요약" description="수집된 데이터 기준의 짧은 정리입니다.">
+        <SummaryList lines={summaryLines.length ? summaryLines : fallbackSummary} />
       </Panel>
       <footer className="border border-slate-200 bg-white px-5 py-4 text-center text-xs font-semibold text-slate-500">개인적 학습 목적으로 제작된 정적 데이터 사이트입니다.</footer>
     </Shell>
