@@ -12,7 +12,12 @@
     "opinet:test": "node scripts/opinet-local-check.mjs",
     "generate:report": "node scripts/generate-ai-report.mjs",
     "generate:oil": "node scripts/fetch-fred-oil.mjs",
-    "generate:all": "npm run generate:data && npm run generate:oil && npm run generate:report"
+    "generate:all": "npm run generate:data && npm run generate:oil && npm run generate:report",
+    "quality:check": "node scripts/quality-check.mjs",
+    "data:check": "node scripts/data-contract-check.mjs",
+    "qa:check": "npm run quality:check && npm run data:check && npm run interaction:check && npm run render:check",
+    "interaction:check": "node scripts/interaction-check.mjs",
+    "render:check": "node scripts/render-check.mjs"
   },
   "dependencies": {
     "proj4": "^2.20.8",

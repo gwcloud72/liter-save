@@ -2,8 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root { color-scheme: light; font-family: Inter, Pretendard, 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  *, ::before, ::after { box-sizing: border-box; }
-  body { margin: 0; min-width: 320px; background: #f8fafc; word-break: keep-all; overflow-wrap: break-word; } button, select, input { font: inherit; }
+:root {
+  color-scheme: light;
+  font-family: Pretendard, Inter, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f8fafc;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button, select {
+  cursor: pointer;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 3px;
 }
