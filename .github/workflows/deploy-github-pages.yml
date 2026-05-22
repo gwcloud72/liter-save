@@ -33,6 +33,7 @@ jobs:
           node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
+          registry-url: https://registry.npmjs.org
 
       - name: Node/npm 버전 확인
         run: |
@@ -41,15 +42,30 @@ jobs:
 
       - name: 의존성 설치
         shell: bash
+        env:
+          NODE_ENV: development
+          NPM_CONFIG_PRODUCTION: "false"
         run: |
-          set -e
+          set -euo pipefail
           npm config set registry https://registry.npmjs.org/
           npm config set audit false
           npm config set fund false
+          npm config set fetch-retries 5
+          npm config set fetch-retry-factor 2
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          npm config set fetch-timeout 600000
+          # GitHub Actions/저장소 설정에서 production/omit=dev가 잡혀 있어도 빌드 도구(vite)가 설치되도록 방어합니다.
+          unset NODE_ENV || true
+          npm config delete production || true
+          npm config delete omit || true
 
           for attempt in 1 2 3; do
             echo "npm ci 실행 시도 ${attempt}/3"
-            if npm ci --no-audit --no-fund --prefer-online; then
+            if npm ci --include=dev --include=optional --no-audit --no-fund --prefer-online --registry=https://registry.npmjs.org/; then
+              npm ls --depth=0
+              test -x ./node_modules/.bin/vite
+              ./node_modules/.bin/vite --version
               echo "의존성 설치 완료"
               exit 0
             fi
@@ -101,7 +117,9 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: React 앱 빌드
-        run: npm run build
+        run: |
+          ./node_modules/.bin/vite --version
+          npm run build
 
       - name: 배포 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3

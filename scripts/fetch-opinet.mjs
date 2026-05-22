@@ -1,6 +1,15 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import proj4 from 'proj4';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+let optionalProj4 = null;
+try {
+  optionalProj4 = require('proj4');
+} catch {
+  optionalProj4 = null;
+}
+const projectCoordinate = optionalProj4?.default ?? optionalProj4;
 
 const OUTPUT_PATH = path.resolve('public/data/oil-prices.json');
 const HISTORY_PATH = path.resolve('public/data/oil-history.json');
@@ -171,7 +180,11 @@ function convertKatecToWgs84(x, y) {
   }
 
   try {
-    const [longitude, latitude] = proj4(KATEC_CRS, WGS84_CRS, [x, y]);
+    if (typeof projectCoordinate !== 'function') {
+      return { latitude: null, longitude: null };
+    }
+
+    const [longitude, latitude] = projectCoordinate(KATEC_CRS, WGS84_CRS, [x, y]);
     return {
       latitude: Number.isFinite(latitude) ? Number(latitude.toFixed(7)) : null,
       longitude: Number.isFinite(longitude) ? Number(longitude.toFixed(7)) : null,
