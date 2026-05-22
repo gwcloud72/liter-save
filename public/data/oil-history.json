@@ -1,6 +1,6 @@
 {
   "mode": "history",
-  "generatedAt": "2026-05-22T09:51:55.567Z",
+  "generatedAt": "2026-05-22T14:28:36.704Z",
   "retentionDays": 90,
   "notice": "오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.",
   "snapshots": [
@@ -2966,7 +2966,7 @@
       ]
     },
     {
-      "capturedAt": "2026-05-22T09:51:55.567Z",
+      "capturedAt": "2026-05-22T14:28:36.704Z",
       "metrics": [
         {
           "regionCode": "ALL",
@@ -2982,8 +2982,8 @@
           "regionName": "전국",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1495,
-          "averagePrice": 1920,
+          "lowestPrice": 1935,
+          "averagePrice": 1942,
           "stationCount": 20
         },
         {
@@ -3144,8 +3144,8 @@
           "regionName": "경남",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1495,
-          "averagePrice": 1927,
+          "lowestPrice": 1935,
+          "averagePrice": 1949,
           "stationCount": 20
         },
         {
@@ -3280,7 +3280,7 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1974,
-          "averagePrice": 1991,
+          "averagePrice": 1990,
           "stationCount": 20
         },
         {
