@@ -23,14 +23,14 @@ jobs:
 
     steps:
       - name: 저장소 코드 가져오기
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Node.js 준비
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
 
@@ -98,13 +98,13 @@ jobs:
           git push origin HEAD:main
 
       - name: GitHub Pages 준비
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
       - name: React 앱 빌드
         run: npm run build
 
       - name: 배포 아티팩트 업로드
-        uses: actions/upload-pages-artifact@v5.0.0
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -119,4 +119,4 @@ jobs:
     steps:
       - name: GitHub Pages 배포
         id: deployment
-        uses: actions/deploy-pages@v5.0.0
+        uses: actions/deploy-pages@v4
