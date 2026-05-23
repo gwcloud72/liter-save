@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 
@@ -365,26 +365,12 @@ function mergeHistory(existingHistory, snapshot) {
   };
 }
 
-async function writeWaitingFiles() {
-  await writeFile(OUTPUT_PATH, JSON.stringify(createWaitingPayload(), null, 2));
-
-  const existingHistory = await readJsonOrDefault(HISTORY_PATH, null);
-  if (existingHistory) {
-    await writeFile(HISTORY_PATH, JSON.stringify(existingHistory, null, 2));
-  } else {
-    await writeFile(HISTORY_PATH, JSON.stringify(createEmptyHistoryPayload(), null, 2));
-  }
-
-  console.log('데이터연동대기 상태 파일을 생성했습니다.');
-}
-
 async function main() {
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
   await mkdir(path.dirname(HISTORY_PATH), { recursive: true });
 
   if (!API_KEY) {
-    await writeWaitingFiles();
-    return;
+    throw new Error('OPINET_CERT_KEY 또는 OPINET_API_KEY가 없습니다. 기존 데이터를 덮어쓰지 않기 위해 데이터 생성을 중단합니다.');
   }
 
   const fuels = parsePairs(process.env.OPINET_FUELS, DEFAULT_FUELS);
@@ -434,8 +420,20 @@ async function main() {
     metrics: buildHistoryMetrics(datasets),
   });
 
-  await writeFile(OUTPUT_PATH, JSON.stringify(payload, null, 2));
-  await writeFile(HISTORY_PATH, JSON.stringify(nextHistory, null, 2));
+  const tempOutputPath = `${OUTPUT_PATH}.tmp`;
+  const tempHistoryPath = `${HISTORY_PATH}.tmp`;
+  await writeFile(tempOutputPath, JSON.stringify(payload, null, 2));
+  await writeFile(tempHistoryPath, JSON.stringify(nextHistory, null, 2));
+
+  const checkPayload = JSON.parse(await readFile(tempOutputPath, 'utf8'));
+  const checkDatasets = Array.isArray(checkPayload.datasets) ? checkPayload.datasets : [];
+  const checkStations = checkDatasets.reduce((sum, dataset) => sum + (Array.isArray(dataset.stations) ? dataset.stations.length : 0), 0);
+  if (!checkDatasets.length || !checkStations) {
+    throw new Error('검증 실패: oil-prices.json.tmp에 주유소 데이터가 없습니다.');
+  }
+
+  await rename(tempOutputPath, OUTPUT_PATH);
+  await rename(tempHistoryPath, HISTORY_PATH);
   console.log(`데이터 파일 생성 완료: ${OUTPUT_PATH}`);
   console.log(`차트 누적 파일 생성 완료: ${HISTORY_PATH}`);
 }

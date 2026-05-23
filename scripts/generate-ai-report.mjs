@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const PRICE_PATH = path.resolve('public/data/oil-prices.json');
@@ -322,8 +322,15 @@ async function main() {
   const summary = buildSummary(historyPayload, pricePayload);
 
   if (!summary.ready) {
+    const existingReport = await readJson(OUTPUT_PATH, null);
+    if (existingReport?.report) {
+      console.log('누적 유가 데이터가 부족해 기존 AI 리포트를 유지합니다.');
+      return;
+    }
     const waitingPayload = createWaitingPayload();
-    await writeFile(OUTPUT_PATH, JSON.stringify(waitingPayload, null, 2));
+    const tempPath = `${OUTPUT_PATH}.tmp`;
+    await writeFile(tempPath, JSON.stringify(waitingPayload, null, 2));
+    await rename(tempPath, OUTPUT_PATH);
     console.log(`AI 리포트 대기 파일 생성 완료: ${OUTPUT_PATH}`);
     return;
   }
@@ -357,7 +364,13 @@ async function main() {
     summary,
   };
 
-  await writeFile(OUTPUT_PATH, JSON.stringify(payload, null, 2));
+  const tempPath = `${OUTPUT_PATH}.tmp`;
+  await writeFile(tempPath, JSON.stringify(payload, null, 2));
+  const parsed = JSON.parse(await readFile(tempPath, 'utf8'));
+  if (!parsed?.report || typeof parsed.report !== 'object') {
+    throw new Error('검증 실패: oil-ai-report.json.tmp에 리포트 데이터가 없습니다.');
+  }
+  await rename(tempPath, OUTPUT_PATH);
   console.log(`AI 리포트 파일 생성 완료: ${OUTPUT_PATH}`);
 }
 

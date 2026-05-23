@@ -82,13 +82,10 @@ function StationRow({ station, rank, averagePrice, favorites }) {
       </td>
       <td className="min-w-0 px-3 py-3 font-bold text-slate-900">
         <p title={station.name} className="line-clamp-2 min-w-0 break-keep leading-snug">{station.name}</p>
-        <p title={station.address} className="mt-1 line-clamp-1 min-w-0 text-[11px] font-semibold leading-snug text-slate-400">{station.address}</p>
+        <div className="mt-1 flex min-w-0 items-center gap-2"><BrandBadge brand={station.brand} /><p title={station.address} className="line-clamp-1 min-w-0 text-[11px] font-semibold leading-snug text-slate-400">{station.address}</p></div>
       </td>
       <td className="whitespace-nowrap px-3 py-3 text-[17px] font-extrabold tabular-nums text-blue-600">{formatNumber(station.price)}</td>
       <td className={`whitespace-nowrap px-3 py-3 font-bold tabular-nums ${saving <= 0 ? 'text-blue-600' : 'text-red-500'}`}>{formatSignedWon(saving)}</td>
-      <td className="min-w-0 px-3 py-3">
-        <BrandBadge brand={station.brand} />
-      </td>
       <td className="px-3 py-3 text-right">
         <ActionCell station={station} mapUrl={mapUrl} favorites={favorites} isFavorite={isFavorite} id={id} />
       </td>
@@ -158,11 +155,10 @@ export default function StationTable({ stations, averagePrice, favorites, title 
             <caption className="sr-only">저가 주유소 목록</caption>
             <colgroup>
               <col className="w-[7%]" />
-              <col className="w-[36%]" />
-              <col className="w-[13%]" />
-              <col className="w-[13%]" />
+              <col className="w-[45%]" />
               <col className="w-[14%]" />
-              <col className="w-[17%]" />
+              <col className="w-[15%]" />
+              <col className="w-[19%]" />
             </colgroup>
             <thead className="bg-slate-50 text-[12px] font-bold text-slate-500">
               <tr>
@@ -170,7 +166,6 @@ export default function StationTable({ stations, averagePrice, favorites, title 
                 <th className="px-3 py-2">주유소</th>
                 <th className="px-3 py-2">가격</th>
                 <th className="px-3 py-2">평균 대비</th>
-                <th className="px-3 py-2">브랜드</th>
                 <th className="px-3 py-2 text-right">확인</th>
               </tr>
             </thead>

@@ -51,7 +51,7 @@ export default function StationCard({ station, rank, averagePrice, sortMode, isF
             className="route-link"
             href={kakaoRouteUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label={`${station.name} 카카오맵 길찾기`}
           >
             카카오맵 길찾기

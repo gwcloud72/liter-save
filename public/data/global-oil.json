@@ -2,20 +2,7 @@
   "mode": "pending",
   "source": "FRED / U.S. Energy Information Administration",
   "updatedAt": null,
-  "checkedAt": "2026-05-22T19:43:47.219Z",
-  "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다. FRED 수집 성공 후 표시됩니다.",
+  "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다.",
   "items": [],
-  "history": {},
-  "warnings": [
-    {
-      "key": "brent",
-      "name": "Brent",
-      "message": "Brent 데이터가 비어 있습니다."
-    },
-    {
-      "key": "wti",
-      "name": "WTI",
-      "message": "WTI 데이터가 비어 있습니다."
-    }
-  ]
+  "history": {}
 }

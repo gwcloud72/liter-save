@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Node.js 준비
         uses: actions/setup-node@v4
@@ -44,6 +45,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          unset NODE_ENV || true
+          unset NPM_CONFIG_PRODUCTION || true
+          unset NPM_CONFIG_OMIT || true
+
+          if grep -qE 'applied-caas|internal\.api\.openai|localhost|file:' package-lock.json; then
+            echo "package-lock.json에 배포 환경에서 접근할 수 없는 registry/file 경로가 있습니다."
+            exit 1
+          fi
+
           npm config set registry https://registry.npmjs.org/
           npm config set audit false
           npm config set fund false
@@ -53,25 +63,33 @@ jobs:
           npm config set fetch-retry-maxtimeout 120000
           npm config set fetch-timeout 600000
 
+          rm -rf node_modules
           for attempt in 1 2 3; do
             echo "npm ci 실행 시도 ${attempt}/3"
-            if npm ci --no-audit --no-fund --prefer-online --registry=https://registry.npmjs.org/; then
-              npm ls --depth=0
-              echo "의존성 설치 완료"
-              exit 0
+            if npm ci --include=dev --include=optional --no-audit --no-fund --prefer-online --registry=https://registry.npmjs.org/; then
+              break
             fi
-
             echo "npm ci 실패. npm 캐시와 node_modules 정리 후 재시도합니다."
             npm cache clean --force || true
             rm -rf node_modules
             sleep 5
           done
 
-          echo "의존성 설치에 실패했습니다. package-lock.json과 npm 로그를 확인해주세요."
-          exit 1
+          test -x ./node_modules/.bin/vite
+          ./node_modules/.bin/vite --version
+
+      - name: 기존 데이터 백업
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf "$RUNNER_TEMP/data-backup"
+          mkdir -p "$RUNNER_TEMP/data-backup"
+          if [ -d public/data ]; then
+            cp -R public/data "$RUNNER_TEMP/data-backup/data"
+          fi
 
       - name: 오피넷 데이터 생성
-        run: npm run generate:data
+        shell: bash
         env:
           OPINET_CERT_KEY: ${{ secrets.OPINET_CERT_KEY }}
           OPINET_REGIONS: ${{ vars.OPINET_REGIONS }}
@@ -80,15 +98,91 @@ jobs:
           OPINET_API_BASE: "http://www.opinet.co.kr/api"
           OPINET_AUTH_PARAM: "code"
           HISTORY_RETENTION_DAYS: "90"
+        run: |
+          set -euo pipefail
+
+          require_oil_data() {
+            node --input-type=module <<'NODE'
+          import { existsSync, readFileSync } from 'node:fs';
+          const file = 'public/data/oil-prices.json';
+          if (!existsSync(file)) {
+            console.error('oil-prices.json이 없습니다. OPINET 수집 성공 또는 기존 데이터가 필요합니다.');
+            process.exit(1);
+          }
+          const payload = JSON.parse(readFileSync(file, 'utf8'));
+          const datasets = Array.isArray(payload.datasets) ? payload.datasets : [];
+          const stations = datasets.reduce((sum, item) => sum + (Array.isArray(item.stations) ? item.stations.length : 0), 0);
+          if (!datasets.length || !stations) {
+            console.error('oil-prices.json에 주유소 데이터가 없습니다. 빈 데이터 배포를 중단합니다.');
+            process.exit(1);
+          }
+          console.log(`OPINET 데이터 확인: ${datasets.length}개 데이터셋, ${stations}개 주유소`);
+          NODE
+          }
+
+          restore_data() {
+            if [ -d "$RUNNER_TEMP/data-backup/data" ]; then
+              rm -rf public/data
+              mkdir -p public
+              cp -R "$RUNNER_TEMP/data-backup/data" public/data
+            fi
+          }
+
+          if [ -z "${OPINET_CERT_KEY:-}" ]; then
+            echo "OPINET 인증 정보가 없습니다. 기존 데이터 유효성을 확인합니다."
+            require_oil_data
+            exit 0
+          fi
+
+          if npm run generate:data; then
+            require_oil_data
+          else
+            echo "OPINET 데이터 수집 실패. 기존 데이터를 복구합니다."
+            restore_data
+            require_oil_data
+          fi
 
       - name: 국제유가 데이터 생성
-        run: npm run generate:oil
+        shell: bash
+        run: |
+          set -euo pipefail
+          if npm run generate:oil; then
+            echo "국제유가 데이터 생성 완료"
+          else
+            echo "::warning::국제유가 데이터 생성 실패. 기존 데이터로 계속 진행합니다."
+            if [ -d "$RUNNER_TEMP/data-backup/data" ]; then
+              cp "$RUNNER_TEMP/data-backup/data/global-oil.json" public/data/global-oil.json 2>/dev/null || true
+            fi
+          fi
 
       - name: 유가 리포트 생성
-        run: npm run generate:report
+        shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/report-backup"
+          if [ -f public/data/oil-ai-report.json ]; then
+            cp public/data/oil-ai-report.json "$RUNNER_TEMP/report-backup/oil-ai-report.json"
+          fi
+
+          if npm run generate:report; then
+            test -f public/data/oil-ai-report.json
+          else
+            echo "유가 리포트 생성 실패. 기존 리포트를 복구합니다."
+            if [ -f "$RUNNER_TEMP/report-backup/oil-ai-report.json" ]; then
+              cp "$RUNNER_TEMP/report-backup/oil-ai-report.json" public/data/oil-ai-report.json
+            else
+              exit 1
+            fi
+          fi
+
+      - name: 정적 데이터 검증
+        run: npm run data:check
+
+      - name: QA 검사
+        run: npm run qa:check
 
       - name: 누적 데이터 저장소 반영
         shell: bash
@@ -102,7 +196,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json
           git commit -m "가격 데이터 자동 갱신 [skip ci]"
-          git push origin HEAD:main
+          git push origin main
 
       - name: GitHub Pages 준비
         uses: actions/configure-pages@v5

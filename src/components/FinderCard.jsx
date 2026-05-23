@@ -80,14 +80,14 @@ export default function FinderCard({
       <div className="filters" aria-label="검색 조건">
         <label>
           <span>유종</span>
-          <select value={selectedFuel} onChange={(event) => onFuelChange(event.target.value)} disabled={!hasFuelOptions}>
+          <select aria-label="유종 선택" value={selectedFuel} onChange={(event) => onFuelChange(event.target.value)} disabled={!hasFuelOptions}>
             {!hasFuelOptions && <option value="">{WAITING_TEXT}</option>}
             {fuelOptions.map((fuel) => <option key={fuel.code} value={fuel.code}>{fuel.name}</option>)}
           </select>
         </label>
         <label>
           <span>지역</span>
-          <select value={selectedRegion} onChange={(event) => onRegionChange(event.target.value)} disabled={!hasRegionOptions}>
+          <select aria-label="지역 선택" value={selectedRegion} onChange={(event) => onRegionChange(event.target.value)} disabled={!hasRegionOptions}>
             {!hasRegionOptions && <option value="">{WAITING_TEXT}</option>}
             {regionOptions.map((region) => <option key={region.code} value={region.code}>{region.name}</option>)}
           </select>
