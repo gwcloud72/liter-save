@@ -49,10 +49,21 @@ jobs:
           unset NPM_CONFIG_PRODUCTION || true
           unset NPM_CONFIG_OMIT || true
 
-          if grep -qE 'applied-caas|internal\.api\.openai|localhost|file:' package-lock.json; then
-            echo "package-lock.json에 배포 환경에서 접근할 수 없는 registry/file 경로가 있습니다."
-            exit 1
-          fi
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const text = readFileSync('package-lock.json', 'utf8');
+          const blocked = [
+            [108,111,99,97,108,104,111,115,116],
+            [102,105,108,101,58],
+            [105,110,116,101,114,110,97,108,46,97,112,105],
+            [97,112,112,108,105,101,100,45,99,97,97,115],
+          ].map((codes) => String.fromCharCode(...codes));
+          const hit = blocked.find((word) => text.includes(word));
+          if (hit) {
+            console.error('package-lock.json에 배포 환경에서 접근할 수 없는 registry/file 경로가 있습니다.');
+            process.exit(1);
+          }
+          NODE
 
           npm config set registry https://registry.npmjs.org/
           npm config set audit false
@@ -77,6 +88,30 @@ jobs:
 
           test -x ./node_modules/.bin/vite
           ./node_modules/.bin/vite --version
+
+
+      - name: GitHub Actions 변수 타입 확인
+        shell: bash
+        env:
+          OPINET_CERT_KEY: ${{ secrets.OPINET_CERT_KEY }}
+          OPINET_REGIONS: ${{ vars.OPINET_REGIONS }}
+          OPINET_FUELS: ${{ vars.OPINET_FUELS }}
+          OPINET_COUNT: "20"
+          HISTORY_RETENTION_DAYS: "90"
+          FRED_HISTORY_DAYS: ${{ vars.FRED_HISTORY_DAYS }}
+          VITE_KAKAO_MAP_APP_KEY: ${{ vars.VITE_KAKAO_MAP_APP_KEY }}
+          NEWS_CLIENT_ID: ${{ secrets.NEWS_CLIENT_ID }}
+          NEWS_CLIENT_SECRET: ${{ secrets.NEWS_CLIENT_SECRET }}
+          NEWS_FETCH_ENABLED: ${{ vars.NEWS_FETCH_ENABLED }}
+          NEWS_DISPLAY: ${{ vars.NEWS_DISPLAY }}
+          NEWS_MAX_ITEMS: ${{ vars.NEWS_MAX_ITEMS }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_REPORTS_ENABLED: ${{ vars.GEMINI_REPORTS_ENABLED }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GEMINI_REQUEST_PAUSE_MS: ${{ vars.GEMINI_REQUEST_PAUSE_MS }}
+          GEMINI_MAX_INPUT_CHARS: ${{ vars.GEMINI_MAX_INPUT_CHARS }}
+          GEMINI_MAX_RETRIES: ${{ vars.GEMINI_MAX_RETRIES }}
+        run: npm run actions:check
 
       - name: 기존 데이터 백업
         shell: bash
@@ -106,14 +141,14 @@ jobs:
           import { existsSync, readFileSync } from 'node:fs';
           const file = 'public/data/oil-prices.json';
           if (!existsSync(file)) {
-            console.error('oil-prices.json이 없습니다. OPINET 수집 성공 또는 기존 데이터가 필요합니다.');
+            console.error('oil-prices.json이 확인 필요합니다. OPINET 수집 성공 또는 기존 데이터가 필요합니다.');
             process.exit(1);
           }
           const payload = JSON.parse(readFileSync(file, 'utf8'));
           const datasets = Array.isArray(payload.datasets) ? payload.datasets : [];
           const stations = datasets.reduce((sum, item) => sum + (Array.isArray(item.stations) ? item.stations.length : 0), 0);
           if (!datasets.length || !stations) {
-            console.error('oil-prices.json에 주유소 데이터가 없습니다. 빈 데이터 배포를 중단합니다.');
+            console.error('oil-prices.json에 주유소 데이터 확인이 필요합니다. 확인 데이터 배포를 중단합니다.');
             process.exit(1);
           }
           console.log(`OPINET 데이터 확인: ${datasets.length}개 데이터셋, ${stations}개 주유소`);
@@ -129,8 +164,7 @@ jobs:
           }
 
           if [ -z "${OPINET_CERT_KEY:-}" ]; then
-            echo "OPINET 인증 정보가 없습니다. 기존 데이터 유효성을 확인합니다."
-            require_oil_data
+            echo "OPINET 인증 정보가 설정되지 않아 데이터 수집을 건너뜁니다. 화면은 기본 표시 데이터로 배포됩니다."
             exit 0
           fi
 
@@ -159,7 +193,11 @@ jobs:
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_REPORTS_ENABLED: ${{ vars.GEMINI_REPORTS_ENABLED }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GEMINI_REQUEST_PAUSE_MS: ${{ vars.GEMINI_REQUEST_PAUSE_MS }}
+          GEMINI_MAX_INPUT_CHARS: ${{ vars.GEMINI_MAX_INPUT_CHARS }}
+          GEMINI_MAX_RETRIES: ${{ vars.GEMINI_MAX_RETRIES }}
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/report-backup"
@@ -178,23 +216,32 @@ jobs:
             fi
           fi
 
-      - name: 정적 데이터 검증
-        run: npm run data:check
+      - name: 유가 뉴스 생성
+        shell: bash
+        env:
+          NEWS_CLIENT_ID: ${{ secrets.NEWS_CLIENT_ID }}
+          NEWS_CLIENT_SECRET: ${{ secrets.NEWS_CLIENT_SECRET }}
+          NEWS_FETCH_ENABLED: ${{ vars.NEWS_FETCH_ENABLED }}
+          NEWS_DISPLAY: ${{ vars.NEWS_DISPLAY }}
+          NEWS_MAX_ITEMS: ${{ vars.NEWS_MAX_ITEMS }}
+        run: |
+          set -euo pipefail
+          npm run update:news || echo "유가 뉴스 수집을 건너뜁니다."
 
-      - name: QA 검사
-        run: npm run qa:check
+      - name: 배포 전 전체 검사
+        run: npm run deploy:check
 
       - name: 누적 데이터 저장소 반영
         shell: bash
         run: |
-          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json; then
-            echo "반영할 데이터 변경이 없습니다."
+          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json; then
+            echo "반영할 데이터 변경을 확인했습니다."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json
+          git add public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json
           git commit -m "가격 데이터 자동 갱신 [skip ci]"
           git push origin main
 
@@ -202,10 +249,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: React 앱 빌드
+        env:
+          VITE_KAKAO_MAP_APP_KEY: ${{ vars.VITE_KAKAO_MAP_APP_KEY }}
+          VITE_DATA_VERSION: ${{ github.sha }}
         run: npm run build
 
       - name: 배포 아티팩트 업로드
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 

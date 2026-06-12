@@ -1,0 +1,115 @@
+:root {
+  --color-primary-700: #0B6941;
+  --color-primary-600: #0D7A4E;
+  --color-primary-500: #12996A;
+  --color-primary-400: #2DBD87;
+  --color-primary-100: #E6F7F1;
+  --color-primary-50: #F0FAF6;
+
+  --color-up: #E03131;
+  --color-up-bg: #FFF0F0;
+  --color-down: #1971C2;
+  --color-down-bg: #EFF8FF;
+  --color-flat: #6B6B6B;
+  --color-flat-bg: #F5F5F5;
+
+  --ipo-demand-bg: #DBEAFE;
+  --ipo-demand-text: #1D4ED8;
+  --ipo-subscribe-bg: #FEF3C7;
+  --ipo-subscribe-text: #92400E;
+  --ipo-listing-bg: #ECFDF5;
+  --ipo-listing-text: #065F46;
+  --ipo-review-bg: #EDE9FE;
+  --ipo-review-text: #5B21B6;
+
+  --color-ink-950: #0F1115;
+  --color-ink-900: #1A1A1A;
+  --color-ink-800: #242424;
+  --color-ink-700: #3D3D3D;
+  --color-ink-600: #525252;
+  --color-ink-500: #6B6B6B;
+  --color-ink-400: #9E9E9E;
+  --color-ink-300: #C7C7C7;
+  --color-ink-200: #E0E0E0;
+  --color-ink-100: #F5F5F5;
+  --color-ink-50: #FAFAFA;
+  --color-white: #FFFFFF;
+
+  --warn-bg: #FFFBEB;
+  --warn-border: #FCD34D;
+  --warn-text: #92400E;
+
+  --hero-farm: linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%);
+  --hero-liter: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #1C2E1C 100%);
+  --hero-sang: linear-gradient(135deg, #0A0A14 0%, #0F172A 50%, #111827 100%);
+
+  --space-0: 0px;
+  --space-0-5: 4px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+  --space-10: 80px;
+
+  --topbar-height: 56px;
+  --sidebar-width: 200px;
+  --right-panel-width: 300px;
+  --content-padding: 24px;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-popover: 0 12px 32px rgba(15, 23, 42, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(18, 153, 106, 0.16);
+  --state-loading-bg: linear-gradient(90deg, #F5F5F5 0%, #FAFAFA 50%, #F5F5F5 100%);
+}
+
+.ds-focus-ring:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+.ds-skeleton { background: var(--state-loading-bg); background-size: 200% 100%; animation: densitySkeleton 1.4s ease-in-out infinite; }
+@keyframes densitySkeleton { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+@keyframes densityPulse {
+  0% { box-shadow: 0 0 0 0 rgba(18, 205, 122, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(18, 205, 122, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(18, 205, 122, 0); }
+}
+
+@keyframes densitySpin { to { transform: rotate(360deg); } }
+
+.live-dot { animation: densityPulse 2s ease infinite; }
+.refresh-spin svg { animation: densitySpin 0.5s linear; }
+
+.map-surface { background-image: radial-gradient(circle at 30% 20%, rgba(13,122,78,.18), transparent 24%), radial-gradient(circle at 70% 65%, rgba(25,113,194,.14), transparent 26%); }
+.map-road-a { left: -8%; top: 34%; width: 118%; height: 12px; transform: rotate(-12deg); }
+.map-road-b { left: 12%; top: -10%; height: 125%; width: 12px; transform: rotate(18deg); }
+.map-road-c { left: 62%; top: -8%; height: 120%; width: 8px; transform: rotate(-24deg); }
+.map-road-d { left: -12%; top: 68%; width: 130%; height: 8px; transform: rotate(7deg); }
+.map-marker-0 { left: 18%; top: 28%; }
+.map-marker-1 { left: 48%; top: 18%; }
+.map-marker-2 { left: 68%; top: 44%; }
+.map-marker-3 { left: 30%; top: 58%; }
+.map-marker-4 { left: 76%; top: 68%; }
+.map-marker-5 { left: 12%; top: 72%; }
+.map-marker-6 { left: 58%; top: 78%; }
+.map-marker-7 { left: 42%; top: 42%; }
+.map-current-dot { left: 52%; top: 52%; }
+.map-current-label { left: 55%; top: 54%; }
+.company-tone-green { background: #DCFCE7; color: #166534; }
+.company-tone-blue { background: #DBEAFE; color: #1E40AF; }
+.company-tone-purple { background: #EDE9FE; color: #5B21B6; }
+.company-tone-amber { background: #FEF3C7; color: #92400E; }
+.company-tone-gray { background: #F3F4F6; color: #374151; }
+.calendar-dot-demand { background: #1D4ED8; }
+.calendar-dot-subscribe { background: #D97706; }
+.calendar-dot-listing { background: #0D7A4E; }
+.calendar-dot-review { background: #7C3AED; }

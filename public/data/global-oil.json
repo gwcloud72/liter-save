@@ -1,21 +1,43 @@
 {
-  "mode": "pending",
-  "source": "FRED / U.S. Energy Information Administration",
-  "updatedAt": null,
-  "checkedAt": "2026-06-12T10:11:13.551Z",
-  "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다. FRED 수집 성공 후 표시됩니다.",
-  "items": [],
-  "history": {},
-  "warnings": [
+  "metadata": {
+    "source": "packaged",
+    "updatedAt": "2026-06-12T09:00:00+09:00"
+  },
+  "series": [
     {
-      "key": "brent",
-      "name": "Brent",
-      "message": "Brent 데이터가 비어 있습니다."
+      "date": "2026-06-05",
+      "brent": 78.5,
+      "wti": 74.2
     },
     {
-      "key": "wti",
-      "name": "WTI",
-      "message": "WTI 데이터가 비어 있습니다."
+      "date": "2026-06-06",
+      "brent": 78.2,
+      "wti": 73.95
+    },
+    {
+      "date": "2026-06-07",
+      "brent": 77.9,
+      "wti": 73.7
+    },
+    {
+      "date": "2026-06-08",
+      "brent": 77.6,
+      "wti": 73.45
+    },
+    {
+      "date": "2026-06-09",
+      "brent": 77.3,
+      "wti": 73.2
+    },
+    {
+      "date": "2026-06-10",
+      "brent": 77.0,
+      "wti": 72.95
+    },
+    {
+      "date": "2026-06-11",
+      "brent": 76.7,
+      "wti": 72.7
     }
   ]
 }

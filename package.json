@@ -2,7 +2,7 @@
   "name": "liter-save",
   "version": "1.0.0",
   "private": true,
-  "description": "React + Vite 기반 지역별 최저가 주유소 조회 서비스",
+  "description": "지역별 최저가 주유소 조회 서비스",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -17,17 +17,37 @@
     "data:check": "node scripts/data-contract-check.mjs",
     "qa:check": "npm run quality:check && npm run data:check && npm run interaction:check && npm run render:check",
     "interaction:check": "node scripts/interaction-check.mjs",
-    "render:check": "node scripts/render-check.mjs"
+    "render:check": "node scripts/render-check.mjs",
+    "actions:check": "node scripts/github-actions-contract-check.mjs",
+    "verify:deps": "node -e \"const fs=require('fs'); for (const p of ['node_modules/.bin/vite','node_modules/@vitejs/plugin-react']) { if (!fs.existsSync(p)) { console.error('missing '+p); process.exit(1); } } console.log('vite dependency ready')\"",
+    "deploy:check": "npm run verify:deps && npm run actions:check && npm run gemini:check && npm run data:check && npm run validate:data && npm run quality:check && npm run runtime-ui:check && npm run interaction:check && npm run render:check && npm run typecheck && npm run build",
+    "ci:check": "npm run deploy:check",
+    "validate:data": "node scripts/data-contract-check.mjs",
+    "runtime-ui:check": "node scripts/runtime-ui-contract-check.mjs",
+    "typecheck": "tsc --noEmit",
+    "update:news": "node scripts/update-news.mjs",
+    "gemini:check": "node scripts/gemini-flash-contract-check.mjs"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
+    "lucide-react": "^0.468.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.4"
   },
   "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11",
-    "tailwindcss": "^3.4.17",
+    "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "autoprefixer": "^10.4.20"
+    "proj4": "^2.20.9",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=20 <23",
+    "npm": ">=10"
   }
 }

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-label="카카오맵 미리보기 지도">
+  <rect width="560" height="360" fill="#eef1ec"/>
+  <rect x="40" y="40" width="120" height="80" rx="6" fill="#e2ecdd"/>
+  <rect x="380" y="230" width="150" height="100" rx="6" fill="#e2ecdd"/>
+  <rect x="430" y="30" width="110" height="70" rx="6" fill="#e6efe0"/>
+  <path d="M0 300c120 30 260-10 380 18 70 16 130 6 180-8v52H0z" fill="#cfe0ec" opacity="0.8"/>
+  <g stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round">
+    <path d="M-10 150c120 8 220-22 320 0s180 4 260-10"/>
+    <path d="M120 -10c-10 120 18 230 6 380"/>
+    <path d="M360 -10c14 130-6 250 10 380"/>
+  </g>
+  <g stroke="#f6d36b" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9">
+    <path d="M-10 150c120 8 220-22 320 0s180 4 260-10"/>
+    <path d="M120 -10c-10 120 18 230 6 380"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="5" fill="none" opacity="0.85">
+    <path d="M0 80h560"/><path d="M0 235h560"/>
+    <path d="M220 -10v380"/><path d="M470 -10v380"/>
+  </g>
+  <g font-family="'Noto Sans CJK KR', sans-serif" font-size="12" fill="#7b8595" font-weight="600">
+    <text x="60" y="60">대치동</text>
+    <text x="150" y="44">교보타워</text>
+    <text x="300" y="44">선릉역</text>
+    <text x="470" y="60">삼성역</text>
+    <text x="150" y="200">역삼역</text>
+    <text x="300" y="210">강남역</text>
+    <text x="470" y="220">대치역</text>
+    <text x="80" y="330">진명</text>
+    <text x="430" y="335">개포동</text>
+  </g>
+  <g fill="#fff" stroke="#9aa6b2" stroke-width="2">
+    <circle cx="170" cy="150" r="5"/><circle cx="320" cy="150" r="5"/><circle cx="120" cy="235" r="5"/>
+  </g>
+  <text x="18" y="348" font-family="sans-serif" font-size="13" fill="#9aa6b2" font-weight="700">kakao</text>
+</svg>
