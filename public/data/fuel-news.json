@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-12T12:11:24.422Z",
+    "updatedAt": "2026-06-12T20:09:40.593Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -88,16 +88,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "db52cbe7d35d4c22",
-      "title": "정부, 수출 호조 속…중동發 불확실성에 물가·고용 우려",
-      "summary": "국제유가 상승 여파도 이어졌다. 두바이유는 4월 배럴당 105.7달러에서 5월 103.2달러로 소폭 하락했지만, 국내 휘발유 가격은 리터당 1986원에서 2011원으로 올랐다. 경유 가격도 1979원에서 2006원으로 상승했다. 고용은...",
-      "source": "view.asiae.co.kr",
-      "publishedAt": "2026-06-12T01:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/277/0005775517?sid=101",
-      "originallink": "https://view.asiae.co.kr/article/2026061209323265916",
-      "keyword": "휘발유"
-    },
-    {
       "id": "bc93b1d379fc5dbf",
       "title": "정부 \"수출·소비 개선에 경기 회복 흐름…중동전쟁에 물가·고용은 불...",
       "summary": "재경부는 지난달 경제동향에서 \"중동상황에 따른 국제유가 상승 등 지정학적 리스크 확대로 물가 상승... 두바이유 가격은 배럴당 103달러를 기록했고 국내 휘발유와 경유 평균 가격은 각각 L당 2011원, 2006원까지...",
@@ -105,6 +95,16 @@
       "publishedAt": "2026-06-12T01:00:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/421/0008999968?sid=101",
       "originallink": "https://www.news1.kr/economy/trend/6195322",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "db52cbe7d35d4c22",
+      "title": "정부, 수출 호조 속…중동發 불확실성에 물가·고용 우려",
+      "summary": "국제유가 상승 여파도 이어졌다. 두바이유는 4월 배럴당 105.7달러에서 5월 103.2달러로 소폭 하락했지만, 국내 휘발유 가격은 리터당 1986원에서 2011원으로 올랐다. 경유 가격도 1979원에서 2006원으로 상승했다. 고용은...",
+      "source": "view.asiae.co.kr",
+      "publishedAt": "2026-06-12T01:00:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/277/0005775517?sid=101",
+      "originallink": "https://view.asiae.co.kr/article/2026061209323265916",
       "keyword": "휘발유"
     },
     {
