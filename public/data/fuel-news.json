@@ -2,11 +2,41 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-13T08:57:08.477Z",
+    "updatedAt": "2026-06-13T19:24:20.733Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "487313cadcb1c20a",
+      "title": "휘발유·경유 4주 연속 하락…이번 주 전국 평균 0.5원 내려",
+      "summary": "국제뉴스/DB 국내 주유소에서 판매되는 휘발유와 경유의 주간 평균 가격이 4주 연속 소폭 하락세를 이어갔다. 한국석유공사 유가정보시스템 오피넷에 따르면, 6월 둘째 주 전국 휘발유 평균 판매 가격은 L당 2,009....",
+      "source": "gukjenews.com",
+      "publishedAt": "2026-06-13T18:04:00.000Z",
+      "link": "https://www.gukjenews.com/news/articleView.html?idxno=3607769",
+      "originallink": "https://www.gukjenews.com/news/articleView.html?idxno=3607769",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "fa6611e2abdc4850",
+      "title": "호르무즈 원유 흐름 ‘정상화’ 아직 멀었다",
+      "summary": "이 여파로 휘발유와 경유 가격도 오르며 세계 인플레이션 압력이 커졌다. 다만 금융시장이 과거에도 이란과의 전쟁 종료 기대에 반등했다가 협상 지연이나 결렬로 실망한 적이 있는 만큼 유가 하락이 지속될지는 아직...",
+      "source": "g-enews.com",
+      "publishedAt": "2026-06-13T17:02:00.000Z",
+      "link": "https://www.g-enews.com/view.php?ud=2026061319415940819a1f309431_1",
+      "originallink": "https://www.g-enews.com/view.php?ud=2026061319415940819a1f309431_1",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "4e06914df471ac53",
+      "title": "\"기름값 더 떨어질까?\" 4주 연속 하락세…전국 평균 휘발윳값 2천9원대",
+      "summary": "국제유가 변동이 국내 주유소 판매가격에 반영되기까지는 보통 2~3주가량의 시차가 있다. 이에 따라 당분간 국내 휘발유와 경유 가격은 급등보다는 완만한 안정 흐름을 이어갈 가능성이 크다는 전망이 나온다.",
+      "source": "imaeil.com",
+      "publishedAt": "2026-06-13T14:15:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/088/0001014378?sid=102",
+      "originallink": "https://www.imaeil.com/page/view/2026061323062430501",
+      "keyword": "휘발유"
+    },
     {
       "id": "f3b4932cd6e20e9b",
       "title": "주유소 기름값 4주 연속 하락...전국 휘발윳값 2천9원대",
@@ -75,36 +105,6 @@
       "publishedAt": "2026-06-13T03:28:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/055/0001364074?sid=101",
       "originallink": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008608632&plink=ORI&cooper=NAVER",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "9b78ca9a7c87817a",
-      "title": "“트럼프 종전 언급에 유가 뚝”…국내 주유소 기름값 4주 연속 소폭 하...",
-      "summary": "국제 석유제품 가격의 경우 국제 휘발유는 배럴당 1.3달러 오른 117.5달러였으나, 국제 자동차용 경유는 7.9달러 크게 내린 140.1달러로 집계됐다. 국내 주유소 가격이 통상 2~3주의 시차를 두고 국제유가 변동을...",
-      "source": "dailian.co.kr",
-      "publishedAt": "2026-06-13T02:29:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/119/0003100695?sid=101",
-      "originallink": "https://www.dailian.co.kr/news/view/1655587/?sc=Naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "d554e5319859e192",
-      "title": "기름값 4주 연속 하락...전국 평균 휘발유 2009원·경유 2004원대",
-      "summary": "국내 주유소 휘발유와 경유 주간 평균 가격이 4주 연속 하락했다. 13일 한국석유공사 유가정보시스템... 3달러 상승한 반면, 국제 자동차용 경유 가격은 140.1달러로 7.9달러 하락했다. 국제유가 변동은 통상 2...",
-      "source": "getnews.co.kr",
-      "publishedAt": "2026-06-13T02:22:00.000Z",
-      "link": "https://www.getnews.co.kr/news/articleView.html?idxno=872315",
-      "originallink": "https://www.getnews.co.kr/news/articleView.html?idxno=872315",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "707770d780ef2c3e",
-      "title": "국제 유가 꺾였는데… 주유소 가격은 제자리",
-      "summary": "국제 유가가 하락세로 돌아섰지만 국내 주유소 가격표 변화는 크지 않았습니다. 전국 휘발유와 경유 가격은 4주 연속 하락했지만 인하 폭은 리터(L)당 1원에도 미치지 못했습니다. 국제 유가 하락 소식이 이어지고...",
-      "source": "jibs.co.kr",
-      "publishedAt": "2026-06-13T02:15:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/661/0000077999?sid=101",
-      "originallink": "https://www.jibs.co.kr/news/articles/articlesDetail/62332?feed=na",
       "keyword": "휘발유"
     },
     {
