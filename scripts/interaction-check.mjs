@@ -25,7 +25,7 @@ function checkControls() {
   }
 }
 for (const snippet of ['href="#main-content"', 'id="main-content"', 'aria-current={active ? \'page\' : undefined}', 'aria-live="polite"', 'URLSearchParams', 'window.history.replaceState', "addEventListener('hashchange'", 'function MobileNav', 'VITE_DATA_VERSION', "cache: 'no-store'", 'setReloadKey']) expect(snippet, snippet);
-const expectedSnippets = ['주유소 찾기','가격 분석','가격 추이','최근 주유 기록','자주 가는 주유소','유가 뉴스','알림 설정','이용 가이드','공지사항','REGION_OPTIONS','카카오맵','priceDiffCopy'];
+const expectedSnippets = ['내 주변', '가격지도', '가격 분석', '내 차량', '유가 뉴스', '가격 흐름', '지역 가격 지도', 'priceDiffCopy', 'favoriteStationIds'];
 for (const item of expectedSnippets) expect(item, item);
 checkControls();
 if (warnings.length) { console.log('interaction:check warnings'); warnings.forEach((warning) => console.log(`- ${warning}`)); }

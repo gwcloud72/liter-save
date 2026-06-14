@@ -2,8 +2,8 @@ import { createServer } from 'vite';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-const tabs = ["home", "stations", "analysis", "trend", "records", "favorites", "fuel-news", "alerts", "guide", "notice"];
-const expectedText = {"home": "원/L ·", "stations": "주유소 찾기", "analysis": "가격 분석", "trend": "가격 추이", "records": "주유 기록", "favorites": "자주 가는 주유소", "fuel-news": "유가 뉴스", "alerts": "알림 설정", "guide": "이용 가이드", "notice": "공지사항"};
+const tabs = ['home', 'stations', 'analysis', 'fuel-news', 'records'];
+const expectedText = {'home': '오늘 최대', 'stations': '가격지도', 'analysis': '가격 분석', 'fuel-news': '유가 뉴스', 'records': '내 차량'};
 const errors = [];
 global.window = { location: { hash: '' }, history: { replaceState(_state, _title, url) { global.window.location.hash = String(url || '').replace(new RegExp('^[^#]*'), ''); } }, addEventListener() {}, removeEventListener() {}, setTimeout(callback) { callback(); return 0; }, clearTimeout() {} };
 Object.defineProperty(globalThis, 'navigator', { value: { userAgent: 'SSR' }, configurable: true });

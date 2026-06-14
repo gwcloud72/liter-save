@@ -17,7 +17,7 @@ const vite = await createServer({
  logLevel: 'silent',
 });
 try {
- const mod = await vite.ssrLoadModule('/src/App.jsx');
+ const mod = await vite.ssrLoadModule('/src/App.tsx');
  const html = ReactDOMServer.renderToString(React.createElement(mod.default));
  process.stdout.write(html);
 } finally {

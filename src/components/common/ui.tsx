@@ -21,3 +21,4 @@ export type { HeroBannerProps } from './HeroBanner';
 export type { PriceBadgeProps } from './PriceBadge';
 export type { SectionHeaderProps } from './SectionHeader';
 export type { StatsStripProps } from './StatsStrip';
+export { AxisLineChart } from '../charts/AxisLineChart';

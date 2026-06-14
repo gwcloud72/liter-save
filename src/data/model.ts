@@ -2,8 +2,10 @@ import { Check, Copy, Map, TrendingDown } from 'lucide-react';
 import type { BottomWidget, MetricItem } from '../components/common/types';
 
 export const REGION_OPTIONS = ['서울','부산','대구','인천','광주','대전','울산','세종','경기','강원','충북','충남','전북','전남','경북','경남','제주'];
+export const FUEL_OPTIONS = ['휘발유', '경유', 'LPG'] as const;
+export type FuelKind = typeof FUEL_OPTIONS[number];
 export interface FuelNewsItem { id: string; title: string; summary: string; source: string; publishedAt: string; link: string; originallink: string; keyword: string; }
-export interface Station { id:string; name:string; brand:string; address:string; distance:number; price:number; avgDiff:number; lat:number; lng:number; trend:number[]; favorite:boolean; }
+export interface Station { id:string; name:string; brand:string; address:string; distance:number; price:number; avgDiff:number; lat:number; lng:number; trend:number[]; favorite:boolean; fuel:FuelKind; region:string; }
 export interface FuelRecord { id:string; date:string; station:string; liter:number; price:number; }
 export interface RegionFuelRow { id:string; region:string; fuel:string; avg:number; low:number; stationCount:number; }
 export interface BrandBar { name:string; value:number; }
@@ -17,19 +19,15 @@ export const fuelNews: FuelNewsItem[] = [
 ];
 
 export const stations: Station[] = [
-  { id:'station-brand-1', name:'알뜰(자영) 평균', brand:'알뜰', address:'오피넷 상표별 평균 판매가격', distance:1.1, price:1979, avgDiff:-72, lat:37.5665, lng:126.9780, trend:[1982, 1981, 1981, 1980, 1980, 1979, 1979], favorite:true },
-  { id:'station-brand-2', name:'알뜰주유소 평균', brand:'알뜰', address:'오피넷 상표별 평균 판매가격', distance:1.4, price:1996, avgDiff:-55, lat:37.5665, lng:126.9780, trend:[1999, 1998, 1998, 1997, 1997, 1996, 1996], favorite:true },
-  { id:'station-brand-3', name:'S-OIL 평균', brand:'S-OIL', address:'오피넷 상표별 평균 판매가격', distance:1.7, price:2010, avgDiff:-41, lat:37.5665, lng:126.9780, trend:[2013, 2012, 2012, 2011, 2011, 2010, 2010], favorite:false },
-  { id:'station-brand-4', name:'HD현대오일뱅크 평균', brand:'HD현대오일뱅크', address:'오피넷 상표별 평균 판매가격', distance:2.0, price:2011, avgDiff:-40, lat:37.5665, lng:126.9780, trend:[2014, 2013, 2013, 2012, 2012, 2011, 2011], favorite:false },
-  { id:'station-brand-5', name:'GS칼텍스 평균', brand:'GS칼텍스', address:'오피넷 상표별 평균 판매가격', distance:2.3, price:2013, avgDiff:-39, lat:37.5665, lng:126.9780, trend:[2016, 2015, 2015, 2014, 2014, 2013, 2013], favorite:false },
-  { id:'station-brand-6', name:'SK에너지 평균', brand:'SK에너지', address:'오피넷 상표별 평균 판매가격', distance:2.6, price:2014, avgDiff:-38, lat:37.5665, lng:126.9780, trend:[2017, 2016, 2016, 2015, 2015, 2014, 2014], favorite:false }
+  { id:'station-brand-1', name:'알뜰(자영) 평균', brand:'알뜰', address:'오피넷 상표별 평균 판매가격', distance:1.1, price:1979, avgDiff:-72, lat:37.5665, lng:126.9780, trend:[1982, 1981, 1981, 1980, 1980, 1979, 1979], favorite:false, fuel:'휘발유', region:'서울' },
+  { id:'station-brand-2', name:'알뜰주유소 평균', brand:'알뜰', address:'오피넷 상표별 평균 판매가격', distance:1.4, price:1996, avgDiff:-55, lat:37.5665, lng:126.9780, trend:[1999, 1998, 1998, 1997, 1997, 1996, 1996], favorite:false, fuel:'휘발유', region:'서울' },
+  { id:'station-brand-3', name:'S-OIL 평균', brand:'S-OIL', address:'오피넷 상표별 평균 판매가격', distance:1.7, price:2010, avgDiff:-41, lat:37.5665, lng:126.9780, trend:[2013, 2012, 2012, 2011, 2011, 2010, 2010], favorite:false, fuel:'휘발유', region:'서울' },
+  { id:'station-brand-4', name:'HD현대오일뱅크 평균', brand:'HD현대오일뱅크', address:'오피넷 상표별 평균 판매가격', distance:2.0, price:2011, avgDiff:-40, lat:37.5665, lng:126.9780, trend:[2014, 2013, 2013, 2012, 2012, 2011, 2011], favorite:false, fuel:'휘발유', region:'서울' },
+  { id:'station-brand-5', name:'GS칼텍스 평균', brand:'GS칼텍스', address:'오피넷 상표별 평균 판매가격', distance:2.3, price:2013, avgDiff:-39, lat:37.5665, lng:126.9780, trend:[2016, 2015, 2015, 2014, 2014, 2013, 2013], favorite:false, fuel:'휘발유', region:'서울' },
+  { id:'station-brand-6', name:'SK에너지 평균', brand:'SK에너지', address:'오피넷 상표별 평균 판매가격', distance:2.6, price:2014, avgDiff:-38, lat:37.5665, lng:126.9780, trend:[2017, 2016, 2016, 2015, 2015, 2014, 2014], favorite:false, fuel:'휘발유', region:'서울' }
 ];
 
-export const records: FuelRecord[] = [
-  { id:'record-1', date:'2026-06-11', station:'알뜰(자영) 평균', liter:50, price:1979 },
-  { id:'record-2', date:'2026-06-10', station:'알뜰주유소 평균', liter:42, price:1996 },
-  { id:'record-3', date:'2026-06-09', station:'S-OIL 평균', liter:48, price:2010 }
-];
+export const records: FuelRecord[] = [];
 
 export const brandBars: BrandBar[] = [
   { name:'SK에너지', value:58 },
@@ -40,7 +38,7 @@ export const brandBars: BrandBar[] = [
 ];
 
 export const widgets: BottomWidget[] = [
-  { title:'근처 저가 순위', action:'주유소 찾기', items:['알뜰(자영) 평균 1,979원','알뜰주유소 평균 1,996원','S-OIL 평균 2,010원'] },
+  { title:'지역 저가 기준', action:'주유소 찾기', items:['서울 최저 기준 1,979원','서울 평균 2,051원','전국 평균 2,010원'] },
   { title:'절약 계산', action:'주유 기록', items:['40L 2,880원 절약','50L 3,600원 절약','60L 4,320원 절약'] },
   { title:'가격 흐름', action:'가격 추이', items:['전국 휘발유 2,010원','전국 경유 2,005원','서울 휘발유 2,051원'] }
 ];

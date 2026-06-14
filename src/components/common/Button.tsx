@@ -51,7 +51,7 @@ export function Button({
       disabled={isDisabled}
       onClick={onClick}
       className={[
-        'inline-flex items-center justify-center gap-ds-1 rounded-md font-semibold transition-fast duration-fast ease-product',
+        'inline-flex items-center justify-center gap-ds-1 rounded-md font-bold transition-fast duration-fast ease-product active:scale-[0.97]',
         'focus-visible:outline-none focus-visible:shadow-focus',
         'disabled:cursor-not-allowed disabled:opacity-45',
         variantClasses[variant],

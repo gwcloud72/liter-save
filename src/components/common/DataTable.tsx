@@ -8,7 +8,6 @@ export interface DataTableProps {
   rows: TableRow[];
   loading?: boolean;
   fallbackTitle?: string;
-  fallbackDescription?: string;
   footer?: ReactNode;
 }
 
@@ -28,7 +27,7 @@ function TableSkeleton({ columns }: { columns: TableColumn[] }) {
   );
 }
 
-export function DataTable({ caption, columns, rows, loading = false, fallbackTitle = '조건에 맞는 항목을 확인하세요', fallbackDescription = '필터를 조정하거나 다른 화면을 확인하세요.', footer }: DataTableProps) {
+export function DataTable({ caption, columns, rows, loading = false, fallbackTitle = '조건에 맞는 항목을 확인하세요', footer }: DataTableProps) {
   return (
     <div className="overflow-hidden rounded-lg border border-ink-200 bg-white shadow-card">
       <div className="overflow-x-auto">
@@ -40,7 +39,7 @@ export function DataTable({ caption, columns, rows, loading = false, fallbackTit
                 <th
                   key={column.key}
                   scope="col"
-                  className={`bg-ink-100 px-ds-2 py-ds-1.5 text-left text-caption font-medium text-ink-500 ${index === 0 ? 'rounded-tl-lg' : ''} ${index === columns.length - 1 ? 'rounded-tr-lg' : ''} ${column.align === 'right' ? 'text-right' : column.align === 'center' ? 'text-center' : ''}`}
+                  className={`bg-ink-100 px-ds-2 py-ds-1.5 text-left text-caption font-bold text-ink-500 ${index === 0 ? 'rounded-tl-lg' : ''} ${index === columns.length - 1 ? 'rounded-tr-lg' : ''} ${column.align === 'right' ? 'text-right' : column.align === 'center' ? 'text-center' : ''}`}
                 >
                   {column.label}
                 </th>
@@ -60,7 +59,7 @@ export function DataTable({ caption, columns, rows, loading = false, fallbackTit
           )}
         </table>
       </div>
-      {!loading && rows.length === 0 ? <div className="p-ds-3"><EmptyState title={fallbackTitle} description={fallbackDescription} compact /></div> : null}
+      {!loading && rows.length === 0 ? <div className="p-ds-3"><EmptyState title={fallbackTitle} compact /></div> : null}
       {footer ? <div className="border-t border-ink-100 px-ds-3 py-ds-2">{footer}</div> : null}
     </div>
   );

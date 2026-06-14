@@ -454,12 +454,28 @@ function mergeHistory(existingHistory, snapshot) {
  };
 }
 
+
+async function hasExistingOilData() {
+ try {
+  const text = await readFile(OUTPUT_PATH, 'utf8');
+  const payload = JSON.parse(text);
+  const datasets = Array.isArray(payload?.datasets) ? payload.datasets : [];
+  return datasets.some((item) => Array.isArray(item?.stations) && item.stations.length > 0);
+ } catch {
+  return false;
+ }
+}
+
 async function main() {
  await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
  await mkdir(path.dirname(HISTORY_PATH), { recursive: true });
 
  if (!API_KEY) {
-  throw new Error('OPINET_CERT_KEY 또는 OPINET_API_KEY가 확인 필요합니다. 기존 데이터를 덮어쓰지 않기 위해 데이터 생성을 중단합니다.');
+  if (await hasExistingOilData()) {
+   console.warn('OPINET 인증 정보가 없어 기존 oil-prices.json을 유지합니다.');
+   return;
+  }
+  throw new Error('OPINET_CERT_KEY 또는 OPINET_API_KEY가 확인 필요합니다. 기존 데이터가 없어 생성을 중단합니다.');
  }
 
  const fuels = ensureFuelCoverage(parsePairs(process.env.OPINET_FUELS, DEFAULT_FUELS));

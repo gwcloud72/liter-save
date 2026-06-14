@@ -15,7 +15,7 @@
     "generate:all": "npm run generate:data && npm run generate:oil && npm run generate:report",
     "quality:check": "node scripts/quality-check.mjs",
     "data:check": "node scripts/data-contract-check.mjs",
-    "qa:check": "npm run quality:check && npm run data:check && npm run interaction:check && npm run render:check",
+    "qa:check": "npm run quality:check && npm run ui-copy:check && npm run selector:check && npm run data:check && npm run interaction:check && npm run render:check",
     "interaction:check": "node scripts/interaction-check.mjs",
     "render:check": "node scripts/render-check.mjs",
     "actions:check": "node scripts/github-actions-contract-check.mjs",
@@ -26,14 +26,17 @@
     "runtime-ui:check": "node scripts/runtime-ui-contract-check.mjs",
     "typecheck": "tsc --noEmit",
     "update:news": "node scripts/update-news.mjs",
-    "gemini:check": "node scripts/gemini-flash-contract-check.mjs"
+    "gemini:check": "node scripts/gemini-flash-contract-check.mjs",
+    "ui-copy:check": "node scripts/ui-copy-policy-check.mjs",
+    "selector:check": "node scripts/selector-audit.mjs"
   },
   "dependencies": {
     "dayjs": "^1.11.13",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "recharts": "^2.15.4"
+    "recharts": "^2.15.4",
+    "proj4": "^2.20.9"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",
@@ -41,7 +44,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "proj4": "^2.20.9",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
     "vite": "^5.4.11"

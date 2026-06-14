@@ -10,5 +10,5 @@ export function StatusBadge({ label }: StatusBadgeProps) {
       : label.includes('상장')
         ? 'bg-ipo-listing-bg text-ipo-listing-text'
         : 'bg-ipo-review-bg text-ipo-review-text';
-  return <span className={`inline-flex items-center rounded-xs px-ds-1 py-ds-0.5 text-micro font-bold ${cls}`}>{label}</span>;
+  return <span className={`inline-flex items-center rounded-full px-ds-1 py-ds-0.5 text-[11px] ${cls}`}>{label}</span>;
 }

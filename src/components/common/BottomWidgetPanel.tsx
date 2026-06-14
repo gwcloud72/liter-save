@@ -15,7 +15,7 @@ export function BottomWidgetPanel({ widgets, onAction, compact = false }: Bottom
         <Card key={widget.title} padding={compact ? 'compact' : 'normal'} interactive>
           <div className="mb-ds-2 flex items-center justify-between gap-ds-2">
             <h3 className="text-heading-3 text-ink-900">{widget.title}</h3>
-            <button type="button" onClick={() => onAction(widget.action)} className="shrink-0 rounded-sm px-ds-1 py-ds-0.5 text-caption font-semibold text-primary-500 hover:bg-primary-50 hover:underline focus-visible:outline-none focus-visible:shadow-focus">{widget.action}</button>
+            <button type="button" onClick={() => onAction(widget.action)} className="shrink-0 rounded-sm px-ds-1 py-ds-0.5 text-caption font-bold text-primary-500 hover:bg-primary-50 hover:underline focus-visible:outline-none focus-visible:shadow-focus">{widget.action}</button>
           </div>
           <ul className={compact ? 'space-y-ds-1' : 'space-y-ds-1'}>
             {widget.items.slice(0, compact ? 3 : 4).map((item) => (

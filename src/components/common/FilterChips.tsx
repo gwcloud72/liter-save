@@ -19,10 +19,10 @@ export function FilterChips({ items, active, onChange, ariaLabel = '필터' }: F
             aria-pressed={selected}
             onClick={() => onChange(item)}
             className={[
-              'h-9 rounded-full border px-ds-2 text-body-2 transition-fast duration-fast ease-product',
+              'h-9 rounded-full border px-ds-2 text-[15px] transition-fast duration-fast ease-product active:scale-[0.97]',
               'focus-visible:outline-none focus-visible:shadow-focus',
               selected
-                ? 'border-primary-600 bg-primary-600 font-semibold text-white'
+                ? 'v6-chip-selected border-primary-600 bg-primary-600 text-white'
                 : 'border-ink-200 bg-white text-ink-700 hover:bg-ink-100',
             ].join(' ')}
           >
