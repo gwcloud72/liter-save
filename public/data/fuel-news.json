@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-14T13:05:04.861Z",
+    "updatedAt": "2026-06-14T19:25:25.697Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -78,16 +78,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "beb4b7b2714f43c9",
-      "title": "[포토]국제유가 안정에 국내 기름값 4주 연속 하락세",
-      "summary": "국내 주유소 휘발유와 경유의 주간 평균 가격이 4주 연속 소폭 하락한 가운데 14일 서울시내의 한 주유소를 찾은 운전자들이 차량에 주유를 하고 있다.한국석유공사 유가정보시스템 오피넷에 따르면 6월 둘째 주(7...",
-      "source": "edaily.co.kr",
-      "publishedAt": "2026-06-14T04:21:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/018/0006305772?sid=102",
-      "originallink": "https://www.edaily.co.kr/news/newspath.asp?newsid=01626886645481720",
-      "keyword": "휘발유"
-    },
-    {
       "id": "566a6c5a786985b0",
       "title": "[포토]국제유가 안정에 국내 기름값 4주 연속 하락",
       "summary": "국내 주유소 휘발유와 경유의 주간 평균 가격이 4주 연속 소폭 하락한 가운데 14일 서울시내의 한 주유소를 찾은 운전자들이 차량에 주유를 하고 있다.한국석유공사 유가정보시스템 오피넷에 따르면 6월 둘째 주(7...",
@@ -98,13 +88,23 @@
       "keyword": "휘발유"
     },
     {
-      "id": "b09e1e58e94d343a",
-      "title": "최고가격제 정산 이번주 윤곽…정유업계, '손실 범위' 줄다리기",
-      "summary": "원유를 정제하면 휘발유와 경유, 등유 등이 동시에 생산되는 연산품 구조이기 때문에 특정 유종의 원가만 따로 계산하기 어렵다는 이유에서다. 업계는 싱가포르 국제 석유제품 가격인 MOPS 등 시장 가격을 손실 산정 기준에...",
-      "source": "m-i.kr",
+      "id": "beb4b7b2714f43c9",
+      "title": "[포토]국제유가 안정에 국내 기름값 4주 연속 하락세",
+      "summary": "국내 주유소 휘발유와 경유의 주간 평균 가격이 4주 연속 소폭 하락한 가운데 14일 서울시내의 한 주유소를 찾은 운전자들이 차량에 주유를 하고 있다.한국석유공사 유가정보시스템 오피넷에 따르면 6월 둘째 주(7...",
+      "source": "edaily.co.kr",
+      "publishedAt": "2026-06-14T04:21:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/018/0006305772?sid=102",
+      "originallink": "https://www.edaily.co.kr/news/newspath.asp?newsid=01626886645481720",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "0436ae0c7b69b7b7",
+      "title": "트럼프 '종전 언급'에도 복지부동…고유가 지속에 도민 부담 가중",
+      "summary": "느끼는 유가 부담은 여전히 큰 상황이다. 제주지역 주유소 휘발유 평균 판매 가격은 4월 5주 2030원에서 지속적으로 하락하고 있으나, 6주간 리터당 3원 하락하는 데 그쳤다. 제주지역 경유 판매 가격도 14일 낮 12시...",
+      "source": "samdailbo.com",
       "publishedAt": "2026-06-14T04:00:00.000Z",
-      "link": "https://www.m-i.kr/news/articleView.html?idxno=1381120",
-      "originallink": "https://www.m-i.kr/news/articleView.html?idxno=1381120",
+      "link": "http://www.samdailbo.com/news/articleView.html?idxno=265950",
+      "originallink": "http://www.samdailbo.com/news/articleView.html?idxno=265950",
       "keyword": "휘발유"
     },
     {
