@@ -1,6 +1,6 @@
 {
   "mode": "history",
-  "generatedAt": "2026-06-15T06:37:43.211Z",
+  "generatedAt": "2026-06-15T12:11:21.547Z",
   "retentionDays": 90,
   "notice": "오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.",
   "snapshots": [
@@ -39909,7 +39909,7 @@
       ]
     },
     {
-      "capturedAt": "2026-06-15T06:37:43.211Z",
+      "capturedAt": "2026-06-15T12:11:21.547Z",
       "metrics": [
         {
           "regionCode": "ALL",
@@ -39944,7 +39944,7 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1929,
-          "averagePrice": 1946,
+          "averagePrice": 1945,
           "stationCount": 20
         },
         {
@@ -39953,7 +39953,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1495,
-          "averagePrice": 1917,
+          "averagePrice": 1916,
           "stationCount": 20
         },
         {
@@ -40007,7 +40007,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1943,
-          "averagePrice": 1955,
+          "averagePrice": 1956,
           "stationCount": 20
         },
         {
@@ -40025,7 +40025,7 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1956,
-          "averagePrice": 1971,
+          "averagePrice": 1970,
           "stationCount": 20
         },
         {
@@ -40079,7 +40079,7 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1949,
-          "averagePrice": 1966,
+          "averagePrice": 1965,
           "stationCount": 20
         },
         {
@@ -40088,7 +40088,7 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1945,
-          "averagePrice": 1962,
+          "averagePrice": 1961,
           "stationCount": 20
         },
         {
@@ -40159,7 +40159,7 @@
           "regionName": "경북",
           "fuelCode": "B027",
           "fuelName": "휘발유",
-          "lowestPrice": 1939,
+          "lowestPrice": 1937,
           "averagePrice": 1951,
           "stationCount": 20
         },
