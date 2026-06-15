@@ -1,61 +1,171 @@
 {
   "metadata": {
-    "source": "packaged",
+    "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-12T09:00:00+09:00",
-    "queryCount": 3,
-    "itemCount": 5
+    "updatedAt": "2026-06-15T02:54:36.112Z",
+    "queryCount": 4,
+    "itemCount": 16
   },
   "items": [
     {
-      "id": "fuel-news-1",
-      "title": "휘발유 가격은 지역별 편차 확인 필요",
-      "summary": "가까운 주유소라도 브랜드와 위치에 따라 리터당 가격 차이가 나타납니다.",
-      "source": "오일데일리",
-      "publishedAt": "2026-06-08T09:00:00+09:00",
-      "link": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "originallink": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
+      "id": "d1cb5673655fff1d",
+      "title": "고유가·고환율 숨통 트인다…'미·이란 종전'에 韓경제 반등 청신호",
+      "summary": "그러나 2월 말부터 발생한 중동 전쟁 여파로 국제유가가 오르면서 3월(2.2%), 4월(2.6%), 지난달(3.1%) 연속으로 상승 폭이 확대됐다. 원유 가격 하락은 국내 주유소의 휘발유·경유 등 석유류 가격에 직접적인 영향을 미친다....",
+      "source": "news1.kr",
+      "publishedAt": "2026-06-15T02:51:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/421/0009004009?sid=101",
+      "originallink": "https://www.news1.kr/economy/trend/6196782",
       "keyword": "휘발유"
     },
     {
-      "id": "fuel-news-2",
-      "title": "경유와 LPG 가격도 함께 비교",
-      "summary": "차량 유종별 평균가와 최저가를 분리해서 확인하면 비교가 더 쉬워집니다.",
-      "source": "에너지경제",
-      "publishedAt": "2026-06-09T09:00:00+09:00",
-      "link": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "originallink": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "keyword": "경유"
+      "id": "1c0f2e58721c6734",
+      "title": "미국과 이란 종전 합의.. \"기름 값 하락에는 시간 걸려\"",
+      "summary": "보통 휘발유 가격은 지난달 12일 2,007원으로 정점을 찍은 뒤 어제까지 2,006원으로 거의 변동이 없고, 경유... 주유소 업계는 종전 합의로 가격 하락에 대한 기대는 높아지고 있지만, 국제 유가가 현실화되는 데에는 2주...",
+      "source": "jmbc.co.kr",
+      "publishedAt": "2026-06-15T02:38:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/659/0000044454?sid=102",
+      "originallink": "http://www.jmbc.co.kr/news/view/65494",
+      "keyword": "휘발유"
     },
     {
-      "id": "fuel-news-3",
-      "title": "50L 기준 예상 결제액 확인",
-      "summary": "리터당 가격 차이를 주유량 기준 금액으로 환산해 절약 규모를 확인합니다.",
-      "source": "리터세이브",
-      "publishedAt": "2026-06-10T09:00:00+09:00",
-      "link": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "originallink": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "keyword": "주유소"
+      "id": "40da2130e04fb3ef",
+      "title": "최고가격제 종료 ‘조건 충족’ 임박…정부, 인플레 딜레마에 신중 모드...",
+      "summary": "한국석유공사 유가정보시스템 오피넷에 따르면 6월 둘째 주(7∼11일) 전국 주유소 휘발유 평균 판매가는 지난주보다 리터(ℓ)당 0.5원 내린 2009.9원이었다. 경유 평균 판매 가격은 전주 대비 0.3원 하락한 2004.8원을...",
+      "source": "biz.heraldcorp.com",
+      "publishedAt": "2026-06-15T02:37:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/016/0002656669?sid=101",
+      "originallink": "https://biz.heraldcorp.com/article/10771805?ref=naver",
+      "keyword": "휘발유"
     },
     {
-      "id": "fuel-news-4",
-      "title": "국제유가 하락 흐름에 국내 가격 안정 기대",
-      "summary": "최근 국제유가가 완만하게 낮아지며 국내 가격 추이를 함께 확인할 필요가 있습니다.",
-      "source": "마켓데일리",
-      "publishedAt": "2026-06-11T09:00:00+09:00",
-      "link": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "originallink": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
+      "id": "50512954e0ad7563",
+      "title": "정유·석유화학업계, 역래깅 우려에도 공급망 안정 안도 [미-이란 종전]",
+      "summary": "주유소 휘발유와 경유의 주간 평균 가격이 4주 연속 소폭 하락한 것으로 나타난 14일 서울 서초구 만남의광장... 전쟁 이후 기초유분 등 석유화학 제품의 핵심 원료인 나프타(납사) 가격은 국제유가 상승세와 연동해...",
+      "source": "biz.heraldcorp.com",
+      "publishedAt": "2026-06-15T02:36:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/016/0002656664?sid=101",
+      "originallink": "https://biz.heraldcorp.com/article/10771800?ref=naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "c7ccc3ae08790103",
+      "title": "호르무즈 열리는데 석유 최고가격제는 언제까지?",
+      "summary": "산업부는 지난달 21일 기준으로 휘발유의 경우 200원대 중후반의 인상 요인을 안고 있다고 설명한 바 있다. 경유와 등유 역시 각각 300원대 중반, 400원대 중반의 누적된 인상 억제분이 남아 있다고 했다. 이후 국제유가...",
+      "source": "kookje.co.kr",
+      "publishedAt": "2026-06-15T02:25:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/658/0000146684?sid=102",
+      "originallink": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0300&key=20260615.99099004061",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "724379a8e8d88c17",
+      "title": "원유공급 정상화 상당한 시간 걸릴 듯…석유 최고가격제도 유지 전망",
+      "summary": "산업부는 5월 21일 기준으로 휘발유는 200원대 중후반의 인상 요인이 있고 경유와 등유 역시 각각 300원대 중반, 400원대 중반의 누적된 인상 억제분이 남아 있다고 밝혔다. 이후 국제유가 하락세가 지속되면서 유종별 인상...",
+      "source": "busan.com",
+      "publishedAt": "2026-06-15T02:22:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/082/0001385420?sid=101",
+      "originallink": "https://www.busan.com/view/busan/view.php?code=2026061511145650052",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "73bae3f69e13bfad",
+      "title": "[이로운전망]106일 만의 미·이란 종전 합의…'유가 리스크 해소'에 한국...",
+      "summary": "특히 휘발유와 경유 가격이 리터당 2000원 안팎에서 움직이는 상황에서 국제유가 하락이 2~3주 시차를 두고 국내 가격에 반영될 경우 소비심리 회복에도 도움이 될 수 있다. 다만 호르무즈 해협이 선언만으로 곧바로...",
+      "source": "eroun.net",
+      "publishedAt": "2026-06-15T02:12:00.000Z",
+      "link": "https://www.eroun.net/news/articleView.html?idxno=83088",
+      "originallink": "https://www.eroun.net/news/articleView.html?idxno=83088",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b563cf04cb6f68c9",
+      "title": "[미·이란 종전] 국내 원유 수급 '신중론'…석유 최고가제 출구전략 시...",
+      "summary": "산업부는 지난달 21일 기준으로 휘발유의 경우 200원대 중후반의 인상 요인을 안고 있다고 설명한 바 있다. 경유와 등유 역시 각각 300원대 중반, 400원대 중반의 누적된 인상 억제분이 남아 있다고 했다. 이후 국제유가...",
+      "source": "yna.co.kr",
+      "publishedAt": "2026-06-15T02:02:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/001/0016138951?sid=101",
+      "originallink": "https://www.yna.co.kr/view/AKR20260524045051003?input=1195m",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "a081b8bf573bf30a",
+      "title": "호르무즈 재개방 눈앞 … 정유업계 \"석유 최고가격제 끝날까\" 기대감",
+      "summary": "1934원, 경유 1923원, 등유 1530원으로 공급가격이 동결돼 왔다. 앞서 산업통상부는 석유 최고가격제 종료 조건으로 △호르무즈 해협 봉쇄 해제 △국제 유가가 급등하지 않고 배럴당 90달러 이하에서 안정되는 상황을...",
+      "source": "biz.newdaily.co.kr",
+      "publishedAt": "2026-06-15T01:52:00.000Z",
+      "link": "https://biz.newdaily.co.kr/site/data/html/2026/06/15/2026061500092.html",
+      "originallink": "https://biz.newdaily.co.kr/site/data/html/2026/06/15/2026061500092.html",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "e447e1f9543c85b2",
+      "title": "중동 종전 기대감에 유가 '뚝'…주유소 기름값 '2000원' 아래로 떨어질...",
+      "summary": "휘발유 가격은 지난달 10일 리터당 2011.90원으로 최고치를 기록한 뒤 최근까지 2000원 초반에서 등락을 이어가고 있다. 국제유가 하락이 통상 2~3주 시차를 두고 국내 판매가격에 반영된다는 점을 고려하면 이달 하순부터...",
+      "source": "newsis.com",
+      "publishedAt": "2026-06-15T01:51:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/003/0014006401?sid=101",
+      "originallink": "https://www.newsis.com/view/NISX20260615_0003669136",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b8a292499417f7d8",
+      "title": "[기획] 전쟁 끝나간다는데 기름값은 왜 그대로… 주유소 '2000원의 벽' 가...",
+      "summary": "정부로서는 종전이라는 외생 변수에만 기대기보다, 유류세 탄력세율 운용과 비축유 방출, 도입선 다변화... 주유소 가격표 사이에는 이렇게 시차와 환율, 신뢰의 세 겹 잠금장치가 놓여 있다. 전쟁이 끝나도 기름값이...",
+      "source": "gokorea.kr",
+      "publishedAt": "2026-06-15T00:18:00.000Z",
+      "link": "https://www.gokorea.kr/news/articleView.html?idxno=869105",
+      "originallink": "https://www.gokorea.kr/news/articleView.html?idxno=869105",
+      "keyword": "유류세"
+    },
+    {
+      "id": "0256da5f69cc29c7",
+      "title": "[중동전쟁 100일, 한국 경제 흔들다⑤] 전쟁은 중동에, 물가는 한국에…...",
+      "summary": "원자재 가격 상승에 직면했다. 서민들은 주유소 기름값과 장바구니 물가를 통해 전쟁의 여파를 체감하고... 정부는 비축유 활용과 수입선 다변화, 유류세 인하 연장, 농축수산물 수급 관리 등을 통해 물가 안정에 나서고...",
+      "source": "newsian.co.kr",
+      "publishedAt": "2026-06-10T22:20:00.000Z",
+      "link": "http://www.newsian.co.kr/news/articleView.html?idxno=90722",
+      "originallink": "http://www.newsian.co.kr/news/articleView.html?idxno=90722",
+      "keyword": "유류세"
+    },
+    {
+      "id": "268b24018d16eecd",
+      "title": "세수 공백 vs 소비자부담…‘감세’의 딜레마 [유류세 인하의 늪②]",
+      "summary": "유류세 인하 조치가 물가 안정과 국가 재정 확보라는 딜레마에 빠졌다. 소비자 기름값 부담을 덜어주는... 지난 2021년 11월 둘째 중에 시행된 휘발유 유류세 인하가 주유소 판매가격에 미치는 효과를 살펴본 결과다....",
+      "source": "dailian.co.kr",
+      "publishedAt": "2026-06-09T09:53:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/119/0003099382?sid=101",
+      "originallink": "https://www.dailian.co.kr/news/view/1654131/?sc=Naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "5124b0ef5b0e71af",
+      "title": "[기자수첩] 물가는 숫자가 아니라 생활비다",
+      "summary": "할당관세를 적용했다면 계란값과 고깃값이 실제로 내려가는지, 유류세를 낮췄다면 주유소 가격에 얼마나... 정책은 발표되는 순간이 아니라 가격표에 반영될 때 비로소 체감된다. 오종원 경제부 기자 특히 기름값은...",
+      "source": "newspim.com",
+      "publishedAt": "2026-06-08T05:24:00.000Z",
+      "link": "https://www.newspim.com/news/view/20260608000555",
+      "originallink": "https://www.newspim.com/news/view/20260608000555",
+      "keyword": "유류세"
+    },
+    {
+      "id": "33dbcd40ea3cdafd",
+      "title": "[중동전쟁 100일, 한국 경제 흔들다②] 배럴당 100달러 공포…'유가 쇼크...",
+      "summary": "원자재 가격 상승에 직면했다. 서민들은 주유소 기름값과 장바구니 물가를 통해 전쟁의 여파를 체감하고... 정부는 국제유가 상승분이 소비자 가격에 즉각 전가되는 것을 막기 위해 최고가격제와 유류세 인하 조치를...",
+      "source": "newsian.co.kr",
+      "publishedAt": "2026-06-06T22:20:00.000Z",
+      "link": "http://www.newsian.co.kr/news/articleView.html?idxno=90598",
+      "originallink": "http://www.newsian.co.kr/news/articleView.html?idxno=90598",
       "keyword": "국제유가"
     },
     {
-      "id": "fuel-news-5",
-      "title": "유류세와 지역 평균가를 함께 확인",
-      "summary": "유류세 조정 이슈와 지역 평균 가격을 함께 보면 실제 결제액 변화를 더 쉽게 파악할 수 있습니다.",
-      "source": "주유경제",
-      "publishedAt": "2026-06-12T09:00:00+09:00",
-      "link": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "originallink": "https://www.opinet.co.kr/user/dopospdrg/dopOsPdrgSelect.do",
-      "keyword": "유류세"
+      "id": "b94f1e71ae9be4b3",
+      "title": "휘발유 23% 뛰었다… 물가 26개월 만에 3%대",
+      "summary": "물가상승률을 높인 건 기름값이었다. 석유류가 24.2% 상승하며 전체 물가를 0.92% 포인트 끌어올렸다.... 재정경제부는 “최고가격제와 유류세 인하 등 정책으로 물가 상승률이 0.6% 포인트 억제됐다”면서 “조치가...",
+      "source": "seoul.co.kr",
+      "publishedAt": "2026-06-02T20:02:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/081/0003649070?sid=101",
+      "originallink": "https://www.seoul.co.kr/news/economy/2026/06/03/20260603001004?wlog_tag3=naver",
+      "keyword": "휘발유"
     }
   ]
 }
