@@ -66,12 +66,13 @@ function ProjectShellContent() {
     selection.setRegion(region);
   };
 
-  const handleUseLocation = () => {
+  const handleUseLocation = async () => {
     if (typeof navigator === 'undefined' || !navigator.geolocation) {
       setLiveText('위치 권한을 사용할 수 없습니다');
       return;
     }
-    selection.useMyLocation();
+    const ok = await selection.useMyLocation();
+    setLiveText(ok ? '내 위치 기준 · 최근 저장 기준' : '위치 권한 확인 필요');
   };
 
   const handleRefresh = () => {

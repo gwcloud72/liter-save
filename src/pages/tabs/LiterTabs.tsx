@@ -7,6 +7,8 @@ import type { LiterData } from '../../data/normalize';
 import { changeDirection, formatSignedWon, getFuelHistory } from '../../data/normalize';
 import type { UserCoordinates } from '../../context/LocationContext';
 import { fetchNearbyStations } from '../../services/nearbyStations';
+import { kakaoRouteHref } from '../../utils/kakao';
+import { formatDistanceKm, sortStationsByUserDistance } from '../../utils/stationDistance';
 
 interface PageProps { data: LiterData; onTabChange: (tab: string) => void; onAction: (text: string) => void; favoriteStationIds?: string[]; onFavoriteToggle?: (id: string) => void; selectedFuel?: string; onFuelChange?: (fuel: string) => void; selectedRegion?: string; regionOptions?: readonly string[]; onRegionChange?: (region: string) => void; onUseLocation?: () => void; locating?: boolean; isMyLocation?: boolean; userCoordinates?: UserCoordinates | null; }
 function Shell({ title, children }: { title: string; children: ReactNode; data: LiterData; onAction: (text: string) => void; compact?: boolean }) { return <div className="v6-page mx-auto max-w-content space-y-ds-3"><SectionHeader title={title} />{children}</div>; }
@@ -22,12 +24,6 @@ function uniqueStations(stations: LiterData['stations']) {
   return Array.from(new Map(stations.map((station) => [station.id, station])).values());
 }
 
-function routeHref(station: LiterData['stations'][number]): string {
-  if (Number.isFinite(station.lat) && Number.isFinite(station.lng) && station.lat !== 0 && station.lng !== 0) {
-    return `https://map.kakao.com/link/to/${encodeURIComponent(station.name)},${station.lat},${station.lng}`;
-  }
-  return `https://map.kakao.com/?q=${encodeURIComponent(station.name)}`;
-}
 
 function RegionFuelControl({ data, selectedFuel, onFuelChange, selectedRegion, regionOptions = [], onRegionChange, onUseLocation, locating = false, isMyLocation = false }: { data: LiterData; selectedFuel: string; onFuelChange?: (fuel: string) => void; selectedRegion: string; regionOptions?: readonly string[]; onRegionChange?: (region: string) => void; onUseLocation?: () => void; locating?: boolean; isMyLocation?: boolean }) {
   const regions = regionOptions.length ? regionOptions : Array.from(new Set(data.regionRows.map((row) => row.region))).filter(Boolean);
@@ -51,7 +47,9 @@ export function StationsPage({ data, onAction, favoriteStationIds = [], onFavori
     const controller = new AbortController();
     fetchNearbyStations({ coordinates: userCoordinates, fuel: selectedFuel, region: selectedRegion, sort: 'distance', signal: controller.signal })
       .then((stations) => setLiveStations(stations))
-      .catch(() => { if (!controller.signal.aborted) setLiveStations([]); });
+      .catch(() => {
+        if (!controller.signal.aborted) setLiveStations(sortStationsByUserDistance(data.stations, userCoordinates));
+      });
     return () => controller.abort();
   }, [isMyLocation, userCoordinates?.lat, userCoordinates?.lng, selectedFuel, selectedRegion]);
   const [selectedId, setSelectedId] = useState(data.stations[0]?.id ?? '');
@@ -71,10 +69,10 @@ export function StationsPage({ data, onAction, favoriteStationIds = [], onFavori
         <KakaoMapPanel stations={list} onSelect={(station) => selectStation(station, '지도 선택')} tall />
         {selected ? <Card padding="normal" selected>
           <div className="flex flex-wrap items-start justify-between gap-ds-2">
-            <div className="min-w-0"><p className="text-caption font-bold text-primary-600">선택 주유소</p><h3 className="mt-ds-0.5 truncate text-heading-2 text-ink-900">{selected.name}</h3><p className="mt-ds-0.5 text-sm text-ink-500">{selected.brand} · {selected.distance}km · {selected.address}</p></div>
+            <div className="min-w-0"><p className="text-caption font-bold text-primary-600">선택 주유소</p><h3 className="mt-ds-0.5 truncate text-heading-2 text-ink-900">{selected.name}</h3><p className="mt-ds-0.5 text-sm text-ink-500">{selected.brand} · {formatDistanceKm(selected.distance)} · {selected.address}</p></div>
             <div className="text-right"><strong className="inline-flex items-baseline justify-end gap-0.5 text-price-lg text-primary-500 tabular"><PriceText value={selected.price} unit="원/L" /></strong><div className="mt-ds-1.5"><PriceBadge direction={changeDirection(selected.avgDiff)} text={formatSignedWon(selected.avgDiff)} /></div></div>
           </div>
-          <div className="mt-ds-3 grid gap-ds-2 sm:grid-cols-4"><div className="rounded-md bg-primary-50 px-ds-2 py-ds-1.5"><p className="text-caption text-primary-600">50L 예상</p><strong className="text-lg font-bold text-primary-600 tabular"><PriceText value={selected.price * 50} /></strong></div><div className="rounded-md bg-down-bg px-ds-2 py-ds-1.5"><p className="text-caption text-down">평균 대비</p><strong className="text-lg font-bold text-down tabular"><PriceText value={Math.round(Math.max(0, 50 * (data.averagePrice - selected.price)))} /> 절약</strong></div><Button variant="secondary" onClick={() => onFavoriteToggle?.(selected.id)} className="h-ds-7"><Star size={15} fill={favoriteStationIds.includes(selected.id) ? 'currentColor' : 'none'} />{favoriteStationIds.includes(selected.id) ? '저장됨' : '저장'}</Button><a href={routeHref(selected)} target="_blank" rel="noopener noreferrer" onClick={() => onAction(`${selected.name} 길찾기`)} className="inline-flex h-ds-7 items-center justify-center gap-2 rounded-md bg-primary-600 px-4 text-sm font-bold text-white hover:bg-primary-700"><ExternalLink size={15} />길찾기</a></div>
+          <div className="mt-ds-3 grid gap-ds-2 sm:grid-cols-4"><div className="rounded-md bg-primary-50 px-ds-2 py-ds-1.5"><p className="text-caption text-primary-600">50L 예상</p><strong className="text-lg font-bold text-primary-600 tabular"><PriceText value={selected.price * 50} /></strong></div><div className="rounded-md bg-down-bg px-ds-2 py-ds-1.5"><p className="text-caption text-down">평균 대비</p><strong className="text-lg font-bold text-down tabular"><PriceText value={Math.round(Math.max(0, 50 * (data.averagePrice - selected.price)))} /> 절약</strong></div><Button variant="secondary" onClick={() => onFavoriteToggle?.(selected.id)} className="h-ds-7"><Star size={15} fill={favoriteStationIds.includes(selected.id) ? 'currentColor' : 'none'} />{favoriteStationIds.includes(selected.id) ? '저장됨' : '저장'}</Button><a href={kakaoRouteHref(selected)} target="_blank" rel="noopener noreferrer" onClick={() => onAction(`${selected.name} 길찾기`)} className="inline-flex h-ds-7 items-center justify-center gap-2 rounded-md bg-primary-600 px-4 text-sm font-bold text-white hover:bg-primary-700"><ExternalLink size={15} />길찾기</a></div>
         </Card> : null}
       </div>
     </div>
@@ -197,9 +195,9 @@ export function RecordsPage({ data, onAction, selectedFuel = data.fuelOptions[0]
       </Card>
       {best ? <Card padding="normal" className="v6-card-hover">
         <SectionHeader title="추천 주유소" action="가격지도" onAction={() => onAction('가격지도')} />
-        <div className="flex items-start justify-between gap-ds-2"><div className="min-w-0"><h3 className="truncate text-body-1 font-bold text-ink-900">{best.name}</h3><p className="mt-ds-0.5 truncate text-caption text-ink-500">{best.brand} · {best.distance}km</p></div><strong className="inline-flex items-baseline text-[20px] font-bold text-primary-500 tabular"><PriceText value={best.price} unit="원/L" /></strong></div>
+        <div className="flex items-start justify-between gap-ds-2"><div className="min-w-0"><h3 className="truncate text-body-1 font-bold text-ink-900">{best.name}</h3><p className="mt-ds-0.5 truncate text-caption text-ink-500">{best.brand} · {formatDistanceKm(best.distance)}</p></div><strong className="inline-flex items-baseline text-[20px] font-bold text-primary-500 tabular"><PriceText value={best.price} unit="원/L" /></strong></div>
         <div className="mt-ds-2 grid grid-cols-2 gap-ds-1.5"><div className="rounded-md bg-primary-50 px-ds-2 py-ds-1"><p className="text-caption text-primary-600">50L 예상</p><strong className="text-lg font-bold text-primary-600 tabular"><PriceText value={best.price * 50} /></strong></div><div className="rounded-md bg-down-bg px-ds-2 py-ds-1"><p className="text-caption text-down">예상 절약</p><strong className="text-lg font-bold text-down tabular"><PriceText value={projectedSaving} /></strong></div></div>
-        <a href={routeHref(best)} target="_blank" rel="noopener noreferrer" onClick={() => onAction(`${best.name} 길찾기`)} className="mt-ds-2 inline-flex h-10 w-full items-center justify-center gap-2 rounded-md border border-ink-200 text-sm font-bold text-primary-600 hover:border-primary-500 hover:bg-primary-50"><ExternalLink size={15} />길찾기</a>
+        <a href={kakaoRouteHref(best)} target="_blank" rel="noopener noreferrer" onClick={() => onAction(`${best.name} 길찾기`)} className="mt-ds-2 inline-flex h-10 w-full items-center justify-center gap-2 rounded-md border border-ink-200 text-sm font-bold text-primary-600 hover:border-primary-500 hover:bg-primary-50"><ExternalLink size={15} />길찾기</a>
       </Card> : null}
     </div>
     <div className="grid gap-ds-3 xl:grid-cols-main-380">

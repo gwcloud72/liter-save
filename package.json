@@ -20,7 +20,7 @@
     "render:check": "node scripts/render-check.mjs",
     "actions:check": "node scripts/github-actions-contract-check.mjs",
     "verify:deps": "node -e \"const fs=require('fs'); for (const p of ['node_modules/.bin/vite','node_modules/@vitejs/plugin-react']) { if (!fs.existsSync(p)) { console.error('missing '+p); process.exit(1); } } console.log('vite dependency ready')\"",
-    "deploy:check": "npm run verify:deps && npm run actions:check && npm run gemini:check && npm run data:check && npm run validate:data && npm run quality:check && npm run runtime-ui:check && npm run interaction:check && npm run render:check && npm run typecheck && npm run build",
+    "deploy:check": "npm run verify:deps && npm run actions:check && npm run gemini:check && npm run data:check && npm run validate:data && npm run quality:check && npm run runtime-ui:check && npm run map-interaction:check && npm run interaction:check && npm run render:check && npm run typecheck && npm run build",
     "ci:check": "npm run deploy:check",
     "validate:data": "node scripts/data-contract-check.mjs",
     "runtime-ui:check": "node scripts/runtime-ui-contract-check.mjs",
@@ -28,7 +28,8 @@
     "update:news": "node scripts/update-news.mjs",
     "gemini:check": "node scripts/gemini-flash-contract-check.mjs",
     "ui-copy:check": "node scripts/ui-copy-policy-check.mjs",
-    "selector:check": "node scripts/selector-audit.mjs"
+    "selector:check": "node scripts/selector-audit.mjs",
+    "map-interaction:check": "node scripts/map-interaction-check.mjs"
   },
   "dependencies": {
     "dayjs": "^1.11.13",

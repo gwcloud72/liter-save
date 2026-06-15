@@ -6,6 +6,7 @@ import type { LiterData } from '../data/normalize';
 import { changeDirection, formatSignedWon, getFuelHistory } from '../data/normalize';
 import type { UserCoordinates } from '../context/LocationContext';
 import { fetchNearbyStations } from '../services/nearbyStations';
+import { formatDistanceKm, sortStationsByUserDistance } from '../utils/stationDistance';
 
 interface PageProps {
   data: LiterData;
@@ -114,8 +115,9 @@ export function HomePage({ data, onTabChange, selectedFuel = data.fuelOptions[0]
       })
       .catch(() => {
         if (!controller.signal.aborted) {
-          setLiveStations([]);
-          window.setTimeout(() => setNearbyState('error'), 300);
+          const fallbackStations = sortStationsByUserDistance(data.stations, userCoordinates);
+          setLiveStations(fallbackStations);
+          window.setTimeout(() => setNearbyState(fallbackStations.length ? 'ready' : 'error'), 300);
         }
       });
     return () => { window.clearTimeout(timer); controller.abort(); };
@@ -147,7 +149,7 @@ export function HomePage({ data, onTabChange, selectedFuel = data.fuelOptions[0]
           <div className="mt-ds-3 flex flex-wrap gap-ds-1"><Button onClick={() => onTabChange('stations')} rightIcon={<Navigation size={16} />}>가격지도 보기</Button><Button variant="secondary" onClick={() => onTabChange('analysis')} rightIcon={<WalletCards size={16} />}>절약 계산</Button></div>
         </div>
         <div className="v6-card-hover rounded-lg border border-white bg-white p-ds-3 shadow-card">
-          <div className="flex items-start justify-between gap-ds-2"><div><p className="text-[11px] text-primary-600">최저가 추천</p><h2 className="mt-ds-0.5 truncate text-[20px] font-bold leading-[1.3] text-ink-900">{best.name}</h2><p className="mt-ds-0.5 truncate text-[13px] text-ink-500">{best.brand} · {best.distance}km</p></div><MapPin className="text-primary-600" size={22} /></div>
+          <div className="flex items-start justify-between gap-ds-2"><div><p className="text-[11px] text-primary-600">최저가 추천</p><h2 className="mt-ds-0.5 truncate text-[20px] font-bold leading-[1.3] text-ink-900">{best.name}</h2><p className="mt-ds-0.5 truncate text-[13px] text-ink-500">{best.brand} · {formatDistanceKm(best.distance)}</p></div><MapPin className="text-primary-600" size={22} /></div>
           <strong className="mt-ds-2 flex items-baseline text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-primary-600 tabular"><span>{bestPrice.toLocaleString()}</span><MoneyUnit>원/L</MoneyUnit></strong>
           <div className="mt-ds-2 flex flex-wrap items-center gap-ds-1"><PriceBadge direction={changeDirection(best.avgDiff)} text={formatSignedWon(best.avgDiff)} />{saving50Target > 0 ? <span className="inline-flex items-baseline rounded-full bg-down-bg px-ds-2 py-ds-0.5 text-[13px] text-down">50L&nbsp;<span className="tabular">{saving50Target.toLocaleString()}</span><MoneyUnit>원</MoneyUnit>&nbsp;절약</span> : null}</div>
         </div>

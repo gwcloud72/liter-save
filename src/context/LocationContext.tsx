@@ -14,7 +14,7 @@ interface LocationState {
   coordinates: UserCoordinates | null;
   setRegion: (region: string) => void;
   setFuel: (fuel: Fuel) => void;
-  useMyLocation: () => void;
+  useMyLocation: () => Promise<boolean>;
 }
 
 const LocationContext = createContext<LocationState | null>(null);
@@ -38,8 +38,12 @@ export function LocationProvider({ children }: { children: ReactNode }) {
     setFuelState(nextFuel);
   };
 
-  const useMyLocation = () => {
-    if (typeof navigator === 'undefined' || !navigator.geolocation) return;
+  const useMyLocation = () => new Promise<boolean>((resolve) => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocating(false);
+      resolve(false);
+      return;
+    }
     setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -48,11 +52,15 @@ export function LocationProvider({ children }: { children: ReactNode }) {
         setRegionState(nextRegion);
         setIsMyLocation(true);
         setLocating(false);
+        resolve(true);
       },
-      () => setLocating(false),
+      () => {
+        setLocating(false);
+        resolve(false);
+      },
       { enableHighAccuracy: true, timeout: 9000, maximumAge: 180000 },
     );
-  };
+  });
 
   const value = useMemo<LocationState>(() => ({ region, fuel, isMyLocation, locating, coordinates, setRegion, setFuel, useMyLocation }), [region, fuel, isMyLocation, locating, coordinates]);
 
