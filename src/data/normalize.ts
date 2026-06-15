@@ -2513,11 +2513,13 @@ function buildRegionRows(datasets: SourceDataset[] = [], fuel?: string): RegionF
     const stations = dataset.stations ?? [];
     const prices = stations.map((station) => safeNumber(station.price, 0)).filter((price) => price > 0);
     const low = prices.length ? Math.min(...prices) : 0;
+    const rawAverage = safeNumber(dataset.averagePrice, 0);
+    const avg = rawAverage || (prices.length ? Math.round(prices.reduce((sum, price) => sum + price, 0) / prices.length) : 0);
     return {
       id: `${dataset.regionName ?? 'region'}-${dataset.fuelName ?? index}`,
       region: String(dataset.regionName ?? '지역 확인'),
       fuel: String(dataset.fuelName ?? '유종 확인'),
-      avg: safeNumber(dataset.averagePrice, 0),
+      avg,
       low,
       stationCount: prices.length,
     };
