@@ -2,11 +2,21 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-17T10:53:56.506Z",
+    "updatedAt": "2026-06-17T20:11:13.298Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "30360ec47d7569f0",
+      "title": "고유가·고물가 언제까지? \"당분간은 고공행진\"",
+      "summary": "중동 전쟁의 끝이 보인다는 소식에도 불구하고 휘발유와 경유 가격은 그러나, 여전히 1,900원 대를 유지하며... 가격 하락에 대한 기대는 높아지고 있지만, 국제 유가가 주유 가격으로 현실화하는 데에는 2주 이상이...",
+      "source": "jmbc.co.kr",
+      "publishedAt": "2026-06-17T11:17:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/659/0000044527?sid=102",
+      "originallink": "http://www.jmbc.co.kr/news/view/65567",
+      "keyword": "휘발유"
+    },
     {
       "id": "88c475515bb6cd0a",
       "title": "국제유가 하락하는데 제주 기름값 요지부동",
@@ -95,16 +105,6 @@
       "publishedAt": "2026-06-17T05:06:00.000Z",
       "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4420450",
       "originallink": "https://news.einfomax.co.kr/news/articleView.html?idxno=4420450",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "d57ff8198b4d99c5",
-      "title": "종전 기대감에 국제유가 80달러 밑으로 ‘뚝’… 18일 석유 최고가격제...",
-      "summary": "전국 휘발유 가격은 지난 14일까지 2010원대를 유지하다가 15일 2009원대로 내려앉았다. 경유 가격은 12일 2005원에서 13일 2004원으로 떨어진 이후 소폭 오르내림을 반복하고 있다. ◆ 국제유가 80달러 밑으로 ‘뚝’… 국내...",
-      "source": "segye.com",
-      "publishedAt": "2026-06-17T02:39:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/022/0004136156?sid=101",
-      "originallink": "https://www.segye.com/newsView/20260617507777?OutUrl=naver",
       "keyword": "휘발유"
     },
     {
