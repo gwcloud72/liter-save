@@ -2,19 +2,99 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-18T10:19:09.231Z",
+    "updatedAt": "2026-06-18T20:24:43.068Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
     {
-      "id": "bb2393e62a54e524",
-      "title": "석유 최고가 현행 유지…7차는 종전 상황 보며 추후 결정",
-      "summary": "현재 주유소 공급가는 휘발유 리터당 1,934원, 경유 1,923원, 등유 1,530원입니다. 정부는 미국과 이란 간 종전 협상 진행 상황과 국제유가 흐름을 고려해 7차 최고가격은 추후 결정하기로 했습니다. 다만 최고가격제가...",
-      "source": "yonhapnewstv.co.kr",
-      "publishedAt": "2026-06-18T10:14:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/422/0000876163?sid=161",
-      "originallink": "http://www.yonhapnewstv.co.kr/news/MYH202606181913165j9",
+      "id": "d5c283f7226c88c9",
+      "title": "석유최고가격 출구전략 시동… “7차 지정 보류하고 현행 유지”",
+      "summary": "부담, 국제유가 수준을 종합 검토해 판단하겠다”고 밝혔다. 이어 “주말을 고비로 다음 주 초까지 진전... 이날 오후 4시 기준 전국 주유소 평균 가격은 휘발유 ℓ당 2008.9원, 경유 2003.9원으로 소폭 하락했다. 정유사...",
+      "source": "seoul.co.kr",
+      "publishedAt": "2026-06-18T20:04:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/081/0003654004?sid=101",
+      "originallink": "https://www.seoul.co.kr/news/economy/2026/06/19/20260619029001?wlog_tag3=naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "32e10cb998f45ddc",
+      "title": "석유 최고가격제 당분간 그대로… 중동 상황 따라 ‘상시 조정’",
+      "summary": "주유소 판매가격도 휘발유와 경유 모두 2000원대 초반을 이어갈 전망이다. 정부는 그간 2~4주 간격으로... 최고가격제 종료 시점도 중동 정세와 국제유가, 물가 부담 등을 고려해 추후 판단한다는 방침이다. 양 실장은...",
+      "source": "kmib.co.kr",
+      "publishedAt": "2026-06-18T15:14:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/005/0001855852?sid=101",
+      "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=1781772734&code=11151400&cp=nv",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "6d11ed0af10cb325",
+      "title": "'유가 담합' 의혹 HD현대오일뱅크 임원 1명 구속…\"증거인멸 염려\"",
+      "summary": "실제 한국석유공사 등에 따르면 국내 주유소 휘발유와 경유 가격은 미국·이란 무력 충돌이 발발한 직후부터 일평균 리터(ℓ)당 20~80원씩 치솟는 이례적 폭등세를 보이기 시작했다. 국제 유가가 통상 2~3주 뒤에 국내...",
+      "source": "news1.kr",
+      "publishedAt": "2026-06-18T15:05:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/421/0009011863?sid=102",
+      "originallink": "https://www.news1.kr/society/court-prosecution/6201953",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "f0a279fbc46ffe12",
+      "title": "수협, 고유가 피해 어업인에 100억 투입 면세유 구매 약 4만명에 40억 현...",
+      "summary": "사진/수협중앙회 중동전쟁 여파로 높은 가격에 어업용 면세유를 구매했던 어업인에게 100억원 규모의... 지원 대상은 올해 4월부터 9월까지 경유, 휘발유, 중유, LPG(액화천연가스) 등 모든 어업용 면세유를 공급받은...",
+      "source": "smedaily.co.kr",
+      "publishedAt": "2026-06-18T13:24:00.000Z",
+      "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=358941",
+      "originallink": "http://www.smedaily.co.kr/news/articleView.html?idxno=358941",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "c8b38c23cae4ba4b",
+      "title": "[EBN 오늘(18일) 이슈 종합] 코스피 사상 첫 9천피 마감…반도체 상승세...",
+      "summary": "여부와 국제 유가 상황을 지켜보고 판단할 예정\"이라고 말했다. 이에 따라 석유 가격은 리터당 휘발유 1934원, 경유 1923원, 등유 1530원으로 유지된다. 정부는 2차 최고가격 때부터 동일한 가격을 유지해 왔다. ◆동탄...",
+      "source": "ebn.co.kr",
+      "publishedAt": "2026-06-18T12:26:00.000Z",
+      "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1713115",
+      "originallink": "https://www.ebn.co.kr/news/articleView.html?idxno=1713115",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "45df7292000d480a",
+      "title": "정부, 6차 석유 최고가격 적용 기간 연장…“주말 중동전 상황 보고 조...",
+      "summary": "지난달 22일부터 적용 중인 6차 최고가격은 ℓ당 휘발유 1934원, 경유 1923원, 등유 1530원이다. 당시 산업부는... 중동전쟁이 종전 절차에 접어든 최근 국제유가와 석유제품 가격은 내림세를 보이고 있다. 브렌트유는 지난...",
+      "source": "khan.co.kr",
+      "publishedAt": "2026-06-18T12:17:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/032/0003453015?sid=101",
+      "originallink": "https://www.khan.co.kr/article/202606182117025",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "5b0995edd4932fb2",
+      "title": "정부, 6차 석유 최고가격 일단 연장…\"호르무즈 통항 재개 주시\"",
+      "summary": "이에 따라 석유 가격은 리터당 휘발유 1934원, 경유 1923원, 등유 1530원으로 유지된다. 정부는 2차 최고가격... 앞서 산업부는 출구 전략과 관련해 △중동 전쟁 종료 △호르무즈 해협 정상화 △국제유가 90달러대 안착 등의...",
+      "source": "ebn.co.kr",
+      "publishedAt": "2026-06-18T11:42:00.000Z",
+      "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1713114",
+      "originallink": "https://www.ebn.co.kr/news/articleView.html?idxno=1713114",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "7c9af6d15c294a88",
+      "title": "6차 석유 최고가격 일단 연장…중동전 종전 변수 고려",
+      "summary": "이에 따라 석유 가격은 리터당 휘발유 1천934원, 경유 1천923원, 등유 1천530원으로 유지된다. 정부는 2차... 앞서 산업부는 출구 전략과 관련해 ▲ 중동 전쟁 종료 ▲ 호르무즈 해협 정상화 ▲ 국제유가 90달러대 안착 등의...",
+      "source": "slist.kr",
+      "publishedAt": "2026-06-18T11:36:00.000Z",
+      "link": "https://www.slist.kr/news/articleView.html?idxno=746175",
+      "originallink": "https://www.slist.kr/news/articleView.html?idxno=746175",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "2074d3ef625abfd2",
+      "title": "한국도 후폭풍…“트럼프, 이란에 ‘연간 100조원’ 안긴다” 이상한 승...",
+      "summary": "로이터 통신은 “미국과 이란의 합의 소식 이후 국제유가는 하락했고, 시장은 이란산 원유가 다시 세계... 소비자 입장에서 휘발유와 경유 등 유류 가격 안정과 함께 전기료, 물류비 등 각종 비용 상승 압력이 완화돼 물가...",
+      "source": "nownews.seoul.co.kr",
+      "publishedAt": "2026-06-18T11:01:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/081/0003653930?sid=104",
+      "originallink": "https://nownews.seoul.co.kr/news/newsView.php?id=20260618601025&wlog_tag3=naver",
       "keyword": "휘발유"
     },
     {
@@ -25,86 +105,6 @@
       "publishedAt": "2026-06-18T10:14:00.000Z",
       "link": "http://www.newsian.co.kr/news/articleView.html?idxno=91148",
       "originallink": "http://www.newsian.co.kr/news/articleView.html?idxno=91148",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "a6033178cca968e8",
-      "title": "정부, 6차 석유 최고가격 연장…중동 정세 지켜본 뒤 7차 결정",
-      "summary": "이에 따라 리터당 최고가격은 휘발유 1934원, 경유 1923원, 등유 1530원으로 유지된다. 정부는 2차 최고가격부터... 석유 최고가격제는 국제유가 급등이 국내 소비자 가격에 빠르게 반영되는 것을 억제하기 위해 정부가...",
-      "source": "newsway.co.kr",
-      "publishedAt": "2026-06-18T10:04:00.000Z",
-      "link": "https://www.newsway.co.kr/news/view?ud=2026061819034110677",
-      "originallink": "https://www.newsway.co.kr/news/view?ud=2026061819034110677",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "5dcc20e1327b5b64",
-      "title": "중동 종전에…정부, 7차 석유 최고가격 지정 보류",
-      "summary": "이에 따라 보통휘발유는 리터당 1934원, 경유는 1923원, 등유는 1530원으로 유지된다. 7차 최고가격은 주말 동안 호르무즈 해협 통항 재개 및 국제유가 상황 변화를 살펴본 뒤 결정할 것으로 보인다. 정유사의 공급가에...",
-      "source": "newsworks.co.kr",
-      "publishedAt": "2026-06-18T09:54:00.000Z",
-      "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=844379",
-      "originallink": "https://www.newsworks.co.kr/news/articleView.html?idxno=844379",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "7d59f625b983e0d8",
-      "title": "‘휘발유 1934원·경유 1923원’ 석유 최고가격 연장…종료 가능성도",
-      "summary": "현재 시행 중인 6차 석유 최고가격인 리터당 휘발유 1934원, 경유 1923원, 등유 1530원이 유지된다. 정부는 2차... 앞서 산업부는 출구 전략과 관련해 ▷중동 전쟁 종료 ▷호르무즈 해협 정상화 ▷국제유가 90달러대 안착 등의...",
-      "source": "biz.heraldcorp.com",
-      "publishedAt": "2026-06-18T09:52:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/016/0002658546?sid=101",
-      "originallink": "https://biz.heraldcorp.com/article/10776716?ref=naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "84b47a1d853a22fc",
-      "title": "석유 최고가격제 6차 유지…7차는 추후 결정",
-      "summary": "최고가격은 호르무즈 해협 통항 재개 등 종전 진전 여부와 국제 유가 상황을 지켜보고 판단할 예정\"이라고 말했습니다. 이에 따라 리터 당 휘발유 1934원, 경유 1923원, 등유 1530원의 현행 최고가격은 그대로 적용됩니다.",
-      "source": "obsnews.co.kr",
-      "publishedAt": "2026-06-18T09:50:00.000Z",
-      "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1527930",
-      "originallink": "https://www.obsnews.co.kr/news/articleView.html?idxno=1527930",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "3f1628cf9c9fa2e3",
-      "title": "정부, 6차 석유 최고가격 일단 연장 … 정유사 손실보전 기준 '원가' 확...",
-      "summary": "여부와 국제 유가 상황을 지켜보고 판단할 계획이다. 이에 따라 7차 최고가격 지정 전까지는 현행 리터당 휘발유 1934원, 경유 1923원, 등유 1530원이 유지될 예정이다. 앞서 정부는 중동 전쟁 발발 직후인 3월 13일부터 2주...",
-      "source": "biz.newdaily.co.kr",
-      "publishedAt": "2026-06-18T09:50:00.000Z",
-      "link": "https://biz.newdaily.co.kr/site/data/html/2026/06/18/2026061800276.html",
-      "originallink": "https://biz.newdaily.co.kr/site/data/html/2026/06/18/2026061800276.html",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "52a381ac2dc95f53",
-      "title": "정부, 석유 최고가격제 일단 연장…\"중동 안정화 보고 종료 여부 결정\"",
-      "summary": "상황, 국제유가 흐름 등을 종합적으로 고려해 판단할 예정\"이라고 밝혔다. 그는 \"이번 주말에는 미국과... 이에 따라 석유 최고가격은 리터당 휘발유 1934원, 경유 1923원, 등유 1530원으로 유지된다. 정부는 중동전쟁 발발...",
-      "source": "shinailbo.co.kr",
-      "publishedAt": "2026-06-18T09:48:00.000Z",
-      "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5032137",
-      "originallink": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5032137",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "a814f5de20792808",
-      "title": "석유최고가격 현행 ‘유지’…“7차 지정 없이 종료할 수도”",
-      "summary": "한국석유공사 유가정보시스템 오피넷에 따르면 이날 오후 4시 기준 전국 주유소 평균 가격은 휘발유 ℓ당 2008.9원, 경유 2003.9원으로 전날보다 소폭 하락했다. 양 실장은 “70달러대로 국제유가가 내려오긴 했지만 아직...",
-      "source": "seoul.co.kr",
-      "publishedAt": "2026-06-18T09:32:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/081/0003653914?sid=101",
-      "originallink": "https://www.seoul.co.kr/news/economy/2026/06/18/20260618500279?wlog_tag3=naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "d8747a6f04153f70",
-      "title": "정부, 석유제품 최고가격제 유지…호르무즈 해협 정상화 여부 촉각",
-      "summary": "국제유가가 전쟁 국면 당시보다 크게 하락했지만 정부는 석유 수급 상황과 국내 시장 가격 변동 가능성을... 현재 적용 중인 6차 최고가격은 휘발유 리터당 1934원, 경유 1923원, 등유 1530원이다. 당초 이 가격은 18일까지...",
-      "source": "ppss.kr",
-      "publishedAt": "2026-06-18T09:31:00.000Z",
-      "link": "https://www.ppss.kr/news/articleView.html?idxno=299220",
-      "originallink": "https://www.ppss.kr/news/articleView.html?idxno=299220",
       "keyword": "휘발유"
     },
     {
