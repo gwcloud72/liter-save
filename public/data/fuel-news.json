@@ -2,11 +2,31 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-19T10:24:36.437Z",
+    "updatedAt": "2026-06-19T19:48:38.923Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "f06dcf46b181916a",
+      "title": "수협, 고유가 피해 어업인에 100억 지급…면세유 구매 4만여 명에 40억 ...",
+      "summary": "미국과 이란 간 중동전쟁 장기화 여파로 높은 가격에 어업용 면세유를 구매했던 어업인에게 100억 원... 지원 대상은 올해 4월부터 9월까지 경유, 휘발유, 중유, 액화석유가스(LPG) 등 모든 어업용 면세유를 공급받은...",
+      "source": "busan.com",
+      "publishedAt": "2026-06-19T13:16:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/082/0001386213?sid=101",
+      "originallink": "https://www.busan.com/view/busan/view.php?code=2026061921532518657",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b7e4e46bb076d72e",
+      "title": "석유 최고가격제 손실 얼마일까...정부도 업계도 계산기",
+      "summary": "유지하면서 7차 최고가격 지정 여부는 호르무즈 해협 통항 재개 등 종전 진전 상황과 국제유가 흐름을 지켜본 뒤 판단하기로 했다. 7차 최고가격 지정 전까지는 리터당 휘발유 1934원, 경유 1923원, 등유 1530원이 유지된다.",
+      "source": "zdnet.co.kr",
+      "publishedAt": "2026-06-19T10:42:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/092/0002427383?sid=105",
+      "originallink": "https://zdnet.co.kr/view/?no=20260619110843",
+      "keyword": "휘발유"
+    },
     {
       "id": "abe919049acfb7d0",
       "title": "미국 이란 종전 MOU 체결 후 중국 기름값 또 인하",
@@ -85,26 +105,6 @@
       "publishedAt": "2026-06-19T04:10:00.000Z",
       "link": "https://www.naeil.com/news/read/592559?ref=naver",
       "originallink": "https://www.naeil.com/news/read/592559?ref=naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "9e772309066663bb",
-      "title": "미국 경유·휘발유값 5주 연속 하락",
-      "summary": "국제유가 급등과 중동발 공급불안이 경유와 휘발유가격을 끌어올렸지만 최근 들어 5주 연속 하락세가 이어지고 있다. ◆갤런당 4달러 아래로 3월말 후 처음 = 18일 (현지시간) 미국자동차협회(AAA)에 따르면 이날...",
-      "source": "naeil.com",
-      "publishedAt": "2026-06-19T04:02:00.000Z",
-      "link": "https://www.naeil.com/news/read/592507?ref=naver",
-      "originallink": "https://www.naeil.com/news/read/592507?ref=naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "d867fde320b8ce0b",
-      "title": "中, 유가 재차 인하… “추가 하락 가능성도 높아”",
-      "summary": "뉴스1 중국은 국제 유가와 수급 상황 등을 고려해 주기적으로 휘발유와 경유 소매 가격 상한선을 발표한다. 발개위는 “지난 6월4일 조정 이후 높은 수준에서 등락하던 국제 유가가 최근 빠르게 하락했다”며...",
-      "source": "segye.com",
-      "publishedAt": "2026-06-19T03:38:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/022/0004136733?sid=104",
-      "originallink": "https://www.segye.com/newsView/20260619508387?OutUrl=naver",
       "keyword": "휘발유"
     },
     {
