@@ -2,59 +2,129 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-22T20:47:10.622Z",
+    "updatedAt": "2026-06-23T09:36:52.665Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
     {
-      "id": "4ec95fe22e70443f",
-      "title": "정유업계, 주유소 공급가 사전고지로 투명화 추진…'경윳값 인하'도 확...",
-      "summary": "사후정산제는 정유사가 석유제품 공급 후 국제유가와 시세 변동분을 반영해 최종 공급가를 확정하는... 이 외에도 GS칼텍스와 에쓰오일은 휘발유나 경유 가격 인하와 관련해 아직은 결정된 사항은 없다는 입장이다. 다만...",
-      "source": "newsis.com",
-      "publishedAt": "2026-06-22T20:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/003/0014021264?sid=101",
-      "originallink": "https://www.newsis.com/view/NISX20260622_0003678781",
+      "id": "302ffb9cb8fa0c8d",
+      "title": "국제유가 하락에도 전북 기름값 2천원대, 시민 부담 지속",
+      "summary": "국제유가가 안정세를 보이고 있는 것으로 풀이되고 있다. 전북지역의 기름값도 하락세를 보이고 있다. 도내 휘발유 평균 판매 가격은 지난달 2주차 2007.33원에서 이달 3주차 2006.01원으로 소폭 하락했다. 같은 기간 경유...",
+      "source": "domin.co.kr",
+      "publishedAt": "2026-06-23T09:32:00.000Z",
+      "link": "http://www.domin.co.kr/news/articleView.html?idxno=1559551",
+      "originallink": "http://www.domin.co.kr/news/articleView.html?idxno=1559551",
       "keyword": "휘발유"
     },
     {
-      "id": "b8b92d97e78ab819",
-      "title": "SK에너지 ‘사후정산제’ 업계 최초 폐지… “주유소에 석유 제품 공급...",
-      "summary": "이 제도는 정유사가 휘발유나 경유 등의 석유 제품을 먼저 주유소에 공급하고, 일정 기간이 지난 후에 국제 유가 흐름을 반영해 각 제품의 공급 가격을 정하는 것이다. 이런 구조 탓에 “국제 유가가 오를 때 주유소...",
-      "source": "chosun.com",
-      "publishedAt": "2026-06-22T15:34:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/023/0003983417?sid=101",
-      "originallink": "https://www.chosun.com/economy/economy_general/2026/06/23/EA7K7DFEYVENXB7U5OTXSV5SIY/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
+      "id": "302b67c5c49f2657",
+      "title": "이르면 다음주 석유 최고가격 내릴 듯…유류세 인하는 8월 이후",
+      "summary": "국제유가의 가격 안정에 따라 이르면 다음 주께 휘발유·경유·등유 등 석유 최고가격제가 적용되는 모든 유종의 최고가격이 내려갈 전망이다. 유류세 인하 폭은 8월부터 확대될 것으로 보인다. 이재명 대통령은 23일...",
+      "source": "hani.co.kr",
+      "publishedAt": "2026-06-23T09:24:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/028/0002811016?sid=101",
+      "originallink": "https://www.hani.co.kr/arti/economy/economy_general/1264972.html",
       "keyword": "휘발유"
     },
     {
-      "id": "e69d74924a43e72f",
-      "title": "SK에너지, 주유소 기름값 ‘사후정산’ 폐지… 공급가 1주前 알린다",
-      "summary": "SK에너지가 국내 정유업계에서 처음으로 각 주유소에 한 주 뒤에 공급할 경유와 휘발유 등 석유제품 가격을... 정유업계에 사후정산 방식이 자리 잡았던 이유는 석유제품 가격을 산정할 때 국제유가와 환율, 정제 마진...",
-      "source": "donga.com",
-      "publishedAt": "2026-06-22T15:31:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/020/0003728578?sid=101",
-      "originallink": "https://www.donga.com/news/Economy/article/all/20260622/134160581/2",
+      "id": "557e3669892f243f",
+      "title": "국제유가는 폭락하는데 기름값은 그대로…서민만 봉인가",
+      "summary": "체감하는 주유소 기름값은 여전히 리터당 2천 원 대에 근접해 있다. 국제유가가 오를 때는 며칠 만에 가격표... 유가 급등기에는 유류세 조정과 가격 관리 등 정책 수단을 활용해 왔다면, 하락기에도 국민이 그 효과를...",
+      "source": "newsgn.com",
+      "publishedAt": "2026-06-23T07:24:00.000Z",
+      "link": "https://www.newsgn.com/news/articleView.html?idxno=558542",
+      "originallink": "https://www.newsgn.com/news/articleView.html?idxno=558542",
+      "keyword": "국제유가"
+    },
+    {
+      "id": "9a427240a2e15ba5",
+      "title": "기름 값, 서천군만 '요지부동'",
+      "summary": "국제유가가 연속 하락하고 있는 것과 달리 서천지역 기름값은 전국 평균치를 웃돌아 운전자들의 불만이 커지고 있다. 지난 22일 한국석유공사의 주유소 가격 정보시스템인 오피넷에 따르면 전국 평균 휘발유 가격은...",
+      "source": "gukjenews.com",
+      "publishedAt": "2026-06-23T07:18:00.000Z",
+      "link": "https://www.gukjenews.com/news/articleView.html?idxno=3615603",
+      "originallink": "https://www.gukjenews.com/news/articleView.html?idxno=3615603",
       "keyword": "휘발유"
     },
     {
-      "id": "75a70d7ebd3111e7",
-      "title": "SK에너지, 주유소 공급가 ‘사후정산’ 폐지",
-      "summary": "공급하는 휘발유·경유 등 석유제품 가격을 사전 고지하기로 했다. 정부와 업계의 상생협약에 따른 조치로... 국제유가에 따라 변동성이 큰 시장 특성상 공급 시점에 가격을 확정하기 어려운 측면이 있다는 점을 고려한...",
-      "source": "kmib.co.kr",
-      "publishedAt": "2026-06-22T15:24:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/005/0001856475?sid=101",
-      "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=1782120823&code=11151400&cp=nv",
+      "id": "2e9107221abea581",
+      "title": "이 대통령 “청년 세대는 현시대의 가장 큰 소외자들”…3주만에 열린 ...",
+      "summary": "물가 안정 대책으로는 “초과세수가 예상돼 유류세를 낮춰도 재정 부담이 그렇게 크지 않고 서민들의 소비... 윤창렬 국무조정실장이 “주유소 기름값은 빨리 안 내려가나”라는 댓글을 읽자, 이 대통령은 “세금과 관련...",
+      "source": "khan.co.kr",
+      "publishedAt": "2026-06-23T07:03:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/032/0003453786?sid=100",
+      "originallink": "https://www.khan.co.kr/article/202606231603001",
+      "keyword": "유류세"
+    },
+    {
+      "id": "84391fd0ffa62f04",
+      "title": "SK에너지, 전국 73개 직영주유소 경유값 L당 50원 인하",
+      "summary": "국제유가와 석유제품 가격 변동성이 커지는 상황에서 공급가격 결정 과정의 투명성을 높이고 유통망의 가격... 또한 사전에 공지된 공급가격을 기준으로 판매 가격이 형성되면서 휘발유와 경유 가격의 급격한 변동 폭을...",
+      "source": "kgnews.co.kr",
+      "publishedAt": "2026-06-23T06:24:00.000Z",
+      "link": "https://www.kgnews.co.kr/news/article.html?no=901044",
+      "originallink": "https://www.kgnews.co.kr/news/article.html?no=901044",
       "keyword": "휘발유"
     },
     {
-      "id": "ae893c403f7e8e6a",
-      "title": "5월 광주 수출 반도체 '발목'",
-      "summary": "부분이 국제 유가 상승에 따른 가격 효과라는 점에서 실질적 수출 경쟁력 강화로 보기 어렵다는 해석이 나온다. 전남 최대 수출 품목인 석유제품(15억 3000만 달러, +31.8%)의 경우 경유·제트유·휘발유 모두 금액...",
-      "source": "gjdream.com",
-      "publishedAt": "2026-06-22T15:04:00.000Z",
-      "link": "http://www.gjdream.com/news/articleView.html?idxno=670397",
-      "originallink": "http://www.gjdream.com/news/articleView.html?idxno=670397",
+      "id": "99ed9fce40c59fab",
+      "title": "석유 최고가격 인하 추진…李 \"더 과감히 유지하고 낮춰야\"",
+      "summary": "석유 최고가격제는 중동전쟁 여파로 국제유가가 치솟자 휘발유·경유 등 국내 석유제품 가격을 안정시키고자 올 3월 도입한 제도다. 제도 도입 이후 정유사의 주유소 공급가에 상한을 둬 왔으며 2주마다 상한을 조정해...",
+      "source": "edaily.co.kr",
+      "publishedAt": "2026-06-23T06:10:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/018/0006313084?sid=101",
+      "originallink": "https://www.edaily.co.kr/news/newspath.asp?newsid=04260726645484672",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "370e59c00694172a",
+      "title": "끝난 전쟁, 안 끝난 기름 불안…호르무즈가 남긴 에너지 안보 숙제 [석유...",
+      "summary": "호르무즈 봉쇄 장기화 우려만으로도 원유 수급 안정성이 흔들렸고 국제유가와 휘발유·경유 등 석유제품 가격 변동폭이 커졌다. 종전은 끝이 아니라 한국 에너지 안보 수준을 다시 점검해야 하는 전환점이라는 지적이...",
+      "source": "dailian.co.kr",
+      "publishedAt": "2026-06-23T05:18:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/119/0003103813?sid=101",
+      "originallink": "https://www.dailian.co.kr/news/view/1658892/?sc=Naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "c7a0d2f99319394a",
+      "title": "\"유가 내렸다며?\"…주유소 가격 붙잡은 건 원유 아닌 '제품가' [석유를 ...",
+      "summary": "원유가격이 내려도 완제품인 국제 휘발유·경유 가격이 함께 내려가야 국내 소비자 가격 인하로 이어질 수 있다. 가격 반영에는 시차도 있다. 국제 제품가격 변동이 정유사 공급가격에 적용된 뒤 대리점과 주유소 유통...",
+      "source": "dailian.co.kr",
+      "publishedAt": "2026-06-23T05:18:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/119/0003103812?sid=101",
+      "originallink": "https://www.dailian.co.kr/news/view/1658870/?sc=Naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "068c6392b1d91004",
+      "title": "李대통령 \"석유 최고가격제 유지·가격 더 낮춰야…소득지원 방안도 연...",
+      "summary": "이에 구 부총리는 \"국제유가 동향과 물가 수준 등을 감안해 최고가격제를 어떻게 하는 게 좋은지 검토 중... '석유 최고가격제'는 정부가 휘발유·경유 등 석유류 제품의 판매 가격 상한선을 직접 설정해 그 이상으로 팔지...",
+      "source": "newsworks.co.kr",
+      "publishedAt": "2026-06-23T04:04:00.000Z",
+      "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=844770",
+      "originallink": "https://www.newsworks.co.kr/news/articleView.html?idxno=844770",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "f0d932f6eb09781c",
+      "title": "산업장관 “새 반도체 단지 필요…기존 투자만으론 부족”",
+      "summary": "최고가격제는 휘발유·경유·등유의 정유사 공급가격에 상한을 두는 제도로, 중동 정세 악화에 따른 국제유가 급등에 대응해 시행 중이다. 정부는 전쟁 종료와 호르무즈 해협 정상화, 유가가 전쟁 이전 수준으로 돌아오는...",
+      "source": "hani.co.kr",
+      "publishedAt": "2026-06-23T02:20:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/028/0002810894?sid=101",
+      "originallink": "https://www.hani.co.kr/arti/economy/economy_general/1264839.html",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "7071a27a015ac9f6",
+      "title": "리터당 2000원 돌파한 경유…당장 오늘부터 '이곳' 가면 더 쌉니다",
+      "summary": "위해 경유 판매가격을 리터당 50원 한시적으로 인하한다. 한국석유공사 유가 정보시스템 오피넷 공시에 따르면 23일 기준 전국 휘발유 평균 가격은 리터당 2008.23원을 기록하며 2000원대 고공 행진을 이어가고 있다. 전일...",
+      "source": "wikitree.co.kr",
+      "publishedAt": "2026-06-23T01:44:00.000Z",
+      "link": "https://www.wikitree.co.kr/articles/1142723",
+      "originallink": "https://www.wikitree.co.kr/articles/1142723",
       "keyword": "휘발유"
     },
     {
@@ -65,46 +135,6 @@
       "publishedAt": "2026-06-22T14:28:00.000Z",
       "link": "https://www.kdpress.co.kr/news/articleView.html?idxno=206319",
       "originallink": "https://www.kdpress.co.kr/news/articleView.html?idxno=206319",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "ef7139d0710d38ce",
-      "title": "SK에너지, 업계 첫 공급가 1주일 단위 사전 고지",
-      "summary": "주유소와 대리점 등 유통망을 대상으로 휘발유·경유 등의 명확한 가격 결정 기준을 마련하고, 각 주유소별... 그동안 정유사와 주유소 간 거래에서는 제품 공급 후 일정 기간이 지난 뒤 국제유가와 석유제품 가격 흐름을...",
-      "source": "ujeil.com",
-      "publishedAt": "2026-06-22T12:32:00.000Z",
-      "link": "http://www.ujeil.com/news/articleView.html?idxno=387632",
-      "originallink": "http://www.ujeil.com/news/articleView.html?idxno=387632",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "f92635d237569e8b",
-      "title": "SK에너지 “주유소 공급가, 사전에 고지”…기름값 예측 가능성 커질 듯",
-      "summary": "사전에 고지된 공급가를 기반으로 주유소 판매가가 정해지는 만큼 휘발유, 경유 등의 가격이 예측 가능한 범위 내에서 형성될 것으로 보고 있다. 또 중동지역 전쟁 발발 등 국제유가가 급등할 경우 인상된 공급가를 사전...",
-      "source": "khan.co.kr",
-      "publishedAt": "2026-06-22T11:56:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/032/0003453611?sid=101",
-      "originallink": "https://www.khan.co.kr/article/202606222056005",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "6c304c45d5447da4",
-      "title": "수협, 고유가 피해 어민에 100억 지원",
-      "summary": "보조금 지원 대상은 올해 4월부터 9월까지 경유와 휘발유, 중유, 액화천연가스(LNG) 등 모든 어업용... 것”이라며 “국제유가 동향을 자세하게 살펴 유류비 상승으로 조업을 포기하는 일이 없도록 하는 방안을...",
-      "source": "kookje.co.kr",
-      "publishedAt": "2026-06-22T10:17:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/658/0000147394?sid=101",
-      "originallink": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20260623.22011006317",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "0a9a930e4cc006f6",
-      "title": "SK에너지, 주유소 공급가 사전 고지…사후정산 폐지한다",
-      "summary": "국제유가와 석유제품 가격 변동이 큰 시장 특성을 반영한 방식이지만, 주유소 입장에서는 매입가격을 미리 가늠하기 어렵다는 한계도 있었다. SK에너지는 앞으로 주유소와 대리점 등 유통망에 휘발유와 경유...",
-      "source": "econovill.com",
-      "publishedAt": "2026-06-22T09:52:00.000Z",
-      "link": "https://www.econovill.com/news/articleView.html?idxno=743089",
-      "originallink": "https://www.econovill.com/news/articleView.html?idxno=743089",
       "keyword": "휘발유"
     },
     {
@@ -135,36 +165,6 @@
       "publishedAt": "2026-06-21T01:32:00.000Z",
       "link": "http://www.breaknews.com/1215693",
       "originallink": "http://www.breaknews.com/1215693",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "b5056cadb70f8f8b",
-      "title": "기름값 5주 연속 하락…휘발유 전국 평균 2900원대",
-      "summary": "이번 주 국내 주유소 휘발유와 경유 가격이 5주 연속 동반 하락했다. 20일 한국석유공사 오피넷에 따르면... 정부는 지난 18일 유류세 최고가격 조치를 연장해 휘발유 1934원, 경유 1923원, 등유 1530원을 유지했다....",
-      "source": "sentv.co.kr",
-      "publishedAt": "2026-06-19T23:16:00.000Z",
-      "link": "https://www.sentv.co.kr/article/view/sentv202606200001",
-      "originallink": "https://www.sentv.co.kr/article/view/sentv202606200001",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "f06dcf46b181916a",
-      "title": "수협, 고유가 피해 어업인에 100억 지급…면세유 구매 4만여 명에 40억 ...",
-      "summary": "미국과 이란 간 중동전쟁 장기화 여파로 높은 가격에 어업용 면세유를 구매했던 어업인에게 100억 원... 지원 대상은 올해 4월부터 9월까지 경유, 휘발유, 중유, 액화석유가스(LPG) 등 모든 어업용 면세유를 공급받은...",
-      "source": "busan.com",
-      "publishedAt": "2026-06-19T13:16:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/082/0001386213?sid=101",
-      "originallink": "https://www.busan.com/view/busan/view.php?code=2026061921532518657",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "b323244d004324d6",
-      "title": "수협, 고유가 피해 어업인 100억 지급",
-      "summary": "수협중앙회가 중동전쟁으로 치솟은 유가 부담을 줄이기 위해 높은 가격에 어업용 면세유를 구매했던... 수협에 따르면 지원 대상은 올해 4월부터 9월까지 경유 휘발유 중유 액화석유가스(LPG) 등 모든 어업용 면세유를...",
-      "source": "naeil.com",
-      "publishedAt": "2026-06-19T04:10:00.000Z",
-      "link": "https://www.naeil.com/news/read/592559?ref=naver",
-      "originallink": "https://www.naeil.com/news/read/592559?ref=naver",
       "keyword": "휘발유"
     }
   ]
