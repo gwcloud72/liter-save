@@ -2,11 +2,31 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-23T09:36:52.665Z",
+    "updatedAt": "2026-06-23T20:02:45.920Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "907b46bb0ac5abd4",
+      "title": "‘2030 지지율 하락’ 이 대통령 “자산 양극화, 청년 소외감 뼈아파”",
+      "summary": "물가 안정 대책으로는 “초과세수가 예상돼 유류세를 낮춰도 재정 부담이 그렇게 크지 않고 서민들의 소비... 윤창렬 국무조정실장이 “주유소 기름값은 빨리 안 내려가나”라는 댓글을 읽자, 이 대통령은 “세금과 관련...",
+      "source": "khan.co.kr",
+      "publishedAt": "2026-06-23T12:38:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/032/0003453913?sid=100",
+      "originallink": "https://www.khan.co.kr/article/202606232138015",
+      "keyword": "유류세"
+    },
+    {
+      "id": "1acf71e635016af4",
+      "title": "고유가가 살린 폭스바겐…전기차 판매 호조에 회복세",
+      "summary": "지난 2월 이후 중동 지역 군사적 긴장이 고조되면서 국제유가가 오름세를 보였고 휘발유와 경유 가격 역시 상승 압력을 받고 있다. 특히 호르무즈 해협을 둘러싼 불안감이 지속되면서 에너지 가격 변동성이 커졌고...",
+      "source": "ekn.kr",
+      "publishedAt": "2026-06-23T10:30:00.000Z",
+      "link": "https://www.ekn.kr/web/view.php?key=20260623026515748",
+      "originallink": "https://www.ekn.kr/web/view.php?key=20260623026515748",
+      "keyword": "휘발유"
+    },
     {
       "id": "302ffb9cb8fa0c8d",
       "title": "국제유가 하락에도 전북 기름값 2천원대, 시민 부담 지속",
@@ -19,7 +39,7 @@
     },
     {
       "id": "302b67c5c49f2657",
-      "title": "이르면 다음주 석유 최고가격 내릴 듯…유류세 인하는 8월 이후",
+      "title": "이르면 다음주 석유 최고가격 내릴 듯…유류세 인하 확대는 8월부터",
       "summary": "국제유가의 가격 안정에 따라 이르면 다음 주께 휘발유·경유·등유 등 석유 최고가격제가 적용되는 모든 유종의 최고가격이 내려갈 전망이다. 유류세 인하 폭은 8월부터 확대될 것으로 보인다. 이재명 대통령은 23일...",
       "source": "hani.co.kr",
       "publishedAt": "2026-06-23T09:24:00.000Z",
@@ -78,16 +98,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "370e59c00694172a",
-      "title": "끝난 전쟁, 안 끝난 기름 불안…호르무즈가 남긴 에너지 안보 숙제 [석유...",
-      "summary": "호르무즈 봉쇄 장기화 우려만으로도 원유 수급 안정성이 흔들렸고 국제유가와 휘발유·경유 등 석유제품 가격 변동폭이 커졌다. 종전은 끝이 아니라 한국 에너지 안보 수준을 다시 점검해야 하는 전환점이라는 지적이...",
-      "source": "dailian.co.kr",
-      "publishedAt": "2026-06-23T05:18:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/119/0003103813?sid=101",
-      "originallink": "https://www.dailian.co.kr/news/view/1658892/?sc=Naver",
-      "keyword": "휘발유"
-    },
-    {
       "id": "c7a0d2f99319394a",
       "title": "\"유가 내렸다며?\"…주유소 가격 붙잡은 건 원유 아닌 '제품가' [석유를 ...",
       "summary": "원유가격이 내려도 완제품인 국제 휘발유·경유 가격이 함께 내려가야 국내 소비자 가격 인하로 이어질 수 있다. 가격 반영에는 시차도 있다. 국제 제품가격 변동이 정유사 공급가격에 적용된 뒤 대리점과 주유소 유통...",
@@ -95,6 +105,16 @@
       "publishedAt": "2026-06-23T05:18:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/119/0003103812?sid=101",
       "originallink": "https://www.dailian.co.kr/news/view/1658870/?sc=Naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "370e59c00694172a",
+      "title": "끝난 전쟁, 안 끝난 기름 불안…호르무즈가 남긴 에너지 안보 숙제 [석유...",
+      "summary": "호르무즈 봉쇄 장기화 우려만으로도 원유 수급 안정성이 흔들렸고 국제유가와 휘발유·경유 등 석유제품 가격 변동폭이 커졌다. 종전은 끝이 아니라 한국 에너지 안보 수준을 다시 점검해야 하는 전환점이라는 지적이...",
+      "source": "dailian.co.kr",
+      "publishedAt": "2026-06-23T05:18:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/119/0003103813?sid=101",
+      "originallink": "https://www.dailian.co.kr/news/view/1658892/?sc=Naver",
       "keyword": "휘발유"
     },
     {
@@ -115,16 +135,6 @@
       "publishedAt": "2026-06-23T02:20:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/028/0002810894?sid=101",
       "originallink": "https://www.hani.co.kr/arti/economy/economy_general/1264839.html",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "7071a27a015ac9f6",
-      "title": "리터당 2000원 돌파한 경유…당장 오늘부터 '이곳' 가면 더 쌉니다",
-      "summary": "위해 경유 판매가격을 리터당 50원 한시적으로 인하한다. 한국석유공사 유가 정보시스템 오피넷 공시에 따르면 23일 기준 전국 휘발유 평균 가격은 리터당 2008.23원을 기록하며 2000원대 고공 행진을 이어가고 있다. 전일...",
-      "source": "wikitree.co.kr",
-      "publishedAt": "2026-06-23T01:44:00.000Z",
-      "link": "https://www.wikitree.co.kr/articles/1142723",
-      "originallink": "https://www.wikitree.co.kr/articles/1142723",
       "keyword": "휘발유"
     },
     {
@@ -156,16 +166,6 @@
       "link": "http://www.breaknews.com/1215715",
       "originallink": "http://www.breaknews.com/1215715",
       "keyword": "유류세"
-    },
-    {
-      "id": "2ce92464417f443d",
-      "title": "15년째 법정 문턱 넘지 못한 정유사 가격담합 의혹 — 검찰은 대표 폰부...",
-      "summary": "휘발유 가격이 일주일 만에 200원 폭등했다고 밝혔다. 국민 피해 규모는 14조원대에 이른다고도 했다. 대검찰청에는 엄정 대응을 지시했다고 했다. ■ 자영주유소만...",
-      "source": "breaknews.com",
-      "publishedAt": "2026-06-21T01:32:00.000Z",
-      "link": "http://www.breaknews.com/1215693",
-      "originallink": "http://www.breaknews.com/1215693",
-      "keyword": "휘발유"
     }
   ]
 }
