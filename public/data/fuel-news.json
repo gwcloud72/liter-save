@@ -2,110 +2,140 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-24T19:44:38.081Z",
+    "updatedAt": "2026-06-25T09:22:07.270Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
     {
-      "id": "ca21a4dbb20b5a74",
-      "title": "호르무즈해협 통행량 증가…유가 전쟁 이전 수준 회복",
-      "summary": "경유 가격도 3월 중순 이후 처음으로 갤런당 5달러 아래로 떨어졌다. 트럼프 대통령은 별도의 소셜미디어(SNS) 게시글을 통해 법무부에 유가 하락에도 휘발유 가격이 충분히 떨어지지 않는 이유를 조사할 것을...",
-      "source": "bloter.net",
-      "publishedAt": "2026-06-24T19:41:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/293/0000086752?sid=101",
-      "originallink": "https://www.bloter.net/news/articleView.html?idxno=666494",
+      "id": "71b3305d82994bd0",
+      "title": "국제유가 떨어져도 주유소 기름값 '요지부동'",
+      "summary": "소요\" ▲ 국제유가가 전쟁 전 수준까지 하락한 25일 청주시의 주유소들의 휘발유·경유 가격이 천차만별인 모습이다. 이날 기준 충북의 휘발유·경유 가격은 전국 평균보다 높은 수준을 유지하고 있다. 사진...",
+      "source": "cctoday.co.kr",
+      "publishedAt": "2026-06-25T09:00:00.000Z",
+      "link": "https://www.cctoday.co.kr/news/articleView.html?idxno=2232203",
+      "originallink": "https://www.cctoday.co.kr/news/articleView.html?idxno=2232203",
       "keyword": "휘발유"
     },
     {
-      "id": "7fe959828307f974",
-      "title": "브렌트유, 이란 전쟁 후 첫 75달러 밑으로",
-      "summary": "국제유가가 이란 전쟁 이후 처음으로 배럴당 75달러 밑으로 내려갔다. 미국과 이란이 종전 협상 진전을... 트럼프 대통령은 별도로 유가 하락에도 휘발유 가격이 더 빨리 떨어지지 않는 이유를 법무부가 살펴보라고...",
-      "source": "g-enews.com",
-      "publishedAt": "2026-06-24T16:02:00.000Z",
-      "link": "https://www.g-enews.com/view.php?ud=2026062423064561259a1f309431_1",
-      "originallink": "https://www.g-enews.com/view.php?ud=2026062423064561259a1f309431_1",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "6bc25b81688473c4",
-      "title": "경유, 두달 만에 2천원선 아래로…휘발유도 하락세",
-      "summary": "경유 판매가격은 L당 1,999.97원으로 집계됐습니다. 전국 평균 가격이 2천원 아래로 떨어진 건 지난 4월 이후 두달 만입니다. 전국 휘발유 평균 가격은 2,007.3원으로 여전히 2천원선을 상회하고 있지만 최근 국제유가가...",
-      "source": "yonhapnewstv.co.kr",
-      "publishedAt": "2026-06-24T12:03:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/422/0000878126?sid=101",
-      "originallink": "http://www.yonhapnewstv.co.kr/news/MYH20260624210253hC8",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "a78c0776b7e6745a",
-      "title": "[데일리안 오늘뉴스 종합] 대통령 발언도 못 막은 환율…\"시간 지나면 ...",
-      "summary": "▲경유가격, 두 달 만에 2천원선 깨졌다…휘발유도 하락세 중동발 긴장 고조로 치솟던 기름값이 다시 내려앉고 있다. 미국과 이란 간 군사 충돌 우려가 잦아들고 국제유가가 안정 흐름을 보이면서, 국내 주유소...",
-      "source": "dailian.co.kr",
-      "publishedAt": "2026-06-24T11:48:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/119/0003104407?sid=101",
-      "originallink": "https://www.dailian.co.kr/news/view/1659570/?sc=Naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "258ed4e5de44216f",
-      "title": "전국 평균 경유 가격, 2달 만에 2000원 아래로…1999.75원",
-      "summary": "지난 4월에는 휘발유와 가격차가 배럴당 150달러 차이(휘발유 144.48달러, 경유 292.80달러)까지 벌어지기도 했다. 하지만 최근들어 미국과 이란 간 종전합의에 진전이 되면서 긴장감이 완화하며 국제유가도 빠르게...",
-      "source": "dt.co.kr",
-      "publishedAt": "2026-06-24T10:32:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/029/0003033565?sid=101",
-      "originallink": "https://www.dt.co.kr/article/12069403?ref=naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "2b83f28a1a28f140",
-      "title": "경유 가격 두달만에 2000원선 아래로…전국 평균 1999원대",
-      "summary": "전국 평균 경유 가격이 두 달만에 2000원 이하로 떨어졌다. 24일 한국석유공사 유가정보서비스 오피넷에... 완화되면서 국제유가가 하락세를 보였다. 같은 시간 전국 휘발유 평균 가격은 2007.3원이지만 조만간 하락할...",
-      "source": "newspim.com",
-      "publishedAt": "2026-06-24T10:24:00.000Z",
-      "link": "https://www.newspim.com/news/view/20260624001191",
-      "originallink": "https://www.newspim.com/news/view/20260624001191",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "53b6ef3938660cef",
-      "title": "국제유가 급락…트럼프, “기름값 그대로?” 조사 지시",
-      "summary": "기름을 실어나르는 유조선이 호르무즈를 오가게 되면서 국제 유가는 크게 떨어졌습니다. 트럼프 미 대통령... 앞으로 유가는 급격히 떨어질 겁니다.\" 국내 휘발유 평균가격도 여전히 2천 원대입니다. 다만, 경유가격은...",
-      "source": "ichannela.com",
-      "publishedAt": "2026-06-24T10:08:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/449/0000350425?sid=104",
-      "originallink": "https://www.ichannela.com/news/main/news_detailPage.do?publishId=000000536272",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "a3ed68280f47dde4",
-      "title": "'2천원대'…국제 유가 하락에도 충북 기름값 요지부동",
-      "summary": "경유도 리터당 2천6.93원으로 전국 4위에 자리했다. 국내 기름값이 떨어지기까지 상당한 시일이 걸릴 전망이다. 주유소 판매 가격은 통상 국제유가 변동 시점을 기점으로 2~3주 뒤에 반영된다. 특히 석유 최고가격제...",
-      "source": "ccdn.co.kr",
-      "publishedAt": "2026-06-24T09:52:00.000Z",
-      "link": "https://www.ccdn.co.kr/news/articleView.html?idxno=1084922",
-      "originallink": "https://www.ccdn.co.kr/news/articleView.html?idxno=1084922",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "2bff4e547aa44c0b",
-      "title": "전국 평균 경유 가격 1999.97원…2달 만에 2000원 아래로",
-      "summary": "전국 평균 경유 가격이 두 달 만에 2000원 이하로 떨어졌다. 미국·이란이 종전 협상에 돌입하면서... 업계에서는 휘발유 가격도 조만간 2000원 아래로 내려갈 것으로 보고 있다. 통상적으로 국제유가와 석유제품 가격...",
+      "id": "9d5f25a32896ac33",
+      "title": "국제유가 전쟁 전으로 뚝…국내 주유소는 여전히 2000원대, 왜?",
+      "summary": "휘발유 가격은 전쟁 발발 열흘 만인 3월 10일 1906.9원까지 치솟았고, 이후에도 상승세를 이어가며 5월 1일 처음으로 2000원 선을 돌파했다. 최고치는 5월 10일 기록한 2011.9원이다. 통상 국제유가 하락은 정유사 공급가격과...",
       "source": "news1.kr",
-      "publishedAt": "2026-06-24T09:41:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/421/0009021974?sid=101",
-      "originallink": "https://www.news1.kr/industry/general-industry/6207493",
+      "publishedAt": "2026-06-25T08:54:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/421/0009024474?sid=101",
+      "originallink": "https://www.news1.kr/economy/trend/6208344",
       "keyword": "휘발유"
     },
     {
-      "id": "e20c5faa97152fc2",
-      "title": "[사설]광주 포함 전국에 2곳만 있다는 착하디착한 주유소",
-      "summary": "일반적으로 착한 주유소는 전국 평균 대비 휘발유·경유를 20원 저렴하게 판매하는 곳으로 총 418개소에... 산업부는 6차 최고가격을 유지하고, 7차는 종전 진전 여부와 국제 유가 상황을 지켜보고 판단하기로 했다. 다소...",
-      "source": "kjdaily.com",
-      "publishedAt": "2026-06-24T09:40:00.000Z",
-      "link": "http://www.kjdaily.com/article.php?aid=1782293766680970018",
-      "originallink": "http://www.kjdaily.com/article.php?aid=1782293766680970018",
+      "id": "225451b6342ba817",
+      "title": "국제원유 하락에도…최고가격제 종료 대신 ‘공급가 인하’",
+      "summary": "최고가격제 유지 여부에 관심이 쏠리고 있다. 국제 유가 하락세로 국내 정유사 휘발유·경유 공급가가 지난 3월 말부터 3개월 가까이 고정된 상한선보다 낮아질 여지가 생기면서 최고가격제 유지 타당성이 제기되고...",
+      "source": "ekn.kr",
+      "publishedAt": "2026-06-25T08:50:00.000Z",
+      "link": "https://www.ekn.kr/web/view.php?key=20260625025406466",
+      "originallink": "https://www.ekn.kr/web/view.php?key=20260625025406466",
       "keyword": "휘발유"
+    },
+    {
+      "id": "d1359ea6c16bdd53",
+      "title": "보령시, 농업용 유류비 긴급 지원…농가 부담 덜고 경영안정 힘 보탠다",
+      "summary": "보령시는 중동 정세에 따른 국제유가 상승으로 면세유 가격이 크게 오르자 농업인의 경영 안정을 위해 '2026년 농업용 유류대 차액 지원사업'을 추진한다. 올해 4월 기준 면세경유는 2월보다 리터당 276원, 면세휘발유는...",
+      "source": "dynews.co.kr",
+      "publishedAt": "2026-06-25T08:14:00.000Z",
+      "link": "http://www.dynews.co.kr/news/articleView.html?idxno=855532",
+      "originallink": "http://www.dynews.co.kr/news/articleView.html?idxno=855532",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "391b7d023d4a3621",
+      "title": "전쟁 전으로 돌아간 유가…중동원유 쏟아지자 과잉 신호, 한국은 아직",
+      "summary": "정유업계에선 국제유가가 정유사의 공급 가격에 반영되는 데 약 1주일, 이후 주유소 판매 가격에 반영되기까지 추가로 1~2주 소요될 것으로 예상했다. 한국석유공사의 오피넷에 따르면 25일 전국 주유소의 휘발유...",
+      "source": "joongang.co.kr",
+      "publishedAt": "2026-06-25T07:43:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/025/0003533180?sid=101",
+      "originallink": "https://www.joongang.co.kr/article/25439896",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "daaa29d0f9ea8a50",
+      "title": "빨리 오르고 늦게 내리는 기름값?…투명성 강화에 나선 정유사들",
+      "summary": "최근 종전 협상이 진전되며 국제 유가가 하락하자 \"내릴 때는 왜 이렇게 느리냐\"는 푸념도 고개를 들었다. 정유업계는 국내 휘발유·경유 가격이 국제 제품 가격(MOPS)과 환율, 세금, 유통·물류 비용, 재고 반영 시차 등...",
+      "source": "mt.co.kr",
+      "publishedAt": "2026-06-25T07:20:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/008/0005377241?sid=101",
+      "originallink": "https://www.mt.co.kr/industry/2026/06/25/2026062514025436295",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "507fc72e6338d284",
+      "title": "미·이란 긴장 완화에 유가 급락…증시 숨통 트이나",
+      "summary": "\" 국제유가가 전쟁 이전 수준을 회복하면서 국내 주유소 판매 가격에도 하락 압력이 작용하고 있습니다. 국내 경유 가격은 두 달 만에 리터당 2천 원 선이 깨졌고, 휘발유 가격 역시 동반 하락하고 있습니다. 유가가...",
+      "source": "mbnmoney.mbn.co.kr",
+      "publishedAt": "2026-06-25T07:10:00.000Z",
+      "link": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005865936",
+      "originallink": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005865936",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "bde70bcb59abea1b",
+      "title": "국제유가 절반 '뚝', 석유 최고가격은 그대로…가격 하향조정하나",
+      "summary": "중동전쟁 상황의 완화로 국제유가가 빠르게 하향안정세에 접었지만 국내 휘발유·경유 가격은 여전히 리터당 2000원 안팎의 높은 가격이 유지되고 있다. 석유제품 도입시점과 판매시점 간 시차로 인한 가격 지연...",
+      "source": "mt.co.kr",
+      "publishedAt": "2026-06-25T06:52:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/008/0005377207?sid=101",
+      "originallink": "https://www.mt.co.kr/economy/2026/06/25/2026062515363535931",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "95a8897cb00d23c2",
+      "title": "경유가격 2천원선 아래로…휘발유 상황은?",
+      "summary": "국제유가가 안정세를 보이며 국내 경유 가격이 2개월 만에 L당 2천원선 아래로 내려왔다. 24일 한국석유공사 유가정보서비스 오피넷에 따르면 이날 오후 4시 기준 전국 주유소 평균 경유 판매가격은 L당 1천999....",
+      "source": "yna.co.kr",
+      "publishedAt": "2026-06-25T06:12:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/001/0016159574?sid=101",
+      "originallink": "https://www.yna.co.kr/view/PYH20260625227600013?input=1196m",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "3785f95cf0103cff",
+      "title": "국제유가, 이란 전쟁 이전 수준으로 하락",
+      "summary": "유가정보서비스 오피넷에 따르면 이날 오후 1시 기준 전국 주유소 평균 휘발유 가격은 리터당 2006.8원, 경유는 1998.7원을 기록했다. 국제유가 하락세가 이어질 경우 조만간 휘발유 가격도 2000원 아래로 내려갈 것으로...",
+      "source": "m.skyedaily.com",
+      "publishedAt": "2026-06-25T06:06:00.000Z",
+      "link": "https://m.skyedaily.com/news_view.html?ID=306630",
+      "originallink": "https://m.skyedaily.com/news_view.html?ID=306630",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "c879792a3f21d8ef",
+      "title": "경유값 두 달 만에 2000원 아래로…휘발유는 아직 2000원대",
+      "summary": "국내 기름값은 국제 유가와 환율, 정유사 공급가격, 유류세 정책 등에 따라 시차를 두고 움직인다. 업계에서는 최근 유가 하락 흐름이 이어질 경우 주유소 판매 가격도 추가로 내려갈 가능성이 있다고 보고 있다.",
+      "source": "news.tvchosun.com",
+      "publishedAt": "2026-06-25T01:55:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/448/0000622130?sid=101",
+      "originallink": "https://news.tvchosun.com/site/data/html_dir/2026/06/25/2026062590099.html",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "3810a751b838ed6b",
+      "title": "전쟁 불안 비용까지 포함된 중동발 유가 급등 속 민관 공조 빛나",
+      "summary": "기름값은 때로 세금보다 빠르게 민심을 흔들었다. 2018년 프랑스의 노란조끼 시위가 그랬다. 출발은 유류세... 마크롱 정부는 결국 유류세 인상안을 철회했다. 에너지 가격 대응에 실패하면 주유소 가격표의 숫자가 거리의...",
+      "source": "e-platform.net",
+      "publishedAt": "2026-06-25T00:48:00.000Z",
+      "link": "http://www.e-platform.net/news/articleView.html?idxno=103280",
+      "originallink": "http://www.e-platform.net/news/articleView.html?idxno=103280",
+      "keyword": "유류세"
+    },
+    {
+      "id": "4335737183027878",
+      "title": "국제유가 하락에도 휘발윳값 '2천원대'…\"소비자만 호갱\"",
+      "summary": "소비자들은 \"정유사와 주유소가 하락기에는 마진을 극대화하기 위해 가격 인하를 최대한 늦추는 경향이 있다\"며 \"가격 산정 과정의 투명성을 높여야 한다\"고 강조했다. 정부도 물가 안정을 위해 유류세 인하 조치 등을...",
+      "source": "newsis.com",
+      "publishedAt": "2026-06-24T23:43:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/003/0014026526?sid=102",
+      "originallink": "https://www.newsis.com/view/NISX20260625_0003682609",
+      "keyword": "국제유가"
     },
     {
       "id": "37fe3aabf5d39442",
@@ -136,36 +166,6 @@
       "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=844926",
       "originallink": "https://www.newsworks.co.kr/news/articleView.html?idxno=844926",
       "keyword": "휘발유"
-    },
-    {
-      "id": "d56dc72e7ec1a292",
-      "title": "[초점] '오일쇼크' 경종 울린 중동 리스크…체질 개선 '안보 파수꾼' 절...",
-      "summary": "국내 기름값 반영 시차를 둘러싸고 정유업계를 향해 반복되던 소비자의 불신을 해소해야 한다는 목소리가 꾸준히 제기됐기 때문이다. 이에 업계 1위인 SK에너지는 최고가격제 종류 이후 정유업계 최초로 주유소...",
-      "source": "newsian.co.kr",
-      "publishedAt": "2026-06-24T05:12:00.000Z",
-      "link": "http://www.newsian.co.kr/news/articleView.html?idxno=91345",
-      "originallink": "http://www.newsian.co.kr/news/articleView.html?idxno=91345",
-      "keyword": "유류세"
-    },
-    {
-      "id": "907b46bb0ac5abd4",
-      "title": "‘2030 지지율 하락’ 이 대통령 “자산 양극화, 청년 소외감 뼈아파”",
-      "summary": "물가 안정 대책으로는 “초과세수가 예상돼 유류세를 낮춰도 재정 부담이 그렇게 크지 않고 서민들의 소비... 윤창렬 국무조정실장이 “주유소 기름값은 빨리 안 내려가나”라는 댓글을 읽자, 이 대통령은 “세금과 관련...",
-      "source": "khan.co.kr",
-      "publishedAt": "2026-06-23T12:38:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/032/0003453913?sid=100",
-      "originallink": "https://www.khan.co.kr/article/202606232138015",
-      "keyword": "유류세"
-    },
-    {
-      "id": "557e3669892f243f",
-      "title": "국제유가는 폭락하는데 기름값은 그대로…서민만 봉인가",
-      "summary": "체감하는 주유소 기름값은 여전히 리터당 2천 원 대에 근접해 있다. 국제유가가 오를 때는 며칠 만에 가격표... 유가 급등기에는 유류세 조정과 가격 관리 등 정책 수단을 활용해 왔다면, 하락기에도 국민이 그 효과를...",
-      "source": "newsgn.com",
-      "publishedAt": "2026-06-23T07:24:00.000Z",
-      "link": "https://www.newsgn.com/news/articleView.html?idxno=558542",
-      "originallink": "https://www.newsgn.com/news/articleView.html?idxno=558542",
-      "keyword": "국제유가"
     }
   ]
 }
