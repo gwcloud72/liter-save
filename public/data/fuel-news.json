@@ -2,11 +2,21 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-25T09:22:07.270Z",
+    "updatedAt": "2026-06-25T19:59:21.937Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "adb2d8302fc551d3",
+      "title": "국제유가 전쟁 전 수준으로 뚝…국내 기름값은 '여전히 2천 원' 언제까지...",
+      "summary": "전쟁 초기에 국제유가 뛸 땐 바로바로 올리더니, 이번엔 언제 내릴까요. 홍지호 기자입니다. 【 기자 】 세종시 주유소들을 돌아봤습니다. 한곳은 경유와 휘발유 가격 모두 2천 원대. 다른 한곳은 좀 내렸지만 큰 차이는...",
+      "source": "mbn.co.kr",
+      "publishedAt": "2026-06-25T11:11:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/057/0001955574?sid=101",
+      "originallink": "http://www.mbn.co.kr/pages/news/newsView.php?news_seq_no=5201985",
+      "keyword": "휘발유"
+    },
     {
       "id": "71b3305d82994bd0",
       "title": "국제유가 떨어져도 주유소 기름값 '요지부동'",
@@ -64,7 +74,7 @@
       "source": "mt.co.kr",
       "publishedAt": "2026-06-25T07:20:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/008/0005377241?sid=101",
-      "originallink": "https://www.mt.co.kr/industry/2026/06/25/2026062514025436295",
+      "originallink": "https://www.mt.co.kr/industry/2026/06/26/2026062514025436295",
       "keyword": "휘발유"
     },
     {
@@ -95,16 +105,6 @@
       "publishedAt": "2026-06-25T06:12:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/001/0016159574?sid=101",
       "originallink": "https://www.yna.co.kr/view/PYH20260625227600013?input=1196m",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "3785f95cf0103cff",
-      "title": "국제유가, 이란 전쟁 이전 수준으로 하락",
-      "summary": "유가정보서비스 오피넷에 따르면 이날 오후 1시 기준 전국 주유소 평균 휘발유 가격은 리터당 2006.8원, 경유는 1998.7원을 기록했다. 국제유가 하락세가 이어질 경우 조만간 휘발유 가격도 2000원 아래로 내려갈 것으로...",
-      "source": "m.skyedaily.com",
-      "publishedAt": "2026-06-25T06:06:00.000Z",
-      "link": "https://m.skyedaily.com/news_view.html?ID=306630",
-      "originallink": "https://m.skyedaily.com/news_view.html?ID=306630",
       "keyword": "휘발유"
     },
     {
