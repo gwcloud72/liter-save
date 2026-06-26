@@ -2,60 +2,130 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-26T09:26:27.937Z",
+    "updatedAt": "2026-06-26T19:47:53.816Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
     {
-      "id": "2573660929fecd46",
-      "title": "정부, 석유 최고가격 내린다…'유가 방패'가 '가격 바닥' 됐다",
-      "summary": "업계에서는 최근 국제유가 하락 폭을 감안하면 휘발유와 경유 모두 리터(L)당 최소 100원 이상 최고가격이 내려갈 가능성이 큰 것으로 보고 있다. 실제 브렌트유는 배럴당 73달러 수준으로 전쟁 이전 가격을 회복했고 WTI도...",
-      "source": "ebn.co.kr",
-      "publishedAt": "2026-06-26T07:38:00.000Z",
-      "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1714130",
-      "originallink": "https://www.ebn.co.kr/news/articleView.html?idxno=1714130",
+      "id": "2037ed31842acbe2",
+      "title": "휘발유 150원 내린다… 최고가 석달만에 인하",
+      "summary": "한국석유공사에 따르면 이날 전국 주유소 평균 휘발유 판매가격은 L당 2005.97원이다. 최고가격 인하는 호르무즈 해협 통항 회복 기대감, 공급 우려 완화에 따른 국제유가 내림세를 반영한 조치다. 25일 오전 8시 기준...",
+      "source": "donga.com",
+      "publishedAt": "2026-06-26T16:42:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/020/0003729804?sid=101",
+      "originallink": "https://www.donga.com/news/Economy/article/all/20260627/134192152/2",
       "keyword": "휘발유"
     },
     {
-      "id": "c63e2e47c7c881e4",
-      "title": "정부, 석유 최고가격 인하한다...제도 자체는 유지",
-      "summary": "평균 휘발유 가격은 2007원, 경유는 1998원으로 지난 4월 이후 석달째 2000원 안팎의 높은 가격을 유지하고 있다. 전쟁 전 1500~1600원대였던 것과 비교해 높은 수준이다. 국제유가 하락이 국내 가격에 즉각 반영되지 않는...",
-      "source": "kfenews.co.kr",
-      "publishedAt": "2026-06-26T07:00:00.000Z",
-      "link": "https://www.kfenews.co.kr/news/articleView.html?idxno=659336",
-      "originallink": "https://www.kfenews.co.kr/news/articleView.html?idxno=659336",
+      "id": "1019c9bc52bffa16",
+      "title": "기름값 낮춰 1800원대 될듯… 공공요금 묶어 물가잡기 안간힘",
+      "summary": "정부가 26일 석유 최고가격을 150원 인하한 것은 국제유가가 하락했기 때문이기도 하지만, 고환율에 따른... 3월 13일 제도 시행 이후 3월 27일 2차 조정 때 현재 가격(휘발유 1934원, 경유 1923원)이 정해진 뒤 3개월여간...",
+      "source": "donga.com",
+      "publishedAt": "2026-06-26T16:42:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/020/0003729811?sid=101",
+      "originallink": "https://www.donga.com/news/Economy/article/all/20260626/134191910/2",
       "keyword": "휘발유"
     },
     {
-      "id": "61c837f0071b160e",
-      "title": "정부 “3500억 농축산물 할인… 불법수익 2배 환수 신설”",
-      "summary": "최고가격은 국제 유가 하락과 민생 부담, 재정 여건 등을 종합적으로 감안해 현행 수준보다 인하하겠다”... 휘발유 1934원, 경유 1923원, 등유 1530원이다. 다자녀 가구에 주말·공휴일 고속도로 통행료 할인 신설...",
-      "source": "seoul.co.kr",
-      "publishedAt": "2026-06-26T06:28:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/081/0003656239?sid=101",
-      "originallink": "https://www.seoul.co.kr/news/economy/2026/06/26/20260626500193?wlog_tag3=naver",
+      "id": "966a99a83df3c9c0",
+      "title": "구윤철 “하반기 전기·가스요금 동결”",
+      "summary": "다만 중동 전쟁 종전 합의에 따른 국제 유가 하락세 등을 감안해, 27일 0시부터 실시하는 7차 최고가격제는 최고가격 기준을 휘발유 L당 1934원에서 1784원, 경유는 1923원에서 1773원으로 각각 150원씩 낮추기로 했다. 2차...",
+      "source": "chosun.com",
+      "publishedAt": "2026-06-26T15:57:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/023/0003984407?sid=101",
+      "originallink": "https://www.chosun.com/economy/economy_general/2026/06/27/QO3UG6GMXBFMHKDDQKKX3XDNVI/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
       "keyword": "휘발유"
     },
     {
-      "id": "4826cd8b9e687bf9",
-      "title": "정부, 석유 최고가격 낮춘다…구윤철 \"국제유가 하락, 민생부담 고려\"",
-      "summary": "동기간 대구지역 평균은 경유는 1천986원에서 1천976원으로, 휘발유는 1천993원에서 1천986원으로 내려간 것으로 측정됐다. 국제유가 하락이 국내 가격에 즉각 반영되지 않는 가장 큰 이유로는 시차가 지목된다....",
-      "source": "idaegu.co.kr",
-      "publishedAt": "2026-06-26T06:06:00.000Z",
-      "link": "https://www.idaegu.co.kr/news/articleView.html?idxno=552202",
-      "originallink": "https://www.idaegu.co.kr/news/articleView.html?idxno=552202",
+      "id": "8b572d17d2f55a2c",
+      "title": "석유 최고가격, L당 150원 인하",
+      "summary": "중동전쟁 종전 양해각서 체결 이후 국제유가가 하락한 것에 맞춰 7차 석유 최고가격도 L당 150원씩 낮췄다.... 석유 최고가격을 6차 대비 L당 150원 낮춘다고 밝혔다. 이번 인하는 휘발유와 경유, 등유에 동일하게 적용된다.",
+      "source": "joongang.co.kr",
+      "publishedAt": "2026-06-26T15:43:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/353/0000055874?sid=102",
+      "originallink": "https://www.joongang.co.kr/article/25440310",
       "keyword": "휘발유"
     },
     {
-      "id": "9e8f5f555810241c",
-      "title": "기름값 리터당 최대 100원 이상 인하 전망…정부, 석유 최고가격 내린다",
-      "summary": "지난 25일 오전 8시 기준 전국 평균 휘발유 가격은 L당 2007원, 경유는 1998원이다. 지난 4월 이후 계속해서 2000원 안팎의 높은 수준을 유지하고 있는 상황이다. 이는 국제유가가 국내 정유사 공급가격과 주유소 판매가격에...",
-      "source": "ddaily.co.kr",
-      "publishedAt": "2026-06-26T05:41:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/138/0002232229?sid=101",
-      "originallink": "https://www.ddaily.co.kr/page/view/2026062613290353885",
+      "id": "519ac12cc30fc7ae",
+      "title": "석유 최고가격 내린다...오늘부터 리터당 150원씩 조정",
+      "summary": "정부가 국제유가 하락 추이 등을 반영해 휘발유와 경유, 등유의 최고가격을 오늘부터 리터당 150원씩 인하합니다. 또 총 1조 원의 예산을 투입해 여름 물가 안정에 총력을 기울이기로 했습니다. 보도에 오인석...",
+      "source": "ytn.co.kr",
+      "publishedAt": "2026-06-26T15:13:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/052/0002371525?sid=101",
+      "originallink": "https://www.ytn.co.kr/_ln/0102_202606270013292360",
       "keyword": "휘발유"
+    },
+    {
+      "id": "4f02d5f3c4c9e508",
+      "title": "석유 최고가격 내린다...오늘부터 리터당 150원씩 조정",
+      "summary": "정부가 석유 최고가격을 국제유가 하락 흐름에 맞춰 내리기로 결정했습니다. 산업통상부는 오늘부터 적용될 7차 석유 최고가격을 6차 대비 리터당 150원 인하한다고 발표했습니다. 150원 인하는 휘발유와 경유, 등유...",
+      "source": "ytn.co.kr",
+      "publishedAt": "2026-06-26T15:13:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/052/0002371524?sid=101",
+      "originallink": "https://www.ytn.co.kr/_ln/0102_202606270013103576",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "96b7da65c192be2c",
+      "title": "휘발유‧경유‧실내등유 등 최고가격 150원 내려…27일 0시부터",
+      "summary": "휘발유와 경유, 실내등유 등 석유 최고가격이 27일 0시부터 리터당 150원 내린다. 이는 중동 전쟁 종전을 위한 MOU 합의에 따른 국제유가 인하분을 선제 반영한 조치다. 산업통상부는 27일 0시부터 적용될 7차 석유...",
+      "source": "energy-news.co.kr",
+      "publishedAt": "2026-06-26T15:06:00.000Z",
+      "link": "https://www.energy-news.co.kr/news/articleView.html?idxno=226411",
+      "originallink": "https://www.energy-news.co.kr/news/articleView.html?idxno=226411",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "9dc94d4fba8655c3",
+      "title": "정부, 석유 최고가격 L당 150원 인하…주유소 기름값 1천800원대 전망",
+      "summary": "그동안 휘발유와 경유 출고가격이 각각 1천934원, 1천923원 수준으로 유지되면서 주유소 판매가격도 2천원... 정부는 국제유가가 중동 분쟁 이전 수준으로 안정세를 보이면서 최고가격 인하 여건이 마련됐다고...",
+      "source": "cbci.co.kr",
+      "publishedAt": "2026-06-26T15:00:00.000Z",
+      "link": "https://www.cbci.co.kr/news/articleView.html?idxno=585038",
+      "originallink": "https://www.cbci.co.kr/news/articleView.html?idxno=585038",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "782cb61ca7e9f788",
+      "title": "[속보]정부, 유류 최고가격 리터당 150원 전격 인하…27일 0시부터 휘발...",
+      "summary": "정부가 국제유가 하락을 반영해 휘발유와 경유, 등유 등 유류 최고가격을 리터당 150원씩 전격 인하한다. 산업통상부는 27일 0시부터 적용되는 7차 석유 최고가격을 기존보다 리터당 150원 낮추기로 결정했다고 26일...",
+      "source": "namdonews.com",
+      "publishedAt": "2026-06-26T14:38:00.000Z",
+      "link": "https://www.namdonews.com/news/articleView.html?idxno=914906",
+      "originallink": "https://www.namdonews.com/news/articleView.html?idxno=914906",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "d0aac4d16d76106a",
+      "title": "석유 최고가 27일부터 150원 인하…휘발유 1800원대",
+      "summary": "이로써 7차 석유 최고가격은 휘발유 1784원, 경유 1773원, 등유 1380원으로 각각 지정됐다. 석유 최고가격은... 정부가 제도 도입 이후 첫 인하 카드를 꺼낸 것은 국제유가가 중동 전쟁 이전 수준으로 안정화됐기 때문이다....",
+      "source": "munhwa.com",
+      "publishedAt": "2026-06-26T14:16:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/021/0002800688?sid=101",
+      "originallink": "https://www.munhwa.com/article/11598593?ref=naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "ca2a81e15212fd42",
+      "title": "정부, 석유 최고가격 첫 인하…기름값 1800원대 진입 기대",
+      "summary": "실제 소비자가 주유소에서 결제하는 가격은 여기에 유류세와 유통비, 판매 마진 등이 더해져 결정된다.... 유류비는 물류와 운송, 외식 등 생활물가 전반에 영향을 미치는 만큼 기름값 안정이 소비자 부담을 줄이는...",
+      "source": "g-enews.com",
+      "publishedAt": "2026-06-26T10:18:00.000Z",
+      "link": "https://www.g-enews.com/view.php?ud=202606261911056307ea13369bfa_1",
+      "originallink": "https://www.g-enews.com/view.php?ud=202606261911056307ea13369bfa_1",
+      "keyword": "유류세"
+    },
+    {
+      "id": "e985aed26d36017e",
+      "title": "1조 이상 투입…계란·돼지고기 할인하고 전기료 동결",
+      "summary": "정부는 이를 위해 민관 합동으로 전국 1만여 개 주유소의 가격과 물량을 집중 모니터링하고 범부처 시장 점검단을 통한 고강도 현장 점검을 시행한다는 계획이다. 아울러 정부는 유류세 인하는 7월 말까지 유지하고...",
+      "source": "sedaily.com",
+      "publishedAt": "2026-06-26T10:01:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/011/0004635444?sid=101",
+      "originallink": "https://www.sedaily.com/article/20060656?ref=naver",
+      "keyword": "유류세"
     },
     {
       "id": "01c14902d25ea494",
@@ -68,44 +138,14 @@
       "keyword": "휘발유"
     },
     {
-      "id": "313afbd964156b16",
-      "title": "국제유가 하락세 속 주유소는 그대로?…정부, 최고가격 인하로 압박",
-      "summary": "이에 따른 가격은 휘발유 1천934원, 경유 1천923원, 등유 1천530원이다. 하지만 미국과 이란이 종전 양해각서를 체결하고 군사적 긴장감도 낮춘 영향 등으로 국제유가가 안정을 찾아가면서 지금은 오히려 이 가격이 소비자...",
-      "source": "kyeonggi.com",
-      "publishedAt": "2026-06-26T05:05:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/666/0000112819?sid=101",
-      "originallink": "https://www.kyeonggi.com/article/20260626580200",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "b8b0ed7ed6d14ff5",
-      "title": "“7차 석유최고가격 인하…공공 요금은 동결”",
-      "summary": "[리포트] 정부는 중동전쟁 종전 MOU 이후 대외 불확실성이 점차 완화되고, 국제유가도 하락세를 보이고... 현행 최고가격은 휘발유 1,934원 경유 1,923원 등으로, 석 달 가까이 유지되고 있습니다. 정부는 석유류 가격이...",
-      "source": "news.kbs.co.kr",
-      "publishedAt": "2026-06-26T05:04:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/056/0012206831?sid=101",
-      "originallink": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8595660&ref=A",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "717e19b917f1dfa7",
-      "title": "\"기름값 드디어 내리나\"…정부, 유가 하락 맞춰 최고가격 조정",
-      "summary": "휘발유 1천934원, 경유 1천923원, 등유 1천530원입니다. 이처럼 석유 최고가격제는 도입 당시에는 국내 유가 폭등을 막는 '방어선' 역할을 했지만, 국제유가가 떨어진 지금은 오히려 국내 가격이 더 내려가지 않도록...",
-      "source": "mbn.mk.co.kr",
-      "publishedAt": "2026-06-26T05:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/057/0001955673?sid=101",
-      "originallink": "http://mbn.mk.co.kr/pages/news/newsView.php?category=mbn00003&news_seq_no=5202094",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "6670516fcfd81b1f",
-      "title": "정부, 하반기 전기·가스요금 동결…7차 석유최고가격도 내린다",
-      "summary": "그럴 경우 전국 평균 휘발유 가격이 1900원대로 내려올 수 있다. 취약계층 지원도 늘린다. LPG 부탄... 최근 종전 합의가 이뤄지면서 유가는 하락세로 돌아섰다. 국내 경유 평균가격은 2개월 만에 리터당 2천 원 아래로...",
-      "source": "smedaily.co.kr",
-      "publishedAt": "2026-06-26T04:58:00.000Z",
-      "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=359339",
-      "originallink": "http://www.smedaily.co.kr/news/articleView.html?idxno=359339",
-      "keyword": "휘발유"
+      "id": "ff6f737db8d84877",
+      "title": "달걀도 돼지고기도 '할인, 할인'... 정부 1조원 쏟아 물가 폭등 막는다",
+      "summary": "지난 3월 13일 석유 최고가격제가 도입된 이후 106일 만의 첫 하향 조정이다. 이에 따라 주유소 기름값은 2,000원대에서 1,800원대로 낮아질 전망이다. 7월 종료되는 유류세 인하 추가 연장 여부도 검토할 방침이다. 이와...",
+      "source": "hankookilbo.com",
+      "publishedAt": "2026-06-26T04:41:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/469/0000938790?sid=101",
+      "originallink": "https://www.hankookilbo.com/news/article/A2026062612490000566?did=NA",
+      "keyword": "유류세"
     },
     {
       "id": "610c78d8b9e6be23",
@@ -126,46 +166,6 @@
       "link": "https://www.wikitree.co.kr/articles/1143362",
       "originallink": "https://www.wikitree.co.kr/articles/1143362",
       "keyword": "휘발유"
-    },
-    {
-      "id": "b0299bc276f5c4e1",
-      "title": "정부, 1조원 투입해 물가 잡는다…'농축수산물 할인·공공요금 동결'",
-      "summary": "현재 유류세 인하 폭은 휘발유 15%, 경유 25%다. 소형트럭과 택시 등 서민 연료 부담 완화를 위해 LPG 부탄에 대한 유류세 25% 인하도 7월까지 연장하고 판매부과금 한시 면제는 올해 말까지 유지한다. 가격 안정에 기여한...",
-      "source": "news1.kr",
-      "publishedAt": "2026-06-26T01:01:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/421/0009025153?sid=101",
-      "originallink": "https://www.news1.kr/economy/trend/6209117",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "cd5609215b505aa4",
-      "title": "정부, 하반기 전기·가스요금 동결... 석유 최고가격도 낮춘다",
-      "summary": "석유 최고가격제는 정부가 휘발유와 경유, 등유의 판매가격 상한을 정하고, 정유사와 주유소가 상한 가격을 넘겨 판매하지 못하도록 하는 제도다. 중동전쟁으로 국제유가가 급등하자 국내 기름값 상승을 억제하기 위해...",
-      "source": "vop.co.kr",
-      "publishedAt": "2026-06-26T00:18:00.000Z",
-      "link": "https://vop.co.kr/A00001695447.html",
-      "originallink": "https://vop.co.kr/A00001695447.html",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "c879792a3f21d8ef",
-      "title": "경유값 두 달 만에 2000원 아래로…휘발유는 아직 2000원대",
-      "summary": "국내 기름값은 국제 유가와 환율, 정유사 공급가격, 유류세 정책 등에 따라 시차를 두고 움직인다. 업계에서는 최근 유가 하락 흐름이 이어질 경우 주유소 판매 가격도 추가로 내려갈 가능성이 있다고 보고 있다.",
-      "source": "news.tvchosun.com",
-      "publishedAt": "2026-06-25T01:55:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/448/0000622130?sid=101",
-      "originallink": "https://news.tvchosun.com/site/data/html_dir/2026/06/25/2026062590099.html",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "3810a751b838ed6b",
-      "title": "전쟁 불안 비용까지 포함된 중동발 유가 급등 속 민관 공조 빛나",
-      "summary": "기름값은 때로 세금보다 빠르게 민심을 흔들었다. 2018년 프랑스의 노란조끼 시위가 그랬다. 출발은 유류세... 마크롱 정부는 결국 유류세 인상안을 철회했다. 에너지 가격 대응에 실패하면 주유소 가격표의 숫자가 거리의...",
-      "source": "e-platform.net",
-      "publishedAt": "2026-06-25T00:48:00.000Z",
-      "link": "http://www.e-platform.net/news/articleView.html?idxno=103280",
-      "originallink": "http://www.e-platform.net/news/articleView.html?idxno=103280",
-      "keyword": "유류세"
     }
   ]
 }
