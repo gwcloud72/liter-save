@@ -2,11 +2,71 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-27T08:36:51.100Z",
+    "updatedAt": "2026-06-27T19:21:31.261Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "39ad4a932c19103c",
+      "title": "석유 최고가 150원 인하에도 소비자는 '글쎄...'",
+      "summary": "이른 휘발유와 경유 등의 가격은 1,800원까지 내려올 수 있다는 전망이 나옵니다. 하지만 서울 등 주요 도시... 또 국제 유가가 오를 때는 바로 가격을 올리던 주유소들이 내릴 때는 인하 속도를 늦추는 행태가 반복될...",
+      "source": "ytn.co.kr",
+      "publishedAt": "2026-06-27T13:04:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/052/0002371702?sid=101",
+      "originallink": "https://www.ytn.co.kr/_ln/0102_202606272204291616",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "5e720afb6e765c7b",
+      "title": "[현장] 유가 인하 첫날 서울 도심 '2000원대'… \"1800원대 기대했는데 아...",
+      "summary": "이에 따라 공급가격 상한은 휘발유 1784원, 경유 1773원, 등유 1380원으로 각각 조정됐다. 정부는 최근 국제유가와 국제 석유제품 가격 안정 흐름을 반영해 물가 부담 완화를 위한 조치라고 설명했다. 다만 정유사 공급가...",
+      "source": "newscj.com",
+      "publishedAt": "2026-06-27T12:30:00.000Z",
+      "link": "https://www.newscj.com/news/articleView.html?idxno=3412595",
+      "originallink": "https://www.newscj.com/news/articleView.html?idxno=3412595",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "4b6aab441b4907d6",
+      "title": "휘발윳값 70일 만에 2000원 밑돌아…석유 최고가격 인하 조치 영향",
+      "summary": "6월 넷째 주 기준 전국 주유소 휘발유와 경유 평균 가격은 각각 리터당 2007.8원, 2001.3원으로 6주 연속 내림세를 기록했다. 국제유가는 미국·이란 고위급 회담 타결과 대이란 석유 수출 제재 완화 영향으로...",
+      "source": "newsway.co.kr",
+      "publishedAt": "2026-06-27T10:30:00.000Z",
+      "link": "https://www.newsway.co.kr/news/view?ud=2026062719291469897",
+      "originallink": "https://www.newsway.co.kr/news/view?ud=2026062719291469897",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b0f334092815e95d",
+      "title": "석유 최고가 150원 내렸지만…美·이란 충돌에 국제 유가 불안 재점화",
+      "summary": "국제유가 하락을 반영한 조치지만, 국내 주유소의 휘발유 가격은 여전히 리터당 2천 원 안팎입니다. 여기에... \" 정부가 오늘 0시부터 내린 건 정유사가 주유소에 넘기는 공급가격 상한입니다. 휘발유는 1784원, 경유는...",
+      "source": "news.tvchosun.com",
+      "publishedAt": "2026-06-27T10:25:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/448/0000622737?sid=101",
+      "originallink": "https://news.tvchosun.com/site/data/html_dir/2026/06/27/2026062790144.html",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "931fed13bd657c1a",
+      "title": "정부, 기름값 리터당 150원 인하했지만…주유소 판매가는 '찔끔' 하락",
+      "summary": "정부는 국제유가 상승 시에는 판매가격이 빠르게 오르면서도 하락 국면에서는 가격 인하 속도가 더딘... 이번 제7차 석유제품 최고가격은 앞으로 4주간 적용되며 최고가격은 휘발유 리터당 1784원, 경유 1773원, 등유...",
+      "source": "ppss.kr",
+      "publishedAt": "2026-06-27T10:16:00.000Z",
+      "link": "https://www.ppss.kr/news/articleView.html?idxno=300174",
+      "originallink": "https://www.ppss.kr/news/articleView.html?idxno=300174",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "794e62f0264e28eb",
+      "title": "오늘부터 석유 최고가격 ‘150원 인하’…전국 휘발윳값 70일만에 1900원...",
+      "summary": "주유소 휘발유 평균 판매가는 직전주보다 L당 1.4원 내린 2007.8원이었다. 전국 경유 평균 판매가격은 직전주 대비 2.8원 하락한 2001.3원을 기록했다. 이번 주 국제유가는 미국·이란 고위급 회담의 성공적 종료와...",
+      "source": "busan.com",
+      "publishedAt": "2026-06-27T09:21:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/082/0001387240?sid=101",
+      "originallink": "https://www.busan.com/view/busan/view.php?code=2026062715393323035",
+      "keyword": "휘발유"
+    },
     {
       "id": "5b426eded1207cff",
       "title": "부산 주유소 기름값 하루만에 15원 하락…시간 더 지나야 1800원대될 듯",
@@ -45,66 +105,6 @@
       "publishedAt": "2026-06-27T06:59:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/052/0002371663?sid=101",
       "originallink": "https://www.ytn.co.kr/_ln/0102_202606271559197099",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "de2e6e61b6828b97",
-      "title": "주유소 기름값 6주 연속 하락…평균 2천7원대",
-      "summary": "주유소 휘발유 평균 판매가는 지난주보다 L당 1.4원 내린 2천7.8원이었습니다. 경유 평균 판매 가격은 전주 대비 2.8원 하락한 2천1.3원을 기록했습니다. 국제유가도 미국·이란 회담의 성공적 종료 등으로 하락했지만...",
-      "source": "obsnews.co.kr",
-      "publishedAt": "2026-06-27T06:48:00.000Z",
-      "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1528824",
-      "originallink": "https://www.obsnews.co.kr/news/articleView.html?idxno=1528824",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "101cf7cfd0dd6350",
-      "title": "전국 평균 휘발윳값 2007원대…주유소 기름값 6주 연속 하락",
-      "summary": "이에 따라 최근 국제유가 하락분이 순차적으로 반영되면 국내 휘발유와 경유 가격도 추가로 내려갈 수 있다. 정부는 이날 0시부터 적용되는 7차 석유 최고가격을 유종별로 ℓ당 150원 인하했다. 이에 따라...",
-      "source": "sidae.com",
-      "publishedAt": "2026-06-27T05:24:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/417/0001149270?sid=101",
-      "originallink": "https://www.sidae.com/article/2026062714153659019",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "b1fcd596c952f97b",
-      "title": "부산 주유소 휘발유 평균가 ℓ당 1993원… 지난주보다 1.7원 ↓",
-      "summary": "또 국제 휘발유 가격은 3.2달러 내린 100.6달러, 국제 자동차용 경유는 3.1달러 하락한 112.8달러로 조사됐다. 국제유가 변동은 통상적으로 2~3주가량이 지난 뒤에야 국내 주유소 가격에 반영된다. 한편 정부는 27일...",
-      "source": "kookje.co.kr",
-      "publishedAt": "2026-06-27T05:14:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/658/0000147876?sid=101",
-      "originallink": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20260627.99099008239",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "bc1becdaeef5a5e2",
-      "title": "석유 최고가격 인하에도 2천 원 넘는 주유소 기름값",
-      "summary": "[기자] 네, 미국과 이란의 종전 양해각서 체결 이후 국제 유가가 상당폭 떨어졌습니다. 수입 원유 가격... 리터당 휘발유 1,784원, 경유 1,773원, 등유 1,380원입니다. 최고가격은 정유사의 주유소 공급가 상한입니다. 아직...",
-      "source": "ytn.co.kr",
-      "publishedAt": "2026-06-27T05:08:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/052/0002371641?sid=101",
-      "originallink": "https://www.ytn.co.kr/_ln/0102_202606271408285925",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "af1258f381aa3d26",
-      "title": "[자막뉴스] 유가는 폭락했는데 기름값은 왜 그대로?...정부, 결국 단속 ...",
-      "summary": "리터당 휘발유 1,784원, 경유 1,773원, 등유 1,380원입니다. 최고가격은 정유사의 주유소 공급가 상한입니다. 아직 시중 주유소에서 체감은 힘듭니다. 한국석유공사 유가정보시스템 오피넷을 보면 오늘 아침 9시 기준...",
-      "source": "ytn.co.kr",
-      "publishedAt": "2026-06-27T04:34:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/052/0002371634?sid=101",
-      "originallink": "https://www.ytn.co.kr/_ln/0134_202606271334063103",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "c65ec9b323bfe9f9",
-      "title": "주유소 기름값 6주 연속 하락…전국 휘발윳값 2007원대",
-      "summary": "국내 주유소 휘발유·경유 가격이 6주 연속 하락세를 이어갔다. 27일 한국석유공사 유가정보시스템... 2달러 내렸고, 국제 자동차용 경유 가격도 112.8달러로 3.1달러 하락했다. 한편 국제유가 변동은 통상 2~3주의...",
-      "source": "newspost.kr",
-      "publishedAt": "2026-06-27T04:30:00.000Z",
-      "link": "https://www.newspost.kr/news/articleView.html?idxno=223853",
-      "originallink": "https://www.newspost.kr/news/articleView.html?idxno=223853",
       "keyword": "휘발유"
     },
     {
