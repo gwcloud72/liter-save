@@ -2,11 +2,41 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-29T10:59:00.709Z",
+    "updatedAt": "2026-06-29T19:56:06.173Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "caac1710965d6f02",
+      "title": "울산 기름값 하락…두 달 만에 1천800원대 등장",
+      "summary": "최고가격제 인하 영향으로 울산지역 기름값도 큰 폭으로 떨어지며 두 달 만에 일부 주유소에서 휘발유... 경유는 1천963원으로 전국에서 가장 낮은 수준을 유지하고 있습니다. 정부의 공급가격 인하와 국제 유가...",
+      "source": "news.kbs.co.kr",
+      "publishedAt": "2026-06-29T12:48:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/056/0012208334?sid=101",
+      "originallink": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8597660&ref=A",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "96d908ef8ad10add",
+      "title": "주유소 기름값 6주째 내렸다지만…인하폭 미미",
+      "summary": "한국석유공사(사장 손주석)는 유가정보시스템인 오피넷을 통해 6월4주 주유소 판매 휘발유가격이 전주대비 1.4원 내린 2007.8원, 경유는 2.8원 인하된 2001.3원, 실내등유는 5월3주부터 6주 연속 인하됐던 강누데...",
+      "source": "energy-news.co.kr",
+      "publishedAt": "2026-06-29T12:48:00.000Z",
+      "link": "https://www.energy-news.co.kr/news/articleView.html?idxno=226445",
+      "originallink": "https://www.energy-news.co.kr/news/articleView.html?idxno=226445",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "dfcdfae476a136b8",
+      "title": "석유 최고가격제 손실 보전, 핵심인 ‘원가 범위’ 샅바싸움 시작",
+      "summary": "중동 사태 이후 비싼 가격에 수입한 원유를 국제유가 하락으로 싸게 팔아 생기는 이른바 ‘재고 손실’을... 반면 정유업계는 석유제품이 하나의 원료로 휘발유와 경유, 등유 등 여러 제품을 생산하는 연산품이라는 점을...",
+      "source": "khan.co.kr",
+      "publishedAt": "2026-06-29T11:38:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/032/0003455025?sid=101",
+      "originallink": "https://www.khan.co.kr/article/202606292038035",
+      "keyword": "휘발유"
+    },
     {
       "id": "16fb1b6ea1d34e06",
       "title": "최고가 인하 효과… 휘발유 가격 1970원대로 ‘뚝’",
@@ -78,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "e213f93c96dab0d7",
-      "title": "기름값 2000원 벽 깨졌다...제주 휘발유 석 달만에 1900원대 ↓",
-      "summary": "제주지역 휘발유 평균 가격이 1900원대를 기록한 것은 지난 4월초 중동 지역의 군사적 긴장 고조로 유가가 치솟으며 2000원대를 넘어선 4월 4일 이후 86일 만이다. 경유의 평균 가격 역시 전날보다 20.17원 하락한...",
-      "source": "jejusori.net",
-      "publishedAt": "2026-06-29T08:06:00.000Z",
-      "link": "https://www.jejusori.net/news/articleView.html?idxno=504345",
-      "originallink": "https://www.jejusori.net/news/articleView.html?idxno=504345",
-      "keyword": "휘발유"
-    },
-    {
       "id": "d1c4c0e9d464e263",
       "title": "1900원대로 내려온 기름값…체감 인하는 3~4주 더 걸린다",
       "summary": "다만 국내 기름값이 곧바로 전쟁 이전 수준으로 돌아가기는 어렵다는 분석이 나온다. 국제 원유 가격은 전쟁 이전보다 낮아졌지만, 국내 주유소 판매가격에는 국제 석유제품 가격, 환율, 세금, 유통마진 등이 함께...",
@@ -96,16 +116,6 @@
       "link": "https://www.newsway.co.kr/news/view?ud=2026062915162472321",
       "originallink": "https://www.newsway.co.kr/news/view?ud=2026062915162472321",
       "keyword": "유류세"
-    },
-    {
-      "id": "fa94e749b926190d",
-      "title": "전북 기름값 두 달 만에 1천900원대, 출근길 주유소마다 운전자 발길",
-      "summary": "이는 정부가 지난 27일 0시부터 7차 석유 최고가격을 적용해 휘발유와 경유 최고가격을 각각 L당 150원씩 낮춘 데다 국제유가 안정세가 맞물리면서 가격 하락 흐름이 본격화된 것으로 풀이된다. 유가 하락은 도내 일부...",
-      "source": "domin.co.kr",
-      "publishedAt": "2026-06-29T07:54:00.000Z",
-      "link": "http://www.domin.co.kr/news/articleView.html?idxno=1560178",
-      "originallink": "http://www.domin.co.kr/news/articleView.html?idxno=1560178",
-      "keyword": "휘발유"
     },
     {
       "id": "19ed9a45b09fef52",
@@ -155,16 +165,6 @@
       "publishedAt": "2026-06-26T10:18:00.000Z",
       "link": "https://www.g-enews.com/view.php?ud=202606261911056307ea13369bfa_1",
       "originallink": "https://www.g-enews.com/view.php?ud=202606261911056307ea13369bfa_1",
-      "keyword": "유류세"
-    },
-    {
-      "id": "e985aed26d36017e",
-      "title": "1조 이상 투입…계란·돼지고기 할인하고 전기료 동결",
-      "summary": "정부는 이를 위해 민관 합동으로 전국 1만여 개 주유소의 가격과 물량을 집중 모니터링하고 범부처 시장 점검단을 통한 고강도 현장 점검을 시행한다는 계획이다. 아울러 정부는 유류세 인하는 7월 말까지 유지하고...",
-      "source": "sedaily.com",
-      "publishedAt": "2026-06-26T10:01:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/011/0004635444?sid=101",
-      "originallink": "https://www.sedaily.com/article/20060656?ref=naver",
       "keyword": "유류세"
     }
   ]
