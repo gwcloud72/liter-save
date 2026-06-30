@@ -2,11 +2,51 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-06-30T09:35:22.801Z",
+    "updatedAt": "2026-06-30T19:57:34.423Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "7210b6193ed467c8",
+      "title": "휘발유값 하락의 역설…미국 경제 새 부담 되나",
+      "summary": "휘발유 가격은 갤런당 3.86달러(약 6000원)였다. 리터로 환산하면 약 1580원이다. 이는 지난 5월 기록한 4년 만의 최고치 갤런당 4.56달러(약 7100원)에서 크게 내려온 수준이다. 휘발유값 하락은 국제유가 안정과 맞물려 있다....",
+      "source": "g-enews.com",
+      "publishedAt": "2026-06-30T18:00:00.000Z",
+      "link": "https://www.g-enews.com/view.php?ud=20260630213253199a1f309431_1",
+      "originallink": "https://www.g-enews.com/view.php?ud=20260630213253199a1f309431_1",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "c8952a88b267519d",
+      "title": "유가는 20% 급락했는데…트럼프 “휘발유값 당장 내려라”",
+      "summary": "◇트럼프 “휘발유값 너무 높다” 국제유가가 급락했지만 미국 소비자가 체감하는 휘발유 가격은 여전히... 원유와 휘발유 가격은 같은 방향으로 움직이더라도 시차가 있다. 원유는 정제 과정을 거쳐 휘발유와 경유...",
+      "source": "g-enews.com",
+      "publishedAt": "2026-06-30T17:00:00.000Z",
+      "link": "https://www.g-enews.com/view.php?ud=2026063020280558939a1f309431_1",
+      "originallink": "https://www.g-enews.com/view.php?ud=2026063020280558939a1f309431_1",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "e3ea6073204f0002",
+      "title": "7월 1주 주요 제조업 전망",
+      "summary": "철강 가격 동향(6월 26일 기준, 출처 하나증권 철강금속 Weekly) △ 국내 철강 가격(원/톤) - 열연 유통가... 주유소 휘발유와 경유 판매 가격은 6주 연속 하락 중임. 정부는 27일 자정부터 적용되는 7차 석유 최고가격을...",
+      "source": "laborplus.co.kr",
+      "publishedAt": "2026-06-30T14:49:00.000Z",
+      "link": "https://www.laborplus.co.kr/news/articleView.html?idxno=41057",
+      "originallink": "https://www.laborplus.co.kr/news/articleView.html?idxno=41057",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "74148cbfccde5264",
+      "title": "7월 국내LPG가격, 50원 인상 가닥…미반영분 여전",
+      "summary": "그동안 SK가스와 E1 등 LPG수입사를 비롯 정유4사는 중동사태로 인해 치솟은 국제유가와 환율 등에 따른... 그렇다고 해서 휘발유나 경유 등 석유제품에 대해 정부가 최고가격제 시행으로 손실보전을 해주는 것과...",
+      "source": "energy-news.co.kr",
+      "publishedAt": "2026-06-30T14:34:00.000Z",
+      "link": "https://www.energy-news.co.kr/news/articleView.html?idxno=226487",
+      "originallink": "https://www.energy-news.co.kr/news/articleView.html?idxno=226487",
+      "keyword": "휘발유"
+    },
     {
       "id": "5eeab37face2d3cd",
       "title": "석유 최고가격 인하에 경남 기름값 40원↓...휘발유 평균 가격 1955원",
@@ -68,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "2a9b9a64d8e3b9be",
-      "title": "에쓰오일 정제마진 강세 지속 기대감, '9조 투입' 샤힌 수익성 확보까지...",
-      "summary": "공식판매가격(OSP) 하락세까지 점쳐지면서 에쓰오일에 우호적 환경이 조성되고 있다. 미국과 이란이 17일 종전 양해각서(MOU)를 체결한 뒤 국제유가는 70달러대로 급락했다. 한때 100달러 선을 넘나들던 것과 비교하면 30...",
-      "source": "businesspost.co.kr",
-      "publishedAt": "2026-06-30T07:26:00.000Z",
-      "link": "https://www.businesspost.co.kr/BP?command=article_view&num=441193",
-      "originallink": "https://www.businesspost.co.kr/BP?command=article_view&num=441193",
-      "keyword": "휘발유"
-    },
-    {
       "id": "f77e03ac162983b6",
       "title": "유류세 인하, 땜질식 아닌 시스템으로 전환해야 [황찬의 세 스토리(稅 s...",
       "summary": "주유소 가격표의 숫자 하나가 화물 운송비를 바꾸고, 이는 다시 마트 진열대의 상품 가격으로 이어진다. 우리... 결국 국내 기름값은 우리의 선택보다 중동 정세에 더 크게 영향을 받는다. 외부 충격에 취약할 수밖에 없는...",
@@ -86,36 +116,6 @@
       "link": "https://n.news.naver.com/mnews/article/011/0004636531?sid=110",
       "originallink": "https://www.sedaily.com/article/20061946?ref=naver",
       "keyword": "유류세"
-    },
-    {
-      "id": "9708d4ebf8149eaa",
-      "title": "중동 리스크 재점화에 국제유가 반등… 최고가격 인하에 부담 커지는 정...",
-      "summary": "이에 따라 정유사 출고가 기준 최고가격은 휘발유 1784원, 경유 1773원, 등유 1380원으로 조정됐다. 정부는 국제유가 하락세와 국민 물가 부담 완화를 고려한 조치라고 설명했다.하지만 정유업계에서는 시장 변동성이 큰...",
-      "source": "asiatoday.co.kr",
-      "publishedAt": "2026-06-30T06:02:00.000Z",
-      "link": "https://www.asiatoday.co.kr/kn/view.php?key=20260630010010631",
-      "originallink": "https://www.asiatoday.co.kr/kn/view.php?key=20260630010010631",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "5ef679a3d575b5d6",
-      "title": "1900원대로 떨어진 서울 기름값",
-      "summary": "정부의 7차 석유 최고가격제 시행과 국제유가 하락이 맞물리면서 전국 주유소 기름값이 내림세를 이어가고 있는 30일 서울 시내 한 주유소에 휘발유와 경유 가격이 1900원대로 표시돼 있다. 한국석유공사...",
-      "source": "newsis.com",
-      "publishedAt": "2026-06-30T04:15:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/003/0014036953?sid=101",
-      "originallink": "https://www.newsis.com/view/NISI20260630_0021343291",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "0523c075db22b107",
-      "title": "서울 휘발유·경유 나란히 1900원대",
-      "summary": "정부의 7차 석유 최고가격제 시행과 국제유가 하락이 맞물리면서 전국 주유소 기름값이 내림세를 이어가고 있는 30일 서울 시내 한 주유소에 휘발유와 경유 가격이 1900원대로 표시돼 있다. 한국석유공사...",
-      "source": "newsis.com",
-      "publishedAt": "2026-06-30T04:15:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/003/0014036961?sid=101",
-      "originallink": "https://www.newsis.com/view/NISI20260630_0021343298",
-      "keyword": "휘발유"
     },
     {
       "id": "d1c4c0e9d464e263",
