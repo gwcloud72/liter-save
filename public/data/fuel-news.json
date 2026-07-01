@@ -2,11 +2,21 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-07-01T09:45:31.255Z",
+    "updatedAt": "2026-07-01T19:55:40.219Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "b8113daeb3ac68a3",
+      "title": "울산 주유소 기름값 엿새째 하락",
+      "summary": "산업통상부는 6월 27일부터 적용된 7차 최고가격을 리터당 150원 낮춰 휘발유 1,784원, 경유 1,773원 등으로 조정했다. 이는 국제유가 하락 흐름을 반영한 것으로, 시행 106일 만의 첫 하향 조정이다. 다만 소비자가...",
+      "source": "ulsanpress.net",
+      "publishedAt": "2026-07-01T12:42:00.000Z",
+      "link": "https://www.ulsanpress.net/news/articleView.html?idxno=578294",
+      "originallink": "https://www.ulsanpress.net/news/articleView.html?idxno=578294",
+      "keyword": "휘발유"
+    },
     {
       "id": "10b351599bba8c1b",
       "title": "6월 수출 1022억달러 돌파…무역역사 새기록",
@@ -105,16 +115,6 @@
       "publishedAt": "2026-07-01T00:18:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/014/0005542034?sid=101",
       "originallink": "http://www.fnnews.com/news/202607010909206697",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "b1b994dad1054296",
-      "title": "[K-석유화학 진단] 원유 싸졌는데 제품은 부족…정유·석화, 엇갈린 하반...",
-      "summary": "원유가는 내려갔지만 휘발유·경유 등 석유제품 수급은 여전히 빠듯하다는 의미다. 미국 정제설비 가동률도 97%에 육박하는 수준으로 파악된다. 원료 가격이 내려가는 가운데 제품 마진이 유지되면 정유사 입장에서는...",
-      "source": "hansbiz.co.kr",
-      "publishedAt": "2026-06-30T22:30:00.000Z",
-      "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=847259",
-      "originallink": "http://www.hansbiz.co.kr/news/articleView.html?idxno=847259",
       "keyword": "휘발유"
     },
     {
