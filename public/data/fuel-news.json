@@ -2,19 +2,119 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-07-02T08:56:43.598Z",
+    "updatedAt": "2026-07-02T19:25:11.801Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
     {
-      "id": "65a62bb184a0b8be",
-      "title": "농산물·기름값 영향…6월 물가 3.2% 상승 ‘30개월만에 최대’",
-      "summary": "6월 석유류 가격은 24.7% 올라 전체 소비자물가를 0.93%포인트 끌어올렸다. 상승폭은 러시아·우크라이나 전쟁 직후인 2022년 7월 이후 3년 11개월만에 최대다. 휘발유(23.1%)와 경유(33.7%), 등유(23.1%) 등 대부분의 유종이 큰...",
-      "source": "sedaily.com",
-      "publishedAt": "2026-07-02T08:53:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/011/0004637611?sid=101",
-      "originallink": "https://www.sedaily.com/article/20063207?ref=naver",
+      "id": "afea193da37cdf8a",
+      "title": "6월 소비자물가 상승률 3.2%… 2년6개월 만에 최고",
+      "summary": "중동전쟁 여파로 경유(33.7%)와 휘발유(23.1%) 가격이 크게 상승한 영향이다. 이두원 국가데이터처 경제동향통계심의관은 \"자동차용 LPG(액화석유가스) 가격이 소폭 올라 석유류 상승폭이 확대됐다\"며 \"6월27일...",
+      "source": "mt.co.kr",
+      "publishedAt": "2026-07-02T19:00:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/008/0005380920?sid=101",
+      "originallink": "https://www.mt.co.kr/living/2026/07/03/2026070219520936874",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "66694d1e9b4c160b",
+      "title": "기름값·농산물에 칩플레이션까지… 물가 두 달 연속 3%대",
+      "summary": "국가데이터처가 2일 발표한 ‘6월 소비자물가동향’에 따르면 지난달 소비자물가지수는 119.99(2020=100)로... 휘발유(23.1%), 경유(33.7%), 등유(23.1%) 가격이 일제히 크게 올랐고, 자동차용 LPG 가격 상승까지 더해지며 지난달...",
+      "source": "kmib.co.kr",
+      "publishedAt": "2026-07-02T17:16:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/005/0001858703?sid=101",
+      "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=1782977450&code=11151100&cp=nv",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "4a30f2d307d40ada",
+      "title": "6월 소비자물가 3.2% 올라… 2년 6개월 만에 최고",
+      "summary": "석유류 가격 상승 폭은 우크라이나 전쟁 초반인 2022년 7월(35.2%) 이후 가장 컸다. 경유 상승 폭이 33.7%에 달했고, 휘발유와 등유는 각각 23.1% 올랐다. 자주 구매하는 품목 중심으로 구성돼 체감 물가를 나타내는 생활...",
+      "source": "chosun.com",
+      "publishedAt": "2026-07-02T15:32:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/023/0003985429?sid=101",
+      "originallink": "https://www.chosun.com/economy/economy_general/2026/07/03/URW4L2747BDDJJETKS7YCNEHWE/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "31718cb5eeb676f3",
+      "title": "고유가 발 '도미노 인상' 강원 물가 3.4% 폭등",
+      "summary": "중동리스크에 따른 국제 유가 불안과 먹거리 가격 상승 여파로 지난달 강원지역 소비자물가가 전국 평균을 웃돌며 높은 상승세를 이어갔다. 특히 경유와 휘발유 등 기름값이 폭등한 데다 대표적 서민 식품인 달걀...",
+      "source": "kado.net",
+      "publishedAt": "2026-07-02T15:10:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/654/0000188741?sid=101",
+      "originallink": "https://www.kado.net/news/articleView.html?idxno=2059301",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b4e3e901b1b89be6",
+      "title": "소비자물가 두 달 연속 3%대...석유류 가격 24.7%↑",
+      "summary": "이란 전쟁 여파로 국제 유가가 오르며 석유류 물가가 24.7% 상승한 영향이 컸습니다. 석유류 가격은 전체... 휘발유는 전월에 이어 23.1% 올랐고, 경유는 33.7%, 등유도 23.1% 상승했습니다. 정부는 석유 최고가격제로 6월...",
+      "source": "ytn.co.kr",
+      "publishedAt": "2026-07-02T13:54:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/052/0002374043?sid=101",
+      "originallink": "https://www.ytn.co.kr/_ln/0102_202607022254259333",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "2ef5c2aec95af287",
+      "title": "[사설] 중동발 고물가에 1600원 넘보는 환율, 재정 확장 신중해야",
+      "summary": "경유와 휘발유 등 석유류가 약 4년 만에 최대폭인 24.7%나 급등, 물가상승을 주도했다. 파와 쌀 등 먹거리 가격까지 들썩이며 생활·밥상물가도 뛰었다. 재정경제부는 석유최고가격제가 없었다면 물가상승률이 3.6%에...",
+      "source": "segye.com",
+      "publishedAt": "2026-07-02T13:45:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/022/0004140162?sid=110",
+      "originallink": "https://www.segye.com/newsView/20260702515461?OutUrl=naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "9c122b5f112863ca",
+      "title": "'울산 적신호' 물가 상승률 2개월째 3%대",
+      "summary": "지난달 소비자 물가를 밀어올린 주요 요인은 역시 국제 유가 상승이었다. 휘발유(24.6%), 경유(35.9%), 등유(17%) 등 석유류 가격은 26.7% 오르며 전체 소비자 물가를 1.03%p 올렸다. 아울러 석유류 가격 외에도 국내항공료...",
+      "source": "ujeil.com",
+      "publishedAt": "2026-07-02T12:46:00.000Z",
+      "link": "http://www.ujeil.com/news/articleView.html?idxno=388229",
+      "originallink": "http://www.ujeil.com/news/articleView.html?idxno=388229",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "add8320e2deb9a59",
+      "title": "기름값 떨어지는데 밥상은 들썩…파 가격 ‘37%’ 급등",
+      "summary": "휘발유(23.1%), 경유(33.7%), 등유(23.1%)가 크게 올랐고 자동차용 LPG(2.7%)도 상승 전환했다. 석유류가 포함된 공업제품은 4.4% 상승해 전체 물가를 1.47%포인트 높였다. 재정경제부는 석유 최고가격제가 없었을 경우...",
+      "source": "khan.co.kr",
+      "publishedAt": "2026-07-02T12:37:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/032/0003455858?sid=101",
+      "originallink": "https://www.khan.co.kr/article/202607022137005",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "284890e349c6d03f",
+      "title": "경남 물가 상승세 지속… 기름값·밥상물가 부담 확대",
+      "summary": "휘발유가 23.6%, 경유는 35.1% 오른 영향이 컸다. 전국적으로도 석유류가 24.7% 올라 전체 물가를 0.93%포인트 밀어올렸다. 중동 지역 정세 불안에 따른 국제유가 상승이 배경으로 꼽힌다. 이 같은 영향으로 경남 교통 부문...",
+      "source": "knnews.co.kr",
+      "publishedAt": "2026-07-02T12:34:00.000Z",
+      "link": "http://www.knnews.co.kr/news/articleView.php?idxno=1545527",
+      "originallink": "http://www.knnews.co.kr/news/articleView.php?idxno=1545527",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "14dcd8b9eb97353b",
+      "title": "\"기름값 때문에 배달 일 못하겠어요\"…물가, 두 달째 3%대 급등",
+      "summary": "그때는, 그때 가면 이제 더이상 배달 직업 못할 거 같아요.\" 중동전쟁 종전합의로 국제유가는 떨어졌지만 그 여파는 여전한 겁니다. 실제 지난달 휘발유 가격은 1년 전보다 23.1% 올랐고 경유도 33.7%나 뛰며 서민들의 부담을...",
+      "source": "news.tvchosun.com",
+      "publishedAt": "2026-07-02T12:24:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/448/0000623932?sid=101",
+      "originallink": "https://news.tvchosun.com/site/data/html_dir/2026/07/02/2026070290300.html",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "a3fd66ccf170e846",
+      "title": "6월 경기도 소비자물가 3.3% 상승… 더 뜨거워진 밥상물가",
+      "summary": "경제동향통계심의관은 \"6월의 경우, 농산물이 일부 재배면적 감소 등으로 가격이 상승세로 돌아섰다\"면서 \"휘발유는 최고가격제 때문에 큰 변동이 없었지만, 자동차용 LPG 가격이 소폭 상승하면서 석유류 상승률이...",
+      "source": "joongboo.com",
+      "publishedAt": "2026-07-02T09:46:00.000Z",
+      "link": "https://www.joongboo.com/news/articleView.html?idxno=363730467",
+      "originallink": "https://www.joongboo.com/news/articleView.html?idxno=363730467",
       "keyword": "휘발유"
     },
     {
@@ -25,86 +125,6 @@
       "publishedAt": "2026-07-02T08:51:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/009/0005702067?sid=101",
       "originallink": "https://www.mk.co.kr/article/12089117",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "cd9abcaf4d759613",
-      "title": "유가 상승 여파…광주·전남 소비자물가 두 달 연속 3%대",
-      "summary": "국제유가 상승 영향으로 휘발유와 경유 등 석유류 가격이 큰 폭으로 오른 데다 서비스 물가도 상승하면서 체감물가 부담이 계속됐다. 다만 일부 채소류 가격이 하락하면서 신선식품 물가는 지역별로 다른 흐름을...",
-      "source": "namdonews.com",
-      "publishedAt": "2026-07-02T08:48:00.000Z",
-      "link": "https://www.namdonews.com/news/articleView.html?idxno=915651",
-      "originallink": "https://www.namdonews.com/news/articleView.html?idxno=915651",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "08a3f08028a73ab1",
-      "title": "경남 소비자물가 석 달째 3%대…석유류·농축수산물 상승 영향",
-      "summary": "품목별로는 휘발유 23.6%, 경유 35.1%, 등유 19.5% 각각 상승했다. 재정경제부는 석유 최고가격제가 6월... 한국은행은 7월 소비자물가 상승률은 국제유가 하락과 정부 물가안정 대책의 영향으로 6월보다 다소 낮아질...",
-      "source": "idomin.com",
-      "publishedAt": "2026-07-02T08:42:00.000Z",
-      "link": "https://www.idomin.com/news/articleView.html?idxno=2009286",
-      "originallink": "https://www.idomin.com/news/articleView.html?idxno=2009286",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "5e7643186547a039",
-      "title": "高유가에 칩플레이션까지…물가 두 달째 3% 넘었다",
-      "summary": "중동 전쟁 여파로 휘발유·경유 등 석유제품 가격이 1년 새 25% 가까이 오른 데다 ‘칩플레이션’(반도체... 국제 유가가 하락세를 보이는 데다 지난달 27일부터 적용된 7차 최고가격제를 통해 석유제품 최고가격을...",
-      "source": "hankyung.com",
-      "publishedAt": "2026-07-02T08:39:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/015/0005305675?sid=101",
-      "originallink": "https://www.hankyung.com/article/2026070227091",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "592c8d793fc19457",
-      "title": "대전 소비자물가 3.0% 상승…고유가에 체감물가도 '껑충'",
-      "summary": "중동 정세 불안에 따른 국제유가 상승으로 석유류 가격이 24.7% 오르며 전체 물가 상승을 주도한 것으로... 휘발유는 대전 23.7%, 세종 23.6%, 충남 23.2%, 충북 23.1% 올랐고, 경유도 세종 34.1%, 충남 34.0%, 대전 33.6%, 충북 33.5...",
-      "source": "joongdo.co.kr",
-      "publishedAt": "2026-07-02T08:10:00.000Z",
-      "link": "https://www.joongdo.co.kr/web/view.php?key=20260702010000747",
-      "originallink": "https://www.joongdo.co.kr/web/view.php?key=20260702010000747",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "ad586a7d4aac13aa",
-      "title": "물가 고공행진…경북 상승률 전국 최고, 대구도 2%대 지속",
-      "summary": "공업제품에서는 휘발유(23.7%)와 경유(34.6%), 등유(25.2%) 품목이 큰 폭으로 오르며 전체 물가 상승을 견인했다. 중동 전쟁에 따른 국제 유가 상승이 여전히 물가에 영향을 미치는 모양새다. 전기·가스·수도는...",
-      "source": "kyongbuk.co.kr",
-      "publishedAt": "2026-07-02T07:54:00.000Z",
-      "link": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4077262",
-      "originallink": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4077262",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "40750883310f59c1",
-      "title": "전북 6월 소비자물가 3.6% 급등…국제유가 폭등에 석 달 연속 3%대 고물...",
-      "summary": "0% 상승하며 가장 큰 폭으로 올랐는데, 국제 유가 상승 여파로 휘발유가 23.8%, 경유가 34.7% 뛴 영향이 컸다.... 휘발유·경유 가격 상승이 직접적인 영향을 미쳤다. 기타 상품·서비스(5.3%)와 오락·문화(4.7%)도...",
-      "source": "jeonmin.co.kr",
-      "publishedAt": "2026-07-02T07:52:00.000Z",
-      "link": "http://www.jeonmin.co.kr/news/articleView.html?idxno=442628",
-      "originallink": "http://www.jeonmin.co.kr/news/articleView.html?idxno=442628",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "56d434455f444dfc",
-      "title": "[사설] 생활물가 폭등에 추경으로 기름 부어서야",
-      "summary": "휘발유와 경유는 물론 농축수산물과 외식비까지 줄줄이 올라 서민 경제를 짓누르고 있다. 정부가 농축수산물... 국제유가 하락분을 신속히 가격에 반영하고 공공요금을 동결하는 조치 역시 서민 부담을 덜어주는 데 일정...",
-      "source": "kyongbuk.co.kr",
-      "publishedAt": "2026-07-02T07:40:00.000Z",
-      "link": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4077256",
-      "originallink": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4077256",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "b0dcfdcb609db8c9",
-      "title": "6월 소비자물가 3.2% 상승",
-      "summary": "중동 전쟁 여파로 국제유가가 오르면서 석유류 가격이 24.7% 급등했고, 휘발유와 경유, 등유 가격도 큰 폭으로 올랐습니다. 자주 사는 품목을 중심으로 한 생활물가지수도 3.4% 상승해 서민들의 체감 물가 부담이 커졌을...",
-      "source": "news.skbroadband.com",
-      "publishedAt": "2026-07-02T07:30:00.000Z",
-      "link": "https://news.skbroadband.com/news/articleView.html?idxno=230987",
-      "originallink": "https://news.skbroadband.com/news/articleView.html?idxno=230987",
       "keyword": "휘발유"
     },
     {
@@ -145,26 +165,6 @@
       "publishedAt": "2026-07-02T04:08:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/586/0000132859?sid=101",
       "originallink": "https://www.sisajournal.com/news/articleView.html?idxno=378481",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "3adf133b0bc9850d",
-      "title": "소비자물가, 유가 쇼크에 3.2% 급등…2년 6개월 만에 최대폭",
-      "summary": "이두원 데이터처 경제동향통계심의관은 석유류 흐름과 관련해 \"휘발유는 최고가격제 때문에 큰 변동이 없었지만, 자동차용 LPG 가격이 소폭 상승하면서 석유류 상승률이 소폭 확대됐다\"고 말했다. 이어 \"6월27일...",
-      "source": "whitepaper.co.kr",
-      "publishedAt": "2026-07-02T03:22:00.000Z",
-      "link": "http://www.whitepaper.co.kr/news/articleView.html?idxno=264142",
-      "originallink": "http://www.whitepaper.co.kr/news/articleView.html?idxno=264142",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "898f708b98f8083e",
-      "title": "석유류·컴퓨터값 뛰자… 6월 물가, 2년 6개월만에 최고 (종합)",
-      "summary": "품목별로는 휘발유가 23.1%, 경유가 33.7%, 등유가 23.1% 각각 올랐다. 정부는 석유 최고가격제 시행으로 6월... 이두원 데이터처 경제동향통계심의관은 \"휘발유는 최고가격제 때문에 큰 변동이 없었지만, 자동차용 LPG...",
-      "source": "fnnews.com",
-      "publishedAt": "2026-07-02T02:55:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/014/0005542849?sid=101",
-      "originallink": "http://www.fnnews.com/news/202607021134244320",
       "keyword": "휘발유"
     }
   ]
