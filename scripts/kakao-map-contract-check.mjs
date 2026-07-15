@@ -8,7 +8,7 @@ const loader = read('src/utils/kakaoMapsSdk.ts');
 const map = read('src/components/map/KakaoStationMap.tsx');
 const feature = read('src/components/feature/liter.tsx');
 const css = read('src/styles/DesignTokens.css');
-const envExample = read('.env.example');
+const workflow = read('.github/workflows/deploy-github-pages.yml');
 const source = [loader, map, feature, css].join('\n');
 
 function requireText(text, needle, label) {
@@ -30,7 +30,7 @@ for (const [needle, label] of [
   ['fitMapToContent', '전체 주유소 보기'],
 ]) requireText(source, needle, label);
 requireText(feature, '<KakaoStationMap', '주유소 화면의 실제 지도 컴포넌트');
-requireText(envExample, 'VITE_KAKAO_MAP_APP_KEY=', '.env.example 설정');
+requireText(workflow, 'VITE_KAKAO_MAP_APP_KEY: ${{ vars.VITE_KAKAO_MAP_APP_KEY }}', 'GitHub Actions 카카오 지도 변수 연결');
 requireText(css, 'min-width: 44px', '지도 가격 마커 44px 너비');
 requireText(css, 'min-height: 44px', '지도 가격 마커 44px 높이');
 
@@ -47,4 +47,4 @@ if (errors.length) {
   process.exit(1);
 }
 console.log('kakao-map:check passed');
-console.log('real SDK map: 1, static map assets: 0, marker touch size: 44px+');
+console.log('real SDK map: 1, GitHub Actions variable: connected, static map assets: 0, marker touch size: 44px+');
