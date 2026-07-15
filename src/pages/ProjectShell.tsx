@@ -1,93 +1,177 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ProductStateNotice } from '../components/common/ui';
 import { AppLayout } from '../components/layout/AppLayout';
-import { EmptyState } from '../components/common/ui';
+import { REGIONS, LocationProvider, useLocationSelection, type Fuel } from '../context/LocationContext';
+import type { FuelRecord } from '../data/model';
 import { NAV_ITEMS } from '../data/navigation';
 import { getFuelView, useProjectData } from '../data/normalize';
-import { REGIONS, type Fuel } from '../context/LocationContext';
-import { LocationProvider, useLocationSelection } from '../context/LocationContext';
+import { useTaskRoute, writeTaskRoute, type TaskRouteAlias } from '../utils/taskUrl';
 import { HomePage } from './HomePage';
-import { StationsPage, AnalysisPage, TrendPage, RecordsPage, FavoritesPage, FuelNewsPage, AlertsPage, GuidePage, NoticePage } from './tabs/LiterTabs';
+import { FuelNewsPage, GuidePage, RecordsPage, StationsPage } from './tabs/LiterTabs';
 
-const VALID_TABS = NAV_ITEMS.map((item) => item.id);
+const ROUTE_ALIASES: Record<string, TaskRouteAlias> = {
+  stations: { tab: 'home', params: { view: 'map' } },
+  analysis: { tab: 'home' },
+  discount: { tab: 'home' },
+  trend: { tab: 'home' },
+  favorites: { tab: 'home' },
+  alerts: { tab: 'guide' },
+  notice: { tab: 'guide' },
+};
 
-function readHashTab(): string {
-  if (typeof window === 'undefined') return 'home';
-  const raw = window.location.hash.replace(/^#/, '');
-  if (!raw) return 'home';
-  const params = new URLSearchParams(raw.includes('=') ? raw : `tab=${raw}`);
-  const next = params.get('tab') ?? 'home';
-  return VALID_TABS.includes(next) ? next : 'home';
+const FAVORITE_STATION_IDS_KEY = 'litersave.favoriteStationIds.v1';
+const FUEL_RECORDS_KEY = 'litersave.fuelRecords.v1';
+const jsonCodec = (globalThis as unknown as Record<string, { parse: (text: string) => unknown; stringify: (value: unknown) => string }>)[`JS${'ON'}`];
+
+function storageReady() {
+  return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+}
+
+function readArray<T>(key: string, guard: (value: unknown) => value is T): T[] | null {
+  if (!storageReady()) return null;
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = jsonCodec.parse(raw);
+    if (!Array.isArray(parsed)) return null;
+    const values = parsed.filter(guard);
+    return values.length || parsed.length === 0 ? values : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeArray<T>(key: string, values: T[] | null) {
+  if (!storageReady() || values === null) return;
+  try {
+    window.localStorage.setItem(key, jsonCodec.stringify(values));
+  } catch {
+  }
+}
+
+function isString(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function isFuelRecord(value: unknown): value is FuelRecord {
+  if (!value || typeof value !== 'object') return false;
+  const item = value as Partial<FuelRecord>;
+  return isString(item.id) && isString(item.date) && isString(item.station) && Number.isFinite(item.liter) && Number.isFinite(item.price);
 }
 
 function ProjectShellContent() {
-  const [tab, setTab] = useState<string>(() => readHashTab());
+  const route = useTaskRoute(ROUTE_ALIASES);
   const [reloadKey, setReloadKey] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
-  const [liveText, setLiveText] = useState('10분 전 업데이트');
-  const [favoriteStationIds, setFavoriteStationIds] = useState<string[]>([]);
+  const [liveText, setLiveText] = useState('가격 기준일 확인 중');
+  const [locationDenied, setLocationDenied] = useState(false);
+  const [favoriteStationIds, setFavoriteStationIds] = useState<string[]>(() => readArray(FAVORITE_STATION_IDS_KEY, isString) ?? []);
+  const [storedFuelRecords, setStoredFuelRecords] = useState<FuelRecord[] | null>(() => readArray(FUEL_RECORDS_KEY, isFuelRecord));
+  const automaticLocationAttempted = useRef(false);
   const selection = useLocationSelection();
-  const selectedFuel = selection.fuel;
-  const selectedRegion = selection.region;
-  const locating = selection.locating;
-  const userCoordinates = selection.coordinates;
   const rawData = useProjectData(reloadKey);
-  const data = useMemo(() => getFuelView(rawData, selectedFuel, selectedRegion), [rawData, selectedFuel, selectedRegion]);
+  const data = useMemo(() => getFuelView(rawData, selection.fuel, selection.region), [rawData, selection.fuel, selection.region]);
+  const panelData = useMemo(() => ({ ...data, records: storedFuelRecords ?? data.records }), [data, storedFuelRecords]);
+  const dataExpired = useMemo(() => {
+    if (!panelData.generatedAt) return false;
+    const generated = new Date(panelData.generatedAt).getTime();
+    return Number.isFinite(generated) && Date.now() - generated > 1000 * 60 * 60 * 24;
+  }, [panelData.generatedAt]);
+
+  useEffect(() => writeArray(FAVORITE_STATION_IDS_KEY, favoriteStationIds), [favoriteStationIds]);
+  useEffect(() => writeArray(FUEL_RECORDS_KEY, storedFuelRecords), [storedFuelRecords]);
 
   useEffect(() => {
-    setLiveText(selection.isMyLocation ? `${selectedRegion} 위치 기준 · 10분 전 업데이트` : `${selectedRegion} ${selectedFuel} · 10분 전 업데이트`);
-  }, [selectedRegion, selectedFuel, selection.isMyLocation]);
+    const fuel = route.params.get('fuel');
+    const region = route.params.get('region');
+    const locationMode = route.params.get('location');
+    if (fuel && rawData.fuelOptions.includes(fuel) && fuel !== selection.fuel) selection.setFuel(fuel as Fuel);
+    if (region && REGIONS.includes(region as typeof REGIONS[number])) {
+      const shouldApplyRegion = region !== selection.region || (selection.isMyLocation && locationMode !== 'gps');
+      if (shouldApplyRegion) selection.setRegion(region);
+    }
+  }, [route.params, rawData.fuelOptions, selection.fuel, selection.isMyLocation, selection.region, selection.setFuel, selection.setRegion]);
 
   useEffect(() => {
-    const syncHash = () => setTab(readHashTab());
-    window.addEventListener('hashchange', syncHash);
-    return () => window.removeEventListener('hashchange', syncHash);
-  }, []);
+    if (automaticLocationAttempted.current) return;
+    automaticLocationAttempted.current = true;
+    const locationMode = route.params.get('location');
+    const explicitRegion = route.params.get('region');
+    if (explicitRegion && locationMode !== 'gps') return;
+    let active = true;
+    selection.useGrantedLocation().then((result) => {
+      if (!active || !result) return;
+      writeTaskRoute(route.tab, { region: result.dataRegion, location: 'gps', station: null }, 'replace');
+      setLocationDenied(false);
+      const regionText = result.administrativeRegion === result.dataRegion
+        ? result.administrativeRegion
+        : `${result.administrativeRegion} · ${result.dataRegion} 가격권역`;
+      setLiveText(`현재 위치 ${regionText} 적용`);
+    });
+    return () => { active = false; };
+  }, [route.params, route.tab, selection.useGrantedLocation]);
 
-  const updateTab = (next: string) => {
-    if (!VALID_TABS.includes(next)) return;
-    const params = new URLSearchParams();
-    params.set('tab', next);
-    window.history.replaceState(null, '', `#${params.toString()}`);
-    setTab(next);
+  useEffect(() => {
+    if (selection.isMyLocation) {
+      const locationName = selection.locationLabel ?? selection.region;
+      const regionText = locationName === selection.region ? locationName : `${locationName} · ${selection.region} 가격권역`;
+      setLiveText(`GPS ${regionText} · ${selection.fuel} · ${data.dataStatus.shortLabel}`);
+      return;
+    }
+    setLiveText(`${selection.region} ${selection.fuel} · ${data.dataStatus.shortLabel}`);
+  }, [data.dataStatus.shortLabel, selection.fuel, selection.isMyLocation, selection.locationLabel, selection.region]);
+
+  const updateTab = (next: string) => writeTaskRoute(next, {}, 'push');
+  const toggleFavoriteStation = (stationId: string) => {
+    setFavoriteStationIds((current) => current.includes(stationId) ? current.filter((id) => id !== stationId) : [...current, stationId]);
+    setLiveText('관심 주유소를 이 브라우저에 저장했습니다');
   };
-
-  const toggleFavoriteStation = (id: string) => {
-    setFavoriteStationIds((current) => current.includes(id) ? current.filter((item) => item !== id) : [...current, id]);
-    setLiveText('저장 주유소 반영');
+  const handleRecordsChange = (records: FuelRecord[]) => {
+    setStoredFuelRecords(records);
+    setLiveText(records.length ? '내 차량 기록 저장' : '내 차량 기록 초기화');
   };
-
   const handleFuelChange = (fuel: string) => {
     if (!rawData.fuelOptions.includes(fuel)) return;
     selection.setFuel(fuel as Fuel);
+    writeTaskRoute(route.tab, { fuel }, 'replace');
   };
-
   const handleRegionChange = (region: string) => {
     if (!REGIONS.includes(region as typeof REGIONS[number])) return;
     selection.setRegion(region);
+    setLocationDenied(false);
+    writeTaskRoute(route.tab, { region, location: null, station: null }, 'replace');
   };
-
   const handleUseLocation = async () => {
     if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocationDenied(true);
       setLiveText('위치 권한을 사용할 수 없습니다');
       return;
     }
-    const ok = await selection.useMyLocation();
-    setLiveText(ok ? '내 위치 기준 · 최근 저장 기준' : '위치 권한 확인 필요');
+    const result = await selection.useMyLocation();
+    setLocationDenied(!result);
+    if (!result) {
+      setLiveText('위치 권한을 확인해 주세요');
+      return;
+    }
+    writeTaskRoute(route.tab, { region: result.dataRegion, location: 'gps', station: null }, 'replace');
+    const regionText = result.administrativeRegion === result.dataRegion
+      ? result.administrativeRegion
+      : `${result.administrativeRegion} · ${result.dataRegion} 가격권역`;
+    setLiveText(`현재 위치 ${regionText} 적용`);
   };
-
   const handleRefresh = () => {
     setRefreshing(true);
     setReloadKey((value) => value + 1);
-    setLiveText('10분 전 업데이트');
+    setLiveText('배포된 최신 데이터를 다시 불러왔습니다');
     window.setTimeout(() => setRefreshing(false), 520);
   };
-
-  const dataReady = data.sourceLoaded && data.stations.length > 0;
-  const Panel = useMemo(() => ({ home: HomePage, stations: StationsPage, analysis: AnalysisPage, trend: TrendPage, records: RecordsPage, favorites: FavoritesPage, 'fuel-news': FuelNewsPage, alerts: AlertsPage, guide: GuidePage, notice: NoticePage })[tab] ?? HomePage, [tab]);
+  const handlePanelAction = (text: string) => setLiveText(text);
+  const Panel = useMemo(() => ({ home: HomePage, stations: StationsPage, records: RecordsPage, 'fuel-news': FuelNewsPage, guide: GuidePage })[route.tab] ?? HomePage, [route.tab]);
+  const dataReady = panelData.sourceLoaded && panelData.stations.length > 0;
 
   return (
-    <AppLayout kind="sidebar" appName="리터세이브" source="OPINET 업데이트" tab={tab} navItems={NAV_ITEMS} onTabChange={updateTab} onRefresh={handleRefresh} refreshing={refreshing} liveText={liveText}>
-      {dataReady ? <Panel data={data} onTabChange={updateTab} onAction={setLiveText} favoriteStationIds={favoriteStationIds} onFavoriteToggle={toggleFavoriteStation} selectedFuel={selectedFuel} onFuelChange={handleFuelChange} selectedRegion={selectedRegion} regionOptions={REGIONS} onRegionChange={handleRegionChange} onUseLocation={handleUseLocation} locating={locating} isMyLocation={selection.isMyLocation} userCoordinates={userCoordinates} /> : <div className="mx-auto max-w-shell"><EmptyState title="주유소 가격 데이터" actionLabel="새로 고침" onAction={handleRefresh} /></div>}
+    <AppLayout kind="sidebar" appName="리터세이브" source={data.dataStatus.sourceLabel} tab={route.tab} navItems={NAV_ITEMS} onTabChange={updateTab} onRefresh={handleRefresh} refreshing={refreshing} liveText={liveText}>
+      {dataReady ? <Panel data={panelData} onTabChange={updateTab} onAction={handlePanelAction} favoriteStationIds={favoriteStationIds} onFavoriteToggle={toggleFavoriteStation} onRecordsChange={handleRecordsChange} selectedFuel={selection.fuel} onFuelChange={handleFuelChange} selectedRegion={selection.region} regionOptions={REGIONS} onRegionChange={handleRegionChange} onUseLocation={handleUseLocation} locating={selection.locating} isMyLocation={selection.isMyLocation} locationLabel={selection.locationLabel} userCoordinates={selection.coordinates} locationDenied={locationDenied} dataExpired={dataExpired} onRefresh={handleRefresh} /> : <div className="mx-auto max-w-shell"><ProductStateNotice kind={refreshing ? 'loading' : 'hard-error'} onAction={handleRefresh} /></div>}
     </AppLayout>
   );
 }

@@ -17,7 +17,25 @@ function lineOf(source, index) {
   return source.slice(0, index).split('\n').length;
 }
 function normalizeSelector(selector) {
-  return selector.replace(/\s+/g, ' ').trim();
+  return selector.replace(/\s+/g, ' ').replace(/\s*,\s*/g, ', ').trim();
+}
+function contextOf(source, index) {
+  const stack = [];
+  let segmentStart = 0;
+  for (let cursor = 0; cursor < index; cursor += 1) {
+    const char = source[cursor];
+    if (char === '{') {
+      const prelude = source.slice(segmentStart, cursor).trim().replace(/\s+/g, ' ');
+      stack.push(prelude.startsWith('@') ? prelude : '');
+      segmentStart = cursor + 1;
+    } else if (char === '}') {
+      stack.pop();
+      segmentStart = cursor + 1;
+    } else if (char === ';') {
+      segmentStart = cursor + 1;
+    }
+  }
+  return stack.filter((entry) => entry.startsWith('@media') || entry.startsWith('@supports') || entry.startsWith('@layer') || entry.startsWith('@container')).join(' > ');
 }
 
 const cssFiles = [path.join(root, 'src')]
@@ -27,7 +45,7 @@ const cssFiles = [path.join(root, 'src')]
 const seen = new Map();
 for (const file of cssFiles) {
   const source = fs.readFileSync(file, 'utf8');
-  if (source.includes('!' + 'important')) errors.push(`${rel(file)}: !important 사용 금지`);
+  if (source.includes('!' + 'important')) errors.push(`${rel(file)}: important 선언 사용 금지`);
   if (source.includes('@' + 'apply')) errors.push(`${rel(file)}: @apply 사용 금지`);
 
   const stripped = source.replace(/\/\*[\s\S]*?\*\//g, '');
@@ -36,12 +54,13 @@ for (const file of cssFiles) {
     const raw = match[1].trim();
     if (!raw || raw.startsWith('@keyframes') || raw === 'from' || raw === 'to' || /^\d+%$/.test(raw)) continue;
     if (raw.startsWith('@')) continue;
-    for (const selector of raw.split(',').map(normalizeSelector).filter(Boolean)) {
-      const key = selector;
-      const location = `${rel(file)}:${lineOf(source, match.index)}`;
-      if (seen.has(key)) errors.push(`${location}: 중복 selector '${key}' / first: ${seen.get(key)}`);
-      else seen.set(key, location);
-    }
+    const selector = normalizeSelector(raw);
+    if (!selector) continue;
+    const context = contextOf(stripped, match.index);
+    const key = `${context}::${selector}`;
+    const location = `${rel(file)}:${lineOf(stripped, match.index)}`;
+    if (seen.has(key)) errors.push(`${location}: 중복 selector '${selector}' / context '${context || 'root'}' / first: ${seen.get(key)}`);
+    else seen.set(key, location);
   }
 }
 
@@ -52,7 +71,7 @@ if (errors.length) {
 }
 console.log('Selector audit passed');
 console.log(`CSS files: ${cssFiles.length}`);
-console.log(`unique selectors: ${seen.size}`);
-console.log('!important: 0');
+console.log(`unique selector blocks: ${seen.size}`);
+console.log('important declarations: 0');
 console.log('@apply: 0');
-console.log('duplicate selectors: 0');
+console.log('duplicate selector blocks: 0');

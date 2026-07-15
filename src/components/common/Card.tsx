@@ -13,19 +13,19 @@ export interface CardProps extends HTMLAttributes<HTMLElement> {
   loading?: boolean;
 }
 
-const toneClasses: Record<CardTone, string> = {
+const cardToneClasses: Record<CardTone, string> = {
   default: 'border-ink-200 bg-white',
   muted: 'border-ink-200 bg-ink-50',
-  accent: 'border-primary-400 bg-primary-50',
+  accent: 'border-primary-100 bg-primary-50',
   danger: 'border-up bg-up-bg',
   warning: 'border-warn-border bg-warn-bg',
 };
 
-const paddingClasses: Record<CardPadding, string> = {
+const cardPaddingClasses: Record<CardPadding, string> = {
   none: '',
-  compact: 'p-ds-2',
-  normal: 'p-ds-3',
-  spacious: 'p-ds-4',
+  compact: 'p-ds-1.5 tablet:p-ds-2',
+  normal: 'p-card-pad-compact tablet:p-card-pad-medium desktop:p-card-pad-expanded',
+  spacious: 'p-ds-3 desktop:p-ds-4',
 };
 
 export function Card({
@@ -33,7 +33,7 @@ export function Card({
   as: Component = 'section',
   tone = 'default',
   padding = 'none',
-  interactive = true,
+  interactive = false,
   selected = false,
   loading = false,
   className = '',
@@ -41,21 +41,24 @@ export function Card({
 }: CardProps) {
   return (
     <Component
+      {...props}
       aria-busy={loading || undefined}
+      data-ui-card="true"
+      data-card-tone={tone}
+      data-card-padding={padding}
       data-selected={selected || undefined}
       className={[
-        'rounded-lg border shadow-card transition-fast duration-fast ease-product',
+        'min-w-0 rounded-card border shadow-card transition-fast duration-fast ease-product',
         'focus-within:shadow-focus',
-        toneClasses[tone],
-        paddingClasses[padding],
-        interactive ? 'hover:border-primary-400 hover:shadow-card-hover' : '',
-        selected ? 'border-primary-500 bg-primary-50 ring-1 ring-primary-500' : '',
+        cardToneClasses[tone],
+        cardPaddingClasses[padding],
+        interactive ? 'hover:border-ink-400 hover:shadow-card-hover' : '',
+        selected ? 'border-primary-400 bg-white ring-1 ring-primary-100' : '',
         loading ? 'pointer-events-none opacity-70' : '',
         className,
       ].filter(Boolean).join(' ')}
-      {...props}
     >
-      {loading ? <div className="mb-ds-2 h-ds-2 w-2/5 rounded-md ds-skeleton" /> : null}
+      {loading ? <div className="mb-ds-2 h-ds-2 w-2/5 rounded-control ds-skeleton" /> : null}
       {children}
     </Component>
   );

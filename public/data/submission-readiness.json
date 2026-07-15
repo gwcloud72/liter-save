@@ -1,0 +1,66 @@
+{
+  "project": "liter-save",
+  "title": "리터세이브",
+  "generatedAt": "2026-07-14T14:20:47.434Z",
+  "portfolioPosition": "실생활 가격 비교, 지도/길찾기, 50L 절약액 UX를 보여주는 프로젝트",
+  "liveDemo": "https://gwcloud72.github.io/liter-save/",
+  "repository": "https://github.com/gwcloud72/liter-save",
+  "readiness": "조건부 제출 가능",
+  "submitReady": true,
+  "score": 70,
+  "source": "OPINET Open API",
+  "freshnessPolicy": "OPINET_MAX_DATA_AGE_HOURS=24",
+  "currentDataStatus": "stale",
+  "currentDataSummary": "OPINET 가격 데이터 최신성 또는 수집 상태 확인이 필요합니다.",
+  "risk": "현재 데이터가 stale이면 최종 제출 전 OPINET 수집 성공 여부를 먼저 확인해야 합니다.",
+  "mustCheckBeforeFinalSubmission": [
+    "Actions 수동 실행 후 oil-prices.json generatedAt과 service-status.json 상태를 확인합니다.",
+    "README 상단 Live Demo 링크와 배포 badge 확인",
+    "브라우저 콘솔 오류 없음 확인",
+    "모바일 첫 화면 캡처와 데스크톱 첫 화면 캡처 갱신"
+  ],
+  "evidence": [
+    {
+      "name": "OPINET 가격 데이터",
+      "status": "pass",
+      "detail": "54개 데이터셋, 1067개 주유소"
+    },
+    {
+      "name": "실시간 수집 비율",
+      "status": "pass",
+      "detail": "실시간 54개, 직전 정상값 0개"
+    },
+    {
+      "name": "유종 커버리지",
+      "status": "pass",
+      "detail": "3개 유종"
+    },
+    {
+      "name": "지역 커버리지",
+      "status": "pass",
+      "detail": "18개 지역"
+    },
+    {
+      "name": "가격 기준시각",
+      "status": "review",
+      "detail": "2026.06.24 18:27, 484.9시간 전"
+    },
+    {
+      "name": "가격 이력",
+      "status": "pass",
+      "detail": "96개 스냅샷"
+    },
+    {
+      "name": "유가 뉴스",
+      "status": "pass",
+      "detail": "16건"
+    }
+  ],
+  "reviewItems": [
+    {
+      "name": "가격 기준시각",
+      "detail": "2026.06.24 18:27, 484.9시간 전"
+    }
+  ],
+  "failedItems": []
+}

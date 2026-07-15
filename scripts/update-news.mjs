@@ -140,7 +140,7 @@ async function main() {
     if (pauseMs) await new Promise((resolve) => setTimeout(resolve, pauseMs));
   }
   const deduped = [...new Map(rows.map((item) => [item.originallink || item.link || item.title, item])).values()]
-    .sort((a, b) => String(b.publishedAt || '').localeCompare(String(a.publishedAt || '')))
+    .sort((latestNewsItem, previousNewsItem) => String(latestNewsItem.publishedAt || '').localeCompare(String(previousNewsItem.publishedAt || '')))
     .slice(0, maxItems);
   if (!deduped.length) {
     console.log(`${target} 뉴스 결과 없음: 기존 데이터를 유지합니다.`);

@@ -98,7 +98,16 @@ jobs:
           OPINET_FUELS: ${{ vars.OPINET_FUELS }}
           OPINET_COUNT: "20"
           HISTORY_RETENTION_DAYS: "90"
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
           FRED_HISTORY_DAYS: ${{ vars.FRED_HISTORY_DAYS }}
+          OPINET_REQUEST_TIMEOUT_MS: "15000"
+          OPINET_REQUEST_PAUSE_MS: "800"
+          OPINET_REQUEST_MAX_RETRIES: "3"
+          OPINET_REQUEST_RETRY_BASE_MS: "1200"
+          OPINET_RATE_LIMIT_MAX_REQUESTS: "18"
+          OPINET_RATE_LIMIT_WINDOW_MS: "60000"
+          OPINET_EMPTY_RESPONSE_COOLDOWN_MS: "65000"
+          OPINET_FALLBACK_MAX_AGE_HOURS: "24"
           VITE_KAKAO_MAP_APP_KEY: ${{ vars.VITE_KAKAO_MAP_APP_KEY }}
           NEWS_CLIENT_ID: ${{ secrets.NEWS_CLIENT_ID }}
           NEWS_CLIENT_SECRET: ${{ secrets.NEWS_CLIENT_SECRET }}
@@ -132,6 +141,15 @@ jobs:
           OPINET_COUNT: "20"
           OPINET_API_BASE: "http://www.opinet.co.kr/api"
           OPINET_AUTH_PARAM: "code"
+          OPINET_WAITING_FALLBACK: "true"
+          OPINET_REQUEST_TIMEOUT_MS: "15000"
+          OPINET_REQUEST_PAUSE_MS: "800"
+          OPINET_REQUEST_MAX_RETRIES: "3"
+          OPINET_REQUEST_RETRY_BASE_MS: "1200"
+          OPINET_RATE_LIMIT_MAX_REQUESTS: "18"
+          OPINET_RATE_LIMIT_WINDOW_MS: "60000"
+          OPINET_EMPTY_RESPONSE_COOLDOWN_MS: "65000"
+          OPINET_FALLBACK_MAX_AGE_HOURS: "24"
           HISTORY_RETENTION_DAYS: "90"
         run: |
           set -euo pipefail
@@ -164,20 +182,27 @@ jobs:
           }
 
           if [ -z "${OPINET_CERT_KEY:-}" ]; then
-            echo "OPINET 인증 정보가 설정되지 않아 데이터 수집을 건너뜁니다. 화면은 기본 표시 데이터로 배포됩니다."
+            echo "OPINET 인증 정보가 없어 신규 수집은 건너뜁니다. 단, 기존 가격 데이터가 유효하지 않으면 배포를 중단합니다."
+            OPINET_STRICT_DATA_AGE=true OPINET_MAX_DATA_AGE_HOURS=24 npm run data:check
             exit 0
           fi
 
           if npm run generate:data; then
             require_oil_data
           else
-            echo "OPINET 데이터 수집 실패. 기존 데이터를 복구합니다."
+            echo "::error::OPINET 데이터 수집에 실패했습니다. 저장소와 현재 배포본은 직전 정상 상태를 유지합니다."
             restore_data
-            require_oil_data
+            exit 1
           fi
 
       - name: 국제유가 데이터 생성
         shell: bash
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          FRED_HISTORY_DAYS: ${{ vars.FRED_HISTORY_DAYS }}
+          FRED_REQUEST_TIMEOUT_MS: "15000"
+          FRED_MAX_RETRIES: "3"
+          FRED_RETRY_BASE_MS: "1200"
         run: |
           set -euo pipefail
           if npm run generate:oil; then
@@ -198,6 +223,7 @@ jobs:
           GEMINI_REQUEST_PAUSE_MS: ${{ vars.GEMINI_REQUEST_PAUSE_MS }}
           GEMINI_MAX_INPUT_CHARS: ${{ vars.GEMINI_MAX_INPUT_CHARS }}
           GEMINI_MAX_RETRIES: ${{ vars.GEMINI_MAX_RETRIES }}
+          LITERSAVE_WAITING_FALLBACK: "true"
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/report-backup"
@@ -228,20 +254,26 @@ jobs:
           set -euo pipefail
           npm run update:news || echo "유가 뉴스 수집을 건너뜁니다."
 
+      - name: 데이터 품질 리포트 생성
+        run: npm run status:generate
+
       - name: 배포 전 전체 검사
+        env:
+          OPINET_STRICT_DATA_AGE: "true"
+          OPINET_MAX_DATA_AGE_HOURS: "24"
         run: npm run deploy:check
 
       - name: 누적 데이터 저장소 반영
         shell: bash
         run: |
-          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json; then
-            echo "반영할 데이터 변경을 확인했습니다."
+          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json public/data/service-status.json docs/data-quality-report.md docs/DEPLOYMENT_RUNBOOK.md docs/submission-readiness-report.md public/data/submission-readiness.json; then
+            echo "반영할 데이터 변경이 없습니다."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json
+          git add public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json public/data/service-status.json docs/data-quality-report.md docs/DEPLOYMENT_RUNBOOK.md docs/submission-readiness-report.md public/data/submission-readiness.json
           git commit -m "가격 데이터 자동 갱신 [skip ci]"
           git push origin main
 

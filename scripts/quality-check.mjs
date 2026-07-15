@@ -18,7 +18,7 @@ const files = ['src', 'index.html', 'tailwind.config.cjs', 'tsconfig.json']
 for (const file of files) {
   const rel = path.relative(root, file);
   const source = read(file);
-  if (source.includes('!' + 'important')) errors.push(`${rel}: !important 사용 금지`);
+  if (source.includes('!' + 'important')) errors.push(`${rel}: important 선언 사용 금지`);
   if (source.includes('@' + 'apply')) errors.push(`${rel}: @apply 사용 금지`);
   if (/style\s*=\s*\{\s*\{/.test(source)) errors.push(`${rel}: 인라인 style={{ ... }} 사용 금지`);
   if (source.includes('Math' + '.random')) errors.push(`${rel}: Math.random 사용 금지`);
@@ -42,7 +42,7 @@ if (warnings.length) { console.warn('\nQuality warnings'); warnings.forEach((war
 if (errors.length) { console.error('\nQuality errors'); errors.forEach((error) => console.error(`- ${error}`)); process.exit(1); }
 console.log('Quality check passed');
 console.log(`Scanned files: ${files.length}`);
-console.log('!important: 0');
+console.log('important declarations: 0');
 console.log('@apply: 0');
 console.log('inline style={{ ... }}: 0');
 console.log(`CSS variables: ${cssVars.length}`);

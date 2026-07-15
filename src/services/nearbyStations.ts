@@ -4,7 +4,7 @@ import type { UserCoordinates } from '../context/LocationContext';
 interface ApiStation { id?: string; name?: string; brand?: string; address?: string; roadAddress?: string; price?: number | string; distance?: number | string; latitude?: number | string | null; longitude?: number | string | null; }
 interface NearbyResponse { stations?: ApiStation[]; }
 export type NearbySort = 'distance' | 'price';
-const safeNumber = (value: unknown, fallback = 0) => { const n = typeof value === 'number' ? value : Number(String(value ?? '').replace(/,/g, '')); return Number.isFinite(n) ? n : fallback; };
+const safeNumber = (value: unknown, fallback = 0) => { const numericValue = typeof value === 'number' ? value : Number(String(value ?? '').replace(/,/g, '')); return Number.isFinite(numericValue) ? numericValue : fallback; };
 const trendFor = (price: number, index: number) => [price + 18 + index, price + 15 + index, price + 12, price + 8, price + 4, price + 2, price].map(Math.round);
 function toStation(item: ApiStation, index: number, averagePrice: number, fuel: Station['fuel'], region: string): Station | null {
   const price = safeNumber(item.price, 0);

@@ -9,7 +9,7 @@ interface SparklineChartProps {
 const strokeByDirection: Record<ChangeDirection, string> = {
   up: '#E03131',
   down: '#1971C2',
-  flat: '#12996A'
+  flat: 'var(--color-ink-700)'
 };
 
 function formatAxis(value: number): string {
@@ -28,18 +28,18 @@ export function SparklineChart({ values, direction = 'flat', height = 48 }: Spar
   const plotHeight = Math.max(18, height - top - bottom);
   const points = values.filter((value) => Number.isFinite(value));
   const series = points.length ? points : [0];
-  const min = Math.min(...series);
-  const max = Math.max(...series);
-  const range = Math.max(1, max - min);
+  const minSeriesValue = Math.min(...series);
+  const maxSeriesValue = Math.max(...series);
+  const valueRange = Math.max(1, maxSeriesValue - minSeriesValue);
   const step = series.length > 1 ? plotWidth / (series.length - 1) : plotWidth;
-  const toY = (value: number) => top + plotHeight - ((value - min) / range) * plotHeight;
+  const toPointY = (value: number) => top + plotHeight - ((value - minSeriesValue) / valueRange) * plotHeight;
   const path = series.map((value, index) => {
-    const x = left + Math.round(index * step * 100) / 100;
-    const y = Math.round(toY(value) * 100) / 100;
-    return `${index === 0 ? 'M' : 'L'}${x},${y}`;
+    const pointX = left + Math.round(index * step * 100) / 100;
+    const pointY = Math.round(toPointY(value) * 100) / 100;
+    return `${index === 0 ? 'M' : 'L'}${pointX},${pointY}`;
   }).join(' ');
   const color = strokeByDirection[direction];
-  const last = series[series.length - 1];
+  const lastSeriesValue = series[series.length - 1];
   const lastX = left + (series.length > 1 ? plotWidth : 0);
 
   return (
@@ -48,12 +48,12 @@ export function SparklineChart({ values, direction = 'flat', height = 48 }: Spar
         <line x1={left} y1={top} x2={left} y2={top + plotHeight} stroke="#D1D5DB" strokeWidth="1" />
         <line x1={left} y1={top + plotHeight} x2={left + plotWidth} y2={top + plotHeight} stroke="#D1D5DB" strokeWidth="1" />
         <line x1={left} y1={top} x2={left + plotWidth} y2={top} stroke="#EEF2F7" strokeWidth="1" />
-        <text x={left - 4} y={top + 4} textAnchor="end" fontSize="9" fill="#6B6B6B">{formatAxis(max)}</text>
-        <text x={left - 4} y={top + plotHeight + 3} textAnchor="end" fontSize="9" fill="#6B6B6B">{formatAxis(min)}</text>
+        <text x={left - 4} y={top + 4} textAnchor="end" fontSize="9" fill="#6B6B6B">{formatAxis(maxSeriesValue)}</text>
+        <text x={left - 4} y={top + plotHeight + 3} textAnchor="end" fontSize="9" fill="#6B6B6B">{formatAxis(minSeriesValue)}</text>
         <text x={left} y={height - 2} textAnchor="start" fontSize="9" fill="#6B6B6B">시작</text>
         <text x={left + plotWidth} y={height - 2} textAnchor="end" fontSize="9" fill="#6B6B6B">현재</text>
         <path d={path} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        {points.length ? <circle cx={lastX} cy={Math.round(toY(last) * 100) / 100} r="2.5" fill={color} /> : null}
+        {points.length ? <circle cx={lastX} cy={Math.round(toPointY(lastSeriesValue) * 100) / 100} r="2.5" fill={color} /> : null}
       </svg>
     </div>
   );

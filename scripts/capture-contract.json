@@ -1,0 +1,35 @@
+{
+  "app": "litersave",
+  "contrastRequired": true,
+  "primaryCtaPerScreenMax": 1,
+  "issueCountCanBypassRequiredChecks": false,
+  "requiredViewports": [
+    1440,
+    430,
+    390,
+    360
+  ],
+  "requiredStates": [
+    "loading",
+    "hard-error",
+    "location-denied",
+    "empty-nearby",
+    "data-expired"
+  ],
+  "note": "오류 수치만으로 통과하지 않으며 실제 데이터 개수, 연속 작업영역, 컨테이너 기반 pane 재배치를 함께 검증한다.",
+  "textContrastEvidenceRequired": true,
+  "loadingErrorCaptureRequired": true,
+  "mobileTabMax": 5,
+  "moreSheetRequiredWhenNavExceeds": 5,
+  "adaptiveDataLayoutRequired": true,
+  "workspaceContinuityRequired": true,
+  "collectionCountRequired": true,
+  "containerQueryRequired": true,
+  "requiredLayoutEvidence": [
+    "balanced-row",
+    "detail-stack",
+    "two-pane",
+    "three-pane",
+    "auto-fit-context"
+  ]
+}

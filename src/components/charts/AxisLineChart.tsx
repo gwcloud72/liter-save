@@ -12,7 +12,7 @@ export interface AxisLineChartProps {
 const strokeByDirection: Record<ChangeDirection, string> = {
   up: '#E03131',
   down: '#1971C2',
-  flat: '#12996A'
+  flat: 'var(--color-ink-700)'
 };
 
 const defaultFormatter = (value: number, unit = ''): string => `${Math.round(value).toLocaleString('ko-KR')}${unit}`;
@@ -68,13 +68,13 @@ export function AxisLineChart({ values, labels, direction = 'flat', height = 180
     <div className="w-full min-w-0 overflow-hidden">
       <svg viewBox={`0 0 ${width} ${height}`} width="100%" height={height} role="img" aria-label="현재값 중심 가격 흐름 그래프">
         {yTicks.map((tick, index) => {
-          const y = toY(tick);
+          const gridLineY = toY(tick);
           return <g key={`y-${index}`}>
-            <line x1={left} y1={y} x2={width - right} y2={y} stroke="#F1F3F5" strokeWidth="1" />
-            <text x={width - right + 10} y={y + 4} textAnchor="start" fontSize="11" fill="#888888">{formatter(tick)}</text>
+            <line x1={left} y1={gridLineY} x2={width - right} y2={gridLineY} stroke="#F1F3F5" strokeWidth="1" />
+            <text x={width - right + 10} y={gridLineY + 4} textAnchor="start" fontSize="11" fill="#888888">{formatter(tick)}</text>
           </g>;
         })}
-        <path d={path} fill="none" stroke={color} strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
+        <path className="v7-chart-line" d={path} fill="none" stroke={color} strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
         {points.map((value, index) => {
           const visibleDot = points.length <= 14 || index === 0 || index === points.length - 1 || index % 10 === 0;
           return visibleDot ? <circle key={`p-${index}`} cx={toX(index)} cy={toY(value)} r={index === points.length - 1 ? 4 : 2.5} fill={color} stroke="#fff" strokeWidth="1.5" /> : null;

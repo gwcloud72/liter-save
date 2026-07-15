@@ -15,7 +15,7 @@ interface HorizontalBarChartProps {
 const colorByTone: Record<string, string> = {
   up: '#E03131',
   down: '#1971C2',
-  primary: '#0D7A4E',
+  primary: 'var(--color-ink-700)',
 };
 
 function compactLabel(value: number, unit = ''): string {
@@ -59,25 +59,25 @@ export function HorizontalBarChart({ data, height = 240, unit = '', limit = 8, a
       <svg viewBox={`0 0 ${width} ${svgHeight}`} width="100%" height={svgHeight} role="img" aria-label="축 수치가 표시된 막대 그래프">
         <text x={labelWidth} y="11" fontSize="11" fill="#6B7280" fontWeight="600">{axisLabel}</text>
         {rows.map((item, index) => {
-          const raw = Math.abs(Number(item.value) || 0);
-          const barWidth = Math.max(6, toX(raw) - barStart);
-          const y = 15 + index * rowHeight;
-          const color = colorByTone[item.tone ?? 'primary'] ?? colorByTone.primary;
+          const absoluteBarValue = Math.abs(Number(item.value) || 0);
+          const barWidth = Math.max(6, toX(absoluteBarValue) - barStart);
+          const barRowY = 15 + index * rowHeight;
+          const barColor = colorByTone[item.tone ?? 'primary'] ?? colorByTone.primary;
           return (
             <g key={`${item.name}-${index}`}>
-              <text x="0" y={y + 17} fontSize="12" fill="#4B5563" fontWeight="600">{item.name}</text>
-              <rect x={barStart} y={y + 6} width={chartWidth} height="12" rx="6" fill="#ECFDF5" />
-              <rect x={barStart} y={y + 6} width={barWidth} height="12" rx="6" fill={color} />
-              <text x={labelWidth + chartWidth + 12} y={y + 17} fontSize="12" fill="#111827" fontWeight="700">{compactLabel(item.value, unit)}</text>
+              <text x="0" y={barRowY + 17} fontSize="12" fill="#4B5563" fontWeight="600">{item.name}</text>
+              <rect x={barStart} y={barRowY + 6} width={chartWidth} height="12" rx="6" fill="var(--color-ink-100)" />
+              <rect x={barStart} y={barRowY + 6} width={barWidth} height="12" rx="6" fill={barColor} />
+              <text x={labelWidth + chartWidth + 12} y={barRowY + 17} fontSize="12" fill="#111827" fontWeight="700">{compactLabel(item.value, unit)}</text>
             </g>
           );
         })}
         <line x1={labelWidth} y1={axisY} x2={labelWidth + chartWidth} y2={axisY} stroke="#D1D5DB" strokeWidth="1" />
         {ticks.map((tick, index) => {
-          const x = toX(tick);
+          const axisTickX = toX(tick);
           return <g key={`axis-${index}`}>
-            <line x1={x} y1={axisY} x2={x} y2={axisY + 4} stroke="#D1D5DB" strokeWidth="1" />
-            <text x={x} y={axisY + 19} textAnchor="middle" fontSize="11" fill="#6B7280">{compactLabel(tick, unit)}</text>
+            <line x1={axisTickX} y1={axisY} x2={axisTickX} y2={axisY + 4} stroke="#D1D5DB" strokeWidth="1" />
+            <text x={axisTickX} y={axisY + 19} textAnchor="middle" fontSize="11" fill="#6B7280">{compactLabel(tick, unit)}</text>
           </g>;
         })}
       </svg>

@@ -19,8 +19,8 @@ if (!kakao.includes('map.kakao.com/link/to/')) errors.push('카카오맵 좌표 
 if (!kakao.includes('map.kakao.com/link/search/')) errors.push('좌표 없는 주유소의 카카오맵 검색 fallback이 없습니다.');
 if (!feature.includes('kakaoRouteHref(best)')) errors.push('지도 패널 큰 버튼이 추천 주유소 목적지를 사용하지 않습니다.');
 if (!feature.includes('kakaoRouteHref(station)')) errors.push('주유소 카드 길찾기 버튼이 목적지를 사용하지 않습니다.');
-if (!home.includes('sortStationsByUserDistance(data.stations, userCoordinates)')) errors.push('홈 내 위치 API 실패 시 정적 거리 계산 fallback이 없습니다.');
-if (!tabs.includes('sortStationsByUserDistance(data.stations, userCoordinates)')) errors.push('가격지도 내 위치 API 실패 시 정적 거리 계산 fallback이 없습니다.');
+if (!/sortStationsByUserDistance\s*\(\s*data\.stations\s*,\s*userCoordinates\s*,?\s*\)/.test(home)) errors.push('홈 내 위치 API 실패 시 정적 거리 계산 fallback이 없습니다.');
+if (!/sortStationsByUserDistance\s*\(\s*data\.stations\s*,\s*userCoordinates\s*,?\s*\)/.test(tabs)) errors.push('가격지도 내 위치 API 실패 시 정적 거리 계산 fallback이 없습니다.');
 if (!distance.includes('formatDistanceKm')) errors.push('0km 표시 방지용 거리 표시 함수가 없습니다.');
 if (feature.includes('{station.distance}km') || feature.includes('{best.distance}km') || home.includes('{best.distance}km') || tabs.includes('{selected.distance}km') || tabs.includes('{best.distance}km')) errors.push('거리 0km가 그대로 노출될 수 있습니다. formatDistanceKm를 사용하세요.');
 

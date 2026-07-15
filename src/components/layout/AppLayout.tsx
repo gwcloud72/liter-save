@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 import type { LayoutKind, NavItem } from '../common/types';
+import { DataDisclaimer } from '../common/DataDisclaimer';
 import { SkipLink } from '../common/ui';
 import { GNBHeader } from './GNBHeader';
 import { MobileNav } from './MobileNav';
+import { PageContainer, PageStack } from './PagePrimitives';
 import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 
@@ -22,7 +24,42 @@ export interface AppLayoutProps {
 
 export function AppLayout({ kind, appName, source, tab, navItems, children, rightRail, onTabChange, onRefresh, refreshing, liveText }: AppLayoutProps) {
   if (kind === 'gnb') {
-    return <><SkipLink /><GNBHeader appName={appName} source={source} tab={tab} navItems={navItems} onTabChange={onTabChange} onRefresh={onRefresh} refreshing={refreshing} liveText={liveText} /><main id="main-content" className={`mx-auto grid w-full max-w-content gap-ds-3 px-ds-2 py-ds-3 md:px-ds-3 ${rightRail ? 'xl:grid-cols-main-right' : ''}`}><section className="min-w-0">{children}</section>{rightRail ? <div className="min-w-0">{rightRail}</div> : null}</main><MobileNav navItems={navItems} tab={tab} onTabChange={onTabChange} /></>;
+    return (
+      <>
+        <SkipLink />
+        <GNBHeader appName={appName} source={source} tab={tab} navItems={navItems} onTabChange={onTabChange} onRefresh={onRefresh} refreshing={refreshing} liveText={liveText} />
+        <PageContainer
+          as="main"
+          id="main-content"
+          className={`grid gap-card-mobile py-section-mobile tablet:gap-card-tablet tablet:py-section-tablet desktop:gap-card-desktop desktop:py-section-desktop ${rightRail ? 'wide:grid-cols-main-right' : ''}`}
+        >
+          <PageStack className="min-w-0 pb-mobile-content-safe desktop:pb-ds-8">
+            {children}
+            <DataDisclaimer />
+          </PageStack>
+          {rightRail ? <aside className="min-w-0">{rightRail}</aside> : null}
+        </PageContainer>
+        <MobileNav navItems={navItems} tab={tab} onTabChange={onTabChange} />
+      </>
+    );
   }
-  return <><SkipLink /><TopBar appName={appName} source={source} onRefresh={onRefresh} refreshing={refreshing} liveText={liveText} /><div className="flex"><Sidebar navItems={navItems} tab={tab} onTabChange={onTabChange} /><main id="main-content" className="min-h-screen-shell min-w-0 flex-1 px-ds-2 py-ds-3 lg:px-ds-3">{children}</main></div><MobileNav navItems={navItems} tab={tab} onTabChange={onTabChange} /></>;
+
+  return (
+    <>
+      <SkipLink />
+      <TopBar appName={appName} source={source} onRefresh={onRefresh} refreshing={refreshing} liveText={liveText} />
+      <div className="desktop:flex">
+        <Sidebar navItems={navItems} tab={tab} onTabChange={onTabChange} />
+        <main id="main-content" className="min-w-0 flex-1 bg-ink-50 desktop:min-h-screen-shell">
+          <PageContainer className="py-section-mobile tablet:py-section-tablet desktop:py-section-desktop">
+            <PageStack className="pb-mobile-content-safe desktop:pb-ds-8">
+              {children}
+              <DataDisclaimer />
+            </PageStack>
+          </PageContainer>
+        </main>
+      </div>
+      <MobileNav navItems={navItems} tab={tab} onTabChange={onTabChange} />
+    </>
+  );
 }

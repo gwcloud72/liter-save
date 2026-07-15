@@ -7,12 +7,14 @@ export interface OilHistorySnapshot { capturedAt: string; metrics: OilHistoryMet
 export interface OilHistoryPoint { date: string; averagePrice: number; lowestPrice: number | null; stationCount: number; }
 export interface GlobalOilPoint { date: string; brent: number | null; wti: number | null; }
 export interface GlobalOilData { updatedAt: string | null; points: GlobalOilPoint[]; latest: GlobalOilPoint | null; summary: string; }
+export type DataFreshnessState = 'fresh' | 'stale' | 'empty' | 'fallback';
+export interface DataStatus { sourceLabel: string; basisLabel: string; updatedLabel: string; shortLabel: string; statusLabel: string; state: DataFreshnessState; ageDays: number | null; }
 export interface FuelView { fuel: string; region: string; stations: Station[]; metrics: typeof metricTemplates; widgets: typeof defaultWidgets; brandBars: BrandBar[]; regionRows: RegionFuelRow[]; averagePrice: number; }
 interface SourceAiReportResponse { provider?: string; model?: string | null; report?: Partial<LiterAiReport>; }
-export type LiterData = { stations: Station[]; metrics: typeof metricTemplates; widgets: typeof defaultWidgets; records: FuelRecord[]; brandBars: BrandBar[]; fuelNews: FuelNewsItem[]; regionRows: RegionFuelRow[]; averagePrice: number; aiReport: LiterAiReport | null; fuelOptions: string[]; fuelViews: FuelView[]; selectedFuel: string; fuel: string; region: string; sourceLoaded: boolean; historySnapshots: OilHistorySnapshot[]; globalOil: GlobalOilData; };
+export type LiterData = { stations: Station[]; metrics: typeof metricTemplates; widgets: typeof defaultWidgets; records: FuelRecord[]; brandBars: BrandBar[]; fuelNews: FuelNewsItem[]; regionRows: RegionFuelRow[]; averagePrice: number; aiReport: LiterAiReport | null; fuelOptions: string[]; fuelViews: FuelView[]; selectedFuel: string; fuel: string; region: string; sourceLoaded: boolean; historySnapshots: OilHistorySnapshot[]; globalOil: GlobalOilData; generatedAt: string | null; dataStatus: DataStatus; };
 interface SourceStation { id?: string; name?: string; brand?: string; address?: string; price?: number | string; distance?: number | string; latitude?: number | string | null; longitude?: number | string | null; }
 interface SourceDataset { regionName?: string; fuelName?: string; averagePrice?: number | string; stations?: SourceStation[]; }
-interface SourceOilResponse { datasets?: SourceDataset[]; }
+interface SourceOilResponse { mode?: string; source?: string; generatedAt?: string; updatedAt?: string; dataAsOf?: string; datasets?: SourceDataset[]; }
 interface SourceNewsItem { id?: string; title?: string; summary?: string; description?: string; source?: string; provider?: string; publishedAt?: string; pubDate?: string; date?: string; link?: string; originallink?: string; keyword?: string; }
 interface SourceNewsResponse { items?: SourceNewsItem[]; }
 interface SourceOilHistoryResponse { snapshots?: { capturedAt?: string; metrics?: Partial<OilHistoryMetric>[] }[]; }
@@ -28,10 +30,28 @@ export function formatSignedWon(value: number): string { const rounded = Math.ro
 export function changeDirection(value: number): 'up' | 'down' | 'flat' { const rounded = Math.round(value); return rounded === 0 ? 'flat' : rounded < 0 ? 'down' : 'up'; }
 export function priceDiffCopy(value: number): string { const rounded = Math.round(value); return rounded === 0 ? '평균과 동일' : rounded < 0 ? `평균보다 ${Math.abs(rounded).toLocaleString()}원 낮음` : `평균보다 ${rounded.toLocaleString()}원 높음`; }
 
+const MAX_FRESH_HOURS = 24;
+function parseDate(value?: string | null): Date | null {
+  if (!value) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+function formatKstDateTime(value?: string | null): string {
+  const date = parseDate(value);
+  if (!date) return '확인 필요';
+  const parts = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(date);
+  const get = (type: string) => parts.find((part) => part.type === type)?.value || '';
+  return `${get('year')}.${get('month')}.${get('day')} ${get('hour')}:${get('minute')}`;
+}
 function formatShortDate(value: string): string {
   const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value.slice(5, 10).replace('-', '.');
-  return `${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+  const fallback = value.slice(5, 16).replace('-', '.').replace('T', ' ');
+  if (Number.isNaN(date.getTime())) return fallback;
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${month}.${day} ${hours}:${minutes}`;
 }
 
 const DEFAULT_GLOBAL_OIL: GlobalOilData = {
@@ -50,7 +70,7 @@ const DEFAULT_GLOBAL_OIL: GlobalOilData = {
 };
 
 const DEFAULT_AI_REPORT: LiterAiReport = {
-  headline: '지역 평균과 저가 기준을 함께 보면 실제 결제액 차이가 더 분명합니다.',
+  headline: '지역 평균과 저가 가격을 함께 보면 실제 결제액 차이가 더 분명합니다.',
   daily: '최근 관측 구간은 큰 급등 없이 완만한 안정 흐름입니다.',
   weekly: '7일 기준으로는 저가 상표와 지역 평균 차이를 우선 확인하는 편이 좋습니다.',
   monthly: '30일·90일 구간은 자동 수집 이력으로 확장됩니다.',
@@ -2412,7 +2432,7 @@ function buildHistorySnapshots(historyJson: SourceOilHistoryResponse | null): Oi
       lowestPrice: safeNumber(metric.lowestPrice, NaN),
       stationCount: Math.max(0, Math.round(safeNumber(metric.stationCount, 0))),
     })).filter((metric) => metric.regionName && metric.fuelName && Number.isFinite(metric.averagePrice ?? NaN)),
-  })).filter((snapshot) => snapshot.capturedAt && snapshot.metrics.length).sort((a, b) => a.capturedAt.localeCompare(b.capturedAt));
+  })).filter((snapshot) => snapshot.capturedAt && snapshot.metrics.length).sort((earlierSnapshot, laterSnapshot) => earlierSnapshot.capturedAt.localeCompare(laterSnapshot.capturedAt));
 }
 
 function buildGlobalOil(globalJson: SourceGlobalOilResponse | null): GlobalOilData {
@@ -2425,7 +2445,7 @@ function buildGlobalOil(globalJson: SourceGlobalOilResponse | null): GlobalOilDa
     wti.forEach((row) => { const date = String(row.date ?? ''); if (!date) return; const current = byDate.get(date) ?? { date, brent: null, wti: null }; current.wti = safeNumber(row.price, NaN); byDate.set(date, current); });
     return [...byDate.values()].filter((row) => Number.isFinite(row.brent ?? NaN) || Number.isFinite(row.wti ?? NaN));
   })();
-  const points = (fromSeries.length ? fromSeries : fromHistory).map((row) => ({ date: row.date, brent: Number.isFinite(row.brent ?? NaN) ? Number(row.brent) : null, wti: Number.isFinite(row.wti ?? NaN) ? Number(row.wti) : null })).sort((a, b) => a.date.localeCompare(b.date));
+  const points = (fromSeries.length ? fromSeries : fromHistory).map((row) => ({ date: row.date, brent: Number.isFinite(row.brent ?? NaN) ? Number(row.brent) : null, wti: Number.isFinite(row.wti ?? NaN) ? Number(row.wti) : null })).sort((earlierPoint, laterPoint) => earlierPoint.date.localeCompare(laterPoint.date));
   if (!points.length) return DEFAULT_GLOBAL_OIL;
   const latest = points.length ? points[points.length - 1] : null;
   const first = points[0];
@@ -2454,6 +2474,12 @@ function trendFor(price: number, index: number): number[] {
   return [price + 24 + index, price + 20 + index, price + 17 + index, price + 12, price + 8, price + 4, price].map(Math.round);
 }
 
+function distanceFromSource(raw: unknown, index: number): number {
+  const value = safeNumber(raw, 0);
+  if (Number.isFinite(value) && value > 0) return Number((value > 80 ? value / 1000 : value).toFixed(1));
+  return Number((1.1 + index * 0.35).toFixed(1));
+}
+
 function mapStation(item: SourceStation, index: number, averagePrice: number, fuel: string, region = '서울'): Station | null {
   const price = safeNumber(item.price, 0);
   const name = String(item.name ?? '').trim();
@@ -2463,7 +2489,7 @@ function mapStation(item: SourceStation, index: number, averagePrice: number, fu
     name,
     brand: String(item.brand ?? '브랜드 확인'),
     address: String(item.address ?? '주소 확인'),
-    distance: safeNumber(item.distance, 0),
+    distance: distanceFromSource(item.distance, index),
     price,
     avgDiff: Math.round(price - averagePrice),
     lat: safeNumber(item.latitude, 0),
@@ -2479,8 +2505,8 @@ function buildMetrics(stations: Station[], averagePrice: number, fuel = '휘발�
   const best = stations[0];
   const saving = best ? Math.round(Math.max(0, averagePrice - best.price)) : 0;
   return [
-    { ...metricTemplates[0], value: best ? `${best.price.toLocaleString()}원/L` : '가격 확인', sub: best?.name ?? '확인 예정' },
-    { ...metricTemplates[1], value: best && saving > 0 ? `${(saving * 50).toLocaleString()}원` : '절약액 확인', sub: best && saving > 0 ? `평균 대비 ${saving.toLocaleString()}원 낮음` : '평균가 확인 예정' },
+    { ...metricTemplates[0], value: best ? `${best.price.toLocaleString()}원/L` : '가격 확인', sub: best?.name ?? '데이터 없음' },
+    { ...metricTemplates[1], value: best && saving > 0 ? `${(saving * 50).toLocaleString()}원` : '절약액 확인', sub: best && saving > 0 ? `평균 대비 ${saving.toLocaleString()}원 낮음` : '평균가 데이터 없음' },
     { ...metricTemplates[2], value: averagePrice ? `${Math.round(averagePrice).toLocaleString()}원` : '평균가 확인', sub: `${region} ${fuel}` },
     { ...metricTemplates[3], value: best ? `${best.trend[best.trend.length - 1] - best.trend[0]}원` : '흐름 확인', sub: '최근 흐름' },
   ];
@@ -2494,7 +2520,7 @@ function buildBrandBars(stations: Station[]): BrandBar[] {
   return [...byBrand.entries()].map(([name, prices]) => {
     const avg = Math.round(prices.reduce((sum, value) => sum + value, 0) / prices.length);
     return { name: name.replace('HD현대오일뱅크', '현대').replace('알뜰주유소', '알뜰'), value: Math.max(12, avg - lowest + 24) };
-  }).sort((a, b) => b.value - a.value).slice(0, 8);
+  }).sort((higherValueMetric, lowerValueMetric) => higherValueMetric.value - lowerValueMetric.value).slice(0, 8);
 }
 
 function buildWidgets(stations: Station[], averagePrice: number, fuel = '휘발유', region = '서울'): typeof defaultWidgets {
@@ -2534,7 +2560,7 @@ function createFuelView(fuel: string, datasets: SourceDataset[], region = '서�
   const stationPrices = sourceStations.map((station) => safeNumber(station.price, 0)).filter((price) => price > 0);
   const averagePrice = rawAveragePrice || (stationPrices.length ? Math.round(stationPrices.reduce((sum, price) => sum + price, 0) / stationPrices.length) : 0);
   const regionName = String(dataset.regionName ?? region);
-  const stations = sourceStations.map((station, index) => mapStation(station, index, averagePrice, fuel, regionName)).filter((station): station is Station => Boolean(station)).sort((a, b) => a.price - b.price).slice(0, 12);
+  const stations = sourceStations.map((station, index) => mapStation(station, index, averagePrice, fuel, regionName)).filter((station): station is Station => Boolean(station)).sort((lowerPriceStation, higherPriceStation) => lowerPriceStation.price - higherPriceStation.price).slice(0, 12);
   if (!stations.length || !averagePrice) return null;
   return { fuel, region: regionName, stations, metrics: buildMetrics(stations, averagePrice, fuel, regionName), widgets: buildWidgets(stations, averagePrice, fuel, regionName), brandBars: buildBrandBars(stations), regionRows: buildRegionRows(datasets, fuel), averagePrice };
 }
@@ -2957,7 +2983,8 @@ const defaultFuelViews: FuelView[] = [
   { fuel: '경유', region: '서울', stations: defaultDieselStations, metrics: buildMetrics(defaultDieselStations, 2040, '경유', '서울'), widgets: buildWidgets(defaultDieselStations, 2040, '경유', '서울'), brandBars: buildBrandBars(defaultDieselStations), regionRows: DEFAULT_REGION_ROWS.filter((row) => row.fuel === '경유'), averagePrice: 2040 },
   { fuel: 'LPG', region: '서울', stations: defaultLpgStations, metrics: buildMetrics(defaultLpgStations, 1167, 'LPG', '서울'), widgets: buildWidgets(defaultLpgStations, 1167, 'LPG', '서울'), brandBars: buildBrandBars(defaultLpgStations), regionRows: DEFAULT_REGION_ROWS.filter((row) => row.fuel === 'LPG'), averagePrice: 1167 },
 ];
-const DEFAULT_LITER_DATA: LiterData = { ...defaultGasView, records: defaultRecords, fuelNews: defaultFuelNews, aiReport: DEFAULT_AI_REPORT, fuelOptions: defaultFuelViews.map((view) => view.fuel), fuelViews: defaultFuelViews, selectedFuel: '휘발유', sourceLoaded: true, historySnapshots: DEFAULT_HISTORY_SNAPSHOTS, globalOil: DEFAULT_GLOBAL_OIL };
+const DEFAULT_DATA_STATUS: DataStatus = { sourceLabel: 'OPINET', basisLabel: '가격 기준일 확인 필요', updatedLabel: '수집 실행 확인 필요', shortLabel: '가격 기준일 확인 필요', statusLabel: '확인 필요', state: 'fallback', ageDays: null };
+const DEFAULT_LITER_DATA: LiterData = { ...defaultGasView, records: defaultRecords, fuelNews: defaultFuelNews, aiReport: DEFAULT_AI_REPORT, fuelOptions: defaultFuelViews.map((view) => view.fuel), fuelViews: defaultFuelViews, selectedFuel: '휘발유', sourceLoaded: true, historySnapshots: DEFAULT_HISTORY_SNAPSHOTS, globalOil: DEFAULT_GLOBAL_OIL, generatedAt: '2026-06-12T09:00:00+09:00', dataStatus: DEFAULT_DATA_STATUS };
 
 function cleanText(value: unknown): string {
   return String(value ?? '').replace(/<[^>]*>/g, '').replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
@@ -3012,6 +3039,27 @@ function buildAiReport(reportJson: SourceAiReportResponse | null): LiterAiReport
   };
 }
 
+function buildDataStatus(payload: SourceOilResponse | null, views: FuelView[]): DataStatus {
+  if (!payload || !views.length) return { ...DEFAULT_DATA_STATUS, state: payload ? 'empty' : 'fallback', statusLabel: payload ? '데이터 없음' : '연결 대기' };
+  const runGeneratedAt = payload.generatedAt || payload.updatedAt || null;
+  const dataAsOf = payload.dataAsOf || runGeneratedAt;
+  const date = parseDate(dataAsOf);
+  const ageHours = date ? Math.max(0, (Date.now() - date.getTime()) / 3600000) : null;
+  const ageDays = ageHours === null ? null : Math.floor(ageHours / 24);
+  const state: DataFreshnessState = ageHours !== null && ageHours > MAX_FRESH_HOURS ? 'stale' : 'fresh';
+  const statusLabel = state === 'stale' ? '갱신 필요' : '최신';
+  const basisLabel = `가격 기준일 ${formatKstDateTime(dataAsOf)}`;
+  return {
+    sourceLabel: String(payload.source || 'OPINET'),
+    basisLabel,
+    updatedLabel: `수집 실행 ${formatKstDateTime(runGeneratedAt)}`,
+    shortLabel: `${basisLabel} · ${statusLabel}`,
+    statusLabel,
+    state,
+    ageDays,
+  };
+}
+
 function buildLiterData(json: SourceOilResponse | null, newsJson: SourceNewsResponse | null, reportJson: SourceAiReportResponse | null, historyJson: SourceOilHistoryResponse | null, globalJson: SourceGlobalOilResponse | null): LiterData {
   const fuelOrder = ['휘발유', '경유', 'LPG'];
   const datasets = json?.datasets ?? [];
@@ -3021,9 +3069,10 @@ function buildLiterData(json: SourceOilResponse | null, newsJson: SourceNewsResp
   const aiReport = buildAiReport(reportJson);
   const historySnapshots = buildHistorySnapshots(historyJson);
   const globalOil = buildGlobalOil(globalJson);
-  if (!views.length) return { ...DEFAULT_LITER_DATA, fuelNews: newsItems.length ? newsItems : defaultFuelNews, aiReport, historySnapshots, globalOil };
+  const dataStatus = buildDataStatus(json, views);
+  if (!views.length) return { ...DEFAULT_LITER_DATA, fuelNews: newsItems.length ? newsItems : defaultFuelNews, aiReport, historySnapshots, globalOil, generatedAt: json?.dataAsOf ?? json?.generatedAt ?? DEFAULT_LITER_DATA.generatedAt, sourceLoaded: false, dataStatus };
   const primary = views[0];
-  return { ...primary, records: defaultRecords, fuelNews: newsItems.length ? newsItems : defaultFuelNews, aiReport, fuelOptions: fuelOrder.filter((fuel) => views.some((view) => view.fuel === fuel)), fuelViews: views, selectedFuel: primary.fuel, sourceLoaded: true, historySnapshots, globalOil };
+  return { ...primary, records: defaultRecords, fuelNews: newsItems.length ? newsItems : defaultFuelNews, aiReport, fuelOptions: fuelOrder.filter((fuel) => views.some((view) => view.fuel === fuel)), fuelViews: views, selectedFuel: primary.fuel, sourceLoaded: true, historySnapshots, globalOil, generatedAt: json?.dataAsOf ?? json?.generatedAt ?? null, dataStatus };
 }
 
 function buildNationalFuelView(data: LiterData, fuel: string): FuelView | null {
@@ -3037,27 +3086,53 @@ function buildNationalFuelView(data: LiterData, fuel: string): FuelView | null {
     return {
       ...best,
       id: `national-${fuel}-${view.region}`,
-      name: `${view.region} ${fuel} 저가 기준`,
+      name: `${view.region} ${fuel} 저가 가격`,
       brand: view.region,
-      address: '지역별 저가 기준',
+      address: '지역별 저가 가격',
       distance: Number((1.2 + index * 0.3).toFixed(1)),
       avgDiff: Math.round(best.price - averagePrice),
       trend: trendFor(best.price, index),
       favorite: false,
       region: '전국',
     };
-  }).filter((station): station is Station => Boolean(station)).sort((a, b) => a.price - b.price).slice(0, 12);
+  }).filter((station): station is Station => Boolean(station)).sort((lowerPriceStation, higherPriceStation) => lowerPriceStation.price - higherPriceStation.price).slice(0, 12);
   if (!stations.length || !averagePrice) return null;
   const regionRows = data.regionRows.filter((row) => row.fuel === fuel);
   return { fuel, region: '전국', stations, metrics: buildMetrics(stations, averagePrice, fuel, '전국'), widgets: buildWidgets(stations, averagePrice, fuel, '전국'), brandBars: buildBrandBars(stations), regionRows, averagePrice };
 }
 
+function buildCombinedLegacyRegionView(data: LiterData, fuel: string): FuelView | null {
+  const direct = data.fuelViews.find((item) => item.fuel === fuel && item.region === '전남광주');
+  if (direct) return direct;
+  const legacy = data.fuelViews.filter((item) => item.fuel === fuel && ['전남', '광주'].includes(item.region));
+  if (!legacy.length) return null;
+  const averageValues = legacy.map((item) => item.averagePrice).filter((value) => value > 0);
+  const averagePrice = averageValues.length ? Math.round(averageValues.reduce((sum, value) => sum + value, 0) / averageValues.length) : 0;
+  const stations = legacy.flatMap((item) => item.stations)
+    .map((station) => ({ ...station, region: '전남광주' }))
+    .sort((left, right) => left.price - right.price)
+    .slice(0, 12);
+  if (!stations.length || !averagePrice) return null;
+  return {
+    fuel,
+    region: '전남광주',
+    stations,
+    metrics: buildMetrics(stations, averagePrice, fuel, '전남광주'),
+    widgets: buildWidgets(stations, averagePrice, fuel, '전남광주'),
+    brandBars: buildBrandBars(stations),
+    regionRows: data.regionRows,
+    averagePrice,
+  };
+}
+
 export function getFuelView(data: LiterData, fuel: string, region = '서울'): LiterData {
   const view = region === '전국'
     ? buildNationalFuelView(data, fuel) ?? data.fuelViews.find((item) => item.fuel === fuel)
-    : data.fuelViews.find((item) => item.fuel === fuel && item.region === region) ?? data.fuelViews.find((item) => item.fuel === fuel) ?? data.fuelViews[0];
+    : region === '전남광주'
+      ? buildCombinedLegacyRegionView(data, fuel) ?? data.fuelViews.find((item) => item.fuel === fuel)
+      : data.fuelViews.find((item) => item.fuel === fuel && item.region === region) ?? data.fuelViews.find((item) => item.fuel === fuel) ?? data.fuelViews[0];
   if (!view) return data;
-  return { ...data, ...view, records: data.records, fuelNews: data.fuelNews, aiReport: data.aiReport, fuelOptions: data.fuelOptions, fuelViews: data.fuelViews, selectedFuel: view.fuel, sourceLoaded: data.sourceLoaded, historySnapshots: data.historySnapshots, globalOil: data.globalOil };
+  return { ...data, ...view, records: data.records, fuelNews: data.fuelNews, aiReport: data.aiReport, fuelOptions: data.fuelOptions, fuelViews: data.fuelViews, selectedFuel: view.fuel, sourceLoaded: data.sourceLoaded, historySnapshots: data.historySnapshots, globalOil: data.globalOil, generatedAt: data.generatedAt, dataStatus: data.dataStatus };
 }
 
 export const selectFuelData = getFuelView;

@@ -1,7 +1,7 @@
 import { Check, Copy, Map, TrendingDown } from 'lucide-react';
 import type { BottomWidget, MetricItem } from '../components/common/types';
 
-export const REGION_OPTIONS = ['서울','부산','대구','인천','광주','대전','울산','세종','경기','강원','충북','충남','전북','전남','경북','경남','제주'];
+export const REGION_OPTIONS = ['서울','부산','대구','인천','대전','울산','세종','경기','강원','충북','충남','전북','경북','경남','제주','전남광주'];
 export const FUEL_OPTIONS = ['휘발유', '경유', 'LPG'] as const;
 export type FuelKind = typeof FUEL_OPTIONS[number];
 export interface FuelNewsItem { id: string; title: string; summary: string; source: string; publishedAt: string; link: string; originallink: string; keyword: string; }
@@ -38,13 +38,13 @@ export const brandBars: BrandBar[] = [
 ];
 
 export const widgets: BottomWidget[] = [
-  { title:'지역 저가 기준', action:'주유소 찾기', items:['서울 최저 기준 1,979원','서울 평균 2,051원','전국 평균 2,010원'] },
+  { title:'지역 저가 가격', action:'주유소 찾기', items:['서울 낮은 가격 1,979원','서울 평균 2,051원','전국 평균 2,010원'] },
   { title:'절약 계산', action:'주유 기록', items:['40L 2,880원 절약','50L 3,600원 절약','60L 4,320원 절약'] },
   { title:'가격 흐름', action:'가격 추이', items:['전국 휘발유 2,010원','전국 경유 2,005원','서울 휘발유 2,051원'] }
 ];
 
 export const metrics: MetricItem[] = [
-  { label:'최저 기준', value:'1,979원/L', sub:'상표별 알뜰 평균', icon:Copy },
+  { label:'낮은 가격', value:'1,979원/L', sub:'상표별 알뜰 평균', icon:Copy },
   { label:'50L 절약', value:'3,600원', sub:'서울 평균 대비 72원 낮음', icon:Check },
   { label:'지역 평균', value:'2,051원', sub:'서울 휘발유', icon:Map },
   { label:'전국 평균', value:'2,010원', sub:'보통휘발유', icon:TrendingDown }

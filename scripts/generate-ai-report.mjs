@@ -8,7 +8,22 @@ const OUTPUT_PATH = path.resolve('public/data/oil-ai-report.json');
 const REGION_CODE = 'ALL';
 const GASOLINE_CODE = 'B027';
 const DIESEL_CODE = 'D047';
+const WAITING_FALLBACK = ['true', '1', 'yes', 'on'].includes(String(process.env.LITERSAVE_WAITING_FALLBACK || process.env.OPINET_WAITING_FALLBACK || '').toLowerCase());
 const BLOCKED_TEXT_PATTERN = new RegExp(['G[e]mini', '\uC81C\uBBF8\uB098\uC774', '\uBAA9\uC5C5', '\uC0D8\uD50C', '\uB370\uBAA8', '\uC784\uC2DC', '\uB370\uC774\uD130\\s*\uC5C6\uC74C', '\uD22C\uC790\\s*\uAD8C\uC720', '\uC218\uC775\uB960', '\uB9E4\uC218', '\uB9E4\uB3C4'].join('|'), 'i');
+const GEMINI_OIL_REPORT_SCHEMA = {
+ type: 'object',
+ additionalProperties: false,
+ properties: {
+  headline: { type: 'string', description: '전국 휘발유와 경유의 현재 수준을 한 문장으로 요약' },
+  daily: { type: 'string', description: '전일 대비 가격 흐름을 입력 숫자만 사용해 요약' },
+  weekly: { type: 'string', description: '최근 7일 가격 흐름을 입력 숫자만 사용해 요약' },
+  monthly: { type: 'string', description: '최근 30일 가격 흐름을 입력 숫자만 사용해 요약' },
+  consumerTip: { type: 'string', description: '투자 판단이 아닌 주유소 비교 참고 문장' },
+  note: { type: 'string', description: '공개 데이터 기반 참고 정보라는 짧은 안내' },
+ },
+ required: ['headline', 'daily', 'weekly', 'monthly', 'consumerTip', 'note'],
+};
+
 
 function toNumber(value) {
  const number = Number(value);
@@ -247,15 +262,49 @@ async function buildFinalReport(summary) {
  const localReport = buildReport(summary);
  const geminiResult = await generateGeminiJson({
   task: '주유 가격 화면에 표시할 짧은 유가 요약 5문장을 다듬습니다.',
-  schema: '{"headline":"문장","daily":"문장","weekly":"문장","monthly":"문장","consumerTip":"문장","note":"문장"}',
+  jsonSchema: GEMINI_OIL_REPORT_SCHEMA,
   input: buildGeminiInput(summary, localReport),
   fallback: localReport,
   validate: validateGeminiOilPayload,
  });
  return {
   report: mergeReport(localReport, geminiResult.payload),
-  provider: geminiResult.used ? 'gemini-flash-local-rules' : 'rule-based',
+  provider: geminiResult.used ? 'gemini-3.5-flash+local-rules' : 'rule-based',
   model: geminiResult.used ? geminiResult.model : null,
+  generation: {
+   requestedModel: geminiResult.requestedModel,
+   model: geminiResult.model,
+   modelVersion: geminiResult.modelVersion,
+   finishReason: geminiResult.finishReason,
+   responseId: geminiResult.responseId,
+   usage: geminiResult.usage,
+   attempts: geminiResult.attempts,
+   latencyMs: geminiResult.latencyMs,
+   reason: geminiResult.reason,
+   error: geminiResult.error,
+   apiStatus: geminiResult.apiStatus,
+   httpStatus: geminiResult.httpStatus,
+   liveApiCalled: geminiResult.used,
+  },
+ };
+}
+
+function buildWaitingReport() {
+ return {
+  mode: 'not-ready',
+  provider: 'rule-based',
+  model: null,
+  generatedAt: null,
+  report: {
+   headline: '운영 가격 수집 연결 후 최신 유가 요약이 표시됩니다.',
+   daily: '현재는 기본 표시 데이터 기준으로 화면 흐름을 확인할 수 있습니다.',
+   weekly: 'OPINET 인증 정보를 설정하면 지역별 가격 이력이 누적됩니다.',
+   monthly: '누적 데이터가 쌓이면 30일·90일 흐름까지 비교합니다.',
+   consumerTip: '배포 전에는 Secrets와 Actions 수집 로그를 함께 확인하세요.',
+   note: '가격 데이터가 연결되면 자동 요약이 다시 생성됩니다.',
+  },
+  summary: { ready: false, reason: 'opinet-not-configured' },
+  generation: { requestedModel: 'gemini-3.5-flash', model: null, modelVersion: null, finishReason: null, responseId: null, usage: null, attempts: 0, latencyMs: null, reason: 'not-ready', error: null, apiStatus: null, httpStatus: null, liveApiCalled: false },
  };
 }
 
@@ -265,6 +314,11 @@ async function main() {
  const historyPayload = await readJson(HISTORY_PATH, null);
  const summary = buildSummary(historyPayload, pricePayload);
  if (!summary.ready) {
+  if (WAITING_FALLBACK) {
+   await writeFile(OUTPUT_PATH, `${JSON.stringify(buildWaitingReport(), null, 2)}\n`, 'utf8');
+   console.log(`대기용 유가 리포트 파일 생성 완료: ${OUTPUT_PATH}`);
+   return;
+  }
   console.log(`운영 유가 데이터 확인 필요: 기존 리포트를 유지합니다: ${OUTPUT_PATH}`);
   return;
  }
@@ -276,6 +330,7 @@ async function main() {
   generatedAt: new Date().toISOString(),
   report: finalReport.report,
   summary,
+  generation: finalReport.generation,
  };
  await writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
  console.log(`요약 리포트 파일 생성 완료: ${OUTPUT_PATH}`);
