@@ -1,34 +1,34 @@
 {
   "project": "liter-save",
-  "generatedAt": "2026-07-14T14:20:47.167Z",
-  "status": "stale",
-  "score": 70,
-  "summary": "OPINET 가격 데이터 최신성 또는 수집 상태 확인이 필요합니다.",
+  "generatedAt": "2026-07-15T01:22:13.725Z",
+  "status": "ready",
+  "score": 100,
+  "summary": "OPINET 가격 데이터가 운영 기준입니다.",
   "data": {
     "source": "한국석유공사 오피넷 Open API",
-    "runGeneratedAt": "2026-06-24T09:27:22.561Z",
-    "dataAsOf": "2026-06-24T09:27:22.561Z",
-    "ageHours": 484.89016444444445,
-    "datasetCount": 54,
-    "liveDatasetCount": 54,
+    "runGeneratedAt": "2026-07-15T01:21:31.793Z",
+    "dataAsOf": "2026-07-15T01:19:20.634Z",
+    "ageHours": 0.04807694444444444,
+    "datasetCount": 51,
+    "liveDatasetCount": 51,
     "cachedDatasetCount": 0,
-    "stationCount": 1067,
-    "regionCount": 18,
+    "stationCount": 1007,
+    "regionCount": 17,
     "fuelCount": 3,
-    "snapshots": 96,
-    "reportGeneratedAt": "2026-06-24T09:27:23.528Z",
+    "snapshots": 76,
+    "reportGeneratedAt": "2026-07-15T01:22:04.256Z",
     "newsCount": 16
   },
   "checks": [
     {
       "name": "OPINET 가격 데이터",
       "status": "pass",
-      "detail": "54개 데이터셋, 1067개 주유소"
+      "detail": "51개 데이터셋, 1007개 주유소"
     },
     {
       "name": "실시간 수집 비율",
       "status": "pass",
-      "detail": "실시간 54개, 직전 정상값 0개"
+      "detail": "실시간 51개, 직전 정상값 0개"
     },
     {
       "name": "유종 커버리지",
@@ -38,17 +38,17 @@
     {
       "name": "지역 커버리지",
       "status": "pass",
-      "detail": "18개 지역"
+      "detail": "17개 지역"
     },
     {
       "name": "가격 기준시각",
-      "status": "review",
-      "detail": "2026.06.24 18:27, 484.9시간 전"
+      "status": "pass",
+      "detail": "2026.07.15 10:19, 0.0시간 전"
     },
     {
       "name": "가격 이력",
       "status": "pass",
-      "detail": "96개 스냅샷"
+      "detail": "76개 스냅샷"
     },
     {
       "name": "유가 뉴스",
