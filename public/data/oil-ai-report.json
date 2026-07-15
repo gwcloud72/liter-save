@@ -2,7 +2,7 @@
   "mode": "generated",
   "provider": "rule-based",
   "model": null,
-  "generatedAt": "2026-07-15T01:22:04.256Z",
+  "generatedAt": "2026-07-15T08:09:33.187Z",
   "report": {
     "headline": "전국 평균 기준 휘발유 1,815원, 경유 1,789원 수준으로 집계됐습니다.",
     "daily": "전일 대비 휘발유 -149원, 경유 -160원으로 하락 흐름입니다.",
@@ -13,10 +13,10 @@
   },
   "summary": {
     "ready": true,
-    "seriesCount": 76,
+    "seriesCount": 77,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-07-15T01:21:31.793Z",
+    "generatedAt": "2026-07-15T08:08:59.579Z",
     "latest": {
       "gasolineAverage": 1815,
       "gasolineLowest": 1775,

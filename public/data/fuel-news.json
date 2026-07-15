@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-07-15T01:22:06.932Z",
+    "updatedAt": "2026-07-15T08:09:36.201Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "6b328e5e1dd05188",
-      "title": "충북 휘발윳값 일주일 새 60원대 급락…리터당 1천950원대 진입",
-      "summary": "정현2주유소, 충북석유 새터주유소 등은 1천859원으로 확인됐다. 충북 평균과 비교하면 90원에서 100원 이상 낮은 가격이다. 국내 판매가격은 국제유가와 환율, 유류세, 정유·유통 비용 등이 함께 반영돼 결정된다....",
-      "source": "jbnews.com",
-      "publishedAt": "2026-07-01T05:02:00.000Z",
-      "link": "https://www.jbnews.com/news/articleView.html?idxno=1506849",
-      "originallink": "https://www.jbnews.com/news/articleView.html?idxno=1506849",
-      "keyword": "국제유가"
-    },
-    {
       "id": "563c65e80ea984cf",
       "title": "석유·채소에 ‘칩플레이션’까지… 6월 물가 3.2% ‘비상’",
       "summary": "국가데이터처가 2일 발표한 ‘6월 소비자물가동향’에 따르면 지난달 소비자물가지수는 119.99(2020=100)로... 휘발유(23.1%), 경유(33.7%), 등유(23.1%) 가격이 일제히 크게 올랐고, 자동차용 LPG 가격 상승까지 더해지며 지난달...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-07-02T17:16:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/005/0001858703?sid=101",
       "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=1782977450&code=11151100&cp=nv",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "afea193da37cdf8a",
+      "title": "6월 소비자물가 상승률 3.2%… 2년6개월 만에 최고",
+      "summary": "중동전쟁 여파로 경유(33.7%)와 휘발유(23.1%) 가격이 크게 상승한 영향이다. 이두원 국가데이터처 경제동향통계심의관은 \"자동차용 LPG(액화석유가스) 가격이 소폭 올라 석유류 상승폭이 확대됐다\"며 \"6월27일...",
+      "source": "mt.co.kr",
+      "publishedAt": "2026-07-02T19:00:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/008/0005380920?sid=101",
+      "originallink": "https://www.mt.co.kr/living/2026/07/03/2026070219520936874",
       "keyword": "휘발유"
     }
   ]
