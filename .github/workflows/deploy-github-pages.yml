@@ -266,14 +266,47 @@ jobs:
       - name: 누적 데이터 저장소 반영
         shell: bash
         run: |
-          if git diff --quiet -- public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json public/data/service-status.json docs/data-quality-report.md docs/DEPLOYMENT_RUNBOOK.md docs/submission-readiness-report.md public/data/submission-readiness.json; then
+          set -euo pipefail
+
+          tracked_files=(
+            public/data/oil-prices.json
+            public/data/oil-history.json
+            public/data/global-oil.json
+            public/data/oil-ai-report.json
+            public/data/fuel-news.json
+            public/data/service-status.json
+            docs/data-quality-report.md
+            docs/DEPLOYMENT_RUNBOOK.md
+            docs/submission-readiness-report.md
+            public/data/submission-readiness.json
+          )
+
+          commit_files=()
+          for file in "${tracked_files[@]}"; do
+            if [ -e "$file" ] || git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
+              commit_files+=("$file")
+            fi
+          done
+
+          if [ "${#commit_files[@]}" -eq 0 ]; then
+            echo "반영할 데이터 파일이 없습니다."
+            exit 0
+          fi
+
+          if [ -z "$(git status --porcelain -- "${commit_files[@]}")" ]; then
             echo "반영할 데이터 변경이 없습니다."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/oil-prices.json public/data/oil-history.json public/data/global-oil.json public/data/oil-ai-report.json public/data/fuel-news.json public/data/service-status.json docs/data-quality-report.md docs/DEPLOYMENT_RUNBOOK.md docs/submission-readiness-report.md public/data/submission-readiness.json
+          git add -A -- "${commit_files[@]}"
+
+          if git diff --cached --quiet; then
+            echo "커밋할 데이터 변경이 없습니다."
+            exit 0
+          fi
+
           git commit -m "가격 데이터 자동 갱신 [skip ci]"
           git push origin main
 
