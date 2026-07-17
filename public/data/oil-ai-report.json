@@ -1,14 +1,14 @@
 {
   "mode": "generated",
-  "provider": "rule-based",
-  "model": null,
-  "generatedAt": "2026-07-16T19:09:47.619Z",
+  "provider": "gemini-3.5-flash+local-rules",
+  "model": "gemini-3.5-flash",
+  "generatedAt": "2026-07-17T08:10:08.208Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,814원, 경유 1,789원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 -1원, 경유 0원으로 하락 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -150원, 경유 -160원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -153원, 경유 -173원으로 하락 흐름입니다.",
-    "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
+    "headline": "전국 평균 기준 휘발유 1814원, 경유 1789원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -1원, 경유 0원의 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -150원, 경유 -160원 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -153원, 경유 -172원 흐름입니다.",
+    "consumerTip": "주유소에 따라 가격 차이가 있으므로 가격을 비교하여 선택할 수 있습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
@@ -16,7 +16,7 @@
     "seriesCount": 79,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-07-16T19:09:19.606Z",
+    "generatedAt": "2026-07-17T08:10:05.753Z",
     "latest": {
       "gasolineAverage": 1814,
       "gasolineLowest": 1775,
@@ -34,23 +34,29 @@
       },
       "month": {
         "gasoline": -153,
-        "diesel": -173
+        "diesel": -172
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": null,
-    "modelVersion": null,
-    "finishReason": null,
-    "responseId": null,
-    "usage": null,
-    "attempts": 3,
-    "latencyMs": null,
-    "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini API 503 UNAVAILABLE: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "apiStatus": "UNAVAILABLE",
-    "httpStatus": 503,
-    "liveApiCalled": false
+    "model": "gemini-3.5-flash",
+    "modelVersion": "gemini-3.5-flash",
+    "finishReason": "STOP",
+    "responseId": "X-NZasqYApWsz7IPiMObCQ",
+    "usage": {
+      "promptTokenCount": 531,
+      "candidatesTokenCount": 176,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 707,
+      "cachedContentTokenCount": 0
+    },
+    "attempts": 1,
+    "latencyMs": 1344,
+    "reason": "generated",
+    "error": null,
+    "apiStatus": null,
+    "httpStatus": 200,
+    "liveApiCalled": true
   }
 }
