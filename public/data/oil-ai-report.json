@@ -1,13 +1,13 @@
 {
   "mode": "generated",
-  "provider": "rule-based",
-  "model": null,
-  "generatedAt": "2026-07-17T19:08:07.531Z",
+  "provider": "gemini-3.5-flash+local-rules",
+  "model": "gemini-3.5-flash",
+  "generatedAt": "2026-07-18T07:49:09.057Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,814원, 경유 1,789원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 -1원, 경유 0원으로 하락 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -150원, 경유 -160원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -153원, 경유 -171원으로 하락 흐름입니다.",
+    "headline": "전국 평균 기준 휘발유 1,813원, 경유 1,788원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -1원, 경유 -1원으로 하락 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -151원, 경유 -161원으로 하락 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -153원, 경유 -172원으로 하락 흐름입니다.",
     "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
@@ -16,41 +16,47 @@
     "seriesCount": 80,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-07-17T19:07:34.803Z",
+    "generatedAt": "2026-07-18T07:49:06.677Z",
     "latest": {
-      "gasolineAverage": 1814,
-      "gasolineLowest": 1775,
-      "dieselAverage": 1789,
-      "dieselLowest": 1740
+      "gasolineAverage": 1813,
+      "gasolineLowest": 1669,
+      "dieselAverage": 1788,
+      "dieselLowest": 1590
     },
     "changes": {
       "day": {
         "gasoline": -1,
-        "diesel": 0
+        "diesel": -1
       },
       "week": {
-        "gasoline": -150,
-        "diesel": -160
+        "gasoline": -151,
+        "diesel": -161
       },
       "month": {
         "gasoline": -153,
-        "diesel": -171
+        "diesel": -172
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": null,
-    "modelVersion": null,
-    "finishReason": null,
-    "responseId": null,
-    "usage": null,
-    "attempts": 3,
-    "latencyMs": null,
-    "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini request timeout",
+    "model": "gemini-3.5-flash",
+    "modelVersion": "gemini-3.5-flash",
+    "finishReason": "STOP",
+    "responseId": "8y9bauXQOKaMjMcPhsvrmQU",
+    "usage": {
+      "promptTokenCount": 531,
+      "candidatesTokenCount": 188,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 719,
+      "cachedContentTokenCount": 0
+    },
+    "attempts": 1,
+    "latencyMs": 1314,
+    "reason": "generated",
+    "error": null,
     "apiStatus": null,
-    "httpStatus": null,
-    "liveApiCalled": false
+    "httpStatus": 200,
+    "liveApiCalled": true
   }
 }
