@@ -1,62 +1,56 @@
 {
   "mode": "generated",
-  "provider": "gemini-3.5-flash+local-rules",
-  "model": "gemini-3.5-flash",
-  "generatedAt": "2026-07-20T08:57:26.891Z",
+  "provider": "rule-based",
+  "model": null,
+  "generatedAt": "2026-07-20T19:44:29.003Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,814원, 경유 1,789원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 +2원, 경유 +1원으로 상승 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -150원, 경유 -160원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -153원, 경유 -172원으로 하락 흐름입니다.",
+    "headline": "전국 평균 기준 휘발유 1,813원, 경유 1,789원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -1원, 경유 +2원으로 상승 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -151원, 경유 -160원으로 하락 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -154원, 경유 -169원으로 하락 흐름입니다.",
     "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
     "ready": true,
-    "seriesCount": 82,
+    "seriesCount": 83,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-07-20T08:57:24.361Z",
+    "generatedAt": "2026-07-20T19:44:10.032Z",
     "latest": {
-      "gasolineAverage": 1814,
-      "gasolineLowest": 1775,
+      "gasolineAverage": 1813,
+      "gasolineLowest": 1660,
       "dieselAverage": 1789,
-      "dieselLowest": 1755
+      "dieselLowest": 1734
     },
     "changes": {
       "day": {
-        "gasoline": 2,
-        "diesel": 1
+        "gasoline": -1,
+        "diesel": 2
       },
       "week": {
-        "gasoline": -150,
+        "gasoline": -151,
         "diesel": -160
       },
       "month": {
-        "gasoline": -153,
-        "diesel": -172
+        "gasoline": -154,
+        "diesel": -169
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": "gemini-3.5-flash",
-    "modelVersion": "gemini-3.5-flash",
-    "finishReason": "STOP",
-    "responseId": "9eJdavfeMb64sOIPh4Du4AQ",
-    "usage": {
-      "promptTokenCount": 530,
-      "candidatesTokenCount": 187,
-      "thoughtsTokenCount": 0,
-      "totalTokenCount": 717,
-      "cachedContentTokenCount": 0
-    },
-    "attempts": 1,
-    "latencyMs": 1299,
-    "reason": "generated",
-    "error": null,
-    "apiStatus": null,
-    "httpStatus": 200,
-    "liveApiCalled": true
+    "model": null,
+    "modelVersion": null,
+    "finishReason": null,
+    "responseId": null,
+    "usage": null,
+    "attempts": 3,
+    "latencyMs": null,
+    "reason": "fallback:REQUEST_FAILED",
+    "error": "Gemini API 503 UNAVAILABLE: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "apiStatus": "UNAVAILABLE",
+    "httpStatus": 503,
+    "liveApiCalled": false
   }
 }
