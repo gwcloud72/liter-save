@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-07-22T19:18:08.680Z",
+    "updatedAt": "2026-07-23T08:29:54.919Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,36 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "afea193da37cdf8a",
-      "title": "6월 소비자물가 상승률 3.2%… 2년6개월 만에 최고",
-      "summary": "중동전쟁 여파로 경유(33.7%)와 휘발유(23.1%) 가격이 크게 상승한 영향이다. 이두원 국가데이터처 경제동향통계심의관은 \"자동차용 LPG(액화석유가스) 가격이 소폭 올라 석유류 상승폭이 확대됐다\"며 \"6월27일...",
-      "source": "mt.co.kr",
-      "publishedAt": "2026-07-02T19:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/008/0005380920?sid=101",
-      "originallink": "https://www.mt.co.kr/living/2026/07/03/2026070219520936874",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "5b15ad02a8b8e149",
-      "title": "25%뛴 기름값, 밥상물가도 껑충… 1500원대 환율 하반기 변수로",
-      "summary": "경유 가격이 33.7% 상승하며 2022년 7월(47.0%) 이후 가장 큰 폭으로 올랐다. 휘발유 가격도 5월에 이어 23.1... 이두원 국가데이터처 경제동향통계심의관은 “휘발유는 최고가격제 때문에 큰 변동이 없었지만 자동차용 LPG...",
-      "source": "donga.com",
-      "publishedAt": "2026-07-02T19:35:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/020/0003731294?sid=101",
-      "originallink": "https://www.donga.com/news/Economy/article/all/20260703/134228619/2",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "57ef56d494a97306",
-      "title": "6월 물가 3.2% 올라… 중동戰이 ‘기름’ 부었다",
-      "summary": "휘발유는 23.1%, 경유는 33.7% 올랐다. 이두원 데이터처 경제동향통계심의관은 “휘발유는 최고가격제 영향으로 큰 변동이 없었지만 자동차용 액화석유가스(LPG) 가격이 소폭 상승하며 석유류 상승률이 확대됐다”고...",
-      "source": "seoul.co.kr",
-      "publishedAt": "2026-07-02T20:02:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/081/0003657975?sid=101",
-      "originallink": "https://www.seoul.co.kr/news/economy/2026/07/03/20260703001006?wlog_tag3=naver",
-      "keyword": "휘발유"
-    },
-    {
       "id": "880c1b2715b7715b",
       "title": "중동 긴장 재고조…대구 기름값 다시 '불안'",
       "summary": "85%가 휘발유·경유·LPG 차량인 대구에서는 유가 불안이 다시 생활비 부담으로 이어질 수 있다는 우려가 나온다. 동북지방데이터청의 '2026년 6월 대구·경북 소비자물가동향'에 따르면, 지난달 대구 소비자물가지수는...",
@@ -166,6 +136,36 @@
       "link": "https://www.gokorea.kr/news/articleView.html?idxno=871613",
       "originallink": "https://www.gokorea.kr/news/articleView.html?idxno=871613",
       "keyword": "유류세"
+    },
+    {
+      "id": "49f34443f39c9808",
+      "title": "고유가 피해지원금 받아보니… MZ세대가 바란 것은?",
+      "summary": "M세대 해뿌 님은 \"기름값 10원이라도 아끼려고 '저렴한 주유소 찾아 삼만리'를 이제 좀 덜 해도 돼서 좋아요.... 이와 관련 Z세대 탈룰라 님은 \"현금성보다 유류세 인하나 주유 쿠폰 형식으로 발급하는 게 바람직해 보여요...",
+      "source": "korea.kr",
+      "publishedAt": "2026-07-10T05:15:00.000Z",
+      "link": "https://www.korea.kr/news/policyNewsView.do?newsId=148967639&call_from=naver_news",
+      "originallink": "https://www.korea.kr/news/policyNewsView.do?newsId=148967639&call_from=naver_news",
+      "keyword": "유류세"
+    },
+    {
+      "id": "9b1e7e863735d0a3",
+      "title": "전국 주유소 기름값 8주 연속 하락…휘발유·경유 1800원대",
+      "summary": "전국 주유소 기름값이 8주 연속 하락하며 휘발유와 경유 평균 판매가격이 모두 ℓ당 1800원대로... 국내 주유소 가격에 반영된다. 국내 주유소 판매가격은 국제유가와 환율을 반영한 수입 원가에 유류세, 정유사...",
+      "source": "dailian.co.kr",
+      "publishedAt": "2026-07-11T03:20:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/119/0003110363?sid=101",
+      "originallink": "https://www.dailian.co.kr/news/view/1666008/?sc=Naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b0dbc02625a45960",
+      "title": "전세버스에도 유가보조금 지급…차량당 평균 월 25만원",
+      "summary": "유류세연동보조금은 7월 기준으로 리터당 149원이며, 유가연동보조금은 98원이다. 이에 따라 경유가격 1900원 기준으로 차량 1대당 월 25만원 수준의 기름값을 보조받는다. 지급기간은 7월 16일부터 내년 7월 15일까지...",
+      "source": "busan.com",
+      "publishedAt": "2026-07-15T04:44:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/082/0001389843?sid=101",
+      "originallink": "https://www.busan.com/view/busan/view.php?code=2026071513402681930",
+      "keyword": "경유"
     }
   ]
 }
