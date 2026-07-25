@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-07-24T19:25:31.695Z",
+    "updatedAt": "2026-07-25T08:06:06.239Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,13 +108,13 @@
       "keyword": "휘발유"
     },
     {
-      "id": "d009e1b1dfa37624",
-      "title": "제주도지사 직속 민생경제 상황실 본격 가동",
-      "summary": "23일 제주도에 따르면 도민이 자주 구매하고 가계지출 비중과 가격변동 체감도가 높은 제주형 10대 중점 물가관리 품목을 확정했다. 석유제품(휘발유·경유), 돼지고기, 달걀, 액화석유가스(LPG), 우유, 닭고기, 배추, 갈치 등...",
-      "source": "segye.com",
-      "publishedAt": "2026-07-23T02:03:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/022/0004145271?sid=102",
-      "originallink": "https://www.segye.com/newsView/20260723509757?OutUrl=naver",
+      "id": "1cf7b5fdb392c941",
+      "title": "정부, 매점매석 부당이익 '최대 2배' 환수…과징금·이행강제금 도입",
+      "summary": "이에 따라 휘발유는 리터(L)당 122원, 경유는 145원, LPG 부탄은 51원의 세금이 줄어든다. 석유제품 최고가격제도 계속 운영한다. 정부는 국제유가와 석유제품 수급 동향, 국민 부담 등을 고려해 25일 0시부터 적용할 8차...",
+      "source": "newspim.com",
+      "publishedAt": "2026-07-24T00:00:00.000Z",
+      "link": "https://www.newspim.com/news/view/20260723001178",
+      "originallink": "https://www.newspim.com/news/view/20260723001178",
       "keyword": "휘발유"
     },
     {
@@ -138,26 +138,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "1cf7b5fdb392c941",
-      "title": "정부, 매점매석 부당이익 '최대 2배' 환수…과징금·이행강제금 도입",
-      "summary": "이에 따라 휘발유는 리터(L)당 122원, 경유는 145원, LPG 부탄은 51원의 세금이 줄어든다. 석유제품 최고가격제도 계속 운영한다. 정부는 국제유가와 석유제품 수급 동향, 국민 부담 등을 고려해 25일 0시부터 적용할 8차...",
-      "source": "newspim.com",
-      "publishedAt": "2026-07-24T00:00:00.000Z",
-      "link": "https://www.newspim.com/news/view/20260723001178",
-      "originallink": "https://www.newspim.com/news/view/20260723001178",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "60b1300aaf4e088e",
-      "title": "\"기름값 오를까 걱정\" 끝 모를 중동전쟁…정부, 유류세 인하 9월까지 연...",
-      "summary": "정부가 이달 말 종료 예정이던 유류세의 한시적 인하 조치를 오는 9월 말까지 2개월 더 연장하기로 했다.... 불안이 커진 가운데 21일 서울 경부고속도로 만남의 광장 알뜰 주유소를 찾은 시민들이 차량에 주유를 하고 있다.",
-      "source": "edaily.co.kr",
-      "publishedAt": "2026-07-24T00:02:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/018/0006335968?sid=101",
-      "originallink": "https://www.edaily.co.kr/news/newspath.asp?newsid=03129126645517800",
-      "keyword": "유류세"
-    },
-    {
       "id": "7d0acb0a11efe845",
       "title": "유류세 인하 9월까지 연장…휘발유 15%·경유 25% 유지",
       "summary": "최고가격제, 3~6월 물가 0.7%p 낮춰\" 지난 21일 서울 시내 한 주유소[출처 : 연합뉴스 자료사진] (세종=연합인포맥스) 박준형 기자 = 정부가 휘발유와 경유, 액화석유가스(LPG) 부탄에 대한 현행 유류세 인하율을 오는 9월...",
@@ -165,6 +145,26 @@
       "publishedAt": "2026-07-24T00:02:00.000Z",
       "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4426609",
       "originallink": "https://news.einfomax.co.kr/news/articleView.html?idxno=4426609",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "56318f6ceeb5fe66",
+      "title": "유류세 인하·최고가격제 연장…중동 리스크에 물가 방어",
+      "summary": "이에 따라 휘발유는 ℓ(리터)당 122원(15%), 경유는 145원(25%), LPG 부탄은 51원(25%)의 세금 인하 효과가 계속된다.... 정부는 앞서 특별관리품목을 23개에서 43개로 확대하고 가격·수급 동향을 상시 점검해 왔다. 원유와 나프타...",
+      "source": "nocutnews.co.kr",
+      "publishedAt": "2026-07-24T00:02:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/079/0004171609?sid=101",
+      "originallink": "https://www.nocutnews.co.kr/news/6552688?utm_source=naver&utm_medium=article&utm_campaign=20260724090106",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "8b8f9180c6d85cbd",
+      "title": "유류세 인하 9월말까지 2개월 연장…휘발유 15%·경유 25% 유지",
+      "summary": "인하율은 휘발유 15%, 경유 25%, LPG 부탄 25%입니다. 리터당 유류세는 인하 전과 비교해 휘발유가 122원 내린... 고등어수급동향 및 대응 등을 안건으로 상정해 함께 논의했습니다. 계란과 고등어의 가격 안정을 위해서는...",
+      "source": "news.bbsi.co.kr",
+      "publishedAt": "2026-07-24T00:16:00.000Z",
+      "link": "https://news.bbsi.co.kr/news/articleView.html?idxno=4096796",
+      "originallink": "https://news.bbsi.co.kr/news/articleView.html?idxno=4096796",
       "keyword": "휘발유"
     }
   ]
