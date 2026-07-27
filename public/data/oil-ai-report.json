@@ -2,38 +2,38 @@
   "mode": "generated",
   "provider": "gemini-3.5-flash+local-rules",
   "model": "gemini-3.5-flash",
-  "generatedAt": "2026-07-27T09:51:33.280Z",
+  "generatedAt": "2026-07-27T19:27:06.242Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,812원, 경유 1,786원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 0원, 경유 -2원 수준입니다.",
-    "weekly": "최근 7일 기준 휘발유 -2원, 경유 -3원 수준입니다.",
-    "monthly": "최근 30일 기준 휘발유 -152원, 경유 -163원 수준입니다.",
-    "consumerTip": "지점별 주유소 가격을 비교해 보면 유리한 선택에 도움을 얻을 수 있습니다.",
+    "headline": "전국 평균 기준 휘발유 1,811원, 경유 1,786원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -1원, 경유 0원입니다.",
+    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -3원입니다.",
+    "monthly": "최근 30일 기준 휘발유 -153원, 경유 -163원입니다.",
+    "consumerTip": "주유소마다 가격 차이가 있으므로 가격을 비교하여 이용하는 것이 좋습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
     "ready": true,
-    "seriesCount": 89,
+    "seriesCount": 90,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-07-27T09:51:30.702Z",
+    "generatedAt": "2026-07-27T19:26:59.632Z",
     "latest": {
-      "gasolineAverage": 1812,
-      "gasolineLowest": 1775,
+      "gasolineAverage": 1811,
+      "gasolineLowest": 1643,
       "dieselAverage": 1786,
-      "dieselLowest": 1739
+      "dieselLowest": 1734
     },
     "changes": {
       "day": {
-        "gasoline": 0,
-        "diesel": -2
+        "gasoline": -1,
+        "diesel": 0
       },
       "week": {
-        "gasoline": -2,
+        "gasoline": -3,
         "diesel": -3
       },
       "month": {
-        "gasoline": -152,
+        "gasoline": -153,
         "diesel": -163
       }
     }
@@ -43,16 +43,16 @@
     "model": "gemini-3.5-flash",
     "modelVersion": "gemini-3.5-flash",
     "finishReason": "STOP",
-    "responseId": "JCpnauH9CpfOjrEP7JqlqQI",
+    "responseId": "BrFnavXyM9P3jrEP0733oAM",
     "usage": {
       "promptTokenCount": 523,
-      "candidatesTokenCount": 174,
+      "candidatesTokenCount": 167,
       "thoughtsTokenCount": 0,
-      "totalTokenCount": 697,
+      "totalTokenCount": 690,
       "cachedContentTokenCount": 0
     },
     "attempts": 1,
-    "latencyMs": 1346,
+    "latencyMs": 3615,
     "reason": "generated",
     "error": null,
     "apiStatus": null,
