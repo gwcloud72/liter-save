@@ -1,7 +1,7 @@
 {
   "project": "liter-save",
   "title": "리터세이브",
-  "generatedAt": "2026-07-30T08:26:13.631Z",
+  "generatedAt": "2026-07-30T19:26:04.736Z",
   "portfolioPosition": "실생활 가격 비교, 지도/길찾기, 50L 절약액 UX를 보여주는 프로젝트",
   "liveDemo": "https://gwcloud72.github.io/liter-save/",
   "repository": "https://github.com/gwcloud72/liter-save",
@@ -43,12 +43,12 @@
     {
       "name": "가격 기준시각",
       "status": "pass",
-      "detail": "2026.07.30 17:23, 0.0시간 전"
+      "detail": "2026.07.31 04:23, 0.0시간 전"
     },
     {
       "name": "가격 이력",
       "status": "pass",
-      "detail": "92개 스냅샷"
+      "detail": "93개 스냅샷"
     },
     {
       "name": "유가 뉴스",
