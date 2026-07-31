@@ -1,14 +1,14 @@
 {
   "mode": "generated",
-  "provider": "rule-based",
-  "model": null,
-  "generatedAt": "2026-07-30T19:25:55.036Z",
+  "provider": "gemini-3.5-flash+local-rules",
+  "model": "gemini-3.5-flash",
+  "generatedAt": "2026-07-31T08:49:43.341Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,810원, 경유 1,782원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 -1원, 경유 -3원으로 하락 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -5원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -154원, 경유 -167원으로 하락 흐름입니다.",
-    "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
+    "headline": "전국 평균 기준 휘발유 1810원, 경유 1785원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 0원, 경유 1원 변동이 있습니다.",
+    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -4원 변동이 있습니다.",
+    "monthly": "최근 30일 기준 휘발유 -154원, 경유 -164원 변동이 있습니다.",
+    "consumerTip": "주유소에 따라 가격에 차이가 있을 수 있으므로 주변 주유소의 가격을 비교해 보시기 바랍니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
@@ -16,41 +16,47 @@
     "seriesCount": 93,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-07-30T19:25:36.250Z",
+    "generatedAt": "2026-07-31T08:49:41.060Z",
     "latest": {
       "gasolineAverage": 1810,
       "gasolineLowest": 1774,
-      "dieselAverage": 1782,
-      "dieselLowest": 1569
+      "dieselAverage": 1785,
+      "dieselLowest": 1739
     },
     "changes": {
       "day": {
-        "gasoline": -1,
-        "diesel": -3
+        "gasoline": 0,
+        "diesel": 1
       },
       "week": {
         "gasoline": -3,
-        "diesel": -5
+        "diesel": -4
       },
       "month": {
         "gasoline": -154,
-        "diesel": -167
+        "diesel": -164
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": null,
-    "modelVersion": null,
-    "finishReason": null,
-    "responseId": null,
-    "usage": null,
-    "attempts": 3,
-    "latencyMs": null,
-    "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini API 503 UNAVAILABLE: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "apiStatus": "UNAVAILABLE",
-    "httpStatus": 503,
-    "liveApiCalled": false
+    "model": "gemini-3.5-flash",
+    "modelVersion": "gemini-3.5-flash",
+    "finishReason": "STOP",
+    "responseId": "pmFsap7QEN28jrEPsOGAuQQ",
+    "usage": {
+      "promptTokenCount": 522,
+      "candidatesTokenCount": 182,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 704,
+      "cachedContentTokenCount": 0
+    },
+    "attempts": 1,
+    "latencyMs": 1270,
+    "reason": "generated",
+    "error": null,
+    "apiStatus": null,
+    "httpStatus": 200,
+    "liveApiCalled": true
   }
 }
