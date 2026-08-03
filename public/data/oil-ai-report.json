@@ -2,26 +2,26 @@
   "mode": "generated",
   "provider": "rule-based",
   "model": null,
-  "generatedAt": "2026-08-03T09:43:03.652Z",
+  "generatedAt": "2026-08-03T19:30:25.762Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,809원, 경유 1,785원 수준으로 집계됐습니다.",
+    "headline": "전국 평균 기준 휘발유 1,809원, 경유 1,784원 수준으로 집계됐습니다.",
     "daily": "전일 대비 휘발유 -1원, 경유 0원으로 하락 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -1원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -155원, 경유 -164원으로 하락 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -2원, 경유 -2원으로 하락 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -155원, 경유 -165원으로 하락 흐름입니다.",
     "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
     "ready": true,
-    "seriesCount": 96,
+    "seriesCount": 97,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-08-03T09:43:02.290Z",
+    "generatedAt": "2026-08-03T19:29:53.530Z",
     "latest": {
       "gasolineAverage": 1809,
       "gasolineLowest": 1774,
-      "dieselAverage": 1785,
-      "dieselLowest": 1739
+      "dieselAverage": 1784,
+      "dieselLowest": 1734
     },
     "changes": {
       "day": {
@@ -29,12 +29,12 @@
         "diesel": 0
       },
       "week": {
-        "gasoline": -3,
-        "diesel": -1
+        "gasoline": -2,
+        "diesel": -2
       },
       "month": {
         "gasoline": -155,
-        "diesel": -164
+        "diesel": -165
       }
     }
   },
@@ -45,12 +45,12 @@
     "finishReason": null,
     "responseId": null,
     "usage": null,
-    "attempts": 1,
+    "attempts": 3,
     "latencyMs": null,
     "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini API 400 FAILED_PRECONDITION: User location is not supported for the API use.",
-    "apiStatus": "FAILED_PRECONDITION",
-    "httpStatus": 400,
+    "error": "Gemini request timeout",
+    "apiStatus": null,
+    "httpStatus": null,
     "liveApiCalled": false
   }
 }
