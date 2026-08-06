@@ -1,14 +1,14 @@
 {
   "mode": "generated",
-  "provider": "rule-based",
-  "model": null,
-  "generatedAt": "2026-08-05T19:29:37.973Z",
+  "provider": "gemini-3.5-flash+local-rules",
+  "model": "gemini-3.5-flash",
+  "generatedAt": "2026-08-06T08:35:27.061Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,808원, 경유 1,784원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 -1원, 경유 -1원으로 하락 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -1원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -156원, 경유 -165원으로 하락 흐름입니다.",
-    "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
+    "headline": "전국 평균 기준 휘발유 1,808원, 경유 1,785원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -1원, 경유 +1원으로 보합 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -2원, 경유 +1원으로 하락 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -156원, 경유 -164원으로 하락 흐름입니다.",
+    "consumerTip": "가격과 거리 조건을 함께 비교해 조회된 주유소 기준으로 가성비 좋은 곳을 확인해보세요.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
@@ -16,41 +16,47 @@
     "seriesCount": 99,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-08-05T19:29:05.712Z",
+    "generatedAt": "2026-08-06T08:35:24.666Z",
     "latest": {
       "gasolineAverage": 1808,
       "gasolineLowest": 1774,
-      "dieselAverage": 1784,
-      "dieselLowest": 1713
+      "dieselAverage": 1785,
+      "dieselLowest": 1750
     },
     "changes": {
       "day": {
         "gasoline": -1,
-        "diesel": -1
+        "diesel": 1
       },
       "week": {
-        "gasoline": -3,
-        "diesel": -1
+        "gasoline": -2,
+        "diesel": 1
       },
       "month": {
         "gasoline": -156,
-        "diesel": -165
+        "diesel": -164
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": null,
-    "modelVersion": null,
-    "finishReason": null,
-    "responseId": null,
-    "usage": null,
-    "attempts": 3,
-    "latencyMs": null,
-    "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini request timeout",
+    "model": "gemini-3.5-flash",
+    "modelVersion": "gemini-3.5-flash",
+    "finishReason": "STOP",
+    "responseId": "TUd0atbVOeL3-8YP3ZfvoQM",
+    "usage": {
+      "promptTokenCount": 523,
+      "candidatesTokenCount": 184,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 707,
+      "cachedContentTokenCount": 0
+    },
+    "attempts": 1,
+    "latencyMs": 1271,
+    "reason": "generated",
+    "error": null,
     "apiStatus": null,
-    "httpStatus": null,
-    "liveApiCalled": false
+    "httpStatus": 200,
+    "liveApiCalled": true
   }
 }
