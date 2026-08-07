@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-08-06T23:58:54.103Z",
+    "updatedAt": "2026-08-07T07:14:46.624Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "05f0008e8d8bc14a",
-      "title": "정유사 손실 보전 위해 최고액 정산위원회 가동한다",
-      "summary": "정부는 우선 국제유가 등 시장여건과 수급 동향, 민생부담 등을 감안해 8차 최고가격을 결정할 예정이다. 8차... 인하 폭은 △휘발유 15% △경유 25% △LPG부탄 25% 등이다. 최고가격제 시행에 따른 정유사 손실을 보전하기...",
-      "source": "fnnews.com",
-      "publishedAt": "2026-07-24T00:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/014/0005552316?sid=101",
-      "originallink": "http://www.fnnews.com/news/202607231633539497",
-      "keyword": "휘발유"
-    },
-    {
       "id": "7d0acb0a11efe845",
       "title": "유류세 인하 9월까지 연장…휘발유 15%·경유 25% 유지",
       "summary": "최고가격제, 3~6월 물가 0.7%p 낮춰\" 지난 21일 서울 시내 한 주유소[출처 : 연합뉴스 자료사진] (세종=연합인포맥스) 박준형 기자 = 정부가 휘발유와 경유, 액화석유가스(LPG) 부탄에 대한 현행 유류세 인하율을 오는 9월...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-07-24T02:04:00.000Z",
       "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5044118",
       "originallink": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5044118",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "1d728e040d748895",
+      "title": "물가 또 꿈틀…석유 최고가격 묶고 유류세 인하 연장",
+      "summary": "최고가격제를 운영해 나가겠다”고 말했다. 이달 말 종료 예정인 유류세 인하 조치도 9월30일까지 연장한다. 이에 따라 부가가치세를 포함한 유류세는 휘발유가 ℓ당 698원, 경유는 436원, LPG 부탄은 152원으로 유지된다....",
+      "source": "sedaily.com",
+      "publishedAt": "2026-07-24T10:02:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/011/0004644966?sid=101",
+      "originallink": "https://www.sedaily.com/article/20071678?ref=naver",
       "keyword": "휘발유"
     }
   ]
