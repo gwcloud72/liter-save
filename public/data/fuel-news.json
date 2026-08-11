@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-08-11T07:06:30.469Z",
+    "updatedAt": "2026-08-11T19:02:03.617Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "56318f6ceeb5fe66",
-      "title": "유류세 인하·최고가격제 연장…중동 리스크에 물가 방어",
-      "summary": "이에 따라 휘발유는 ℓ(리터)당 122원(15%), 경유는 145원(25%), LPG 부탄은 51원(25%)의 세금 인하 효과가 계속된다.... 정부는 앞서 특별관리품목을 23개에서 43개로 확대하고 가격·수급 동향을 상시 점검해 왔다. 원유와 나프타...",
-      "source": "nocutnews.co.kr",
-      "publishedAt": "2026-07-24T00:02:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/079/0004171609?sid=101",
-      "originallink": "https://www.nocutnews.co.kr/news/6552688?utm_source=naver&utm_medium=article&utm_campaign=20260724090106",
-      "keyword": "휘발유"
-    },
-    {
       "id": "7d0acb0a11efe845",
       "title": "유류세 인하 9월까지 연장…휘발유 15%·경유 25% 유지",
       "summary": "최고가격제, 3~6월 물가 0.7%p 낮춰\" 지난 21일 서울 시내 한 주유소[출처 : 연합뉴스 자료사진] (세종=연합인포맥스) 박준형 기자 = 정부가 휘발유와 경유, 액화석유가스(LPG) 부탄에 대한 현행 유류세 인하율을 오는 9월...",
@@ -125,6 +115,16 @@
       "publishedAt": "2026-07-24T00:02:00.000Z",
       "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4426609",
       "originallink": "https://news.einfomax.co.kr/news/articleView.html?idxno=4426609",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "56318f6ceeb5fe66",
+      "title": "유류세 인하·최고가격제 연장…중동 리스크에 물가 방어",
+      "summary": "이에 따라 휘발유는 ℓ(리터)당 122원(15%), 경유는 145원(25%), LPG 부탄은 51원(25%)의 세금 인하 효과가 계속된다.... 정부는 앞서 특별관리품목을 23개에서 43개로 확대하고 가격·수급 동향을 상시 점검해 왔다. 원유와 나프타...",
+      "source": "nocutnews.co.kr",
+      "publishedAt": "2026-07-24T00:02:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/079/0004171609?sid=101",
+      "originallink": "https://www.nocutnews.co.kr/news/6552688?utm_source=naver&utm_medium=article&utm_campaign=20260724090106",
       "keyword": "휘발유"
     },
     {
