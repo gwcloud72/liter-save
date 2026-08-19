@@ -1,14 +1,14 @@
 {
   "project": "liter-save",
-  "generatedAt": "2026-08-18T18:37:42.095Z",
+  "generatedAt": "2026-08-19T06:42:13.345Z",
   "status": "ready",
   "score": 100,
   "summary": "OPINET 가격 데이터가 운영 기준입니다.",
   "data": {
     "source": "한국석유공사 오피넷 Open API",
-    "runGeneratedAt": "2026-08-18T18:37:17.425Z",
-    "dataAsOf": "2026-08-18T18:35:06.441Z",
-    "ageHours": 0.04323333333333333,
+    "runGeneratedAt": "2026-08-19T06:41:59.550Z",
+    "dataAsOf": "2026-08-19T06:39:48.355Z",
+    "ageHours": 0.040271944444444444,
     "datasetCount": 51,
     "liveDatasetCount": 51,
     "cachedDatasetCount": 0,
@@ -16,7 +16,7 @@
     "regionCount": 17,
     "fuelCount": 3,
     "snapshots": 112,
-    "reportGeneratedAt": "2026-08-18T18:37:31.835Z",
+    "reportGeneratedAt": "2026-08-19T06:42:04.367Z",
     "newsCount": 16
   },
   "checks": [
@@ -43,7 +43,7 @@
     {
       "name": "가격 기준시각",
       "status": "pass",
-      "detail": "2026.08.19 03:35, 0.0시간 전"
+      "detail": "2026.08.19 15:39, 0.0시간 전"
     },
     {
       "name": "가격 이력",
