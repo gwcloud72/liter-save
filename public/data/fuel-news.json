@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-08-20T18:38:49.227Z",
+    "updatedAt": "2026-08-21T06:44:09.945Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,26 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "7d0acb0a11efe845",
-      "title": "유류세 인하 9월까지 연장…휘발유 15%·경유 25% 유지",
-      "summary": "최고가격제, 3~6월 물가 0.7%p 낮춰\" 지난 21일 서울 시내 한 주유소[출처 : 연합뉴스 자료사진] (세종=연합인포맥스) 박준형 기자 = 정부가 휘발유와 경유, 액화석유가스(LPG) 부탄에 대한 현행 유류세 인하율을 오는 9월...",
-      "source": "news.einfomax.co.kr",
-      "publishedAt": "2026-07-24T00:02:00.000Z",
-      "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4426609",
-      "originallink": "https://news.einfomax.co.kr/news/articleView.html?idxno=4426609",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "8b8f9180c6d85cbd",
-      "title": "유류세 인하 9월말까지 2개월 연장…휘발유 15%·경유 25% 유지",
-      "summary": "인하율은 휘발유 15%, 경유 25%, LPG 부탄 25%입니다. 리터당 유류세는 인하 전과 비교해 휘발유가 122원 내린... 고등어수급동향 및 대응 등을 안건으로 상정해 함께 논의했습니다. 계란과 고등어의 가격 안정을 위해서는...",
-      "source": "news.bbsi.co.kr",
-      "publishedAt": "2026-07-24T00:16:00.000Z",
-      "link": "https://news.bbsi.co.kr/news/articleView.html?idxno=4096796",
-      "originallink": "https://news.bbsi.co.kr/news/articleView.html?idxno=4096796",
-      "keyword": "휘발유"
-    },
-    {
       "id": "8cd8e2c88dac485d",
       "title": "[민생물가 특별관리] 기름값·밥상물가 안정 총력전",
       "summary": "이에 따라 휘발유 15%, 경유 25%, 액화석유가스(LPG) 부탄 25%의 인하율이 현행대로 유지된다. 부가가치세 10%를... 지난달 27일 석유제품 최고가격을 리터당 150원 인하한 데 이어, 대외 불확실성 지속에 대응해 유류세 조정...",
@@ -166,6 +146,26 @@
       "link": "https://www.jbnews.com/news/articleView.html?idxno=1508234",
       "originallink": "https://www.jbnews.com/news/articleView.html?idxno=1508234",
       "keyword": "휘발유"
+    },
+    {
+      "id": "210d3647ec419df0",
+      "title": "정부, 석유 최고가격제 9월까지 연장…유류세 인하도 두 달 더",
+      "summary": "정부는 국제유가ㆍ수급 동향과 민생 부담을 감안해 8차 석유 최고가격을 결정하고 25일 0시부터 시행에... 휘발유 15%, 경유ㆍLPG부탄은 25% 인하폭을 그대로 유지한다. 최고가격제 시행에 따른 정유사 손실은 원가...",
+      "source": "dnews.co.kr",
+      "publishedAt": "2026-07-26T06:42:00.000Z",
+      "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202607261304447030526",
+      "originallink": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202607261304447030526",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "32d8c9a7c42d53ea",
+      "title": "기름값·계란값, 두 달 더 버틴다…9월 말이 진짜 고비",
+      "summary": "이달 말 끝날 예정이었던 유류세 인하가 9월 30일까지 두 달 더 연장된다. 계란과 고등어 등 장바구니... 여기에 7월 25일 0시부터 적용되는 8차 석유 최고가격까지 겹쳐 있어, 당분간 주유소 기름값이 급격히 오를...",
+      "source": "dailypop.kr",
+      "publishedAt": "2026-07-27T08:30:00.000Z",
+      "link": "http://www.dailypop.kr/news/articleView.html?idxno=100934",
+      "originallink": "http://www.dailypop.kr/news/articleView.html?idxno=100934",
+      "keyword": "유류세"
     }
   ]
 }
