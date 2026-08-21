@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-08-21T06:44:09.945Z",
+    "updatedAt": "2026-08-21T18:36:13.645Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "8cd8e2c88dac485d",
-      "title": "[민생물가 특별관리] 기름값·밥상물가 안정 총력전",
-      "summary": "이에 따라 휘발유 15%, 경유 25%, 액화석유가스(LPG) 부탄 25%의 인하율이 현행대로 유지된다. 부가가치세 10%를... 지난달 27일 석유제품 최고가격을 리터당 150원 인하한 데 이어, 대외 불확실성 지속에 대응해 유류세 조정...",
-      "source": "00news.co.kr",
-      "publishedAt": "2026-07-24T02:02:00.000Z",
-      "link": "http://www.00news.co.kr/news/articleView.html?idxno=105384",
-      "originallink": "http://www.00news.co.kr/news/articleView.html?idxno=105384",
-      "keyword": "휘발유"
-    },
-    {
       "id": "9cd43639887fc788",
       "title": "구윤철 \"중동 긴장 재고조\"…유류세 인하 9월까지 연장",
       "summary": "휘발유는 15%, 경유와 LPG부탄은 각각 25% 인하해 오는 9월30일까지 적용한다. 리터(ℓ)당 인하 효과는 휘발유... 또한 정부는 25일 0시부터 적용되는 8차 석유제품 최고가격도 국제유가와 수급 동향, 국민 부담 등을...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-07-27T08:30:00.000Z",
       "link": "http://www.dailypop.kr/news/articleView.html?idxno=100934",
       "originallink": "http://www.dailypop.kr/news/articleView.html?idxno=100934",
+      "keyword": "유류세"
+    },
+    {
+      "id": "4f0c43eb032bd778",
+      "title": "당분간 유가 변동성 불가피…정부 “수급 상황 점검”",
+      "summary": "국내 주유소 기름값도 리터당 1,900원 안팎에 머물고 있습니다. 하지만 유가 변동성이 당분간 이어질 가능성이 큰 상황. 정부가 석유 최고가격제를 유지하겠다고 한 배경입니다. [강유정/청와대 수석대변인 : \"석유 최고...",
+      "source": "news.kbs.co.kr",
+      "publishedAt": "2026-07-27T10:22:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/056/0012225894?sid=101",
+      "originallink": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8621173&ref=A",
       "keyword": "유류세"
     }
   ]
