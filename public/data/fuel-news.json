@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-08-24T06:56:36.941Z",
+    "updatedAt": "2026-08-24T18:39:30.358Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "210d3647ec419df0",
-      "title": "정부, 석유 최고가격제 9월까지 연장…유류세 인하도 두 달 더",
-      "summary": "정부는 국제유가ㆍ수급 동향과 민생 부담을 감안해 8차 석유 최고가격을 결정하고 25일 0시부터 시행에... 휘발유 15%, 경유ㆍLPG부탄은 25% 인하폭을 그대로 유지한다. 최고가격제 시행에 따른 정유사 손실은 원가...",
-      "source": "dnews.co.kr",
-      "publishedAt": "2026-07-26T06:42:00.000Z",
-      "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202607261304447030526",
-      "originallink": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202607261304447030526",
-      "keyword": "휘발유"
-    },
-    {
       "id": "4f0c43eb032bd778",
       "title": "당분간 유가 변동성 불가피…정부 “수급 상황 점검”",
       "summary": "국내 주유소 기름값도 리터당 1,900원 안팎에 머물고 있습니다. 하지만 유가 변동성이 당분간 이어질 가능성이 큰 상황. 정부가 석유 최고가격제를 유지하겠다고 한 배경입니다. [강유정/청와대 수석대변인 : \"석유 최고...",
@@ -166,6 +156,16 @@
       "link": "https://n.news.naver.com/mnews/article/022/0004147219?sid=101",
       "originallink": "https://www.segye.com/newsView/20260730511509?OutUrl=naver",
       "keyword": "국제유가"
+    },
+    {
+      "id": "0e299a2d7406bd3d",
+      "title": "일본·대만은 지켰고 한국은 뚫렸다… 비싼 기름값 부른 엉뚱한 국가 개...",
+      "summary": "김헌일 청주대 생활체육학과 교수 올해 들어 기름값이 너무 비싸다. 내렸다지만 여전히 비싸다. 미국·이란... 유류세 인하폭을 확대해 가격 상승분을 방어했지만, 정유사와 주유소 행정 지도에 집중했다. 소비자에게는...",
+      "source": "ccdailynews.com",
+      "publishedAt": "2026-08-02T13:22:00.000Z",
+      "link": "https://www.ccdailynews.com/news/articleView.html?idxno=2431553",
+      "originallink": "https://www.ccdailynews.com/news/articleView.html?idxno=2431553",
+      "keyword": "유류세"
     }
   ]
 }
