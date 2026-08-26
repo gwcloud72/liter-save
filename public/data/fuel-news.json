@@ -2,21 +2,11 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-08-25T18:39:06.284Z",
+    "updatedAt": "2026-08-26T06:47:38.962Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
-    {
-      "id": "d0399b98971c7822",
-      "title": "[전라 Insight] 혼란 부추기는 중동사태 가짜뉴스",
-      "summary": "\"곧 기름이 떨어져 주유소가 셧다운 된다\" \"정부가 곧 유류 배급제를 실시한다\" \"휘발유 가격이 리터당... 에너지 가격이나 수급 상황이 궁금하다면 한국석유공사의 오피넷(Opinet)이나 정부 부처의 공식 누리집을 직접...",
-      "source": "jeollailbo.com",
-      "publishedAt": "2026-04-09T15:06:00.000Z",
-      "link": "http://www.jeollailbo.com/news/articleView.html?idxno=797083",
-      "originallink": "http://www.jeollailbo.com/news/articleView.html?idxno=797083",
-      "keyword": "휘발유"
-    },
     {
       "id": "6fad87322741144a",
       "title": "석유공사 '오피넷' 고유가 속 국민 유류비 부담 경감",
@@ -166,6 +156,16 @@
       "link": "https://www.jnilbo.com/news/articleView.html?idxno=90000038262",
       "originallink": "https://www.jnilbo.com/news/articleView.html?idxno=90000038262",
       "keyword": "유류세"
+    },
+    {
+      "id": "bf4fd9954855ab01",
+      "title": "국제유가 잡기 나선 美…한국 기름값·물가에도 영향 줄까",
+      "summary": "휘발유 가격을 안정시키기 위해 정유업체 지원책을 내놓기로 하면서 국제 석유시장과 국내 기름값에 미칠... 국내 주유소 가격은 국제유가 외에도 원·달러 환율과 유류세, 정유·유통 과정의 비용 등에 영향을 받는다....",
+      "source": "newsway.co.kr",
+      "publishedAt": "2026-08-18T06:26:00.000Z",
+      "link": "https://www.newsway.co.kr/news/view?ud=2026081815234196534",
+      "originallink": "https://www.newsway.co.kr/news/view?ud=2026081815234196534",
+      "keyword": "휘발유"
     }
   ]
 }
