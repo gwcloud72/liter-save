@@ -1,473 +1,9 @@
 {
   "mode": "history",
-  "generatedAt": "2026-09-01T20:37:11.845Z",
+  "generatedAt": "2026-09-02T10:42:24.280Z",
   "retentionDays": 90,
   "notice": "오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.",
   "snapshots": [
-    {
-      "capturedAt": "2026-06-04T09:00:00+09:00",
-      "metrics": [
-        {
-          "regionCode": "01",
-          "regionName": "서울",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2050.94,
-          "lowestPrice": 1978.92,
-          "stationCount": 6
-        },
-        {
-          "regionCode": "01",
-          "regionName": "서울",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2039.96,
-          "lowestPrice": 2011.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "01",
-          "regionName": "서울",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1164.49,
-          "lowestPrice": 1137.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "02",
-          "regionName": "경기",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2009.11,
-          "lowestPrice": 1980.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "02",
-          "regionName": "경기",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2003.14,
-          "lowestPrice": 1975.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "02",
-          "regionName": "경기",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1105.54,
-          "lowestPrice": 1078.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "03",
-          "regionName": "강원",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2018.45,
-          "lowestPrice": 1990.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "03",
-          "regionName": "강원",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2012.36,
-          "lowestPrice": 1984.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "03",
-          "regionName": "강원",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1134.51,
-          "lowestPrice": 1107.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "04",
-          "regionName": "충북",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2015.24,
-          "lowestPrice": 1986.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "04",
-          "regionName": "충북",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2009.96,
-          "lowestPrice": 1981.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "04",
-          "regionName": "충북",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1096.69,
-          "lowestPrice": 1069.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "05",
-          "regionName": "충남",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2014.46,
-          "lowestPrice": 1986.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "05",
-          "regionName": "충남",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2008.54,
-          "lowestPrice": 1980.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "05",
-          "regionName": "충남",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1110.59,
-          "lowestPrice": 1083.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "06",
-          "regionName": "전북",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2006.07,
-          "lowestPrice": 1977.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "06",
-          "regionName": "전북",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2002.12,
-          "lowestPrice": 1974.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "06",
-          "regionName": "전북",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1068.97,
-          "lowestPrice": 1041.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "07",
-          "regionName": "전남",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2014.54,
-          "lowestPrice": 1986.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "07",
-          "regionName": "전남",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2010.59,
-          "lowestPrice": 1982.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "07",
-          "regionName": "전남",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1116.87,
-          "lowestPrice": 1089.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "08",
-          "regionName": "경북",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2003.98,
-          "lowestPrice": 1975.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "08",
-          "regionName": "경북",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1997.89,
-          "lowestPrice": 1969.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "08",
-          "regionName": "경북",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1095.1,
-          "lowestPrice": 1067.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "09",
-          "regionName": "경남",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2002.25,
-          "lowestPrice": 1973.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "09",
-          "regionName": "경남",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1998.75,
-          "lowestPrice": 1970.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "09",
-          "regionName": "경남",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1086.82,
-          "lowestPrice": 1059.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "10",
-          "regionName": "부산",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 1995.2,
-          "lowestPrice": 1966.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "10",
-          "regionName": "부산",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1989.34,
-          "lowestPrice": 1961.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "10",
-          "regionName": "부산",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1099.7,
-          "lowestPrice": 1072.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "11",
-          "regionName": "제주",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2026.98,
-          "lowestPrice": 1998.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "11",
-          "regionName": "제주",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2018.81,
-          "lowestPrice": 1990.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "11",
-          "regionName": "제주",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1140.17,
-          "lowestPrice": 1112.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "14",
-          "regionName": "대구",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 1990.03,
-          "lowestPrice": 1961.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "14",
-          "regionName": "대구",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1983.38,
-          "lowestPrice": 1955.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "14",
-          "regionName": "대구",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1126.11,
-          "lowestPrice": 1098.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "15",
-          "regionName": "인천",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2006.6,
-          "lowestPrice": 1978.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "15",
-          "regionName": "인천",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2002.08,
-          "lowestPrice": 1974.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "15",
-          "regionName": "인천",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1100.79,
-          "lowestPrice": 1073.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "16",
-          "regionName": "광주",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 1999.07,
-          "lowestPrice": 1970.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "16",
-          "regionName": "광주",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1995.24,
-          "lowestPrice": 1967.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "16",
-          "regionName": "광주",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1110.19,
-          "lowestPrice": 1082.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "17",
-          "regionName": "대전",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 1998.38,
-          "lowestPrice": 1970.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "17",
-          "regionName": "대전",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1995.73,
-          "lowestPrice": 1967.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "17",
-          "regionName": "대전",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1083.57,
-          "lowestPrice": 1056.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "18",
-          "regionName": "울산",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 1993.1,
-          "lowestPrice": 1964.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "18",
-          "regionName": "울산",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 1992.55,
-          "lowestPrice": 1964.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "18",
-          "regionName": "울산",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1116.9,
-          "lowestPrice": 1089.37,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "19",
-          "regionName": "세종",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "averagePrice": 2005.29,
-          "lowestPrice": 1976.92,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "19",
-          "regionName": "세종",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "averagePrice": 2003.03,
-          "lowestPrice": 1975.66,
-          "stationCount": 4
-        },
-        {
-          "regionCode": "19",
-          "regionName": "세종",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "averagePrice": 1109.79,
-          "lowestPrice": 1082.37,
-          "stationCount": 4
-        }
-      ]
-    },
     {
       "capturedAt": "2026-06-05T09:00:00+09:00",
       "metrics": [
@@ -71269,6 +70805,601 @@
           "averagePrice": 1062,
           "stationCount": 20,
           "capturedAt": "2026-09-01T20:37:11.844Z",
+          "collectionStatus": "live"
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-09-02T10:42:24.280Z",
+      "dataAsOf": "2026-09-02T10:40:13.123Z",
+      "cachedDatasetCount": 0,
+      "metrics": [
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1755,
+          "averagePrice": 1802,
+          "stationCount": 340
+        },
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1725,
+          "averagePrice": 1784,
+          "stationCount": 340
+        },
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 949,
+          "averagePrice": 1048,
+          "stationCount": 327
+        },
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1755,
+          "averagePrice": 1779,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:13.123Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1725,
+          "averagePrice": 1755,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:13.760Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "ALL",
+          "regionName": "전국",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 949,
+          "averagePrice": 972,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:14.453Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "01",
+          "regionName": "서울",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1799,
+          "averagePrice": 1819,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:15.255Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "01",
+          "regionName": "서울",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1777,
+          "averagePrice": 1796,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:16.056Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "01",
+          "regionName": "서울",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1076,
+          "averagePrice": 1145,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:17.026Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "02",
+          "regionName": "경기",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1789,
+          "averagePrice": 1791,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:17.689Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "02",
+          "regionName": "경기",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1774,
+          "averagePrice": 1774,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:18.468Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "02",
+          "regionName": "경기",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 979,
+          "averagePrice": 1002,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:19.235Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "03",
+          "regionName": "강원",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1780,
+          "averagePrice": 1806,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:20.073Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "03",
+          "regionName": "강원",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1785,
+          "averagePrice": 1798,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:20.888Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "03",
+          "regionName": "강원",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1018,
+          "averagePrice": 1053,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:21.779Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "04",
+          "regionName": "충북",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1802,
+          "averagePrice": 1812,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:22.470Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "04",
+          "regionName": "충북",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1769,
+          "averagePrice": 1792,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:23.332Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "04",
+          "regionName": "충북",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 969,
+          "averagePrice": 1016,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:24.033Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "05",
+          "regionName": "충남",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1788,
+          "averagePrice": 1797,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:24.868Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "05",
+          "regionName": "충남",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1772,
+          "averagePrice": 1785,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:40:25.664Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "05",
+          "regionName": "충남",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 973,
+          "averagePrice": 1039,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:12.692Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "06",
+          "regionName": "전북",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1785,
+          "averagePrice": 1799,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:13.106Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "06",
+          "regionName": "전북",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1773,
+          "averagePrice": 1780,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:13.776Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "06",
+          "regionName": "전북",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 992,
+          "averagePrice": 996,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:14.553Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "08",
+          "regionName": "경북",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1755,
+          "averagePrice": 1783,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:15.387Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "08",
+          "regionName": "경북",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1725,
+          "averagePrice": 1762,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:16.178Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "08",
+          "regionName": "경북",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 999,
+          "averagePrice": 1023,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:16.952Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "09",
+          "regionName": "경남",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1783,
+          "averagePrice": 1790,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:17.992Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "09",
+          "regionName": "경남",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1750,
+          "averagePrice": 1770,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:18.579Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "09",
+          "regionName": "경남",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 998,
+          "averagePrice": 1014,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:19.356Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "10",
+          "regionName": "부산",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1780,
+          "averagePrice": 1793,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:20.171Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "10",
+          "regionName": "부산",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1779,
+          "averagePrice": 1784,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:21.012Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "10",
+          "regionName": "부산",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 949,
+          "averagePrice": 1031,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:21.780Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "11",
+          "regionName": "제주",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1819,
+          "averagePrice": 1850,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:22.575Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "11",
+          "regionName": "제주",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1809,
+          "averagePrice": 1818,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:23.394Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "11",
+          "regionName": "제주",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1079,
+          "averagePrice": 1127,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:24.172Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "14",
+          "regionName": "대구",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1779,
+          "averagePrice": 1787,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:24.968Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "14",
+          "regionName": "대구",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1757,
+          "averagePrice": 1763,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:41:25.780Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "14",
+          "regionName": "대구",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1048,
+          "averagePrice": 1096,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:12.800Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "15",
+          "regionName": "인천",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1789,
+          "averagePrice": 1797,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:13.090Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "15",
+          "regionName": "인천",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1768,
+          "averagePrice": 1773,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:13.891Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "15",
+          "regionName": "인천",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1034,
+          "averagePrice": 1059,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:14.671Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "17",
+          "regionName": "대전",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1805,
+          "averagePrice": 1807,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:15.520Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "17",
+          "regionName": "대전",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1787,
+          "averagePrice": 1793,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:16.339Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "17",
+          "regionName": "대전",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 981,
+          "averagePrice": 1026,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:17.066Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "18",
+          "regionName": "울산",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1788,
+          "averagePrice": 1796,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:17.890Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "18",
+          "regionName": "울산",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1773,
+          "averagePrice": 1782,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:18.858Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "18",
+          "regionName": "울산",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1039,
+          "averagePrice": 1094,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:19.485Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "19",
+          "regionName": "세종",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1819,
+          "averagePrice": 1831,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:20.281Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "19",
+          "regionName": "세종",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1802,
+          "averagePrice": 1816,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:21.113Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "19",
+          "regionName": "세종",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1054,
+          "averagePrice": 1101,
+          "stationCount": 7,
+          "capturedAt": "2026-09-02T10:42:21.896Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "20",
+          "regionName": "전남광주",
+          "fuelCode": "B027",
+          "fuelName": "휘발유",
+          "lowestPrice": 1797,
+          "averagePrice": 1799,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:22.703Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "20",
+          "regionName": "전남광주",
+          "fuelCode": "D047",
+          "fuelName": "경유",
+          "lowestPrice": 1779,
+          "averagePrice": 1785,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:23.527Z",
+          "collectionStatus": "live"
+        },
+        {
+          "regionCode": "20",
+          "regionName": "전남광주",
+          "fuelCode": "K015",
+          "fuelName": "LPG",
+          "lowestPrice": 1016,
+          "averagePrice": 1062,
+          "stationCount": 20,
+          "capturedAt": "2026-09-02T10:42:24.280Z",
           "collectionStatus": "live"
         }
       ]
