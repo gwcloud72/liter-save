@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-04T20:19:54.994Z",
+    "updatedAt": "2026-09-05T10:01:35.767Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -98,26 +98,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "f9d07db5a743920a",
-      "title": "당분간 유가 변동성 불가피…정부 “수급 상황 점검”",
-      "summary": "국내 주유소 기름값도 리터당 1,900원 안팎에 머물고 있습니다. 하지만 유가 변동성이 당분간 이어질 가능성이 큰 상황. 정부가 석유 최고가격제를 유지하겠다고 한 배경입니다. [강유정/청와대 수석대변인 : \"석유 최고...",
-      "source": "news.kbs.co.kr",
-      "publishedAt": "2026-07-27T21:24:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/056/0012226213?sid=101",
-      "originallink": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8621608&ref=A",
-      "keyword": "유류세"
-    },
-    {
-      "id": "63882c7f38b704d1",
-      "title": "'중동 리스크'에 출렁이는 국제유가, 국내 기름값도 반등 우려",
-      "summary": "국내 주유소 기름값 역시 최근 하락 폭이 크게 줄어드는 등 반등 조짐을 보이고 있다. 한국석유공사... 최고가격제를 지속하고, 유류세 인하 같은 정책 수단도 최대한 유지해주기 바란다\"고 지시하기도 했다. 다만...",
-      "source": "newsprime.co.kr",
-      "publishedAt": "2026-07-28T05:38:00.000Z",
-      "link": "http://www.newsprime.co.kr/news/article.html?no=741788",
-      "originallink": "http://www.newsprime.co.kr/news/article.html?no=741788",
-      "keyword": "국제유가"
-    },
-    {
       "id": "9ef95cce7bb5b7ea",
       "title": "美·이란 전쟁, 국제유가 급등…기름값 하락에 급브레이크·인상 가능성...",
       "summary": "국내 기름값 낙폭도 눈에 띄게 줄어들며 사실상 하락 국면이 마무리되는 모양새다. 통상적으로 국제유가의 변동분은 2~3주의 시차를 두고 국내 주유소 가격에 반영된다. 따라서 다음 주부터는 하락세를 멈추고 현...",
@@ -165,6 +145,26 @@
       "publishedAt": "2026-08-18T06:26:00.000Z",
       "link": "https://www.newsway.co.kr/news/view?ud=2026081815234196534",
       "originallink": "https://www.newsway.co.kr/news/view?ud=2026081815234196534",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "f9a87e5484a75e8c",
+      "title": "생활밀착형 세제개편, 퇴근길 생맥주 한 잔에 포함된 세금은? [K-정책 사...",
+      "summary": "Q. 전자담배 가격에 포함된 세율은? Q. 담배값 속 세금과 부담금의 사용처는? Q. 최근 주유소 기름값 상황은? Q. 유류세에 포함된 세금은? Q. 항공권 가격을 결정짓는 유류할증료란? Q. 일상 속 세금의 가치는?",
+      "source": "ktv.go.kr",
+      "publishedAt": "2026-08-19T04:00:00.000Z",
+      "link": "https://www.ktv.go.kr/content/view?content_id=759607",
+      "originallink": "https://www.ktv.go.kr/content/view?content_id=759607",
+      "keyword": "유류세"
+    },
+    {
+      "id": "b06e91d1cb30f154",
+      "title": "\"중동전쟁 여파… 석유 수입도 줄고 소비도 줄었다\"",
+      "summary": "한국석유공사 '2026년 상반기 국내 석유수급 동향 분석' 자료에 따르면 제품 생산(6.9%↓)과 제품 수입(14.4... 8% 감소, 휘발유는 1.3% 늘었다. 경유 소비는 자동차 등록대수 추세적 감소, 경유 가격 상승 등의 영향으로 큰...",
+      "source": "energydaily.co.kr",
+      "publishedAt": "2026-08-21T07:44:00.000Z",
+      "link": "https://www.energydaily.co.kr/news/articleView.html?idxno=202423",
+      "originallink": "https://www.energydaily.co.kr/news/articleView.html?idxno=202423",
       "keyword": "휘발유"
     }
   ]
