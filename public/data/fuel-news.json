@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-09T20:29:17.560Z",
+    "updatedAt": "2026-09-10T10:41:59.795Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -88,16 +88,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "0f815f7543007ead",
-      "title": "비축유 풀고 기름값 묶었지만…에너지 위기 '장기전 매뉴얼'은 없어",
-      "summary": "7차 가격과 같은 수준이다. 유류세 인하 조치도 오는 9월 말까지 연장됐다. 정부가 가격 방어에 나선 것은... 정부는 최고가격제로 발생한 정유사와 주유소 등의 손실을 보전하기 위한 재정지원 규정도 마련했다. 가격...",
-      "source": "econovill.com",
-      "publishedAt": "2026-08-06T09:48:00.000Z",
-      "link": "https://www.econovill.com/news/articleView.html?idxno=747341",
-      "originallink": "https://www.econovill.com/news/articleView.html?idxno=747341",
-      "keyword": "유류세"
-    },
-    {
       "id": "7f1f1a6964ea08ce",
       "title": "\"월급 빼고 다 올랐다\"…K패스·점심값 할인으로 생활비 아끼는 법",
       "summary": "\"기름값 한 번 더 깎자\" 최저가 앱과 주유 특화 카드 서민에게 치솟는 기름값은 부담스럽다. 유류세 인하라는... 오일나우는 사용자가 매일 다니는 출퇴근 동선에서 리터당 단 10원이라도 더 저렴한 최저가 알뜰주유소를...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-08-24T01:18:00.000Z",
       "link": "https://www.tokenpost.kr/news/cryptocurrency/396274",
       "originallink": "https://www.tokenpost.kr/news/cryptocurrency/396274",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "be00293b5dfd05c0",
+      "title": "상반기 휘발유 소비량 '역대 최대'…시행 6개월차 최고가격제의 역설(종...",
+      "summary": "같은 기간 전체 석유제품 소비가 11.5% 감소했는데 휘발유만 증가세를 보였다. 이 기간 경유와 LPG는 각각 6.8%, 5.8% 감소했다. [출처: 대한석유협회, AI 생성 이미지] 최고가격제가 시행된 3월부터 따져보면, 휘발유 내수...",
+      "source": "news.einfomax.co.kr",
+      "publishedAt": "2026-08-24T12:28:00.000Z",
+      "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4431543",
+      "originallink": "https://news.einfomax.co.kr/news/articleView.html?idxno=4431543",
       "keyword": "휘발유"
     }
   ]
