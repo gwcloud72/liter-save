@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-11T20:30:43.827Z",
+    "updatedAt": "2026-09-12T10:10:05.233Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -88,16 +88,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "f9a87e5484a75e8c",
-      "title": "생활밀착형 세제개편, 퇴근길 생맥주 한 잔에 포함된 세금은? [K-정책 사...",
-      "summary": "Q. 전자담배 가격에 포함된 세율은? Q. 담배값 속 세금과 부담금의 사용처는? Q. 최근 주유소 기름값 상황은? Q. 유류세에 포함된 세금은? Q. 항공권 가격을 결정짓는 유류할증료란? Q. 일상 속 세금의 가치는?",
-      "source": "ktv.go.kr",
-      "publishedAt": "2026-08-19T04:00:00.000Z",
-      "link": "https://www.ktv.go.kr/content/view?content_id=759607",
-      "originallink": "https://www.ktv.go.kr/content/view?content_id=759607",
-      "keyword": "유류세"
-    },
-    {
       "id": "78ce93e1eb3cb592",
       "title": "양산 기름값 안정 속 국제유가 다시 꿈틀",
       "summary": "양산지역 기름값이 최근 한 달간 꾸준한 안정세를 이어가고 있다. 국내 유가가 14주 연속 하락세를 보이면서 지역 주유소 판매가격도 동반 하락했지만, 국제유가는 다시 상승 흐름을 나타내고 있어 향후 국내 유가...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-08-25T14:40:00.000Z",
       "link": "https://www.laborplus.co.kr/news/articleView.html?idxno=41356",
       "originallink": "https://www.laborplus.co.kr/news/articleView.html?idxno=41356",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "f5f5e3188273f1b1",
+      "title": "한국석유공사, 비상 수급 안정화·경영 혁신 ‘두 토끼’ 잡았다",
+      "summary": "여기에 자영 알뜰주유소와 오피넷(Opinet)을 통해 휘발유·경유 가격의 하향 안정을 도모하고, 정부의 유가 안정 정책을 뒷받침하는 공공 플랫폼 역할을 충실히 수행했다. 석유공사는 이번 위기를 계기로 2000만 배럴 이상의...",
+      "source": "seoul.co.kr",
+      "publishedAt": "2026-08-26T05:58:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/081/0003673733?sid=101",
+      "originallink": "https://www.seoul.co.kr/news/economy/2026/08/26/20260826500086?wlog_tag3=naver",
       "keyword": "휘발유"
     }
   ]
