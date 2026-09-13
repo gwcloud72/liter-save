@@ -2,21 +2,11 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-12T20:14:12.017Z",
+    "updatedAt": "2026-09-13T11:09:28.893Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
-    {
-      "id": "1a3cb4fe8c9a9ac1",
-      "title": "주유소 경유 '2000원' 넘었다..상승 압력은 여전",
-      "summary": "브레이크뉴스 문홍철 기자= 전국 주유소 경유 가격이 다시 ℓ당 2000원선을 돌파하며 고유가 부담이 확산되고 있다. 휘발유에 이어 경유까지 2000원대에 진입하면서...",
-      "source": "breaknews.com",
-      "publishedAt": "2026-04-24T05:40:00.000Z",
-      "link": "http://www.breaknews.com/1202894",
-      "originallink": "http://www.breaknews.com/1202894",
-      "keyword": "휘발유"
-    },
     {
       "id": "a8cdc782986189be",
       "title": "주말 연휴에도 \"기름값 2000원 시대\"… '석유 최고가격제' 투입에도 고유...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-08-26T05:58:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/081/0003673733?sid=101",
       "originallink": "https://www.seoul.co.kr/news/economy/2026/08/26/20260826500086?wlog_tag3=naver",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "66834511272406d3",
+      "title": "석유, 가스, 그리고 바이오연료…브라질 에너지 파워",
+      "summary": "산업 동향 브라질은 가솔린, 디젤, LPG, 나프타 등 주요 석유제품의 자국 생산량이 내수 수요를 충족하지... 또한 18,000개 이상의 산업·농업·운송 기업 고객을 대상으로 휘발유, 디젤, 바이오 연료 및 자체 윤활유...",
+      "source": "dream.kotra.or.kr",
+      "publishedAt": "2026-08-31T05:56:00.000Z",
+      "link": "http://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=80&CONTENTS_NO=2&bbsGbn=242&bbsSn=242&pNttSn=243461",
+      "originallink": "http://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=80&CONTENTS_NO=2&bbsGbn=242&bbsSn=242&pNttSn=243461",
       "keyword": "휘발유"
     }
   ]
