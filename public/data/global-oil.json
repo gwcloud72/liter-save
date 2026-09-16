@@ -1,7 +1,7 @@
 {
   "mode": "fred",
   "source": "FRED / U.S. Energy Information Administration",
-  "updatedAt": "2026-09-16T10:54:40.504Z",
+  "updatedAt": "2026-09-16T20:55:43.207Z",
   "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다.",
   "items": [
     {
@@ -9,10 +9,10 @@
       "name": "Brent",
       "seriesId": "DCOILBRENTEU",
       "unit": "USD per barrel",
-      "date": "2026-09-09",
-      "price": 109.51,
-      "previousPrice": 106.12,
-      "change": 3.39,
+      "date": "2026-09-15",
+      "price": 130.8,
+      "previousPrice": 121.25,
+      "change": 9.55,
       "strategy": "api"
     },
     {
@@ -20,31 +20,15 @@
       "name": "WTI",
       "seriesId": "DCOILWTICO",
       "unit": "USD per barrel",
-      "date": "2026-09-09",
-      "price": 97.26,
-      "previousPrice": 94.21,
-      "change": 3.05,
+      "date": "2026-09-15",
+      "price": 107.02,
+      "previousPrice": 102.42,
+      "change": 4.6,
       "strategy": "api"
     }
   ],
   "history": {
     "brent": [
-      {
-        "date": "2026-03-19",
-        "price": 111.05
-      },
-      {
-        "date": "2026-03-20",
-        "price": 118.42
-      },
-      {
-        "date": "2026-03-23",
-        "price": 103.79
-      },
-      {
-        "date": "2026-03-24",
-        "price": 108.42
-      },
       {
         "date": "2026-03-25",
         "price": 109.14
@@ -508,25 +492,25 @@
       {
         "date": "2026-09-09",
         "price": 109.51
+      },
+      {
+        "date": "2026-09-10",
+        "price": 120.98
+      },
+      {
+        "date": "2026-09-11",
+        "price": 118.06
+      },
+      {
+        "date": "2026-09-14",
+        "price": 121.25
+      },
+      {
+        "date": "2026-09-15",
+        "price": 130.8
       }
     ],
     "wti": [
-      {
-        "date": "2026-03-19",
-        "price": 96.11
-      },
-      {
-        "date": "2026-03-20",
-        "price": 98.71
-      },
-      {
-        "date": "2026-03-23",
-        "price": 89.33
-      },
-      {
-        "date": "2026-03-24",
-        "price": 93.18
-      },
       {
         "date": "2026-03-25",
         "price": 91.51
@@ -990,6 +974,22 @@
       {
         "date": "2026-09-09",
         "price": 97.26
+      },
+      {
+        "date": "2026-09-10",
+        "price": 103.57
+      },
+      {
+        "date": "2026-09-11",
+        "price": 101.27
+      },
+      {
+        "date": "2026-09-14",
+        "price": 102.42
+      },
+      {
+        "date": "2026-09-15",
+        "price": 107.02
       }
     ]
   },
