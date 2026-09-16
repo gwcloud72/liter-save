@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-15T20:55:09.512Z",
+    "updatedAt": "2026-09-16T10:55:15.393Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -148,16 +148,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "3b862b1e7b8b0d2d",
-      "title": "[로드픽] 이란전 6개월… 미 가계 덮친 '1000억 달러' 호르무즈發 기름값...",
-      "summary": "유권자 설문조사에서 '최우선 과제'로 항상 언급되는 항목은 물가(인플레이션)이며, 주유소 전광판의... 휘발유 가격이 갤런당 5.86달러, 하와이가 5.39달러에 달하는 등 이동 거리가 길거나 환경 규제·유류세가 높은...",
-      "source": "newsroad.co.kr",
-      "publishedAt": "2026-09-08T09:52:00.000Z",
-      "link": "http://www.newsroad.co.kr/news/articleView.html?idxno=63984",
-      "originallink": "http://www.newsroad.co.kr/news/articleView.html?idxno=63984",
-      "keyword": "휘발유"
-    },
-    {
       "id": "9e2b31921731e9c1",
       "title": "두바이유 105달러 돌파…기름값 완충장치 잇단 시험대",
       "summary": "국내 주유소 가격의 주요 변수다. 다만 현재 확인된 자료만으로 다음 회차 가격이 인상될 것이라고 단정할 수는 없다. 유류세 한시 인하 조치도 9월 30일까지 적용된다. 정부는 7월 24일 유류세 인하를 9월 30일까지 두...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-09-09T01:38:00.000Z",
       "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=362870",
       "originallink": "http://www.smedaily.co.kr/news/articleView.html?idxno=362870",
+      "keyword": "국제유가"
+    },
+    {
+      "id": "e7411e5c869ac535",
+      "title": "불붙은 중동, 100달러 뚫은 유가...추석 코앞 韓 물가·성장 '빨간불'",
+      "summary": "국내 기름값은 당장보다 앞으로가 문제 국내 주유소 가격은 아직 국제유가 급등을 본격적으로 반영하지... 다만 석유 최고가격제와 유류세 인하 등 정부 정책은 국제유가 상승이 국내 물가에 미치는 영향을 줄이는...",
+      "source": "newsway.co.kr",
+      "publishedAt": "2026-09-10T05:32:00.000Z",
+      "link": "https://www.newsway.co.kr/news/view?ud=2026091013495317182",
+      "originallink": "https://www.newsway.co.kr/news/view?ud=2026091013495317182",
       "keyword": "국제유가"
     }
   ]
