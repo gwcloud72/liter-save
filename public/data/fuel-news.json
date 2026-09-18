@@ -2,11 +2,21 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-17T21:00:26.185Z",
+    "updatedAt": "2026-09-18T10:38:43.112Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
+    {
+      "id": "a8cdc782986189be",
+      "title": "주말 연휴에도 \"기름값 2000원 시대\"… '석유 최고가격제' 투입에도 고유...",
+      "summary": "2일 한국석유공사 유가정보시스템 오피넷(Opinet)에 따르면, 4월 다섯째 주 기준 전국 주유소 휘발유 평균 판매 가격은 전주 대비 4.8원 오른 리터당 2,008.6원을 기록했다. 경유 가격 역시 5.1원 상승한 2,002.8원으로...",
+      "source": "metroseoul.co.kr",
+      "publishedAt": "2026-05-02T06:46:00.000Z",
+      "link": "http://www.metroseoul.co.kr/article/20260502500021",
+      "originallink": "http://www.metroseoul.co.kr/article/20260502500021",
+      "keyword": "휘발유"
+    },
     {
       "id": "7ad9f2e3c1f66a54",
       "title": "트럼프, '전쟁리셋'에 유가 재점등…韓 4차 최고가 사실상 무력화",
@@ -68,26 +78,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "b6322166acfdccb8",
-      "title": "중동위기? 휘발유 소비는 사상 최대",
-      "summary": "24일 한국석유공사가 발간한 '2026년 상반기 국내 석유 수급 동향 분석'에 따르면, 올해 상반기 휘발유의... 5% 감소했는데 휘발유만 증가세를 보였습니다. 이 기간 경유와 LPG는 각각 6.8%, 5.8% 감소했습니다. 최고가격제가...",
-      "source": "biz.sbs.co.kr",
-      "publishedAt": "2026-08-24T23:07:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/374/0000529155?sid=103",
-      "originallink": "https://biz.sbs.co.kr/article_hub/20000330533?division=NAVER",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "82e5fd5c01772789",
-      "title": "8월 4주 주요 제조업 전망",
-      "summary": "6%를 달성함 □ 8월 3주 철강 가격 동향(8월 21일 기준, 출처 하나증권 철강금속 Weekly) △ 국내 철강 가격(원... 국내 휘발유 가격과 경유 가격은 5월 3주부터 14주 연속 하락 중임. 산업통상부는 21일 국내 석유 수급...",
-      "source": "laborplus.co.kr",
-      "publishedAt": "2026-08-25T14:40:00.000Z",
-      "link": "https://www.laborplus.co.kr/news/articleView.html?idxno=41356",
-      "originallink": "https://www.laborplus.co.kr/news/articleView.html?idxno=41356",
-      "keyword": "휘발유"
-    },
-    {
       "id": "f5f5e3188273f1b1",
       "title": "한국석유공사, 비상 수급 안정화·경영 혁신 ‘두 토끼’ 잡았다",
       "summary": "여기에 자영 알뜰주유소와 오피넷(Opinet)을 통해 휘발유·경유 가격의 하향 안정을 도모하고, 정부의 유가 안정 정책을 뒷받침하는 공공 플랫폼 역할을 충실히 수행했다. 석유공사는 이번 위기를 계기로 2000만 배럴 이상의...",
@@ -95,36 +85,6 @@
       "publishedAt": "2026-08-26T05:58:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/081/0003673733?sid=101",
       "originallink": "https://www.seoul.co.kr/news/economy/2026/08/26/20260826500086?wlog_tag3=naver",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "66834511272406d3",
-      "title": "석유, 가스, 그리고 바이오연료…브라질 에너지 파워",
-      "summary": "산업 동향 브라질은 가솔린, 디젤, LPG, 나프타 등 주요 석유제품의 자국 생산량이 내수 수요를 충족하지... 또한 18,000개 이상의 산업·농업·운송 기업 고객을 대상으로 휘발유, 디젤, 바이오 연료 및 자체 윤활유...",
-      "source": "dream.kotra.or.kr",
-      "publishedAt": "2026-08-31T05:56:00.000Z",
-      "link": "http://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=80&CONTENTS_NO=2&bbsGbn=242&bbsSn=242&pNttSn=243461",
-      "originallink": "http://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=80&CONTENTS_NO=2&bbsGbn=242&bbsSn=242&pNttSn=243461",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "e93c1d8214e91a83",
-      "title": "8월 소비자물가 3.1% 상승 … 한은 \"9월 근원물가 중심 높은 오름세 지속...",
-      "summary": "물가동향팀장 등이 참석했다. 이지호 부총재보는 물가흐름에 대해 \"8월 소비자물가는 지난해 통신비... 3%), 휘발유(-1.3%), 경유(-1.5%), 유산균(-10.5%), 자동차용LPG(-3.2%), 에어컨(-4.4%), 식용유(-5.2%), 도시가스(0.2...",
-      "source": "efnews.co.kr",
-      "publishedAt": "2026-09-02T01:32:00.000Z",
-      "link": "http://www.efnews.co.kr/news/articleView.html?idxno=132054",
-      "originallink": "http://www.efnews.co.kr/news/articleView.html?idxno=132054",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "4a724b49804cacbc",
-      "title": "물가 계속 오른다는데…판단 기준 되는 근원물가는[궁금한경제]",
-      "summary": "축·수산물은 물론 가공식품 가격까지 통째로 털어내는 셈입니다. 에너지 요금을 보는 방식에도 차이가 있습니다. 한국식 근원물가는 주유소에서 넣는 휘발유, 경유, LPG 같은 석유류만 제거합니다. OECD식 근원물가는...",
-      "source": "edaily.co.kr",
-      "publishedAt": "2026-09-04T21:03:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/018/0006364029?sid=101",
-      "originallink": "https://www.edaily.co.kr/News/Read?newsId=01633446645577168&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
       "keyword": "휘발유"
     },
     {
@@ -165,6 +125,46 @@
       "publishedAt": "2026-09-13T07:28:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/002/0002456347?sid=101",
       "originallink": "https://www.pressian.com/pages/articles/2026091315453133111?utm_source=naver&utm_medium=search",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "65243a4eb962332b",
+      "title": "원유 8% 덜 들여왔는데 31억弗 더 냈다…'청구서' 열어보니[호르무즈 봉...",
+      "summary": "석유수급 동향 분석'에 따르면 올해 상반기 국내 원유 수입량은 4억6711만7000배럴로 전년 동기... 제품별로는 나프타 생산이 8.4% 감소했고 휘발유는 8.1%, 경유는 7.3% 각각 줄었다. 보고서는 원유 도입 차질에 따른...",
+      "source": "newsis.com",
+      "publishedAt": "2026-09-13T21:00:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/003/0014187200?sid=101",
+      "originallink": "https://www.newsis.com/view/NISX20260911_0003786373",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "1706c28c2a8403b7",
+      "title": "유가 100달러 재돌파에 정부 가격안정 총력…최고가격제·유류세 연장 검...",
+      "summary": "정부는 최고가격제 연장에 대비해 2027년도 정부 예산안에도 1조 5497억 원을 편성한 상태다. 이달 30일 종료 예정인 유류세 한시 인하 조치의 연장 가능성도 거론된다. 현재 휘발유에는 15%, 경유와 액화석유가스(LPG)...",
+      "source": "news1.kr",
+      "publishedAt": "2026-09-14T21:00:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/421/0009169861?sid=101",
+      "originallink": "https://www.news1.kr/economy/trend/6290305",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "b01904b518472d34",
+      "title": "[이슈] 중동 불안에 치솟는 유가, 올 겨울 전세계 '에너지 대란' 우려…...",
+      "summary": "(L)당 휘발유 698원, 경유 436원, LPG·부탄 152원 수준이다. 美 경유값 사상 첫 6달러 돌파…유권자 불만 최고조 미 민주당 상하원 동시 승리 전망까지 치솟는 에너지 가격은 오는 11월 미국 중간선거에도 직접적인 영향을...",
+      "source": "polinews.co.kr",
+      "publishedAt": "2026-09-15T03:33:00.000Z",
+      "link": "https://www.polinews.co.kr/news/articleView.html?idxno=743146",
+      "originallink": "https://www.polinews.co.kr/news/articleView.html?idxno=743146",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "abab6c47baf4856c",
+      "title": "유류세 인하 11월 말까지 연장...휘발유 15%·경유 25% 유지",
+      "summary": "이에 따라 휘발유 15%, 경유와 액화석유가스(LPG) 부탄 각각 25%의 유류세 인하율이 오는 11월 30일까지... 정부는 향후에도 중동 정세와 국제유가, 국내 석유제품 가격 동향 등을 점검하면서 유류비 부담 완화를 위한...",
+      "source": "m-economynews.com",
+      "publishedAt": "2026-09-17T23:22:00.000Z",
+      "link": "https://www.m-economynews.com/news/article.html?no=70845",
+      "originallink": "https://www.m-economynews.com/news/article.html?no=70845",
       "keyword": "휘발유"
     }
   ]
