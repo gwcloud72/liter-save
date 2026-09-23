@@ -1,56 +1,62 @@
 {
   "mode": "generated",
-  "provider": "rule-based",
-  "model": null,
-  "generatedAt": "2026-09-23T10:50:48.195Z",
+  "provider": "gemini-3.5-flash+local-rules",
+  "model": "gemini-3.5-flash",
+  "generatedAt": "2026-09-23T21:08:21.011Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,801원, 경유 1,785원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 0원, 경유 +1원으로 상승 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 +3원, 경유 +2원으로 상승 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -2원, 경유 +1원으로 하락 흐름입니다.",
-    "consumerTip": "상승 흐름이 이어질 때는 가까운 저가 주유소를 먼저 비교하는 편이 유리합니다.",
-    "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
+    "headline": "전국 평균 기준 휘발유 1,771원, 경유 1,758원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -30원, 경유 -24원입니다.",
+    "weekly": "최근 7일 기준 휘발유 -29원, 경유 -26원입니다.",
+    "monthly": "최근 30일 기준 휘발유 -33원, 경유 -25원입니다.",
+    "consumerTip": "주유소별 가격 차이가 존재하므로 주변 가격을 비교해 보는 것이 도움이 될 수 있습니다.",
+    "note": "공개 유가 데이터를 바탕으로 생성한 참고용 정보입니다."
   },
   "summary": {
     "ready": true,
-    "seriesCount": 140,
+    "seriesCount": 141,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-09-23T10:50:16.612Z",
+    "generatedAt": "2026-09-23T21:08:07.766Z",
     "latest": {
-      "gasolineAverage": 1801,
-      "gasolineLowest": 1755,
-      "dieselAverage": 1785,
-      "dieselLowest": 1735
+      "gasolineAverage": 1771,
+      "gasolineLowest": 1719,
+      "dieselAverage": 1758,
+      "dieselLowest": 1707
     },
     "changes": {
       "day": {
-        "gasoline": 0,
-        "diesel": 1
+        "gasoline": -30,
+        "diesel": -24
       },
       "week": {
-        "gasoline": 3,
-        "diesel": 2
+        "gasoline": -29,
+        "diesel": -26
       },
       "month": {
-        "gasoline": -2,
-        "diesel": 1
+        "gasoline": -33,
+        "diesel": -25
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": null,
-    "modelVersion": null,
-    "finishReason": null,
-    "responseId": null,
-    "usage": null,
-    "attempts": 3,
-    "latencyMs": null,
-    "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini request timeout",
+    "model": "gemini-3.5-flash",
+    "modelVersion": "gemini-3.5-flash",
+    "finishReason": "STOP",
+    "responseId": "wz-0aof5GbOIqtsPmbWBuAg",
+    "usage": {
+      "promptTokenCount": 528,
+      "candidatesTokenCount": 171,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 699,
+      "cachedContentTokenCount": 0
+    },
+    "attempts": 2,
+    "latencyMs": 12188,
+    "reason": "generated",
+    "error": null,
     "apiStatus": null,
-    "httpStatus": null,
-    "liveApiCalled": false
+    "httpStatus": 200,
+    "liveApiCalled": true
   }
 }
