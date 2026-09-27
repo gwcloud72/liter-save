@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-09-27T11:28:59.634Z",
+    "updatedAt": "2026-09-27T20:57:23.813Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -88,16 +88,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "a7452f6a05869d8d",
-      "title": "[진단] 정유 · 석유화학 업계 '래깅 효과' 소멸",
-      "summary": "이에 국내 정유업계와 석유화학 업계의 수익성 동향을 진단하고 향후 '역래깅 효과'가 국내 산업에 미칠... 정유사 수익성을 가늠하는 핵심 지표로 원유 도입 가격 대비 휘발유·경유 가격이 더 오르면 마진이...",
-      "source": "todayenergy.kr",
-      "publishedAt": "2026-09-07T01:22:00.000Z",
-      "link": "https://www.todayenergy.kr/news/articleView.html?idxno=302561",
-      "originallink": "https://www.todayenergy.kr/news/articleView.html?idxno=302561",
-      "keyword": "휘발유"
-    },
-    {
       "id": "d45cfb6aa46b43b0",
       "title": "주유 전 1분 검색, '착한 주유소'에서 알뜰주유",
       "summary": "일반 주유소 기름 가격 (본인 촬영) 직접 한국석유공사의 유가정보서비스 '오피넷(www.opinet.co.kr)' 누리집에서... 전국 주유소의 휘발유 평균 판매가격은 리터당 1860.2원이었다. 자동차를 자주 이용하는 가정이라면 유류비가...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-09-17T23:22:00.000Z",
       "link": "https://www.m-economynews.com/news/article.html?no=70845",
       "originallink": "https://www.m-economynews.com/news/article.html?no=70845",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "11cd13dd59f94ee2",
+      "title": "'휘발유·경유·LPG' 유류세 인하 11월까지",
+      "summary": "휘발유는 15% 인하를 지속하고, 산업·물류 등에 필수적인 경유와 소형트럭 등에서 서민 연료로 활용되는 LPG(부탄)는 현행과 같은 25%의 인하폭을 유지한다. 이번 조치로 LPG(부탄)의 유류세 인하가 두 달 더 이어지면서...",
+      "source": "gasnews.com",
+      "publishedAt": "2026-09-18T00:18:00.000Z",
+      "link": "https://www.gasnews.com/news/articleView.html?idxno=126872",
+      "originallink": "https://www.gasnews.com/news/articleView.html?idxno=126872",
       "keyword": "휘발유"
     }
   ]
