@@ -1,62 +1,56 @@
 {
   "mode": "generated",
-  "provider": "gemini-3.5-flash+local-rules",
-  "model": "gemini-3.5-flash",
-  "generatedAt": "2026-10-01T12:30:53.361Z",
+  "provider": "rule-based",
+  "model": null,
+  "generatedAt": "2026-10-01T22:24:20.536Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,800원, 경유 1,785원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 -1원, 경유 1원 변동이 있습니다.",
-    "weekly": "최근 7일 기준 휘발유 29원, 경유 29원 상승했습니다.",
-    "monthly": "최근 30일 기준 휘발유 -2원, 경유 1원 변동이 있습니다.",
-    "consumerTip": "주유 전에 가까운 저가 주유소를 비교하는 편이 참고가 됩니다.",
+    "headline": "전국 평균 기준 휘발유 1,800원, 경유 1,784원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 0원, 경유 0원으로 보합 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 +30원, 경유 +27원으로 상승 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -2원, 경유 0원으로 하락 흐름입니다.",
+    "consumerTip": "상승 흐름이 이어질 때는 가까운 저가 주유소를 먼저 비교하는 편이 유리합니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
     "ready": true,
-    "seriesCount": 156,
+    "seriesCount": 157,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-10-01T12:30:38.155Z",
+    "generatedAt": "2026-10-01T22:23:48.587Z",
     "latest": {
       "gasolineAverage": 1800,
       "gasolineLowest": 1755,
-      "dieselAverage": 1785,
+      "dieselAverage": 1784,
       "dieselLowest": 1735
     },
     "changes": {
       "day": {
-        "gasoline": -1,
-        "diesel": 1
+        "gasoline": 0,
+        "diesel": 0
       },
       "week": {
-        "gasoline": 29,
-        "diesel": 29
+        "gasoline": 30,
+        "diesel": 27
       },
       "month": {
         "gasoline": -2,
-        "diesel": 1
+        "diesel": 0
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": "gemini-3.5-flash",
-    "modelVersion": "gemini-3.5-flash",
-    "finishReason": "STOP",
-    "responseId": "eVK-atTMOOXrz7IP06TMkQ0",
-    "usage": {
-      "promptTokenCount": 519,
-      "candidatesTokenCount": 172,
-      "thoughtsTokenCount": 0,
-      "totalTokenCount": 691,
-      "cachedContentTokenCount": 0
-    },
-    "attempts": 2,
-    "latencyMs": 13738,
-    "reason": "generated",
-    "error": null,
+    "model": null,
+    "modelVersion": null,
+    "finishReason": null,
+    "responseId": null,
+    "usage": null,
+    "attempts": 3,
+    "latencyMs": null,
+    "reason": "fallback:REQUEST_FAILED",
+    "error": "Gemini request timeout",
     "apiStatus": null,
-    "httpStatus": 200,
-    "liveApiCalled": true
+    "httpStatus": null,
+    "liveApiCalled": false
   }
 }
