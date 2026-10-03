@@ -2,21 +2,11 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-10-02T21:53:05.231Z",
+    "updatedAt": "2026-10-03T11:10:41.649Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
-    {
-      "id": "a8cdc782986189be",
-      "title": "주말 연휴에도 \"기름값 2000원 시대\"… '석유 최고가격제' 투입에도 고유...",
-      "summary": "2일 한국석유공사 유가정보시스템 오피넷(Opinet)에 따르면, 4월 다섯째 주 기준 전국 주유소 휘발유 평균 판매 가격은 전주 대비 4.8원 오른 리터당 2,008.6원을 기록했다. 경유 가격 역시 5.1원 상승한 2,002.8원으로...",
-      "source": "metroseoul.co.kr",
-      "publishedAt": "2026-05-02T06:46:00.000Z",
-      "link": "http://www.metroseoul.co.kr/article/20260502500021",
-      "originallink": "http://www.metroseoul.co.kr/article/20260502500021",
-      "keyword": "휘발유"
-    },
     {
       "id": "7ad9f2e3c1f66a54",
       "title": "트럼프, '전쟁리셋'에 유가 재점등…韓 4차 최고가 사실상 무력화",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-09-18T00:18:00.000Z",
       "link": "https://www.gasnews.com/news/articleView.html?idxno=126872",
       "originallink": "https://www.gasnews.com/news/articleView.html?idxno=126872",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "5c72ed3ae9ec674f",
+      "title": "추석 연휴 고속도로 주유소 기름값 L당 100원 인하… 유류세 인하 11월까...",
+      "summary": "인하율은 현행과 동일하게 휘발유 15%, 경유 및 소형트럭용 부탄(LPG) 25%가 적용된다. 아울러 19일 0시부터 적용되는 '제10차 석유 최고가격'은 국제유가 동향 및 물가 여건을 종합 고려해 이날 오후 6시 발표된다. 최근...",
+      "source": "starnewsk.com",
+      "publishedAt": "2026-09-18T00:58:00.000Z",
+      "link": "http://www.starnewsk.com/news/articleView.html?idxno=59152",
+      "originallink": "http://www.starnewsk.com/news/articleView.html?idxno=59152",
       "keyword": "휘발유"
     }
   ]
