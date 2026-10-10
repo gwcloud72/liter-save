@@ -2,21 +2,11 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-10-09T22:18:56.845Z",
+    "updatedAt": "2026-10-10T11:58:44.437Z",
     "queryCount": 4,
     "itemCount": 16
   },
   "items": [
-    {
-      "id": "8ee054c2fd77cc2d",
-      "title": "석유제품 '사후정산제 폐지법안' 국회 통과 앞둬, 영세 주유소 부담 우...",
-      "summary": "그는 \"정보의 비대칭성을 해소하여 소비자가 오피넷(Opinet) 등 디지털 채널을 통해 공동구매 주체들의 가격... 오피넷은 한국석유공사가 운영하는 유가정보 서비스로, 전국 주유소의 휘발유·경유 등 석유제품 판매가격을...",
-      "source": "businesspost.co.kr",
-      "publishedAt": "2026-05-21T07:58:00.000Z",
-      "link": "https://www.businesspost.co.kr/BP?command=article_view&num=438369",
-      "originallink": "https://www.businesspost.co.kr/BP?command=article_view&num=438369",
-      "keyword": "휘발유"
-    },
     {
       "id": "e1a60b0b3fa4328e",
       "title": "기름값 8주 만에 꺾였다…휘발유·경유 동반 하락",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-09-18T01:36:00.000Z",
       "link": "https://www.widedaily.com/news/articleView.html?idxno=301257",
       "originallink": "https://www.widedaily.com/news/articleView.html?idxno=301257",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "63d41d7beedc4b72",
+      "title": "유류세 인하 11월 말까지 연장…환원 땐 휘발유 L당 40원",
+      "summary": "석유공사 오피넷의 9월 4주 동향에서 전국 휘발유 평균가는 L당 1858.0원으로 0.6원 내렸다. 경유는 L당 1843.4원으로 전주보다 0.5원 떨어졌다. 최고가격제와 추석 할인이 겹치며 19주 연속 하락이다. 지역별로 보면...",
+      "source": "imaeil.com",
+      "publishedAt": "2026-09-27T12:20:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/088/0001030802?sid=101",
+      "originallink": "https://www.imaeil.com/page/view/2026092721122059099",
       "keyword": "휘발유"
     }
   ]
