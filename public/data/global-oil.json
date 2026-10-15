@@ -1,7 +1,7 @@
 {
   "mode": "fred",
   "source": "FRED / U.S. Energy Information Administration",
-  "updatedAt": "2026-10-15T10:55:17.236Z",
+  "updatedAt": "2026-10-15T20:58:55.091Z",
   "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다.",
   "items": [
     {
@@ -9,10 +9,10 @@
       "name": "Brent",
       "seriesId": "DCOILBRENTEU",
       "unit": "USD per barrel",
-      "date": "2026-10-06",
-      "price": 125.44,
-      "previousPrice": 125.51,
-      "change": -0.07,
+      "date": "2026-10-14",
+      "price": 126.55,
+      "previousPrice": 125.78,
+      "change": 0.77,
       "strategy": "api"
     },
     {
@@ -20,39 +20,15 @@
       "name": "WTI",
       "seriesId": "DCOILWTICO",
       "unit": "USD per barrel",
-      "date": "2026-10-06",
-      "price": 96.24,
-      "previousPrice": 96.13,
-      "change": 0.11,
+      "date": "2026-10-14",
+      "price": 101.91,
+      "previousPrice": 100.86,
+      "change": 1.05,
       "strategy": "api"
     }
   ],
   "history": {
     "brent": [
-      {
-        "date": "2026-04-17",
-        "price": 98.63
-      },
-      {
-        "date": "2026-04-20",
-        "price": 103.4
-      },
-      {
-        "date": "2026-04-21",
-        "price": 106.14
-      },
-      {
-        "date": "2026-04-22",
-        "price": 113.44
-      },
-      {
-        "date": "2026-04-23",
-        "price": 113.25
-      },
-      {
-        "date": "2026-04-24",
-        "price": 111.86
-      },
       {
         "date": "2026-04-27",
         "price": 113.89
@@ -508,33 +484,33 @@
       {
         "date": "2026-10-06",
         "price": 125.44
+      },
+      {
+        "date": "2026-10-07",
+        "price": 126
+      },
+      {
+        "date": "2026-10-08",
+        "price": 130.18
+      },
+      {
+        "date": "2026-10-09",
+        "price": 130.03
+      },
+      {
+        "date": "2026-10-12",
+        "price": 129.95
+      },
+      {
+        "date": "2026-10-13",
+        "price": 125.78
+      },
+      {
+        "date": "2026-10-14",
+        "price": 126.55
       }
     ],
     "wti": [
-      {
-        "date": "2026-04-16",
-        "price": 96.46
-      },
-      {
-        "date": "2026-04-17",
-        "price": 85.91
-      },
-      {
-        "date": "2026-04-20",
-        "price": 91.06
-      },
-      {
-        "date": "2026-04-21",
-        "price": 93.64
-      },
-      {
-        "date": "2026-04-22",
-        "price": 94.76
-      },
-      {
-        "date": "2026-04-23",
-        "price": 99.27
-      },
       {
         "date": "2026-04-24",
         "price": 98.42
@@ -990,6 +966,30 @@
       {
         "date": "2026-10-06",
         "price": 96.24
+      },
+      {
+        "date": "2026-10-07",
+        "price": 95.02
+      },
+      {
+        "date": "2026-10-08",
+        "price": 98.26
+      },
+      {
+        "date": "2026-10-09",
+        "price": 98.73
+      },
+      {
+        "date": "2026-10-12",
+        "price": 98.73
+      },
+      {
+        "date": "2026-10-13",
+        "price": 100.86
+      },
+      {
+        "date": "2026-10-14",
+        "price": 101.91
       }
     ]
   },
