@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-10-14T21:20:20.056Z",
+    "updatedAt": "2026-10-15T10:55:21.975Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -158,13 +158,13 @@
       "keyword": "휘발유"
     },
     {
-      "id": "e0640832ba8ee845",
-      "title": "국내 기름값 20주째 하락…G7 비축유 1억 배럴 방출, 추가 하락 변수되나",
-      "summary": "전국 주유소 기름값이 20주 연속 하락했다. 다만 휘발유 가격은 일주일 새 L당 0.4원 내리는 데 그쳐... 정부는 국제유가와 환율, 소비자물가 및 민생 부담을 종합적으로 고려해 현재 가격을 유지하고 있다. 유류세 인하...",
-      "source": "ppss.kr",
-      "publishedAt": "2026-10-03T01:23:00.000Z",
-      "link": "https://www.ppss.kr/news/articleView.html?idxno=313862",
-      "originallink": "https://www.ppss.kr/news/articleView.html?idxno=313862",
+      "id": "b890d8e185e0a02f",
+      "title": "휘발유값 20주 연속 하락…1천857원",
+      "summary": "3일 한국석유공사(KNOC) 유가정보시스템 오피넷(Opinet)에 따르면 9월 다섯째 주(9월 27일~10월 1일) 전국 주유소 휘발유 평균 판매가격은 전주보다 L당 0.4원 내린 1천857.6원으로 집계됐다. 경유 평균 판매가격은 0.1원...",
+      "source": "smedaily.co.kr",
+      "publishedAt": "2026-10-03T01:44:00.000Z",
+      "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=364143",
+      "originallink": "http://www.smedaily.co.kr/news/articleView.html?idxno=364143",
       "keyword": "휘발유"
     }
   ]
