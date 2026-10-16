@@ -1,14 +1,14 @@
 {
   "mode": "generated",
-  "provider": "gemini-3.5-flash+local-rules",
-  "model": "gemini-3.5-flash",
-  "generatedAt": "2026-10-15T20:58:56.886Z",
+  "provider": "rule-based",
+  "model": null,
+  "generatedAt": "2026-10-16T10:46:56.772Z",
   "report": {
     "headline": "전국 평균 기준 휘발유 1,799원, 경유 1,784원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 0원, 경유 0원 변동입니다.",
-    "weekly": "최근 7일 기준 휘발유 -1원, 경유 -1원 변동입니다.",
-    "monthly": "최근 30일 기준 휘발유 1원, 경유 1원 변동입니다.",
-    "consumerTip": "주유소별 가격 차이가 있으므로 인근 주유소 가격을 비교하여 이용할 수 있습니다.",
+    "daily": "전일 대비 휘발유 0원, 경유 0원으로 보합 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -1원, 경유 0원으로 하락 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 +1원, 경유 +1원으로 상승 흐름입니다.",
+    "consumerTip": "가격과 거리 조건을 함께 비교해 조회된 주유소 기준으로 가성비 좋은 곳을 확인해보세요.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
@@ -16,7 +16,7 @@
     "seriesCount": 178,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-10-15T20:58:54.076Z",
+    "generatedAt": "2026-10-16T10:46:26.975Z",
     "latest": {
       "gasolineAverage": 1799,
       "gasolineLowest": 1755,
@@ -30,7 +30,7 @@
       },
       "week": {
         "gasoline": -1,
-        "diesel": -1
+        "diesel": 0
       },
       "month": {
         "gasoline": 1,
@@ -40,23 +40,17 @@
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": "gemini-3.5-flash",
-    "modelVersion": "gemini-3.6-flash",
-    "finishReason": "STOP",
-    "responseId": "jz7Raq7mH72zjrEPjqOlgAo",
-    "usage": {
-      "promptTokenCount": 515,
-      "candidatesTokenCount": 174,
-      "thoughtsTokenCount": 0,
-      "totalTokenCount": 689,
-      "cachedContentTokenCount": 0
-    },
-    "attempts": 1,
-    "latencyMs": 1559,
-    "reason": "generated",
-    "error": null,
+    "model": null,
+    "modelVersion": null,
+    "finishReason": null,
+    "responseId": null,
+    "usage": null,
+    "attempts": 3,
+    "latencyMs": null,
+    "reason": "fallback:REQUEST_FAILED",
+    "error": "Gemini request timeout",
     "apiStatus": null,
-    "httpStatus": 200,
-    "liveApiCalled": true
+    "httpStatus": null,
+    "liveApiCalled": false
   }
 }
