@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-10-20T21:18:08.551Z",
+    "updatedAt": "2026-10-21T11:14:48.075Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -65,16 +65,6 @@
       "publishedAt": "2026-09-13T07:28:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/002/0002456347?sid=101",
       "originallink": "https://www.pressian.com/pages/articles/2026091315453133111?utm_source=naver&utm_medium=search",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "65243a4eb962332b",
-      "title": "원유 8% 덜 들여왔는데 31억弗 더 냈다…'청구서' 열어보니[호르무즈 봉...",
-      "summary": "석유수급 동향 분석'에 따르면 올해 상반기 국내 원유 수입량은 4억6711만7000배럴로 전년 동기... 제품별로는 나프타 생산이 8.4% 감소했고 휘발유는 8.1%, 경유는 7.3% 각각 줄었다. 보고서는 원유 도입 차질에 따른...",
-      "source": "newsis.com",
-      "publishedAt": "2026-09-13T21:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/003/0014187200?sid=101",
-      "originallink": "https://www.newsis.com/view/NISX20260911_0003786373",
       "keyword": "휘발유"
     },
     {
@@ -166,6 +156,16 @@
       "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=364143",
       "originallink": "http://www.smedaily.co.kr/news/articleView.html?idxno=364143",
       "keyword": "휘발유"
+    },
+    {
+      "id": "24329921a3bb02f5",
+      "title": "'실적은 호황, 경영은 가시밭길'…정유 4사, 재판·국감까지",
+      "summary": "국제유가 급등이 국내 기름값에 곧바로 반영되는 것을 막아 가계와 산업계의 부담을 덜었다는 설명이다.... 함께 유류세 인하분의 판매가격 반영 여부, 정제마진의 적정성, 정유사와 주유소 간 거래 관행 등이 주요...",
+      "source": "news.bizwatch.co.kr",
+      "publishedAt": "2026-10-05T21:50:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/648/0000051321?sid=101",
+      "originallink": "https://news.bizwatch.co.kr/article/industry/2026/10/02/0037",
+      "keyword": "국제유가"
     }
   ]
 }
