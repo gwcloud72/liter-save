@@ -1,7 +1,7 @@
 {
   "mode": "fred",
   "source": "FRED / U.S. Energy Information Administration",
-  "updatedAt": "2026-10-21T11:14:24.425Z",
+  "updatedAt": "2026-10-21T21:18:11.598Z",
   "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다.",
   "items": [
     {
@@ -13,7 +13,8 @@
       "price": 126.55,
       "previousPrice": 125.78,
       "change": 0.77,
-      "strategy": "api"
+      "strategy": "cached",
+      "stale": true
     },
     {
       "key": "wti",
@@ -24,7 +25,8 @@
       "price": 101.91,
       "previousPrice": 100.86,
       "change": 1.05,
-      "strategy": "api"
+      "strategy": "cached",
+      "stale": true
     }
   ],
   "history": {
@@ -993,5 +995,16 @@
       }
     ]
   },
-  "warnings": []
+  "warnings": [
+    {
+      "key": "brent",
+      "name": "Brent",
+      "message": "API: Brent FRED API JSON 파싱 실패 / CSV: Brent FRED CSV 관측값이 없습니다."
+    },
+    {
+      "key": "wti",
+      "name": "WTI",
+      "message": "API: WTI FRED API JSON 파싱 실패 / CSV: WTI FRED CSV 관측값이 없습니다."
+    }
+  ]
 }

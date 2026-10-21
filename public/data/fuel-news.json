@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-10-21T11:14:48.075Z",
+    "updatedAt": "2026-10-21T21:18:16.157Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -65,16 +65,6 @@
       "publishedAt": "2026-09-13T07:28:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/002/0002456347?sid=101",
       "originallink": "https://www.pressian.com/pages/articles/2026091315453133111?utm_source=naver&utm_medium=search",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "1706c28c2a8403b7",
-      "title": "유가 100달러 재돌파에 정부 가격안정 총력…최고가격제·유류세 연장 검...",
-      "summary": "정부는 최고가격제 연장에 대비해 2027년도 정부 예산안에도 1조 5497억 원을 편성한 상태다. 이달 30일 종료 예정인 유류세 한시 인하 조치의 연장 가능성도 거론된다. 현재 휘발유에는 15%, 경유와 액화석유가스(LPG)...",
-      "source": "news1.kr",
-      "publishedAt": "2026-09-14T21:00:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/421/0009169861?sid=101",
-      "originallink": "https://www.news1.kr/economy/trend/6290305",
       "keyword": "휘발유"
     },
     {
@@ -166,6 +156,16 @@
       "link": "https://n.news.naver.com/mnews/article/648/0000051321?sid=101",
       "originallink": "https://news.bizwatch.co.kr/article/industry/2026/10/02/0037",
       "keyword": "국제유가"
+    },
+    {
+      "id": "1b15c115c6e7ffa4",
+      "title": "기름값 깎아주다 탄소중립 놓친다?",
+      "summary": "정유사가 주유소 등에 공급하는 휘발유·경유 가격에 상한을 두는 제도로, 1997년 유가 자유화 이후 처음이다. \"연료 지원책으로 굳어져, 온실가스 감축 걸림돌 우려\" 보고서는 유가 급등이 이어졌던 2022년의 유류세...",
+      "source": "newspenguin.com",
+      "publishedAt": "2026-10-06T04:42:00.000Z",
+      "link": "https://www.newspenguin.com/news/articleView.html?idxno=22260",
+      "originallink": "https://www.newspenguin.com/news/articleView.html?idxno=22260",
+      "keyword": "휘발유"
     }
   ]
 }
