@@ -1,7 +1,7 @@
 {
   "mode": "fred",
   "source": "FRED / U.S. Energy Information Administration",
-  "updatedAt": "2026-10-21T21:18:11.598Z",
+  "updatedAt": "2026-10-22T11:13:01.160Z",
   "notice": "국제유가는 국내 주유소 가격 해석을 돕기 위한 참고 지표입니다.",
   "items": [
     {
@@ -9,44 +9,26 @@
       "name": "Brent",
       "seriesId": "DCOILBRENTEU",
       "unit": "USD per barrel",
-      "date": "2026-10-14",
-      "price": 126.55,
-      "previousPrice": 125.78,
-      "change": 0.77,
-      "strategy": "cached",
-      "stale": true
+      "date": "2026-10-20",
+      "price": 115.22,
+      "previousPrice": 118.82,
+      "change": -3.6,
+      "strategy": "api"
     },
     {
       "key": "wti",
       "name": "WTI",
       "seriesId": "DCOILWTICO",
       "unit": "USD per barrel",
-      "date": "2026-10-14",
-      "price": 101.91,
-      "previousPrice": 100.86,
-      "change": 1.05,
-      "strategy": "cached",
-      "stale": true
+      "date": "2026-10-20",
+      "price": 107.89,
+      "previousPrice": 110.01,
+      "change": -2.12,
+      "strategy": "api"
     }
   ],
   "history": {
     "brent": [
-      {
-        "date": "2026-04-27",
-        "price": 113.89
-      },
-      {
-        "date": "2026-04-28",
-        "price": 117.62
-      },
-      {
-        "date": "2026-04-29",
-        "price": 124.16
-      },
-      {
-        "date": "2026-04-30",
-        "price": 124.24
-      },
       {
         "date": "2026-05-01",
         "price": 118.26
@@ -510,25 +492,25 @@
       {
         "date": "2026-10-14",
         "price": 126.55
+      },
+      {
+        "date": "2026-10-15",
+        "price": 126.35
+      },
+      {
+        "date": "2026-10-16",
+        "price": 119.33
+      },
+      {
+        "date": "2026-10-19",
+        "price": 118.82
+      },
+      {
+        "date": "2026-10-20",
+        "price": 115.22
       }
     ],
     "wti": [
-      {
-        "date": "2026-04-24",
-        "price": 98.42
-      },
-      {
-        "date": "2026-04-27",
-        "price": 99.89
-      },
-      {
-        "date": "2026-04-28",
-        "price": 103.45
-      },
-      {
-        "date": "2026-04-29",
-        "price": 110.47
-      },
       {
         "date": "2026-04-30",
         "price": 108.64
@@ -983,28 +965,33 @@
       },
       {
         "date": "2026-10-12",
-        "price": 98.73
+        "price": 94.99
       },
       {
         "date": "2026-10-13",
-        "price": 100.86
+        "price": 95.39
       },
       {
         "date": "2026-10-14",
-        "price": 101.91
+        "price": 96.34
+      },
+      {
+        "date": "2026-10-15",
+        "price": 104.71
+      },
+      {
+        "date": "2026-10-16",
+        "price": 108.21
+      },
+      {
+        "date": "2026-10-19",
+        "price": 110.01
+      },
+      {
+        "date": "2026-10-20",
+        "price": 107.89
       }
     ]
   },
-  "warnings": [
-    {
-      "key": "brent",
-      "name": "Brent",
-      "message": "API: Brent FRED API JSON 파싱 실패 / CSV: Brent FRED CSV 관측값이 없습니다."
-    },
-    {
-      "key": "wti",
-      "name": "WTI",
-      "message": "API: WTI FRED API JSON 파싱 실패 / CSV: WTI FRED CSV 관측값이 없습니다."
-    }
-  ]
+  "warnings": []
 }

@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-10-21T21:18:16.157Z",
+    "updatedAt": "2026-10-22T11:13:07.206Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -148,16 +148,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "24329921a3bb02f5",
-      "title": "'실적은 호황, 경영은 가시밭길'…정유 4사, 재판·국감까지",
-      "summary": "국제유가 급등이 국내 기름값에 곧바로 반영되는 것을 막아 가계와 산업계의 부담을 덜었다는 설명이다.... 함께 유류세 인하분의 판매가격 반영 여부, 정제마진의 적정성, 정유사와 주유소 간 거래 관행 등이 주요...",
-      "source": "news.bizwatch.co.kr",
-      "publishedAt": "2026-10-05T21:50:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/648/0000051321?sid=101",
-      "originallink": "https://news.bizwatch.co.kr/article/industry/2026/10/02/0037",
-      "keyword": "국제유가"
-    },
-    {
       "id": "1b15c115c6e7ffa4",
       "title": "기름값 깎아주다 탄소중립 놓친다?",
       "summary": "정유사가 주유소 등에 공급하는 휘발유·경유 가격에 상한을 두는 제도로, 1997년 유가 자유화 이후 처음이다. \"연료 지원책으로 굳어져, 온실가스 감축 걸림돌 우려\" 보고서는 유가 급등이 이어졌던 2022년의 유류세...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-10-06T04:42:00.000Z",
       "link": "https://www.newspenguin.com/news/articleView.html?idxno=22260",
       "originallink": "https://www.newspenguin.com/news/articleView.html?idxno=22260",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "527915ba1fce6234",
+      "title": "20주째 떨어진 주유소 기름값, 1800원대는 유지",
+      "summary": "전국 주유소 기름값이 20주 연속 하락세를 이어갔다. 다만 소폭 내려 휘발유와 경유가 1800원대를... 통상적으로 국제유가 변동은 2~3주가량 차이를 두고 국내 주유소 가격에 반영된다. 한편 정부는 급등락을...",
+      "source": "newsprime.co.kr",
+      "publishedAt": "2026-10-06T05:00:00.000Z",
+      "link": "http://www.newsprime.co.kr/news/article.html?no=749991",
+      "originallink": "http://www.newsprime.co.kr/news/article.html?no=749991",
       "keyword": "휘발유"
     }
   ]
