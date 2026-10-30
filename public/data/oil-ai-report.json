@@ -1,14 +1,14 @@
 {
   "mode": "generated",
-  "provider": "rule-based",
-  "model": null,
-  "generatedAt": "2026-10-30T12:12:21.993Z",
+  "provider": "gemini-3.5-flash+local-rules",
+  "model": "gemini-3.5-flash",
+  "generatedAt": "2026-10-30T21:58:53.868Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,798원, 경유 1,785원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 -1원, 경유 +1원으로 보합 흐름입니다.",
-    "weekly": "최근 7일 기준 휘발유 -1원, 경유 0원으로 하락 흐름입니다.",
-    "monthly": "최근 30일 기준 휘발유 -3원, 경유 +1원으로 하락 흐름입니다.",
-    "consumerTip": "가격과 거리 조건을 함께 비교해 조회된 주유소 기준으로 가성비 좋은 곳을 확인해보세요.",
+    "headline": "전국 평균 기준 휘발유 1,798원, 경유 1,784원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 -1원, 경유 -1원 변화를 보였습니다.",
+    "weekly": "최근 7일 기준 휘발유 -1원, 경유 -1원 변화를 보였습니다.",
+    "monthly": "최근 30일 기준 휘발유 -2원, 경유 0원 변화를 보였습니다.",
+    "consumerTip": "주유소 이용 시 가격 정보를 비교하여 선택할 수 있습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
@@ -16,41 +16,47 @@
     "seriesCount": 178,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-10-30T12:11:58.934Z",
+    "generatedAt": "2026-10-30T21:58:50.283Z",
     "latest": {
       "gasolineAverage": 1798,
       "gasolineLowest": 1679,
-      "dieselAverage": 1785,
-      "dieselLowest": 1746
+      "dieselAverage": 1784,
+      "dieselLowest": 1742
     },
     "changes": {
       "day": {
         "gasoline": -1,
-        "diesel": 1
+        "diesel": -1
       },
       "week": {
         "gasoline": -1,
-        "diesel": 0
+        "diesel": -1
       },
       "month": {
-        "gasoline": -3,
-        "diesel": 1
+        "gasoline": -2,
+        "diesel": 0
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": null,
-    "modelVersion": null,
-    "finishReason": null,
-    "responseId": null,
-    "usage": null,
-    "attempts": 3,
-    "latencyMs": null,
-    "reason": "fallback:REQUEST_FAILED",
-    "error": "Gemini API 503 UNAVAILABLE: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "apiStatus": "UNAVAILABLE",
-    "httpStatus": 503,
-    "liveApiCalled": false
+    "model": "gemini-3.5-flash",
+    "modelVersion": "gemini-3.6-flash",
+    "finishReason": "STOP",
+    "responseId": "GxPlasjIKb-OwbUPtLeAkAc",
+    "usage": {
+      "promptTokenCount": 516,
+      "candidatesTokenCount": 168,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 684,
+      "cachedContentTokenCount": 0
+    },
+    "attempts": 1,
+    "latencyMs": 2397,
+    "reason": "generated",
+    "error": null,
+    "apiStatus": null,
+    "httpStatus": 200,
+    "liveApiCalled": true
   }
 }
