@@ -1,32 +1,32 @@
 {
   "mode": "generated",
-  "provider": "gemini-3.5-flash+local-rules",
-  "model": "gemini-3.5-flash",
-  "generatedAt": "2026-10-31T11:45:18.124Z",
+  "provider": "rule-based",
+  "model": null,
+  "generatedAt": "2026-10-31T21:02:25.334Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,799원, 경유 1,785원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 0원, 경유 1원 변동입니다.",
-    "weekly": "최근 7일 기준 휘발유 0원, 경유 0원 변동입니다.",
-    "monthly": "최근 30일 기준 휘발유 -1원, 경유 1원 변동입니다.",
-    "consumerTip": "주유소 가격과 거리 조건을 비교하여 적절한 주유소를 확인해보세요.",
-    "note": "공개 유가 데이터를 바탕으로 생성한 참고용 정보입니다."
+    "headline": "전국 평균 기준 휘발유 1,799원, 경유 1,784원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 +1원, 경유 -1원으로 보합 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 0원, 경유 0원으로 보합 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -1원, 경유 -1원으로 하락 흐름입니다.",
+    "consumerTip": "가격과 거리 조건을 함께 비교해 조회된 주유소 기준으로 가성비 좋은 곳을 확인해보세요.",
+    "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
     "ready": true,
     "seriesCount": 178,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-10-31T11:44:46.051Z",
+    "generatedAt": "2026-10-31T21:01:56.785Z",
     "latest": {
       "gasolineAverage": 1799,
       "gasolineLowest": 1765,
-      "dieselAverage": 1785,
+      "dieselAverage": 1784,
       "dieselLowest": 1734
     },
     "changes": {
       "day": {
-        "gasoline": 0,
-        "diesel": 1
+        "gasoline": 1,
+        "diesel": -1
       },
       "week": {
         "gasoline": 0,
@@ -34,29 +34,23 @@
       },
       "month": {
         "gasoline": -1,
-        "diesel": 1
+        "diesel": -1
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": "gemini-3.5-flash",
-    "modelVersion": "gemini-3.6-flash",
-    "finishReason": "STOP",
-    "responseId": "ydTlavCVOYXRz7IP9aXX6A0",
-    "usage": {
-      "promptTokenCount": 515,
-      "candidatesTokenCount": 168,
-      "thoughtsTokenCount": 0,
-      "totalTokenCount": 683,
-      "cachedContentTokenCount": 0
-    },
+    "model": null,
+    "modelVersion": null,
+    "finishReason": null,
+    "responseId": null,
+    "usage": null,
     "attempts": 3,
-    "latencyMs": 31078,
-    "reason": "generated",
-    "error": null,
-    "apiStatus": null,
-    "httpStatus": 200,
-    "liveApiCalled": true
+    "latencyMs": null,
+    "reason": "fallback:REQUEST_FAILED",
+    "error": "Gemini API 503 UNAVAILABLE: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "apiStatus": "UNAVAILABLE",
+    "httpStatus": 503,
+    "liveApiCalled": false
   }
 }
