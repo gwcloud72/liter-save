@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-11-03T00:34:23.991Z",
+    "updatedAt": "2026-11-03T13:42:04.587Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "47074bdf94a4fda7",
-      "title": "IMF \"기름값 통제보다 선별적 현금지원이 효율적\"",
-      "summary": "대응책으로 가격통제와 유류세 인하 대신 취약계층에 대한 선별적 현금지원을 권고했다. 기름값을... 11차 석유최고가격이 발표되는 16일 서울 서초구 만남의광장 주유소에 유가가 표시돼있다.(사진=연합뉴스)",
-      "source": "edaily.co.kr",
-      "publishedAt": "2026-10-18T19:02:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/018/0006391075?sid=101",
-      "originallink": "https://www.edaily.co.kr/News/Read?newsId=01252966645614560&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
-      "keyword": "유류세"
-    },
-    {
       "id": "efc1e13d86a3c528",
       "title": "농민 10조 지원·러 경유 수입에도…트럼프, 기름값 '묘수'가 없다",
       "summary": "미국 중간선거를 2주 앞두고 도널드 트럼프 대통령이 기름값 잡기에 총력을 기울이고 있다. 농민... 휘발유 가격도 갤런당 4달러(약 5308원) 수준이다. 지난 16일 미국 뉴저지주 베이온의 한 주유소에서 직원이 트럭에...",
@@ -166,6 +156,16 @@
       "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1728960",
       "originallink": "https://www.ebn.co.kr/news/articleView.html?idxno=1728960",
       "keyword": "휘발유"
+    },
+    {
+      "id": "c95baf7821c14a96",
+      "title": "중동 확전 우려에 유가↑·뉴욕 증시↓...우리 경제는?",
+      "summary": "이런 가운데, 국내 기름값은 23주째 하락 중인 상황입니다. 국내외 경제 이슈들, 이인철... 판매가격, 일반 주유소의 판매가격 상한을 정하고 있는데 이거 지난 3월 13일부터 시작이 됐는데요. 벌써 11번 연장을 했습니다....",
+      "source": "ytn.co.kr",
+      "publishedAt": "2026-10-24T09:40:00.000Z",
+      "link": "https://n.news.naver.com/mnews/article/052/0002423155?sid=101",
+      "originallink": "https://www.ytn.co.kr/_ln/0102_202610241840334217",
+      "keyword": "유류세"
     }
   ]
 }
