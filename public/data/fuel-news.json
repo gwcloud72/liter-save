@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-11-08T21:43:50.903Z",
+    "updatedAt": "2026-11-09T15:16:46.383Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "c279eef56f77983d",
-      "title": "휘발유가격 최대 239원 억제했다…최고가격제, 효과봤지만 재정부담도↑",
-      "summary": "정부가 중동전쟁에 따른 기름값 급등을 막기 위해 도입한 석유 최고가격제가 실제 소비자 가격 안정에... 산업연구원은 최고가격제가 실제 주유소 판매가격에 미친 영향을 확인하기 위해 한국석유공사 오피넷의...",
-      "source": "edaily.co.kr",
-      "publishedAt": "2026-10-23T01:02:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/018/0006394435?sid=101",
-      "originallink": "https://www.edaily.co.kr/News/Read?newsId=03247206645615872&mediaCodeNo=257&utm_source=naver&utm_medium=referral&utm_campaign=news_syndication&utm_content=original_article",
-      "keyword": "휘발유"
-    },
-    {
       "id": "e4f43516d1780f6e",
       "title": "석유최고가격제, 휘발유 최대 239원 억제…“재정부담에 출구전략 마련...",
       "summary": "국책연구기관은 정부가 중동전쟁에 따른 기름값 급등을 막기 위해 도입한 석유 최고가격제로 인해... 산업연구원은 최고가격제가 실제 주유소 판매가격에 미친 영향을 확인하기 위해 한국석유공사 오피넷의 2023년...",
@@ -166,6 +156,16 @@
       "link": "https://news.mtn.co.kr/article/2026102615153472489",
       "originallink": "https://news.mtn.co.kr/article/2026102615153472489",
       "keyword": "휘발유"
+    },
+    {
+      "id": "7f9e4f8a6faae6e1",
+      "title": "석유 최고가격제, 기름값 상승 완충했지만…산업연 \"단계적 정상화 필요...",
+      "summary": "에너지 가격 급등에 대응하기 위해 도입된 석유 최고가격제가 국내 기름값 상승을 억제하는 데 일정 부분... 이는 가격관리 방식은 국가마다 다르기 때문이다 한국은 주유소 소매가격이 아닌 정유사 공급가격에 상한을...",
+      "source": "ajunews.com",
+      "publishedAt": "2026-10-27T01:02:00.000Z",
+      "link": "https://www.ajunews.com/view/20261027085746777",
+      "originallink": "https://www.ajunews.com/view/20261027085746777",
+      "keyword": "유류세"
     }
   ]
 }
