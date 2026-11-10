@@ -2,35 +2,35 @@
   "mode": "generated",
   "provider": "gemini-3.5-flash+local-rules",
   "model": "gemini-3.5-flash",
-  "generatedAt": "2026-11-10T14:24:36.706Z",
+  "generatedAt": "2026-11-10T22:53:58.488Z",
   "report": {
-    "headline": "전국 평균 기준 휘발유 1,799원, 경유 1,785원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 0원, 경유 +1원 변화를 보였습니다.",
-    "weekly": "최근 7일 기준 휘발유 0원, 경유 0원 변화를 보였습니다.",
-    "monthly": "최근 30일 기준 휘발유 -1원, 경유 +5원 변화를 보였습니다.",
-    "consumerTip": "가격과 거리 조건을 함께 비교해 조회된 주유소 기준으로 가성비 좋은 곳을 확인해보세요.",
-    "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
+    "headline": "전국 평균 기준 휘발유 1,799원, 경유 1,784원 수준으로 집계됐습니다.",
+    "daily": "전일 대비 휘발유 0원, 경유 0원 변동입니다.",
+    "weekly": "최근 7일 기준 휘발유 0원, 경유 -1원 변동입니다.",
+    "monthly": "최근 30일 기준 휘발유 -1원, 경유 5원 변동입니다.",
+    "consumerTip": "가격과 거리 조건을 비교하여 주유소 정보를 확인하십시오.",
+    "note": "공개 유가 데이터를 바탕으로 작성된 참고용 정보입니다."
   },
   "summary": {
     "ready": true,
     "seriesCount": 177,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-11-10T14:24:10.521Z",
+    "generatedAt": "2026-11-10T22:53:55.879Z",
     "latest": {
       "gasolineAverage": 1799,
       "gasolineLowest": 1765,
-      "dieselAverage": 1785,
-      "dieselLowest": 1747
+      "dieselAverage": 1784,
+      "dieselLowest": 1732
     },
     "changes": {
       "day": {
         "gasoline": 0,
-        "diesel": 1
+        "diesel": 0
       },
       "week": {
         "gasoline": 0,
-        "diesel": 0
+        "diesel": -1
       },
       "month": {
         "gasoline": -1,
@@ -43,16 +43,16 @@
     "model": "gemini-3.5-flash",
     "modelVersion": "gemini-3.6-flash",
     "finishReason": "STOP",
-    "responseId": "IinzaqSrPPe9xdIP7q6C2AQ",
+    "responseId": "hKDzarCJOfzxqtsPreXOuAg",
     "usage": {
-      "promptTokenCount": 514,
-      "candidatesTokenCount": 177,
+      "promptTokenCount": 515,
+      "candidatesTokenCount": 162,
       "thoughtsTokenCount": 0,
-      "totalTokenCount": 691,
+      "totalTokenCount": 677,
       "cachedContentTokenCount": 0
     },
-    "attempts": 3,
-    "latencyMs": 24932,
+    "attempts": 1,
+    "latencyMs": 1736,
     "reason": "generated",
     "error": null,
     "apiStatus": null,
