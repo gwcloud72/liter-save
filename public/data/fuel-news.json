@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-11-11T13:37:46.880Z",
+    "updatedAt": "2026-11-12T00:06:35.559Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,16 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "015574b34b680d92",
-      "title": "제주 10월 소비자물가 2.6% 상승, 기름값·교통비 부담",
-      "summary": "3일 국가데이터처 제주사무소가 발표한 '2026년 10월 제주특별자치도 소비자물가동향'에 따르면 지난달... 경유 가격은 16.1%, 휘발유는 9.7% 상승했으며 국제항공료(20.7%)와 국내항공료(11.8%)도 크게 올랐다. 주택...",
-      "source": "jemin.com",
-      "publishedAt": "2026-11-03T08:38:00.000Z",
-      "link": "https://www.jemin.com/news/articleView.html?idxno=846054",
-      "originallink": "https://www.jemin.com/news/articleView.html?idxno=846054",
-      "keyword": "휘발유"
-    },
-    {
       "id": "b1f808497b5bb07b",
       "title": "[더나은미래 경제브리핑] 금융지주 회장 문턱 높인다, 3연임 시 주주 75...",
       "summary": "◇애플, 분기 매출 154조 ‘역대 최대’...아이폰 가격 인상 덕분? 3일 애플에 따르면 2026 회계연도 4분기(7... 경유가 19.7%, 휘발유가 11.6% 올랐다. 자동차용 액화석유가스(LPG) 상승률은 전월 9.8%에서 14.5%로, 취사용 LPG는...",
@@ -165,6 +155,16 @@
       "publishedAt": "2026-11-04T01:47:00.000Z",
       "link": "https://n.news.naver.com/mnews/article/008/0005436348?sid=101",
       "originallink": "https://www.mt.co.kr/economy/2026/11/04/2026110319461989810",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "0721cee868a501f3",
+      "title": "장바구니는 가벼워졌다는데, 왜 식탁 물가는 그대로일까",
+      "summary": "농산물 가격이 떨어지며 전체 지표를 끌어내렸지만, 정작 소비자가 매일 마주하는 가공식품과 외식 물가는... 경유가 19.7%, 휘발유가 11.6% 올랐고 가정용·자동차용 LPG도 나란히 두 자릿수 상승률을 보였다. 서비스...",
+      "source": "dailyt.co.kr",
+      "publishedAt": "2026-11-04T04:18:00.000Z",
+      "link": "https://www.dailyt.co.kr/newsView/dlt202611040017",
+      "originallink": "https://www.dailyt.co.kr/newsView/dlt202611040017",
       "keyword": "휘발유"
     }
   ]
