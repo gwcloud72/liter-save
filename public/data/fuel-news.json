@@ -2,7 +2,7 @@
   "metadata": {
     "source": "naver-search-news",
     "target": "liter",
-    "updatedAt": "2026-11-18T23:56:01.023Z",
+    "updatedAt": "2026-11-19T15:19:09.730Z",
     "queryCount": 4,
     "itemCount": 16
   },
@@ -108,26 +108,6 @@
       "keyword": "휘발유"
     },
     {
-      "id": "b1f808497b5bb07b",
-      "title": "[더나은미래 경제브리핑] 금융지주 회장 문턱 높인다, 3연임 시 주주 75...",
-      "summary": "◇애플, 분기 매출 154조 ‘역대 최대’...아이폰 가격 인상 덕분? 3일 애플에 따르면 2026 회계연도 4분기(7... 경유가 19.7%, 휘발유가 11.6% 올랐다. 자동차용 액화석유가스(LPG) 상승률은 전월 9.8%에서 14.5%로, 취사용 LPG는...",
-      "source": "futurechosun.com",
-      "publishedAt": "2026-11-03T09:08:00.000Z",
-      "link": "https://futurechosun.com/?p=165417",
-      "originallink": "https://futurechosun.com/?p=165417",
-      "keyword": "휘발유"
-    },
-    {
-      "id": "4959b9b6c5179ce5",
-      "title": "석유류·가공식품 가격 상승에 10월 소비자물가 2.8% 올라",
-      "summary": "국가데이터처가 3일 발표한 '10월 소비자물가 동향'에 따르면 지난달 소비자물가지수는 120.73(2020년=100)... 석유류 가격은 전년동월 대비 14.9% 올랐다. 휘발유가 11.6%, 경유가 19.7%, 자동차용 액화석유가스(LPG)가 14.5...",
-      "source": "fnnews.com",
-      "publishedAt": "2026-11-03T09:30:00.000Z",
-      "link": "https://n.news.naver.com/mnews/article/014/0005598898?sid=101",
-      "originallink": "https://www.fnnews.com/news/202611031829268418",
-      "keyword": "휘발유"
-    },
-    {
       "id": "80ce496c3c009845",
       "title": "연말 김장철, 먹거리 물가 괜찮을까요",
       "summary": "경유(19.7%)와 휘발유(11.6%)가 두 자릿수 상승률을 기록한 데다, 석유제품 최고가격제 적용 대상이 아닌 자동차용 액화석유가스(LPG)도 14.5% 치솟았다. 정부는 최고가격제가 전체 소비자물가 상승률을 0.8%포인트 낮춘...",
@@ -165,6 +145,26 @@
       "publishedAt": "2026-11-04T04:18:00.000Z",
       "link": "https://www.dailyt.co.kr/newsView/dlt202611040017",
       "originallink": "https://www.dailyt.co.kr/newsView/dlt202611040017",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "06af3a56ef7e05b2",
+      "title": "[사설] 물가 상승에 서민 살림살이 갈수록 팍팍하다",
+      "summary": "국가데이터처가 발표한 10월 소비자물가 동향에 따르면 전국 소비자물가지수는 지난해 같은 달보다 2.8... 석유류 가격은 14.9%나 뛰었다. 경유가 19.7%, 휘발유가 11.6%, 자동차용 LPG가 14.5% 상승했다. 가공식품 가격은 2.9...",
+      "source": "kyongbuk.co.kr",
+      "publishedAt": "2026-11-04T07:04:00.000Z",
+      "link": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4089636",
+      "originallink": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4089636",
+      "keyword": "휘발유"
+    },
+    {
+      "id": "626dd70be45ad818",
+      "title": "10월 소비자물가, 석유제품 가격 14.9% 상승",
+      "summary": "지난 3일 국가데이터처가 발표한 '2026년 10월 소비자물가 동향'에 따르면 지난달 소비자물가 지수는 120.... 이외에도 LPG 가격은 휘발유·경유에 비해 소비자 물가에 미치는 영향이 제한적이라 '최고 가격제' 적용...",
+      "source": "todayenergy.kr",
+      "publishedAt": "2026-11-04T22:48:00.000Z",
+      "link": "https://www.todayenergy.kr/news/articleView.html?idxno=305124",
+      "originallink": "https://www.todayenergy.kr/news/articleView.html?idxno=305124",
       "keyword": "휘발유"
     }
   ]
