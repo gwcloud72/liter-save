@@ -1,14 +1,14 @@
 {
   "mode": "generated",
-  "provider": "gemini-3.5-flash+local-rules",
-  "model": "gemini-3.5-flash",
-  "generatedAt": "2026-11-26T01:37:22.812Z",
+  "provider": "rule-based",
+  "model": null,
+  "generatedAt": "2026-11-26T16:28:04.756Z",
   "report": {
     "headline": "전국 평균 기준 휘발유 1,795원, 경유 1,781원 수준으로 집계됐습니다.",
-    "daily": "전일 대비 휘발유 0원, 경유 +1원 변동입니다.",
-    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -4원 변동입니다.",
-    "monthly": "최근 30일 기준 휘발유 -4원, 경유 -2원 변동입니다.",
-    "consumerTip": "주유 시 주변 주유소의 가격을 비교하여 참고할 수 있습니다.",
+    "daily": "전일 대비 휘발유 0원, 경유 0원으로 보합 흐름입니다.",
+    "weekly": "최근 7일 기준 휘발유 -3원, 경유 -4원으로 하락 흐름입니다.",
+    "monthly": "최근 30일 기준 휘발유 -3원, 경유 -2원으로 하락 흐름입니다.",
+    "consumerTip": "완만한 하락 흐름이라면 급하지 않은 주유는 시점을 조금 더 지켜볼 수 있습니다.",
     "note": "공개 유가 데이터를 바탕으로 생성한 참고용 리포트입니다."
   },
   "summary": {
@@ -16,7 +16,7 @@
     "seriesCount": 176,
     "stationTotal": 1007,
     "datasetCount": 51,
-    "generatedAt": "2026-11-26T01:37:09.408Z",
+    "generatedAt": "2026-11-26T16:27:40.956Z",
     "latest": {
       "gasolineAverage": 1795,
       "gasolineLowest": 1713,
@@ -26,37 +26,31 @@
     "changes": {
       "day": {
         "gasoline": 0,
-        "diesel": 1
+        "diesel": 0
       },
       "week": {
         "gasoline": -3,
         "diesel": -4
       },
       "month": {
-        "gasoline": -4,
+        "gasoline": -3,
         "diesel": -2
       }
     }
   },
   "generation": {
     "requestedModel": "gemini-3.5-flash",
-    "model": "gemini-3.5-flash",
-    "modelVersion": "gemini-3.6-flash",
-    "finishReason": "STOP",
-    "responseId": "UY0Ha9jxJsKQ_uMP4NucsAI",
-    "usage": {
-      "promptTokenCount": 515,
-      "candidatesTokenCount": 168,
-      "thoughtsTokenCount": 0,
-      "totalTokenCount": 683,
-      "cachedContentTokenCount": 0
-    },
-    "attempts": 2,
-    "latencyMs": 12208,
-    "reason": "generated",
-    "error": null,
+    "model": null,
+    "modelVersion": null,
+    "finishReason": null,
+    "responseId": null,
+    "usage": null,
+    "attempts": 3,
+    "latencyMs": null,
+    "reason": "fallback:REQUEST_FAILED",
+    "error": "Gemini request timeout",
     "apiStatus": null,
-    "httpStatus": 200,
-    "liveApiCalled": true
+    "httpStatus": null,
+    "liveApiCalled": false
   }
 }
