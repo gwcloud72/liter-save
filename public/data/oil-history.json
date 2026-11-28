@@ -1,604 +1,9 @@
 {
   "mode": "history",
-  "generatedAt": "2026-11-27T16:12:41.605Z",
+  "generatedAt": "2026-11-28T01:08:29.389Z",
   "retentionDays": 90,
   "notice": "오전 6시와 오후 6시에 수집된 가격 데이터를 누적해 표시합니다.",
   "snapshots": [
-    {
-      "capturedAt": "2026-08-29T20:28:20.136Z",
-      "dataAsOf": "2026-08-29T20:26:08.622Z",
-      "cachedDatasetCount": 0,
-      "metrics": [
-        {
-          "regionCode": "ALL",
-          "regionName": "전국",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1755,
-          "averagePrice": 1803,
-          "stationCount": 340
-        },
-        {
-          "regionCode": "ALL",
-          "regionName": "전국",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1725,
-          "averagePrice": 1784,
-          "stationCount": 340
-        },
-        {
-          "regionCode": "ALL",
-          "regionName": "전국",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 949,
-          "averagePrice": 1048,
-          "stationCount": 327
-        },
-        {
-          "regionCode": "ALL",
-          "regionName": "전국",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1755,
-          "averagePrice": 1779,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:08.622Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "ALL",
-          "regionName": "전국",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1725,
-          "averagePrice": 1755,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:09.285Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "ALL",
-          "regionName": "전국",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 949,
-          "averagePrice": 972,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:09.993Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "01",
-          "regionName": "서울",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1799,
-          "averagePrice": 1819,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:10.786Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "01",
-          "regionName": "서울",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1777,
-          "averagePrice": 1796,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:11.584Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "01",
-          "regionName": "서울",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1076,
-          "averagePrice": 1145,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:12.383Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "02",
-          "regionName": "경기",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1789,
-          "averagePrice": 1792,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:13.218Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "02",
-          "regionName": "경기",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1759,
-          "averagePrice": 1773,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:14.006Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "02",
-          "regionName": "경기",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 979,
-          "averagePrice": 1002,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:14.774Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "03",
-          "regionName": "강원",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1791,
-          "averagePrice": 1807,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:15.596Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "03",
-          "regionName": "강원",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1786,
-          "averagePrice": 1800,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:16.390Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "03",
-          "regionName": "강원",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1018,
-          "averagePrice": 1051,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:17.173Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "04",
-          "regionName": "충북",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1812,
-          "averagePrice": 1814,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:17.993Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "04",
-          "regionName": "충북",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1769,
-          "averagePrice": 1793,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:18.792Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "04",
-          "regionName": "충북",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 969,
-          "averagePrice": 1016,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:19.574Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "05",
-          "regionName": "충남",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1788,
-          "averagePrice": 1798,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:20.396Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "05",
-          "regionName": "충남",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1774,
-          "averagePrice": 1785,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:26:21.194Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "05",
-          "regionName": "충남",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 973,
-          "averagePrice": 1039,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:08.178Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "06",
-          "regionName": "전북",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1785,
-          "averagePrice": 1798,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:08.491Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "06",
-          "regionName": "전북",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1774,
-          "averagePrice": 1780,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:09.290Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "06",
-          "regionName": "전북",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 992,
-          "averagePrice": 997,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:10.069Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "08",
-          "regionName": "경북",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1755,
-          "averagePrice": 1783,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:10.901Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "08",
-          "regionName": "경북",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1725,
-          "averagePrice": 1762,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:11.696Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "08",
-          "regionName": "경북",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 999,
-          "averagePrice": 1023,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:12.482Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "09",
-          "regionName": "경남",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1783,
-          "averagePrice": 1792,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:13.295Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "09",
-          "regionName": "경남",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1750,
-          "averagePrice": 1770,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:14.098Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "09",
-          "regionName": "경남",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 998,
-          "averagePrice": 1014,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:14.884Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "10",
-          "regionName": "부산",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1780,
-          "averagePrice": 1794,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:15.712Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "10",
-          "regionName": "부산",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1753,
-          "averagePrice": 1783,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:16.490Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "10",
-          "regionName": "부산",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 949,
-          "averagePrice": 1029,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:17.272Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "11",
-          "regionName": "제주",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1827,
-          "averagePrice": 1852,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:18.094Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "11",
-          "regionName": "제주",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1809,
-          "averagePrice": 1818,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:18.884Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "11",
-          "regionName": "제주",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1079,
-          "averagePrice": 1127,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:19.672Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "14",
-          "regionName": "대구",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1779,
-          "averagePrice": 1787,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:20.488Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "14",
-          "regionName": "대구",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1757,
-          "averagePrice": 1764,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:27:21.298Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "14",
-          "regionName": "대구",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1048,
-          "averagePrice": 1096,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:08.766Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "15",
-          "regionName": "인천",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1789,
-          "averagePrice": 1797,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:09.440Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "15",
-          "regionName": "인천",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1768,
-          "averagePrice": 1774,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:09.732Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "15",
-          "regionName": "인천",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1034,
-          "averagePrice": 1052,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:10.519Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "17",
-          "regionName": "대전",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1805,
-          "averagePrice": 1807,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:11.336Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "17",
-          "regionName": "대전",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1779,
-          "averagePrice": 1792,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:12.136Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "17",
-          "regionName": "대전",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 981,
-          "averagePrice": 1026,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:12.918Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "18",
-          "regionName": "울산",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1788,
-          "averagePrice": 1797,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:13.733Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "18",
-          "regionName": "울산",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1775,
-          "averagePrice": 1785,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:14.535Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "18",
-          "regionName": "울산",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1039,
-          "averagePrice": 1094,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:15.323Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "19",
-          "regionName": "세종",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1819,
-          "averagePrice": 1831,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:16.141Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "19",
-          "regionName": "세종",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1799,
-          "averagePrice": 1816,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:16.936Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "19",
-          "regionName": "세종",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1054,
-          "averagePrice": 1101,
-          "stationCount": 7,
-          "capturedAt": "2026-08-29T20:28:17.716Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "20",
-          "regionName": "전남광주",
-          "fuelCode": "B027",
-          "fuelName": "휘발유",
-          "lowestPrice": 1799,
-          "averagePrice": 1804,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:18.556Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "20",
-          "regionName": "전남광주",
-          "fuelCode": "D047",
-          "fuelName": "경유",
-          "lowestPrice": 1779,
-          "averagePrice": 1787,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:19.346Z",
-          "collectionStatus": "live"
-        },
-        {
-          "regionCode": "20",
-          "regionName": "전남광주",
-          "fuelCode": "K015",
-          "fuelName": "LPG",
-          "lowestPrice": 1016,
-          "averagePrice": 1062,
-          "stationCount": 20,
-          "capturedAt": "2026-08-29T20:28:20.135Z",
-          "collectionStatus": "live"
-        }
-      ]
-    },
     {
       "capturedAt": "2026-08-30T11:19:45.630Z",
       "dataAsOf": "2026-08-30T11:17:33.889Z",
@@ -103535,8 +102940,8 @@
       ]
     },
     {
-      "capturedAt": "2026-11-27T16:12:41.605Z",
-      "dataAsOf": "2026-11-27T16:10:30.397Z",
+      "capturedAt": "2026-11-28T01:08:29.389Z",
+      "dataAsOf": "2026-11-28T01:06:18.035Z",
       "cachedDatasetCount": 0,
       "metrics": [
         {
@@ -103574,7 +102979,7 @@
           "lowestPrice": 1713,
           "averagePrice": 1758,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:30.397Z",
+          "capturedAt": "2026-11-28T01:06:18.035Z",
           "collectionStatus": "live"
         },
         {
@@ -103585,7 +102990,7 @@
           "lowestPrice": 1708,
           "averagePrice": 1732,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:31.008Z",
+          "capturedAt": "2026-11-28T01:06:18.560Z",
           "collectionStatus": "live"
         },
         {
@@ -103596,7 +103001,7 @@
           "lowestPrice": 1031,
           "averagePrice": 1054,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:31.772Z",
+          "capturedAt": "2026-11-28T01:06:19.095Z",
           "collectionStatus": "live"
         },
         {
@@ -103607,7 +103012,7 @@
           "lowestPrice": 1795,
           "averagePrice": 1814,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:32.527Z",
+          "capturedAt": "2026-11-28T01:06:19.878Z",
           "collectionStatus": "live"
         },
         {
@@ -103618,7 +103023,7 @@
           "lowestPrice": 1784,
           "averagePrice": 1795,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:33.334Z",
+          "capturedAt": "2026-11-28T01:06:20.691Z",
           "collectionStatus": "live"
         },
         {
@@ -103629,7 +103034,7 @@
           "lowestPrice": 1158,
           "averagePrice": 1227,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:34.114Z",
+          "capturedAt": "2026-11-28T01:06:21.478Z",
           "collectionStatus": "live"
         },
         {
@@ -103640,7 +103045,7 @@
           "lowestPrice": 1713,
           "averagePrice": 1775,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:34.939Z",
+          "capturedAt": "2026-11-28T01:06:22.302Z",
           "collectionStatus": "live"
         },
         {
@@ -103649,9 +103054,9 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1721,
-          "averagePrice": 1763,
+          "averagePrice": 1762,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:35.741Z",
+          "capturedAt": "2026-11-28T01:06:23.103Z",
           "collectionStatus": "live"
         },
         {
@@ -103662,7 +103067,7 @@
           "lowestPrice": 1065,
           "averagePrice": 1086,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:36.509Z",
+          "capturedAt": "2026-11-28T01:06:23.891Z",
           "collectionStatus": "live"
         },
         {
@@ -103673,7 +103078,7 @@
           "lowestPrice": 1791,
           "averagePrice": 1799,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:37.380Z",
+          "capturedAt": "2026-11-28T01:06:24.691Z",
           "collectionStatus": "live"
         },
         {
@@ -103681,10 +103086,10 @@
           "regionName": "강원",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1783,
-          "averagePrice": 1796,
+          "lowestPrice": 1762,
+          "averagePrice": 1794,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:38.135Z",
+          "capturedAt": "2026-11-28T01:06:25.487Z",
           "collectionStatus": "live"
         },
         {
@@ -103695,7 +103100,7 @@
           "lowestPrice": 1103,
           "averagePrice": 1134,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:38.922Z",
+          "capturedAt": "2026-11-28T01:06:26.278Z",
           "collectionStatus": "live"
         },
         {
@@ -103704,9 +103109,9 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1750,
-          "averagePrice": 1794,
+          "averagePrice": 1793,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:39.722Z",
+          "capturedAt": "2026-11-28T01:06:27.110Z",
           "collectionStatus": "live"
         },
         {
@@ -103717,7 +103122,7 @@
           "lowestPrice": 1708,
           "averagePrice": 1779,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:40.550Z",
+          "capturedAt": "2026-11-28T01:06:27.891Z",
           "collectionStatus": "live"
         },
         {
@@ -103728,7 +103133,7 @@
           "lowestPrice": 1051,
           "averagePrice": 1088,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:41.344Z",
+          "capturedAt": "2026-11-28T01:06:28.691Z",
           "collectionStatus": "live"
         },
         {
@@ -103739,7 +103144,7 @@
           "lowestPrice": 1782,
           "averagePrice": 1793,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:42.132Z",
+          "capturedAt": "2026-11-28T01:06:29.493Z",
           "collectionStatus": "live"
         },
         {
@@ -103747,10 +103152,10 @@
           "regionName": "충남",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1778,
+          "lowestPrice": 1782,
           "averagePrice": 1787,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:10:42.976Z",
+          "capturedAt": "2026-11-28T01:06:30.304Z",
           "collectionStatus": "live"
         },
         {
@@ -103761,7 +103166,7 @@
           "lowestPrice": 1054,
           "averagePrice": 1118,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:29.749Z",
+          "capturedAt": "2026-11-28T01:07:17.226Z",
           "collectionStatus": "live"
         },
         {
@@ -103770,9 +103175,9 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1745,
-          "averagePrice": 1788,
+          "averagePrice": 1789,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:30.266Z",
+          "capturedAt": "2026-11-28T01:07:18.254Z",
           "collectionStatus": "live"
         },
         {
@@ -103783,7 +103188,7 @@
           "lowestPrice": 1716,
           "averagePrice": 1776,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:31.064Z",
+          "capturedAt": "2026-11-28T01:07:18.503Z",
           "collectionStatus": "live"
         },
         {
@@ -103794,7 +103199,7 @@
           "lowestPrice": 1065,
           "averagePrice": 1077,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:31.866Z",
+          "capturedAt": "2026-11-28T01:07:19.283Z",
           "collectionStatus": "live"
         },
         {
@@ -103805,7 +103210,7 @@
           "lowestPrice": 1776,
           "averagePrice": 1781,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:32.669Z",
+          "capturedAt": "2026-11-28T01:07:20.109Z",
           "collectionStatus": "live"
         },
         {
@@ -103816,7 +103221,7 @@
           "lowestPrice": 1752,
           "averagePrice": 1763,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:33.557Z",
+          "capturedAt": "2026-11-28T01:07:20.910Z",
           "collectionStatus": "live"
         },
         {
@@ -103827,7 +103232,7 @@
           "lowestPrice": 1079,
           "averagePrice": 1098,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:34.246Z",
+          "capturedAt": "2026-11-28T01:07:21.702Z",
           "collectionStatus": "live"
         },
         {
@@ -103836,9 +103241,9 @@
           "fuelCode": "B027",
           "fuelName": "휘발유",
           "lowestPrice": 1760,
-          "averagePrice": 1785,
+          "averagePrice": 1786,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:35.075Z",
+          "capturedAt": "2026-11-28T01:07:22.510Z",
           "collectionStatus": "live"
         },
         {
@@ -103849,7 +103254,7 @@
           "lowestPrice": 1724,
           "averagePrice": 1770,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:35.907Z",
+          "capturedAt": "2026-11-28T01:07:23.306Z",
           "collectionStatus": "live"
         },
         {
@@ -103860,7 +103265,7 @@
           "lowestPrice": 1080,
           "averagePrice": 1097,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:36.650Z",
+          "capturedAt": "2026-11-28T01:07:24.083Z",
           "collectionStatus": "live"
         },
         {
@@ -103871,7 +103276,7 @@
           "lowestPrice": 1793,
           "averagePrice": 1796,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:37.465Z",
+          "capturedAt": "2026-11-28T01:07:24.907Z",
           "collectionStatus": "live"
         },
         {
@@ -103882,7 +103287,7 @@
           "lowestPrice": 1769,
           "averagePrice": 1783,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:38.266Z",
+          "capturedAt": "2026-11-28T01:07:25.706Z",
           "collectionStatus": "live"
         },
         {
@@ -103893,7 +103298,7 @@
           "lowestPrice": 1031,
           "averagePrice": 1108,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:39.094Z",
+          "capturedAt": "2026-11-28T01:07:26.486Z",
           "collectionStatus": "live"
         },
         {
@@ -103904,7 +103309,7 @@
           "lowestPrice": 1809,
           "averagePrice": 1840,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:39.862Z",
+          "capturedAt": "2026-11-28T01:07:27.300Z",
           "collectionStatus": "live"
         },
         {
@@ -103915,7 +103320,7 @@
           "lowestPrice": 1809,
           "averagePrice": 1829,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:40.696Z",
+          "capturedAt": "2026-11-28T01:07:28.103Z",
           "collectionStatus": "live"
         },
         {
@@ -103926,7 +103331,7 @@
           "lowestPrice": 1161,
           "averagePrice": 1209,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:41.450Z",
+          "capturedAt": "2026-11-28T01:07:28.884Z",
           "collectionStatus": "live"
         },
         {
@@ -103937,7 +103342,7 @@
           "lowestPrice": 1777,
           "averagePrice": 1786,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:42.268Z",
+          "capturedAt": "2026-11-28T01:07:29.714Z",
           "collectionStatus": "live"
         },
         {
@@ -103946,9 +103351,9 @@
           "fuelCode": "D047",
           "fuelName": "경유",
           "lowestPrice": 1762,
-          "averagePrice": 1768,
+          "averagePrice": 1767,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:11:43.098Z",
+          "capturedAt": "2026-11-28T01:07:30.506Z",
           "collectionStatus": "live"
         },
         {
@@ -103959,7 +103364,7 @@
           "lowestPrice": 1130,
           "averagePrice": 1177,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:30.095Z",
+          "capturedAt": "2026-11-28T01:08:17.364Z",
           "collectionStatus": "live"
         },
         {
@@ -103970,7 +103375,7 @@
           "lowestPrice": 1795,
           "averagePrice": 1797,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:30.437Z",
+          "capturedAt": "2026-11-28T01:08:18.479Z",
           "collectionStatus": "live"
         },
         {
@@ -103978,10 +103383,10 @@
           "regionName": "인천",
           "fuelCode": "D047",
           "fuelName": "경유",
-          "lowestPrice": 1777,
-          "averagePrice": 1781,
+          "lowestPrice": 1774,
+          "averagePrice": 1780,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:31.204Z",
+          "capturedAt": "2026-11-28T01:08:19.434Z",
           "collectionStatus": "live"
         },
         {
@@ -103992,7 +103397,7 @@
           "lowestPrice": 1116,
           "averagePrice": 1133,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:32.007Z",
+          "capturedAt": "2026-11-28T01:08:19.678Z",
           "collectionStatus": "live"
         },
         {
@@ -104003,7 +103408,7 @@
           "lowestPrice": 1797,
           "averagePrice": 1799,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:32.811Z",
+          "capturedAt": "2026-11-28T01:08:20.491Z",
           "collectionStatus": "live"
         },
         {
@@ -104014,7 +103419,7 @@
           "lowestPrice": 1786,
           "averagePrice": 1788,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:33.607Z",
+          "capturedAt": "2026-11-28T01:08:21.290Z",
           "collectionStatus": "live"
         },
         {
@@ -104025,7 +103430,7 @@
           "lowestPrice": 1063,
           "averagePrice": 1104,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:34.423Z",
+          "capturedAt": "2026-11-28T01:08:22.063Z",
           "collectionStatus": "live"
         },
         {
@@ -104036,7 +103441,7 @@
           "lowestPrice": 1785,
           "averagePrice": 1793,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:35.207Z",
+          "capturedAt": "2026-11-28T01:08:22.890Z",
           "collectionStatus": "live"
         },
         {
@@ -104047,7 +103452,7 @@
           "lowestPrice": 1765,
           "averagePrice": 1781,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:36.006Z",
+          "capturedAt": "2026-11-28T01:08:23.810Z",
           "collectionStatus": "live"
         },
         {
@@ -104058,7 +103463,7 @@
           "lowestPrice": 1106,
           "averagePrice": 1173,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:36.817Z",
+          "capturedAt": "2026-11-28T01:08:24.473Z",
           "collectionStatus": "live"
         },
         {
@@ -104069,7 +103474,7 @@
           "lowestPrice": 1814,
           "averagePrice": 1824,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:37.606Z",
+          "capturedAt": "2026-11-28T01:08:25.295Z",
           "collectionStatus": "live"
         },
         {
@@ -104080,7 +103485,7 @@
           "lowestPrice": 1795,
           "averagePrice": 1811,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:38.430Z",
+          "capturedAt": "2026-11-28T01:08:26.079Z",
           "collectionStatus": "live"
         },
         {
@@ -104091,7 +103496,7 @@
           "lowestPrice": 1136,
           "averagePrice": 1183,
           "stationCount": 7,
-          "capturedAt": "2026-11-27T16:12:39.188Z",
+          "capturedAt": "2026-11-28T01:08:26.882Z",
           "collectionStatus": "live"
         },
         {
@@ -104102,7 +103507,7 @@
           "lowestPrice": 1745,
           "averagePrice": 1787,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:40.023Z",
+          "capturedAt": "2026-11-28T01:08:27.698Z",
           "collectionStatus": "live"
         },
         {
@@ -104113,7 +103518,7 @@
           "lowestPrice": 1716,
           "averagePrice": 1773,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:40.818Z",
+          "capturedAt": "2026-11-28T01:08:28.501Z",
           "collectionStatus": "live"
         },
         {
@@ -104124,7 +103529,7 @@
           "lowestPrice": 1098,
           "averagePrice": 1144,
           "stationCount": 20,
-          "capturedAt": "2026-11-27T16:12:41.604Z",
+          "capturedAt": "2026-11-28T01:08:29.389Z",
           "collectionStatus": "live"
         }
       ]
